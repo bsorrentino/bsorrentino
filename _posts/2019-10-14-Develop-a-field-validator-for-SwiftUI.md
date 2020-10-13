@@ -45,14 +45,11 @@ In the continuation of this article let assume  that you are familiar with basic
 
 When I started to deal with SwiftUI Form element immediately I’ve had the need to validate input field and rather than reuse the swift library already used in pre-SwiftUI world I’ve tried to develop a TextField Validator following the philosophy of this new framework. Below I’ll share my implementation and criterias used for it, first I've defined a validator closure as shown below
 
-<table>
-  <tr>
-    <td>// MARK: Validation Closure
+```swift
+// MARK: Validation Closure
 
 typealias Validator = (T) -> String?</td>
-  </tr>
-</table>
-
+```
 
 Where T is the value to validate and the result is an optional string that if = nil means that data is valid otherwise it contains description of error that could be displayed to the user.
 
@@ -62,27 +59,21 @@ The main elements of the following implementation are FieldChecker ([snippet 1](
 
 #### Snippet 1 - FieldChecker
 
-<table>
-  <tr>
-    <td>// MARK: FieldChecker holds last error message or nil if valid </td>
-  </tr>
-  <tr>
-    <td>struct FieldChecker {
-    var errorMessage:String? = nil
-    var valid:Bool { self.errorMessage == nil }
-}</td>
-  </tr>
-</table>
+```swift
+// MARK: FieldChecker holds last error message or nil if valid </td>
 
+struct FieldChecker {
+  var errorMessage:String? = nil
+  var valid:Bool { self.errorMessage == nil }
+}
+```
 
 #### Snippet 2 - FieldValidator
 
-<table>
-  <tr>
-    <td>// MARK: FieldValidator validate the value changes updating the FieldChecker</td>
-  </tr>
-  <tr>
-    <td>class FieldValidator<T> : ObservableObject where T : Hashable {
+```swift
+// MARK: FieldValidator validate the value changes updating the FieldChecker</td>
+
+class FieldValidator<T> : ObservableObject where T : Hashable {
 
     // specialize validator for TestField ( T = String )    
     typealias Validator = (T) -> String?
@@ -116,10 +107,7 @@ The main elements of the following implementation are FieldChecker ([snippet 1](
     }
 
 } // end class FieldValidator
-</td>
-  </tr>
-</table>
-
+```
 
 As you see FieldValidator is an ObservableObject that has the ability to publish properties whose values can be bounded and observed.
 
@@ -143,9 +131,9 @@ So we  need to create a SwiftUI view  this is a simple implementation named Text
 
 #### Snippet 3 - TextFieldWithValidator
 
-<table>
-  <tr>
-    <td>struct TextFieldWithValidator : View {
+```swift
+
+struct TextFieldWithValidator : View {
     // specialize validator for TestField ( T = String )
     typealias Validator = (String) -> String?     
 
@@ -177,32 +165,26 @@ So we  need to create a SwiftUI view  this is a simple implementation named Text
         }
     }
 }
-</td>
-  </tr>
-</table>
-
+```
 
 Well we have almost finished, now all we have to do is implement a simple use case applying it in a SwiftUI Form, so let create as simple login form with username and password fields following the steps outlined below:
 
 1. Create an observable (bindable) data model:
 
-<table>
-  <tr>
-    <td>class DataItem: ObservableObject { // observable object
+```swift
+class DataItem: ObservableObject { // observable object
 
     @Published var username:String = "" // observable property
     @Published var password:String = "" // observable property
 
-}</td>
-  </tr>
-</table>
-
+}
+```
 
 2. Create a FormWithValidator view that will contain the input fields and validation logic. In this case we have simply considered empty field as not valid
 
-<table>
-  <tr>
-    <td>struct FormVithValidator : View {
+```swift
+
+struct FormVithValidator : View {
 
  @ObservedObject var item:DataItem // data model reference  
 
@@ -254,41 +236,30 @@ Well we have almost finished, now all we have to do is implement a simple use ca
   } // end of form
  }
 }
-</td>
-  </tr>
-</table>
+```
 
 
 3. In the SceneDelegate creates an instance of data and pass to them to form
 
-<table>
-  <tr>
-    <td>let item = DataItem()// instance of data
+```swift
+
+let item = DataItem()// instance of data
 
 // create a viewController from the FormWithValidator SwiftUI view
 let vc = UIHostingController(rootView: FormVithValidator( item:item))
 
 window.rootViewController = vc // set viewController as root
-</td>
-  </tr>
-</table>
-
+```
 
 Et voilà the form with validation has been completed.
 
 To better understand how these elements work together below I’ve drawn a simple sequence diagram of the solution
 
-<table>
-  <tr>
-    <td></td>
-  </tr>
-</table>
-
-
+!swiftui-fieldvalidator.png!
 
 
 # Conclusions
 
-In this exercise I’ve applied all the new concepts that I’ve learned in my journey through SwiftUI, hope this could help you to better understand this new amazing approach and in case also provide you a lightweight framework on which to build your form validation strategy. **The code of the article is on ****[GITHU**B](https://github.com/bsorrentino/swiftui-fieldvalidator)
+In this exercise I’ve applied all the new concepts that I’ve learned in my journey through SwiftUI, hope this could help you to better understand this new amazing approach and in case also provide you a lightweight framework on which to build your form validation strategy. **The code of the article is on [GITHUB](https://github.com/bsorrentino/swiftui-fieldvalidator)**
 
 Happy coding and … enjoy SwiftUI
