@@ -48,7 +48,7 @@ When I started to deal with SwiftUI Form element immediately I’ve had the need
 ```swift
 // MARK: Validation Closure
 
-typealias Validator = (T) -> String?</td>
+typealias Validator = (T) -> String?
 ```
 
 Where T is the value to validate and the result is an optional string that if = nil means that data is valid otherwise it contains description of error that could be displayed to the user.
@@ -60,7 +60,7 @@ The main elements of the following implementation are FieldChecker ([snippet 1](
 #### Snippet 1 - FieldChecker
 
 ```swift
-// MARK: FieldChecker holds last error message or nil if valid </td>
+// MARK: FieldChecker holds last error message or nil if valid
 
 struct FieldChecker {
   var errorMessage:String? = nil
@@ -71,7 +71,7 @@ struct FieldChecker {
 #### Snippet 2 - FieldValidator
 
 ```swift
-// MARK: FieldValidator validate the value changes updating the FieldChecker</td>
+// MARK: FieldValidator validate the value changes updating the FieldChecker
 
 class FieldValidator<T> : ObservableObject where T : Hashable {
 
