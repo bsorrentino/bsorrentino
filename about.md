@@ -1,7 +1,7 @@
 ---
 layout: page
 title: About
-permalink: /bsorrentino/about/
+permalink: about/
 ---
 
 ### Hi there 👋
