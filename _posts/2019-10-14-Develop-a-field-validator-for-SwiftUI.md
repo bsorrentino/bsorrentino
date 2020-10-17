@@ -255,7 +255,7 @@ Et voilà the form with validation has been completed.
 
 To better understand how these elements work together below I’ve drawn a simple sequence diagram of the solution
 
-![Sequence Diagram](/bsorrentino/assets/swiftui-fieldvalidator.png)
+![Sequence Diagram](assets/swiftui-fieldvalidator.png)
 
 
 # Conclusions
