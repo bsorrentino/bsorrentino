@@ -1,11 +1,11 @@
 ---
 layout: post
-title:  "new release 4.2.0 of cordova-broadcaster-plugin "
-date:   2020-10-18 20:05:26 +0200
+title:  "new release 4.3.0 of cordova-broadcaster-plugin "
+date:   2020-10-20 20:05:26 +0200
 categories: cordova android update
 ---
 
-## New Release 4.2.0
+## New Release 4.3.0
 
 **cordova-broadcaster-plugin** is an [apache cordova](https://cordova.apache.org/) plugin allowing message exchange between javascript and native (and viceversa).
 
