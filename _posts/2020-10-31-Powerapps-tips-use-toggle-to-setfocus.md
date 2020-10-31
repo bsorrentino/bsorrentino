@@ -31,6 +31,7 @@ Based upon that has been enough add a toggle in a Dialog controls group and assu
 * The action that show dialog perform `UpdateContext({showPopup: true})` setting the variable `showPopup` at `true`
 
 the solution is to set the following property on `Toggle_1`
+
 Property | Value
 --- | ---
 `Default` | `showPopup`|
