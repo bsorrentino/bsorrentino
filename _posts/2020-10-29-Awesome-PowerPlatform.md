@@ -5,7 +5,7 @@ date:   2020-10-31 12:00:00 +0200
 categories: Microsoft PowerPlatfrom
 ---
 
-# Microsoft Power Platform
+## Microsoft Power Platform
 
 
 Lately I've had the chance to use the Microsoft **Power Platform** the **low-code platform that spans Office365, Azure, Dynamics365 and standalone applications**.
@@ -17,9 +17,8 @@ After a while I've understood the incredible potential behind such platform and 
 For this reason I  would like to start writing my experience  in this journey discovering  Power Platform.
 As usual the best strategy is to start reusing as much as possible stuff from community and matter experts so below that are a collections of useful links where we can start to unveil this new world  behind Power Platform  
 
----
 
-## References
+### References
 
 * [Awesome Power Platform](https://github.com/Power-Maverick/awesome-power-platform)
 > A curated colelctions of Links, Tools & More and in particular
@@ -33,7 +32,8 @@ As usual the best strategy is to start reusing as much as possible stuff from co
 * [Power Platform Training Materials](https://powerusers.microsoft.com/t5/News-Announcements/Power-Platform-Training-Materials/ba-p/342088)
 > An answer at the common question : **"Where do I go to find out more about Power Platform?"**
 
-## Video
+### Video
+
 * [Power Apps and Automate Architecture series (presented by Power CAT)](https://www.youtube.com/watch?v=r0kOVMan3dc&list=PLi9EhCY4z99W2QOTgbwhFZEjpqc8YZDVH)
 > This series, presented by Power CAT, will provide your architects and developers with the tools and best practices to run successful Power Apps projects of high complexity.
 
@@ -41,8 +41,6 @@ As usual the best strategy is to start reusing as much as possible stuff from co
 > Learn about all things PowerApps, Microsoft Flow, SharePoint, PowerShell, and Office365.
 > This channel is provided by Shane Young as part of documenting his work with PowerApps911.  )
 
----
-
-## Images
+### Images
 
 ![manifest](/bsorrentino/assets/powerplatform-mf.png)
