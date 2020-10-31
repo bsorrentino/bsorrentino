@@ -45,7 +45,7 @@ That's all, hope this help and enjoy Powerapps
 
 Lately has been released  for Canvas App a new [Container Control] (experimental feature yet), it allows more flexibility over controls grouping and could be used instead of Rectangle for Dialog. Take a look the the links below.
 
-## References
+## References
 
 * [Create dialog in powerapps]
 * [SetFocus function limitations]
