@@ -24,20 +24,22 @@ Based upon diagnosys the solution should had to be ensure that invocation to Set
 ## Solution
 
 To Help me came in to the play the **"_Toggle Control_"**, it has a useful handler named `OnCheck` that **is raised when the toggle is ON so that its `Default` property is `True`**.
-Based upon that has been enough add a toggle in a Dialog controls group and assuming:
+Based upon that has been enough add a toggle in a Dialog controls group and assuming that
 * Rectangle (i.e. Dialog) is named: `Rectangle_1`
 * Input Box is named: `TextInput_1`
 * Toggle is named: `Toggle_1`
+* The action that show dialog perform `UpdateContext({showPopup: true})` setting the variable `showPopup` at `true`
 
 the solution is to set the following property on `Toggle_1`
-
 Property | Value
 --- | ---
-`Default` | `Rectangle_1.Visible`|
+`Default` | `showPopup`|
 `OnCheck` | `SetFocus( TextInput_1 )` |
 
 **<u>Important Note</u>**
 > In order to avoid showing toggle not use `Visible` property but rather makes its size (witdh & height) equals to 0 otherwise the trigger  `OnCheck` not will be activated.
+
+You can downlad a simple app [here](manifest](/bsorrentino/assets/SetFocusTest.msapp))
 
 That's all, hope this help and enjoy Powerapps
 
