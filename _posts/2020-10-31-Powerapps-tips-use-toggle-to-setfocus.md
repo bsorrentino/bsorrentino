@@ -13,7 +13,7 @@ The **"_Canvas developers_"** know the way to show a dialog is to make visible a
 
 After followed the useful article [Create dialog in powerapps] I surprised that I was not able to set focus on the unique input box contained in dialog.
 
-**"_Setting focus_"** over control for me was a trivial task but I've understood that in Powerapps is is not so. I red the [SetFocus function limitations] but again I did understand the problem.
+**"_Setting focus_"** over control for me was a trivial task but I've understood that in Powerapps it is not so. I red the [SetFocus function limitations] but again I did understand the problem.
 
 ## Diagnosys
 
