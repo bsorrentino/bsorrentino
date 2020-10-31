@@ -1,6 +1,6 @@
 ---
 layout: post
-title:  "new release 4.3.0 of cordova-broadcaster-plugin "
+title:  "cordova-broadcaster-plugin 4.3.0 is out"
 date:   2020-10-20 20:05:26 +0200
 categories: cordova android update
 ---
