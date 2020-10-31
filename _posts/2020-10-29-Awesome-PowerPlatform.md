@@ -22,8 +22,8 @@ As usual the best strategy is to start reusing as much as possible stuff from co
 
 * [awesome-power-platform](https://github.com/Power-Maverick/awesome-power-platform)
 > A curated collections of Links, Tools & More and in particular
-> [Official MS guidance docs for ALM with Power Platform](https://docs.microsoft.com/en-us/power-platform/alm/)
-> [Establish an Environment Strategy for Power Platform
+> * [Official MS guidance docs for ALM with Power Platform](https://docs.microsoft.com/en-us/power-platform/alm/)
+> * [Establish an Environment Strategy for Power Platform
 ](https://powerapps.microsoft.com/en-us/blog/establishing-an-environment-strategy-for-microsoft-power-platform/)
 
 * [Power Platform Adoption Framework](http://www.powerplatform.af/)
