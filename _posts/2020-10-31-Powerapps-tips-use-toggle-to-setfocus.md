@@ -7,9 +7,9 @@ categories: Microsoft PowerPlatform Powerapps
 
 ## Problem
 
-During development of a "Canvas App" in Powerapps I had to show a dialog requesting a single text as input.
+During development of a **"_Canvas App_"** in Powerapps I had to show a dialog requesting a single text as input.
 
-The "Canvas" developers know the way to show a dialog is to make visible a rectangle on the screen and its controls is a group of standard controls that are constrained with the rectangle visibility itself.
+The "Canvas"** developers know the way to show a dialog is to make visible a rectangle on the screen and its controls is a group of standard controls that are constrained with the rectangle visibility itself.
 
 After followed the useful article [Create dialog in powerapps] I surprised that I was not able to set focus on the unique input box contained in dialog.
 
@@ -37,13 +37,14 @@ Property | Value
 `OnCheck` | `SetFocus( TextInput_1 )` |
 
 **<u>Important Note</u>**
-> In order to avoid showing toggle not use `Visible` property but rather makes its size (witdh & height) equals to 0 otherwise the trigger  `onCheck` not will be activated.
+> In order to avoid showing toggle not use `Visible` property but rather makes its size (witdh & height) equals to 0 otherwise the trigger  `OnCheck` not will be activated.
 
 That's all, hope this help and enjoy Powerapps
 
 #### Dev. Note - Container Control
 
 Lately has been released  for Canvas App a new [Container Control] (experimental feature yet), it allows more flexibility over controls grouping and could be used instead of Rectangle for Dialog. Take a look the the links below.
+
 
 ## References
 
