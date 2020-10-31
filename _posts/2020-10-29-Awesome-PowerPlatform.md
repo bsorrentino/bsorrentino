@@ -20,24 +20,24 @@ As usual the best strategy is to start reusing as much as possible stuff from co
 
 ### References
 
-##### [awesome-power-platform](https://github.com/Power-Maverick/awesome-power-platform)
+#### [awesome-power-platform](https://github.com/Power-Maverick/awesome-power-platform)
 > A curated collections of Links, Tools & More and in particular
 > * [Official MS guidance docs for ALM with Power Platform](https://docs.microsoft.com/en-us/power-platform/alm/)
 > * [Establish an Environment Strategy for Power Platform
 ](https://powerapps.microsoft.com/en-us/blog/establishing-an-environment-strategy-for-microsoft-power-platform/)
 
-##### [Power Platform Adoption Framework](http://www.powerplatform.af/)
+#### [Power Platform Adoption Framework](http://www.powerplatform.af/)
 > Power Platform adoption Whitepaper and Wiki
 
-##### [Power Platform Training Materials](https://powerusers.microsoft.com/t5/News-Announcements/Power-Platform-Training-Materials/ba-p/342088)
+#### [Power Platform Training Materials](https://powerusers.microsoft.com/t5/News-Announcements/Power-Platform-Training-Materials/ba-p/342088)
 > An answer at the common question : **"Where do I go to find out more about Power Platform?"**
 
 ### Video
 
-##### [Power Apps and Automate Architecture series](https://www.youtube.com/watch?v=r0kOVMan3dc&list=PLi9EhCY4z99W2QOTgbwhFZEjpqc8YZDVH)
+#### [Power Apps and Automate Architecture series](https://www.youtube.com/watch?v=r0kOVMan3dc&list=PLi9EhCY4z99W2QOTgbwhFZEjpqc8YZDVH)
 > This series, presented by Power CAT, will provide your architects and developers with the tools and best practices to run successful Power Apps projects of high complexity.
 
-##### [Shane Young - PowerApps911](https://www.youtube.com/c/ShaneYoungCloud/videos)
+#### [Shane Young - PowerApps911](https://www.youtube.com/c/ShaneYoungCloud/videos)
 > Learn about all things PowerApps, Microsoft Flow, SharePoint, PowerShell, and Office365.
 > This channel is provided by Shane Young as part of documenting his work with PowerApps911.  )
 
