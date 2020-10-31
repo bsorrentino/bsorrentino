@@ -9,11 +9,11 @@ categories: Microsoft PowerPlatform Powerapps
 
 During development of a **"_Canvas App_"** in Powerapps I had to show a dialog requesting a single text as input.
 
-The "Canvas"** developers know the way to show a dialog is to make visible a rectangle on the screen and its controls is a group of standard controls that are constrained with the rectangle visibility itself.
+The **"_Canvas developers_"** know the way to show a dialog is to make visible a rectangle on the screen and its controls is a group of standard controls that are constrained with the rectangle visibility itself.
 
 After followed the useful article [Create dialog in powerapps] I surprised that I was not able to set focus on the unique input box contained in dialog.
 
-"Setting focus" over control for me was a trivial task but I've understood that in Powerapps is is not so. I red the [SetFocus function limitations] but again I did understand the problem.
+**"_Setting focus_"** over control for me was a trivial task but I've understood that in Powerapps is is not so. I red the [SetFocus function limitations] but again I did understand the problem.
 
 ## Diagnosys
 
@@ -25,7 +25,7 @@ Based upon diagnosys the solution should had to be ensure that invocation to Set
 
 To Help me came in to the play the **"_Toggle Control_"**, it has a useful handler named `OnCheck` that **is raised when the toggle is ON so that its `Default` property is `True`**.
 Based upon that has been enough add a toggle in a Dialog controls group and assuming:
-* Rectangle (ie Dialog) is named: `Rectangle_1`
+* Rectangle (i.e. Dialog) is named: `Rectangle_1`
 * Input Box is named: `TextInput_1`
 * Toggle is named: `Toggle_1`
 
@@ -44,7 +44,6 @@ That's all, hope this help and enjoy Powerapps
 #### Dev. Note - Container Control
 
 Lately has been released  for Canvas App a new [Container Control] (experimental feature yet), it allows more flexibility over controls grouping and could be used instead of Rectangle for Dialog. Take a look the the links below.
-
 
 ## References
 
