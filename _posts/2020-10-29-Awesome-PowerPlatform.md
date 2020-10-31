@@ -2,7 +2,7 @@
 layout: post
 title:  "Awesome Power Platform"
 date:   2020-10-31 12:00:00 +0200
-categories: Microsoft PowerPlatfrom
+categories: Microsoft PowerPlatform
 ---
 
 ## Microsoft Power Platform
