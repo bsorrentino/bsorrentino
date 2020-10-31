@@ -20,10 +20,10 @@ As usual the best strategy is to start reusing as much as possible stuff from co
 
 ### References
 
-* [Awesome Power Platform](https://github.com/Power-Maverick/awesome-power-platform)
-> A curated colelctions of Links, Tools & More and in particular
-> * [Official MS guidance docs for ALM with Power Platform](https://docs.microsoft.com/en-us/power-platform/alm/)
-> * [Establish an Environment Strategy for Power Platform
+* [awesome-power-platform](https://github.com/Power-Maverick/awesome-power-platform)
+> A curated collections of Links, Tools & More and in particular
+> [Official MS guidance docs for ALM with Power Platform](https://docs.microsoft.com/en-us/power-platform/alm/)
+> [Establish an Environment Strategy for Power Platform
 ](https://powerapps.microsoft.com/en-us/blog/establishing-an-environment-strategy-for-microsoft-power-platform/)
 
 * [Power Platform Adoption Framework](http://www.powerplatform.af/)
@@ -34,7 +34,7 @@ As usual the best strategy is to start reusing as much as possible stuff from co
 
 ### Video
 
-* [Power Apps and Automate Architecture series (presented by Power CAT)](https://www.youtube.com/watch?v=r0kOVMan3dc&list=PLi9EhCY4z99W2QOTgbwhFZEjpqc8YZDVH)
+* [Power Apps and Automate Architecture series](https://www.youtube.com/watch?v=r0kOVMan3dc&list=PLi9EhCY4z99W2QOTgbwhFZEjpqc8YZDVH)
 > This series, presented by Power CAT, will provide your architects and developers with the tools and best practices to run successful Power Apps projects of high complexity.
 
 * [Shane Young - PowerApps911](https://www.youtube.com/c/ShaneYoungCloud/videos)
