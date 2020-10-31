@@ -39,7 +39,7 @@ As usual the best strategy is to start reusing as much as possible stuff from co
 
 * [Shane Young - PowerApps911](https://www.youtube.com/c/ShaneYoungCloud/videos)
 > Learn about all things PowerApps, Microsoft Flow, SharePoint, PowerShell, and Office365.
-> This channel is provided by Shane Young as part of documenting his work with PowerApps911.  ) 
+> This channel is provided by Shane Young as part of documenting his work with PowerApps911.  )
 
 ---
 
