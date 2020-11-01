@@ -13,13 +13,13 @@ The **"_Canvas developers_"** know the way to show a dialog is to make visible a
 
 After followed the useful article [Create dialog in powerapps] I surprised that I was not able to set focus on the unique input box contained in dialog.
 
-**"_Setting focus_"** over control for me was a trivial task but I've understood that in Powerapps it is not so. I red the [SetFocus function limitations] but again I did understand the problem.
+I assumed that **“_Setting focus_“** over control was a trivial task but I’ve understood that in Powerapps it is not so. I read the [SetFocus function limitations] but again I didn't understand the problem.
 
-## Diagnosys
+## Diagnosis
 
 After struggling to investigate the possible causes I understood that problem seemed related to the fact that the input box is initially not visible and when I try to make dialog visible jointly with input box, the subsequent invocation to SetFocus function seems not in-synch with the visible state of control.
 
-Based upon diagnosys the solution should had to be ensure that invocation to SetFocus function happened after that input control was visible, so how to do this ?
+Based upon diagnosis the solution should had to be ensure that invocation to SetFocus function happened after that input control was visible, so how to do this ?
 
 ## Solution
 
