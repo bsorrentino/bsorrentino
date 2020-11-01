@@ -2,7 +2,7 @@
 layout: post
 title:  "Powerapps tips: use toggle to set focus"
 date:   2020-10-31 16:00:00 +0200
-categories: Microsoft PowerPlatform Powerapps
+categories: Microsoft PowerPlatform Powerapps Canvas
 ---
 
 ## Problem
