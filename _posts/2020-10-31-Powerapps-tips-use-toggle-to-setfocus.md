@@ -40,7 +40,7 @@ Property | Value
 **<u>Important Note</u>**
 > In order to avoid showing toggle not use `Visible` property but rather makes its size (witdh & height) equals to 0 otherwise the trigger  `OnCheck` not will be activated.
 
-You can downlad a simple app [here](/bsorrentino/raw/gh-pages/assets/setFocusTest.msapp)
+You can downlad a simple app [here](https://github.com/bsorrentino/bsorrentino/raw/gh-pages/assets/setFocusTest.msapp)
 
 That's all, hope this help and enjoy Powerapps
 
