@@ -163,11 +163,11 @@ What’s less obvious is that screen names are read aloud by screen readers, whi
 who have vision accessibility needs. Therefore, it’s imperative that you use plain language to name
 your screens, and that the names include spaces and no abbreviations. Also, we recommend that you
 end the name with the word “Screen,” so that the context is understood when the name is announced.
-Here are some good examples:
 
+Here are some good examples:
 * `Home Screen`
 * `Thrive Help Screen`
-
+ 
 ![img_p5_1](../../../assets/powerapps-canvas-guidelines/img_p5_1.png "")
 
 Here are some bad examples:
