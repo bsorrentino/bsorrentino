@@ -220,6 +220,7 @@ Here are some bad examples:
 As the following image shows, if you consistently name your controls, your app will be much cleaner in
 the navigation view, and your code will be much cleaner too.
 ![img_p7_1](../../../assets/powerapps-canvas-guidelines/img_p7_1.png "")
+![](../../../assets/powerapps-canvas-guidelines/img_p7_1.png "")
 
 #### Data source names
 When you add a data source to your application, the name can’t be changed in the PowerApps app. The
