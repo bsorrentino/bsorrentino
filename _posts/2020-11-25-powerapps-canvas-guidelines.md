@@ -31,57 +31,58 @@ Sudhakaran, Hubert Sui, Vanessa Welgemoed, Keith Whatling
 
 
 ## Contents
-Introduction .................................................. 4
-Purpose of this white paper ................................... 4
-Scope of this white paper ..................................... 4
-This is a living doc........................................... 4
-General naming conventions .................................... 5
-Camel case .................................................... 5
-Pascal case ................................................... 5
-Object naming conventions ..................................... 5
-Screen names .................................................. 5
-Control names ................................................. 6
-Data source names.............................................. 8
-Code naming conventions ...................................... 10
-Variable name................................................. 10
-Collection names ............................................. 11
-Organizing your objects and code ............................. 12
-Using groups for organization ................................ 12
-Format text feature .......................................... 12
-Minimizing the number of controls that you create............. 13
-Finding the best place for your code ......................... 13
-Other tips for organization................................... 18
-General coding guidelines .................................... 19
-Click targets ................................................ 19
-Variables and collections .................................... 19
-Nesting ...................................................... 20
-Optimizing for performance ................................... 21
-OnStart code ................................................. 21
-Concurrent function .......................................... 21
-Delegable calls vs. non-delegable calls ...................... 22
-Using local collections ...................................... 22
-SQL optimization ............................................. 22
-Expensive calls .............................................. 23
-Limiting the package size .................................... 24
-Periodically republishing your apps .......................... 24
-Advanced settings ............................................ 25
-App design ................................................... 26
-Using parent/child relationships for relative styling .........26
-Galleries .................................................... 26
-Forms ........................................................ 27
-Common Data Service for Apps ................................. 27
-Multiple form factors ........................................ 28
-Configuration values ......................................... 28
-Creating a hidden configuration screen ....................... 28
-Storing configuration values in Common Data Service for Apps  .30
-Using a custom API............................................ 30
-Error handling/debugging ..................................... 30
-Toggle controls for error handling ........................... 30
-Using a canvas control as a debug panel ...................... 31
-Showing debug controls to app makers ......................... 31
-Documentation ................................................ 32
-Code comments ................................................ 32
-Documentation screens ........................................ 33
+
+* Introduction .................................................. 4
+* Purpose of this white paper ................................... 4
+* Scope of this white paper ..................................... 4
+* This is a living doc........................................... 4
+* General naming conventions .................................... 5
+* Camel case .................................................... 5
+* Pascal case ................................................... 5
+* Object naming conventions ..................................... 5
+* Screen names .................................................. 5
+* Control names ................................................. 6
+* Data source names.............................................. 8
+* Code naming conventions ...................................... 10
+* Variable name................................................. 10
+* Collection names ............................................. 11
+* Organizing your objects and code ............................. 12
+* Using groups for organization ................................ 12
+* Format text feature .......................................... 12
+* Minimizing the number of controls that you create............. 13
+* Finding the best place for your code ......................... 13
+* Other tips for organization................................... 18
+* General coding guidelines .................................... 19
+* Click targets ................................................ 19
+* Variables and collections .................................... 19
+* Nesting ...................................................... 20
+* Optimizing for performance ................................... 21
+* OnStart code ................................................. 21
+* Concurrent function .......................................... 21
+* Delegable calls vs. non-delegable calls ...................... 22
+* Using local collections ...................................... 22
+* SQL optimization ............................................. 22
+* Expensive calls .............................................. 23
+* Limiting the package size .................................... 24
+* Periodically republishing your apps .......................... 24
+* Advanced settings ............................................ 25
+* App design ................................................... 26
+* Using parent/child relationships for relative styling .........26
+* Galleries .................................................... 26
+* Forms ........................................................ 27
+* Common Data Service for Apps ................................. 27
+* Multiple form factors ........................................ 28
+* Configuration values ......................................... 28
+* Creating a hidden configuration screen ....................... 28
+* Storing configuration values in Common Data Service for Apps  .30
+* Using a custom API............................................ 30
+* Error handling/debugging ..................................... 30
+* Toggle controls for error handling ........................... 30
+* Using a canvas control as a debug panel ...................... 31
+* Showing debug controls to app makers ......................... 31
+* Documentation ................................................ 32
+* Code comments ................................................ 32
+* Documentation screens ........................................ 33
 
 
 ### Introduction
