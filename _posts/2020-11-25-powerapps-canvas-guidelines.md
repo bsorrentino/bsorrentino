@@ -170,6 +170,7 @@ Here are some good examples:
 >
 
 ![img_p5_1](../../../assets/powerapps-canvas-guidelines/img_p5_1.png "")
+![](/bsorrentino/assets/powerapps-canvas-guidelines/img_p5_1.png "")
 
 Here are some bad examples:
 * `Home`
