@@ -243,7 +243,7 @@ name and its operations use Pascal casing (that is, `UpperUpperUpper`). For exam
 source is named `LinkedIn` and has an operation named `ListCompanies`.
 
 
-![img_p8_1](../../../assets/powerapps-canvas-guidelines/img_p8_1.png "")
+![img_p8_1](../../../assets/powerapps-canvas-guidelines/img_p8_1.png)
 
 ##### Custom connectors
 Custom connectors can be created by any maker in your environment. They’re used to connect to
