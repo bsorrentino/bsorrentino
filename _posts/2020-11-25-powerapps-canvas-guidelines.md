@@ -169,7 +169,7 @@ Here are some good examples:
 * `Thrive Help Screen`
 
 ![img_p5_1](/bsorrentino/assets/powerapps-canvas-guidelines/img_p5_1.png "")
-![](/bsorrentino/assets/powerapps-canvas-guidelines/img_p5_1.png "")
+![img_p5_1](/bsorrentino/assets/powerapps-canvas-guidelines/img_p5_1.png "")
 
 Here are some bad examples:
 * `Home`
@@ -242,6 +242,7 @@ In Standard action connectors that expose functions, such as LinkedIn, you’ll 
 name and its operations use Pascal casing (that is, `UpperUpperUpper`). For example, the LinkedIn data
 source is named `LinkedIn` and has an operation named `ListCompanies`.
 ![img_p8_1](../../../assets/powerapps-canvas-guidelines/img_p8_1.png "")
+![](../../../assets/powerapps-canvas-guidelines/img_p8_1.png "")
 
 ##### Custom connectors
 Custom connectors can be created by any maker in your environment. They’re used to connect to
@@ -251,14 +252,17 @@ its operations. Just be aware that the custom connector name and the way that it
 can differ.
 For example, here’s a custom connector named **MS Auction Item Bid API**.
 ![img_p8_2](../../../assets/powerapps-canvas-guidelines/img_p8_2.png "")
+![](../../../assets/powerapps-canvas-guidelines/img_p8_2.png "")
 
 But when you create a connection from this connector and add it to your PowerApps app as a data
 source, it appears as **AuctionItemBidAPI**.
 ![img_p8_3](../../../assets/powerapps-canvas-guidelines/img_p8_3.png "")
+![](../../../assets/powerapps-canvas-guidelines/img_p8_3.png "")
 
 To discover the reason, you can look inside the OpenAPI file. There, you’ll see a `title` attribute that
 contains the text `Auction Item Bid API`.
 ![img_p8_4](../../../assets/powerapps-canvas-guidelines/img_p8_4.png "")
+![](../../../assets/powerapps-canvas-guidelines/img_p8_4.png "")
 
 PowerApps removes all the spaces from this attribute value and uses it as the name of your data source.
 We recommend that you change the value of this attribute to a Pascal-cased name such as
