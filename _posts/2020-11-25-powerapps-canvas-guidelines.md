@@ -167,7 +167,7 @@ end the name with the word “Screen,” so that the context is understood when 
 Here are some good examples:
 * `Home Screen`
 * `Thrive Help Screen`
-\
+ \
 ![img_p5_1](../../../assets/powerapps-canvas-guidelines/img_p5_1.png "")
 
 Here are some bad examples:
