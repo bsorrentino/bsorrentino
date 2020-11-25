@@ -241,7 +241,8 @@ for PowerApps article.
 In Standard action connectors that expose functions, such as LinkedIn, you’ll see that the data source
 name and its operations use Pascal casing (that is, `UpperUpperUpper`). For example, the LinkedIn data
 source is named `LinkedIn` and has an operation named `ListCompanies`.
-![img_p8_1](../../../assets/powerapps-canvas-guidelines/img_p8_1.png "")
+
+
 ![img_p8_1](../../../assets/powerapps-canvas-guidelines/img_p8_1.png "")
 
 ##### Custom connectors
