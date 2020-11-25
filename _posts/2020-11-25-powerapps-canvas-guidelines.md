@@ -353,7 +353,7 @@ All controls on a screen should belong to a group, so that you can easily recogn
 them around a screen or between screens, or collapse them to simplify your view. Gallery, Form, and
 Canvas controls are already groups, but they can also, optionally, be part of another group to help
 improve organization.
- ![img_p11_1](../../..assets/powerapps-canvas-guidelines/img_p11_1.png "")
+![img_p11_1](../../..assets/powerapps-canvas-guidelines/img_p11_1.png "")
 
 Optionally, you can use the experimental enhanced Group control, which allows for nesting of groups,
 group-level settings, keyboard navigation, and more.
@@ -363,13 +363,13 @@ difficult to read a large block of code that contains multiline functions. The *
 breaks and indentation to make your formula easier to read. As for code comments, the extra white
 space is removed from the app package that’s downloaded to the client. Therefore, there’s no need to
 use the **Remove formatting** feature before you publish your app.
- ![img_p11_2](../../..assets/powerapps-canvas-guidelines/img_p11_2.png "")
+![img_p11_2](../../..assets/powerapps-canvas-guidelines/img_p11_2.png "")
 
 #### Minimizing the number of controls that you create
 To minimize complexity, try to limit the number of controls in your apps. For example, instead of having
 four image controls that lie on top of each other and have different `Visible` property settings, use one
 image that includes logic in its `Image` property to show different images.
- ![img_p12_1](../../..assets/powerapps-canvas-guidelines/img_p12_1.png "")
+![img_p12_1](../../..assets/powerapps-canvas-guidelines/img_p12_1.png "")
 
 #### Finding the best place for your code
 As the complexity of your PowerApps apps increase, it can become more difficult to find your code
@@ -389,13 +389,13 @@ case, the maker didn’t put the logic to load the profile in the gallery’s `O
 app just passes any variables that are needed on the next screen as context variables in the `Navigate`
 function. The **User Profile** screen does all the work to load the user profile.
 Here’s the `Navigate` function in the gallery’s `OnSelect` property for this example.
- ![img_p12_2](../../..assets/powerapps-canvas-guidelines/img_p12_2.png "")
+![img_p12_2](../../..assets/powerapps-canvas-guidelines/img_p12_2.png "")
 
 
 Then, in the `OnVisible` property of the **User Profile** screen, call `Office365Users.UserProfileV2`
 by using the user ID that was received from the previous screen. Subsequent code then uses the other
 context variables that were passed.
- ![img_p13_1](../../..assets/powerapps-canvas-guidelines/img_p13_1.png "")
+![img_p13_1](../../..assets/powerapps-canvas-guidelines/img_p13_1.png "")
 
 **Note:** The previous example passes `ThisItem` values as context variables instead of having the next
 screen refer to the `Selected` property of the previous screen. This approach was used deliberately,
@@ -411,12 +411,12 @@ Here are the recommended uses for `OnStart`:
 * **Screen routing**: Unlike the `OnVisible` property, you can use the `Navigate` function in the
 `OnStart` property. Therefore, it can be a handy place to make routing decisions. For example,
 you can evaluate a parameter named `mode`nullto determine which screen to show.
- ![img_p13_2](../../..assets/powerapps-canvas-guidelines/img_p13_2.png "")
+![img_p13_2](../../..assets/powerapps-canvas-guidelines/img_p13_2.png "")
 
 * **Impersonation or debug privileges**: You can create code in the `OnStart` property to check
 whether the current user is on a list of email addresses and, if the user is on the list, turn on a
 debug mode that shows hidden screens and text input controls.
- ![img_p13_3](../../..assets/powerapps-canvas-guidelines/img_p13_3.png "")
+![img_p13_3](../../..assets/powerapps-canvas-guidelines/img_p13_3.png "")
 
 **Note:** You can also check Azure Active Directory (AAD) group membership to apply security
 settings to your apps.
@@ -450,7 +450,7 @@ controls and set the `Start` property to watch a Boolean variable or control sta
 For example, if you want to have a form that lets the user switch an auto-save feature on and off, you
 can create a toggle control that’s named `tglAutoSave`. A timer on the screen then has its `Start`
 property set to `tglAutoSave.Value`, and code in the `OnTimerStart` property can save the data.
- ![img_p15_1](../../..assets/powerapps-canvas-guidelines/img_p15_1.png "")
+![img_p15_1](../../..assets/powerapps-canvas-guidelines/img_p15_1.png "")
 In the `OnTimerStart` property, you can also put code that uses the `ClearCollect` function to reload
 data at a specified refresh interval.
 The `OnTimerStart` property also supports the `Navigate` function. You can use it to go to another
@@ -469,15 +469,15 @@ on the screen.
 For example, you have a timer control on a loader screen. You set the control’s `Start` property
 to `locRedirect`, a Boolean context variable, and you put the following navigation code in the
 `OnTimerStart` property.
- ![img_p16_1](../../..assets/powerapps-canvas-guidelines/img_p16_1.png "")
+![img_p16_1](../../..assets/powerapps-canvas-guidelines/img_p16_1.png "")
 The `OnVisible` property of the loader screen retrieves the employee ID and sets
 `locRedirect` to `false` if the ID isn’t numeric (because non-numeric employee IDs are error
 conditions).
- ![img_p16_2](../../..assets/powerapps-canvas-guidelines/img_p16_2.png "")
+![img_p16_2](../../..assets/powerapps-canvas-guidelines/img_p16_2.png "")
 When `locRedirect` is set to `true`, the timer control’s `OnStart` code runs, but there’s a slight
 delay, during which code in the `OnVisible` property continues to run. Therefore, do an
 additional error check for the next few lines of code.
- ![img_p16_3](../../..assets/powerapps-canvas-guidelines/img_p16_3.png "")
+![img_p16_3](../../..assets/powerapps-canvas-guidelines/img_p16_3.png "")
 
 ##### OnSelect property
 Code in the `OnSelect` property of a control runs whenever that object is selected. Object selection can
@@ -509,18 +509,18 @@ then uses a `Navigate` function to go to another screen, it might not be possibl
 
 To avoid this situation, use a toggle control on a hidden settings screen in the app. Then check the state of
 this toggle in the `OnSelect` property before you call the `Navigate` function.
- ![img_p17_1](../../..assets/powerapps-canvas-guidelines/img_p17_1.png "")
+![img_p17_1](../../..assets/powerapps-canvas-guidelines/img_p17_1.png "")
 
 #### Other tips for organization
 
 * Don’t “nest” secondary logical tests by explicitly writing `If` after the initial statement.
- ![img_p17_2](../../..assets/powerapps-canvas-guidelines/img_p17_2.png "")
+![img_p17_2](../../..assets/powerapps-canvas-guidelines/img_p17_2.png "")
 * To write secondary logical tests, just write the logical test, without explicitly writing `If`.
- ![img_p18_1](../../..assets/powerapps-canvas-guidelines/img_p18_1.png "")
+![img_p18_1](../../..assets/powerapps-canvas-guidelines/img_p18_1.png "")
 * Avoid lengthy expressions whenever possible.
 * To manually format your code, follow these guidelines:
   * Each semicolon should represent a line break.
- ![img_p18_2](../../..assets/powerapps-canvas-guidelines/img_p18_2.png "")
+![img_p18_2](../../..assets/powerapps-canvas-guidelines/img_p18_2.png "")
   * For long single-line formulas, try to insert line breaks in reasonable places: before and after parentheses, commas, and colons.
 
 ### General coding guidelines
@@ -553,26 +553,26 @@ Avoid passing context variables between screens when a global variable might be 
 
 Update all necessary context variables in a single `UpdateContext` call. In this way, you make your code more efficient and easier to read.
 For example, use this call to update several context variables.
- ![img_p19_1](../../..assets/powerapps-canvas-guidelines/img_p19_1.png "")
+![img_p19_1](../../..assets/powerapps-canvas-guidelines/img_p19_1.png "")
 Don’t use these separate calls.
- ![img_p19_2](../../..assets/powerapps-canvas-guidelines/img_p19_2.png "")
+![img_p19_2](../../..assets/powerapps-canvas-guidelines/img_p19_2.png "")
 
 ##### Global Variables
 Don’t use multiple variables when you can use just one. Here’s an example of multiple variables.
- ![img_p19_3](../../..assets/powerapps-canvas-guidelines/img_p19_3.png "")
+![img_p19_3](../../..assets/powerapps-canvas-guidelines/img_p19_3.png "")
 Instead, you can use just one variable, as shown here.
- ![img_p19_4](../../..assets/powerapps-canvas-guidelines/img_p19_4.png "")
+![img_p19_4](../../..assets/powerapps-canvas-guidelines/img_p19_4.png "")
 
 ##### Collections
 Limit your use of collections. Try to use them only when they’re absolutely necessary.
 Use `ClearCollect` instead of `Clear;Collect`.
- ![img_p19_5](../../..assets/powerapps-canvas-guidelines/img_p19_5.png "")
+![img_p19_5](../../..assets/powerapps-canvas-guidelines/img_p19_5.png "")
 To count the records in a local collection, use `CountIf` instead of `Count(Filter())`.
 
 #### Nesting
 Avoid using unnecessary DataCards and canvases, especially if they have nested galleries.  
 Avoid nesting in other operators too, such as the `ForAll` function.
- ![img_p19_6](../../..assets/powerapps-canvas-guidelines/img_p19_6.png "")
+![img_p19_6](../../..assets/powerapps-canvas-guidelines/img_p19_6.png "")
 
 **Note**: A previous version of this document stated that nested galleries would be deprecated. This is
 incorrect and we apologize for the error.
@@ -600,7 +600,7 @@ especially when some timers depend on other timers.
 The `Concurrent` function eliminates the need to use timer controls to make multiple data calls at the
 same time. The following code snippet replaces several API calls that used to reside in the
 `OnTimerStart` property of timer controls in the app. This approach is much easier to maintain.
- ![img_p20_1](../../..assets/powerapps-canvas-guidelines/img_p20_1.png "")
+![img_p20_1](../../..assets/powerapps-canvas-guidelines/img_p20_1.png "")
 To fire these calls, you can put them in the `OnVisible` property. Alternatively, if that approach
 becomes too messy, you can put the calls in a timer control, and set the variable referenced in the
 timer’s `Start` property either in the `OnVisible` property or in the `OnSelect`nullproperty of a hidden
@@ -691,13 +691,13 @@ the scenes.
 * The `Concurrent`nullfunction is a great way to make your calls to run in parallel. However, when this approach is used, long-running calls can block subsequent code from running.
 
 Here’s a bad example in an `OnSelect` property that goes to the next page.
- ![img_p22_1](../../..assets/powerapps-canvas-guidelines/img_p22_1.png "")
+![img_p22_1](../../..assets/powerapps-canvas-guidelines/img_p22_1.png "")
 
 
 Here’s a better example. First, here’s the code in the `OnSelect` property.
- ![img_p23_1](../../..assets/powerapps-canvas-guidelines/img_p23_1.png "")
+![img_p23_1](../../..assets/powerapps-canvas-guidelines/img_p23_1.png "")
 And here’s the code in the `OnVisible` property in the next page.
- ![img_p23_2](../../..assets/powerapps-canvas-guidelines/img_p23_2.png "")
+![img_p23_2](../../..assets/powerapps-canvas-guidelines/img_p23_2.png "")
 
 #### Limiting the package size
 Although PowerApps does a lot to optimize app loading, you can take steps to reduce the footprint of
@@ -734,7 +734,7 @@ runtime will load only the screens and code that are required to show the first 
 ##### Use these features at your own risk, and be sure to test your apps thoroughly when you experiment with
 
 these features.
- ![img_p24_1](../../..assets/powerapps-canvas-guidelines/img_p24_1.png "")
+![img_p24_1](../../..assets/powerapps-canvas-guidelines/img_p24_1.png "")
 
 
 ### App design
@@ -743,7 +743,7 @@ these features.
 
 We recommend that you use one control’s style as the basis for styling other controls. In general, use
 relative styling for the color, fill, x, y, width, and height properties.
- ![img_p25_1](../../..assets/powerapps-canvas-guidelines/img_p25_1.png "")
+![img_p25_1](../../..assets/powerapps-canvas-guidelines/img_p25_1.png "")
 
 #### Galleries
 Use galleries for almost everything that’s repetitive and linear.
@@ -751,7 +751,7 @@ The “brute force” (manual placement of multiple controls) method might be fa
 very time-consuming to modify later.
 If you must present a series of information or controls that seem repetitive, always consider whether
 you might be able to create a internal collection by using a gallery.
- ![img_p25_2](../../..assets/powerapps-canvas-guidelines/img_p25_2.png "")
+![img_p25_2](../../..assets/powerapps-canvas-guidelines/img_p25_2.png "")
 It’s also useful to use a Gallery control as a view form, instead of using a Display Form control.
 
 For example, you have a three-screen “app from data” app. There’s a **Users** data source that contains
@@ -775,7 +775,7 @@ Use forms for repetitive data entry fields.
 Forms also let you quickly group several fields instead of having to use several text boxes.
 A form is much easier to work with than individual text boxes, because forms let you to take advantage
 of parent/child relationships to implement relative styling.
- ![img_p26_1](../../..assets/powerapps-canvas-guidelines/img_p26_1.png "")
+![img_p26_1](../../..assets/powerapps-canvas-guidelines/img_p26_1.png "")
 
 #### Common Data Service for Apps
 We recommend that you use a single screen to handle edit/insert operations.
@@ -822,13 +822,13 @@ membership, or use the PowerApps for Makers connector.
 
 The following example is from the Microsoft PowerApps Company Pulse sample template. Here, you can
 see text input controls that let the PowerApps admin configure application setting values.
- ![img_p28_1](../../..assets/powerapps-canvas-guidelines/img_p28_1.png "")
+![img_p28_1](../../..assets/powerapps-canvas-guidelines/img_p28_1.png "")
 
 Here, you can see the name of the control that stores the Twitter account settings value.
- ![img_p28_2](../../..assets/powerapps-canvas-guidelines/img_p28_2.png "")
+![img_p28_2](../../..assets/powerapps-canvas-guidelines/img_p28_2.png "")
 Here, you can see where the value is used to return tweets for the Twitter account from the Twitter
 connector.
- ![img_p28_3](../../..assets/powerapps-canvas-guidelines/img_p28_3.png "")
+![img_p28_3](../../..assets/powerapps-canvas-guidelines/img_p28_3.png "")
 
 Although this approach is the easiest way of changing values, it does have some downsides:
 * You must republish the app to change values and make them persist.
@@ -865,7 +865,7 @@ with Timer controls. Another pattern that you can use to handle errors involves 
 30
 
 The following illustration shows this approach.
- ![img_p30_1](../../..assets/powerapps-canvas-guidelines/img_p30_1.png "")
+![img_p30_1](../../..assets/powerapps-canvas-guidelines/img_p30_1.png "")
 In this approach, logic for validation and/or error handling can be encapsulated inside a single control.
 The Toggle control can evaluate complex conditions and issue a `true` or `false` value. Other controls
 can then reference that value to show/hide error messages, change font or border colors, make buttons
@@ -888,7 +888,7 @@ control visibility for certain users.
 One elegant approach is to add the PowerApps for Makers connector. Despite the name, this connector
 can be used by non-makers for read-only calls. Then call the `GetAppRoleAssignments` function to
 determine whether the signed-in user is a maker for the current app.
- ![img_p31_1](../../..assets/powerapps-canvas-guidelines/img_p31_1.png "")
+![img_p31_1](../../..assets/powerapps-canvas-guidelines/img_p31_1.png "")
 For this example, you’ll then set the `Visible` property of your debug controls to `gloIsMaker`, so that
 those controls appear only to app users who have maker permissions.
 The benefit of this approach is that you won’t need to use a configuration table to specify special debug
@@ -933,4 +933,4 @@ We recommend that you create screens to document the collections and variables t
 PowerApps app. Don’t link to these screens from the other screens in your app. These screens are seen
 only when the app is open in edit mode.
 Here’s an example from the Microsoft PowerApps Company Pulse sample template.
- ![img_p32_1](../../..assets/powerapps-canvas-guidelines/img_p32_1.png "")
+![img_p32_1](../../..assets/powerapps-canvas-guidelines/img_p32_1.png "")
