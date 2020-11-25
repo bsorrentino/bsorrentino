@@ -167,8 +167,7 @@ end the name with the word “Screen,” so that the context is understood when 
 Here are some good examples:
 * `Home Screen`
 * `Thrive Help Screen`
-
-- ![img_p5_1](../../../assets/powerapps-canvas-guidelines/img_p5_1.png "")
+![img_p5_1](../../../assets/powerapps-canvas-guidelines/img_p5_1.png "")
 
 Here are some bad examples:
 * `Home`
@@ -218,7 +217,6 @@ Here are some bad examples:
 
 As the following image shows, if you consistently name your controls, your app will be much cleaner in
 the navigation view, and your code will be much cleaner too.
-
 ![img_p7_1](../../../assets/powerapps-canvas-guidelines/img_p7_1.png "")
 
 #### Data source names
@@ -240,7 +238,6 @@ for PowerApps article.
 In Standard action connectors that expose functions, such as LinkedIn, you’ll see that the data source
 name and its operations use Pascal casing (that is, `UpperUpperUpper`). For example, the LinkedIn data
 source is named `LinkedIn` and has an operation named `ListCompanies`.
-
 ![img_p8_1](../../../assets/powerapps-canvas-guidelines/img_p8_1.png "")
 
 ##### Custom connectors
@@ -251,6 +248,7 @@ its operations. Just be aware that the custom connector name and the way that it
 can differ.
 For example, here’s a custom connector named **MS Auction Item Bid API**.
 ![img_p8_2](../../../assets/powerapps-canvas-guidelines/img_p8_2.png "")
+
 But when you create a connection from this connector and add it to your PowerApps app as a data
 source, it appears as **AuctionItemBidAPI**.
 ![img_p8_3](../../../assets/powerapps-canvas-guidelines/img_p8_3.png "")
