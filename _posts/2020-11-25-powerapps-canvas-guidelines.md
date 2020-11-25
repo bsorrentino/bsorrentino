@@ -169,7 +169,6 @@ Here are some good examples:
 * `Thrive Help Screen`
 
 ![img_p5_1](/bsorrentino/assets/powerapps-canvas-guidelines/img_p5_1.png "")
-![](/bsorrentino/assets/powerapps-canvas-guidelines/img_p5_1.png "")
 
 Here are some bad examples:
 * `Home`
