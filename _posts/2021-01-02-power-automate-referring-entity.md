@@ -14,7 +14,7 @@ Let’s see an example.
 
 If you just referring the **unique id** (_as in the image below_)
 
-![img_p1_1](.../../../assets/power-automate-referring-entity/img_p1_1.png)
+![img_p1_1](../../../assets/power-automate-referring-entity/img_p1_1.png)
 
 
 After running the flow  got failed with
@@ -23,7 +23,7 @@ After running the flow  got failed with
 >
 
 
-![img_p2_1](.../../../assets/power-automate-referring-entity/img_p2_1.png)
+![img_p2_1](../../../assets/power-automate-referring-entity/img_p2_1.png)
  
 The problem is the **CDS( Current environment) connector** itself that, unlike the **CDS Connector**, it expects referenced attribute values in “**OData Id**” format i.e.:
 ```
@@ -32,7 +32,7 @@ The problem is the **CDS( Current environment) connector** itself that, unlike 
 
 So, in the example case, for quote lookup attribute the value is:  `/quotes/(Record’s Id/GUID)`.
  
-![img_p3_1](.../../../assets/power-automate-referring-entity/img_p3_1.png)
+![img_p3_1](../../../assets/power-automate-referring-entity/img_p3_1.png)
 >
 
 
@@ -57,11 +57,11 @@ For example:
 
 ##### Queues: 
 
-![img_p7_2](.../../../assets/power-automate-referring-entity/img_p7_2.png)
+![img_p7_2](../../../assets/power-automate-referring-entity/img_p7_2.png)
 
 ##### Cases:
 
-![img_p8_1](.../../../assets/power-automate-referring-entity/img_p8_1.png)
+![img_p8_1](../../../assets/power-automate-referring-entity/img_p8_1.png)
 
 
 #### Setting a lookup to a custom entity:
@@ -74,7 +74,7 @@ For example:
 
 ##### Due Diligence: 
 
-![img_p8_4](.../../../assets/power-automate-referring-entity/img_p8_4.png)
+![img_p8_4](../../../assets/power-automate-referring-entity/img_p8_4.png)
 
 
 ## References
