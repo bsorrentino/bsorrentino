@@ -30,7 +30,8 @@ The problem is the **CDS( Current environment) connector** itself that, unlike 
 So, in the example case, for quote lookup attribute the value is:  `/quotes/(Record’s Id/GUID)`.
  
 ![img_p3_1](../../../assets/power-automate-referring-entity/img_p3_1.png)
- 
+>
+
 After making the above change, flow run successfully.
  
 As said the interesting thing is **if you use old CDS connector, you wont face this issue**. But we cannot be compromised to use old one cause the new connector gives us lot of advantages, like the option to [configure multiple trigger](https://powerofpowerplatform.com/when-a-record-is-created-updated-or-deleted-trigger-for-cds-power-automate/).
