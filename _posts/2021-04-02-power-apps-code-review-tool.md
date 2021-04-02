@@ -68,6 +68,7 @@ Download the solution file [here](https://github.com/microsoft/powerapps-tools/t
 
 ## References
 
+* [Original Article](https://powerapps.microsoft.com/en-us/blog/power-apps-code-review-tool/)
 * [Announced Source code files for Canvas apps.](https://powerapps.microsoft.com/en-us/blog/source-code-files-for-canvas-apps)
 * New Power Apps Code Review Tool
 > [Video](https://youtu.be/ZkXL_IqK4UE)
