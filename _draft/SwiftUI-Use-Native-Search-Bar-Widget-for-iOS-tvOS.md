@@ -28,7 +28,8 @@ SearchBar(text: $searchText ) {
 ## iOS implementation
 
 ### UIKit Search Bar behaviour
-So let's start, beginning with iOS where the native widget is `UIsearchbox`.
+
+Let's start, beginning with iOS where the native widget is `UIsearchbox`.
 `UIKit` offers a pretty convenient way to implement a native search bar embedded into the navigation bar. In a typical `UINavigationController` a navigation stack, each `UIViewController` has a corresponding `UINavigationItem` that has a property called `searchController`.
 
 ### The SwiftUI challenges
