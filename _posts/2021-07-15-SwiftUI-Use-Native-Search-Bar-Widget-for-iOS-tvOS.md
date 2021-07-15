@@ -43,6 +43,7 @@ But, how could I achieve this ? It was enough for me follow [this amazing articl
 
 Since behind the SwiftUI `NavigationView` there is a `UINavigationController` instance we can start development following below steps:
 1. create a new `UIViewController` named `SearchBarViewController` that hold an instance of `UISearchController`:
+
  ```swift
  class SearchBarViewController : UIViewController {
 
@@ -57,6 +58,7 @@ Since behind the SwiftUI `NavigationView` there is a `UINavigationController` in
  ```
 2. Handle when `SearchBarViewController` will be attached to `UINavigationController`(_behind `NavigationView`_) and hook up the `UISearchController` to the `UINavigationController` through the `navigationItem.searchController` property.
 To do this We need to override an UIViewController lifecycle method named `didMove(toParent parent: UIViewController?)`:
+
   ```swift
 override func didMove(toParent parent: UIViewController?) {
     super.didMove(toParent: parent)
@@ -69,7 +71,8 @@ override func didMove(toParent parent: UIViewController?) {
     parent.navigationItem.searchController = searchController
 }
   ```
-3. Create an `UIViewControllerRepresentable` named `SearchBar` that create  a`SearchBarViewController` instance and hold a `@Binding` string variable named `text` that will be used to handle the search text update events
+3. Create an `UIViewControllerRepresentable` named `SearchBar` that create  a`SearchBarViewController` instance and hold a `@Binding` string variable named `text` that will be used to handle the search text update events:
+
  ```swift
  struct SearchBar: UIViewControllerRepresentable {
 
@@ -108,8 +111,8 @@ override func didMove(toParent parent: UIViewController?) {
     func updateUIViewController(_ uiViewController: UIViewControllerType, context: UIViewControllerRepresentableContext<SearchBar>) {
     }
 }
-
  ```
+
 
 #### Enable `SearchBar` to be a SwiftUI container
 
@@ -178,6 +181,8 @@ struct SearchBar<Content: View>: UIViewControllerRepresentable {
     // Continue
 }
 ```
+
+
 ##### 4. update Content
 
 While in the first implementation of `SearchBar` we have ignored implementation of `updateUIViewController` now, since we are managing the SwiftUI content, it is not possible anymore. The `updateUIViewController` is automatically called by SwiftUI when an update is required and as consequence we have to re-evaluate content closure passing it to the `SearchBarViewController`
