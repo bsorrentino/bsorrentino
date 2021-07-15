@@ -1,4 +1,4 @@
-# How to use native searchbar in SwiftUI for iOS, tvOS
+# How to use native Search Bar in SwiftUI for iOS, tvOS
 
 In my Developer journey using SwiftUI in developing [SlidesOnTV](https://github.com/bsorrentino/slidesOnTV) and [KeyChainX](https://github.com/bsorrentino/keychain-ios-app) I've dealt with adding search bar on top of list, grid, etc…
 
@@ -11,7 +11,7 @@ For this reason I've decided to write this article for sharing my experience hop
 
 ## Solution Design
 
-My solution design will consist in **implementing a searchbar as swiftui container** (ie. using a `@viewbuilder`) so we'll define the search bar and also the view where the search result will be applied.
+My solution design consists in **implementing a searchbar as swiftui container** (ie. using a `@viewbuilder`) so we'll define the search bar and also the view where the search result will be applied.
 
 ```swift
 SearchBar(text: $searchText ) {
@@ -195,6 +195,38 @@ func updateUIViewController(_ uiViewController: UIViewControllerType, context: U
 
 ```
 
-## tvOS implementation
+### Put all together
+
+Finally we have finished and we can put all together as reported below
+
+```swift
+
+struct ContentView: View {
+    @State var searchText = ""
+    var body: some View {
+        NavigationView {
+            SearchBar(text: $searchText ) {
+                List {
+                  ForEach( (1...50)
+                              .map( { "Item\($0)" } )
+                              .filter({ $0.starts(with: searchText)}), id: \.self) { item in
+                      Text("\(item)")
+                  }
+
+                }
+            }.navigationTitle("Search Bar Test")
+        }
+    }
+}
+
+```
+## Conclusion
+
+I've also implemented a search bar for **tvOS** but I'll explain how in another article, however the complete code is on [github](https://github.com/bsorrentino/SwiftUI-SearchBar).
+
+Hope this could help someone, in the meanwhile **Happy coding** 👋
 
 ## References
+
+* [SwiftUI Search Bar in the Navigation Bar](http://blog.eppz.eu/swiftui-search-bar-in-the-navigation-bar/)
+* [Creating a search bar for SwiftUI](https://axelhodler.medium.com/creating-a-search-bar-for-swiftui-e216fe8c8c7f)
