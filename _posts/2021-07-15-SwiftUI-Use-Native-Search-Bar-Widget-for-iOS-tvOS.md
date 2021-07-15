@@ -43,7 +43,7 @@ But, how could I achieve this ? It was enough for me follow [this amazing articl
 
 Since, as said, behind the SwiftUI `NavigationView` there is a `UINavigationController` instance we can start development following steps below:
 
-##### 1. create a new UIViewController that hold an instance of UISearchController
+#### 1. create a new UIViewController that hold an instance of UISearchController
 
  ```swift
  class SearchBarViewController : UIViewController {
@@ -57,7 +57,7 @@ Since, as said, behind the SwiftUI `NavigationView` there is a `UINavigationCont
     // Continue ...
  }
  ```
-##### 2. Hook up the UISearchController to the UINavigationController
+#### 2. Hook up the UISearchController to the UINavigationController
 
  To do this we've to find a way to handle when `SearchBarViewController` will be attached to `UINavigationController` (_behind `NavigationView`_) and hook up the UISearchController to the UINavigationController through the `navigationItem.searchController` property.
  An easy way is overridden the UIViewController lifecycle method named **didMove**:
@@ -74,7 +74,7 @@ override func didMove(toParent parent: UIViewController?) {
     parent.navigationItem.searchController = searchController
 }
   ```
-##### 3. Add an UIViewControllerRepresentable to manage SearchBarViewController
+#### 3. Add an UIViewControllerRepresentable to manage SearchBarViewController
 
  We have to add an `UIViewControllerRepresentable` named `SearchBar` that create a `SearchBarViewController` instance and hold a `@Binding` string variable that will be used to handle the search text update events:
 
