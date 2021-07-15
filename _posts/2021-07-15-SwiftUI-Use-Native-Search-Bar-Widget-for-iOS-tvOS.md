@@ -1,4 +1,4 @@
-# How to use native Search Bar in SwiftUI for iOS, tvOS
+# How to use native Search Bar in SwiftUI for iOS and tvOS
 
 In my Developer journey using SwiftUI in developing [SlidesOnTV](https://github.com/bsorrentino/slidesOnTV) and [KeyChainX](https://github.com/bsorrentino/keychain-ios-app) I've dealt with adding search bar on top of list, grid, etc…
 
