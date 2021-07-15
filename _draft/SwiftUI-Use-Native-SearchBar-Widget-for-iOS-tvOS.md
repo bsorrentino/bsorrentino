@@ -113,19 +113,19 @@ override func didMove(toParent parent: UIViewController?) {
 #### Enable `SearchBar` to be a SwiftUI container
 
 Cool.. we have a first draft of implementation **but we miss an important part** the new created Widget **isn't a SwiftUI container** so it doesn't manage Sub Views Content.
-To do this we can use the **magic** `@ViewBuilder` the **custom parameter attribute that constructs views from closures**.
+To do this we can use the **magic** `@ViewBuilder` the **custom parameter attribute that constructs views from closures**, however we proceed with order following the steps below:
 
-##### Update `SearchBarViewController` implementation
+##### 1. Update `SearchBarViewController` implementation
 
-First we've to update the `SearchBarViewController` enabling it to manage SwiftUI View.
+First we've to update the `SearchBarViewController` enabling it to manage SwiftUI View as a new attribute.
 
-```
+```Swift
 class SearchBarViewController<Content:View> : UIViewController {
 
     let searchController: UISearchController
-    private let contentViewController: UIHostingController<Content>
+    let contentViewController: UIHostingController<Content>
 
-    init( searchController:UISearchController, content:Content ) {
+    init( searchController:UISearchController, withContent content:Content ) {
 
         self.contentViewController = UIHostingController( rootView: content )
         self.searchController = searchController
@@ -136,9 +136,9 @@ class SearchBarViewController<Content:View> : UIViewController {
 }
 ```
 
-##### Got a UIView from SwiftUI View
+##### 2. Got a UIView from SwiftUI View
 
-Since it is not possible maps a SwiftUI View to an `UIView` we have to use `UIHostingController` that is able to create a `UIViewController` from a SwiftUI View and then we can got a UIView from it and adding them as sub view to the `SearchBarViewController` hierarchy.
+Since it is not possible maps a SwiftUI View to an `UIView` we have to use `UIHostingController` that is able to create a `UIViewController` from a SwiftUI View then we can got a UIView and adding it as sub view to the `SearchBarViewController` views hierarchy.
 
 ```Swift
 override func viewDidLoad() {
@@ -150,15 +150,47 @@ override func viewDidLoad() {
 
 ```
 
-##### Update `SearchBar` Implementation
+##### 3. Update `SearchBar` Implementation
+
+Lets add to `SearchBar`, our `UIViewControllerRepresentable`, a new attribute qualified as `@ViewBuilder` that hold the **closure producing the contained SwiftUI View** and evaluate such closure to initialize `SearchBarViewController`
 
 ```Swift
-```
+struct SearchBar<Content: View>: UIViewControllerRepresentable {
 
-While in the first implementation of `SearchBar` we have ignored implementation of `updateUIViewController` now managing the SwiftUI content it is not possible anymore
+    typealias UIViewControllerType = SearchBarViewController<Content>
+
+    @Binding var text: String
+    @ViewBuilder var content: () -> Content  // closure that produce SwiftUI content
+
+    class Coordinator: NSObject, UISearchResultsUpdating { ... }
+
+    func makeCoordinator() -> SearchBar.Coordinator { ... }
+
+    func makeUIViewController(context: UIViewControllerRepresentableContext<SearchBar>) -> UIViewControllerType {
+
+      let searchController =  UISearchController(searchResultsController: nil)
+      searchController.searchResultsUpdater = context.coordinator
+
+      return SearchBarViewController( searchController:searchController, withContent: content() )
+    }
+
+    // Continue
+}
+```
+##### 4. update Content
+
+While in the first implementation of `SearchBar` we have ignored implementation of `updateUIViewController` now, since we are managing the SwiftUI content, it is not possible anymore. The `updateUIViewController` is automatically called by SwiftUI when an update is required and as consequence we have to re-evaluate content closure passing it to the `SearchBarViewController`
 
 ```Swift
 func updateUIViewController(_ uiViewController: UIViewControllerType, context: UIViewControllerRepresentableContext<SearchBar>) {
+
+  let contentViewController = uiViewController.contentViewController  // get reference to UIHostingController
+
+  contentViewController.view.removeFromSuperview() // remove previous content
+  contentViewController.rootView = content() // assign fresh content to UIHostingController
+  uiViewController.view.addSubview(contentViewController.view) // add produced UIView
+  contentViewController.view.frame = uiViewController.view.bounds // update view geometry
+
 }
 
 ```
