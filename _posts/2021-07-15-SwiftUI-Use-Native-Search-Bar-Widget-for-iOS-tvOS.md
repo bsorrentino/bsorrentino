@@ -11,7 +11,7 @@ For this reason I've decided to write this article for sharing my experience hop
 
 ## Solution Design
 
-My solution design consists in **implementing a searchbar as swiftui container** (ie. using a `@viewbuilder`) so we'll define the search bar and also the view where the search result will be applied.
+My solution design consists in **implementing a search bar as swiftui container** (ie. using a `@viewbuilder`) so we'll define the search bar and also the view where the search result will be applied.
 
 ```swift
 SearchBar(text: $searchText ) {
@@ -29,20 +29,21 @@ SearchBar(text: $searchText ) {
 
 ### UIKit Search Bar behaviour
 
-Let's start, beginning with iOS where the native widget is `UIsearchbox`.
+Let's start, beginning with iOS where the native widget is `UISearchBox`.
 `UIKit` offers a pretty convenient way to implement a native search bar embedded into the navigation bar. In a typical `UINavigationController` a navigation stack, each `UIViewController` has a corresponding `UINavigationItem` that has a property called `searchController`.
 
 ### The SwiftUI challenges
 
-#### looking for a `UINavigationController` instance
+#### Looking for a UINavigationController instance
 The challenge here in SwiftUI is to hook up a `UISearchController` instance to a `UINavigationController`, so you can get all the iOS native search bar features with a single line of code.
 
-But, how could I achieve this ? It was enough for me follow [this amazing article](http://blog.eppz.eu/swiftui-search-bar-in-the-navigation-bar/) where I've understood that **behind the SwiftUI `NavigationView` there is the good old `UINavigationController` from UIKit**.
+But, how could I achieve this ? It was enough for me follow [this amazing article](http://blog.eppz.eu/swiftui-search-bar-in-the-navigation-bar/) where I've understood that _"behind the SwiftUI NavigationView there is the good old UINavigationController from UIKit"_.
 
-#### Hooking up `UISearchController` to a `NavigationView`
+#### Hooking up UISearchController to a NavigationView
 
-Since behind the SwiftUI `NavigationView` there is a `UINavigationController` instance we can start development following below steps:
-1. create a new `UIViewController` named `SearchBarViewController` that hold an instance of `UISearchController`:
+Since, as said, behind the SwiftUI `NavigationView` there is a `UINavigationController` instance we can start development following steps below:
+
+##### 1. create a new UIViewController that hold an instance of UISearchController
 
  ```swift
  class SearchBarViewController : UIViewController {
@@ -56,8 +57,10 @@ Since behind the SwiftUI `NavigationView` there is a `UINavigationController` in
     // Continue ...
  }
  ```
-2. Handle when `SearchBarViewController` will be attached to `UINavigationController`(_behind `NavigationView`_) and hook up the `UISearchController` to the `UINavigationController` through the `navigationItem.searchController` property.
-To do this We need to override an UIViewController lifecycle method named `didMove(toParent parent: UIViewController?)`:
+##### 2. Hook up the UISearchController to the UINavigationController
+
+ To do this we've to find a way to handle when `SearchBarViewController` will be attached to `UINavigationController` (_behind `NavigationView`_) and hook up the UISearchController to the UINavigationController through the `navigationItem.searchController` property.
+ An easy way is overridden the UIViewController lifecycle method named **didMove**:
 
   ```swift
 override func didMove(toParent parent: UIViewController?) {
@@ -71,7 +74,9 @@ override func didMove(toParent parent: UIViewController?) {
     parent.navigationItem.searchController = searchController
 }
   ```
-3. Create an `UIViewControllerRepresentable` named `SearchBar` that create  a`SearchBarViewController` instance and hold a `@Binding` string variable named `text` that will be used to handle the search text update events:
+##### 3. Add an UIViewControllerRepresentable to manage SearchBarViewController
+
+ We have to add an `UIViewControllerRepresentable` named `SearchBar` that create a `SearchBarViewController` instance and hold a `@Binding` string variable that will be used to handle the search text update events:
 
  ```swift
  struct SearchBar: UIViewControllerRepresentable {
@@ -114,12 +119,12 @@ override func didMove(toParent parent: UIViewController?) {
  ```
 
 
-#### Enable `SearchBar` to be a SwiftUI container
+#### Enable SearchBar to be a SwiftUI container
 
 Cool.. we have a first draft of implementation **but we miss an important part** the new created Widget **isn't a SwiftUI container** so it doesn't manage Sub Views Content.
-To do this we can use the **magic** `@ViewBuilder` the **custom parameter attribute that constructs views from closures**, however we proceed with order following the steps below:
+To do this we can use the magic `@ViewBuilder` the **custom parameter attribute that constructs views from closures**, however we proceed with order following the steps below:
 
-##### 1. Update `SearchBarViewController` implementation
+##### 1. Update SearchBarViewController implementation
 
 First we've to update the `SearchBarViewController` enabling it to manage SwiftUI View as a new attribute.
 
@@ -154,7 +159,7 @@ override func viewDidLoad() {
 
 ```
 
-##### 3. Update `SearchBar` Implementation
+##### 3. Update SearchBar Implementation
 
 Lets add to `SearchBar`, our `UIViewControllerRepresentable`, a new attribute qualified as `@ViewBuilder` that hold the **closure producing the contained SwiftUI View** and evaluate such closure to initialize `SearchBarViewController`
 
