@@ -64,8 +64,8 @@ As you can see the solution is very easy and validation is directly applied on f
 
 ## Conclusion
 
-I've released version `1.5` of the **FieldValidationLibrary** containing this new implementation but keeping backward compatibility with the previous one.
+I've released version `1.5` of the **FieldValidationLibrary** containing this new implementation but keeping backward compatibility .
 
-For more details and meaningful examples go to the [project on github](https://github.com/bsorrentino/swiftui-fieldvalidator)
+For more details and meaningful examples go to [project on github](https://github.com/bsorrentino/swiftui-fieldvalidator)
 
 Happy coding and … enjoy SwiftUI
