@@ -7,7 +7,7 @@ categories: SwiftUI
 
 ## Recap
 
-In the previous article the [episode 1](https://bsorrentino.github.io/bsorrentino/swifui/update/2019/10/14/Develop-a-field-validator-for-SwiftUI.html), we have started to implement a field validator trying to follow the philosophy and approach behind the SwiftUI the (no longer) new declarative framework proposed by Apple as an fast and homogeneous way to develop UI/UX on Apple Devices
+In the previous article the [episode 1](https://bsorrentino.github.io/bsorrentino/swifui/update/2019/10/14/Develop-a-field-validator-for-SwiftUI.html), we have started to implement a field validator trying to follow the philosophy and approach behind the SwiftUI the (no longer) new declarative framework proposed by Apple as a fast and homogeneous way to develop UI/UX on Apple Devices
 
 ## Continuous Evolving & Learning
 
