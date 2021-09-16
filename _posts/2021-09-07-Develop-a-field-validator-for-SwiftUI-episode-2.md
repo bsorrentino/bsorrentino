@@ -31,7 +31,7 @@ This code opened my mind to a new vision on "**how to implement a field validati
 
 ## The Idea
 
-The original **FieldValidatorLibrary** implementation relies on the `FieldChecker` to hold validation status and `FieldValidator` that, “behind the scene”, manages validation process. The original solution was also based on the  custom Views `TextFieldWithValidator` and `SecureFieldWithValidator` needed to bind `FieldChecker` with `FieldValidator`.
+The original **FieldValidatorLibrary** implementation relies on the `FieldChecker` to hold validation status and `FieldValidator` that, _behind the scene_, manages validation process. The original solution was also based on the  custom Views `TextFieldWithValidator` and `SecureFieldWithValidator` needed to bind `FieldChecker` with `FieldValidator`.
 The solution work well but the idea was to remove custom views in favour of the standard views removing as consequence also FieldValidator making the overall solution **lean**, **more reusable** and **future proof**
 
 ## New Implementation
