@@ -143,4 +143,4 @@ Reference: [How-to guides](https://docs.microsoft.com/en-us/powerapps/developer/
 
 #### Use in Canvas app
 
-![img_p2_1](img_p2_1.png)
+![img_p2_1](../assets/support-events-in-PCF-control/img_p2_1.png)

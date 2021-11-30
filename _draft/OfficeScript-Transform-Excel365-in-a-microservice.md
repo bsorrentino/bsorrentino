@@ -24,7 +24,7 @@ After the above considerations I've proposed to use the "Microsoft Power Platfor
 ### Assumptions
 
 Before start design & implementation I've made the following assumption:
-> Reuse the already in place process to reuse both the mail and the excel sheet "as-is" because this will minimise inpact in its adoption.
+> Reuse the already in place process to reuse both the mail and the excel sheet "as-is" because this will minimise impact in its adoption.
 
 ### Power Platform Architecture of Solution
 
@@ -35,7 +35,7 @@ Above there is the first "reference architecture" that I've designed to accompli
 As you can see each mail sent/forwarded to a pre-configured mail group is triggered by a "Power Automate Flow" that :
  1. Identify the sender
  1. Analyse the subject to understand the nature of time entry (`Hours Off`, `Holyday`, `Availability`, `Overtime`, ...).
-    > This is achieved by an serverless function but is planned to use the Power Platform AI extension
+    > This is achieved by an server-less function but is planned to use the Power Platform AI extension
 
 #### Save Data
 After that the gathered information are saved in "Dataverse" in the state: `pending for approval`
