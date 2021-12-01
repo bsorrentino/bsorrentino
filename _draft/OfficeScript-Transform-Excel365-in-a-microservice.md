@@ -28,7 +28,7 @@ Before start design & implementation I've made the following assumption:
 
 ### Power Platform Architecture of Solution
 
-
+![Architecture](../assets/OfficeScript-Transform-Excel365-in-a-microservice/architecture.png)
 Above there is the first "reference architecture" that I've designed to accomplish the requirements.
 
 #### Trigger Mail
