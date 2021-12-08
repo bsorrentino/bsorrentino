@@ -28,7 +28,12 @@ Before start design & implementation I've made the following assumption:
 
 ### Power Platform Architecture of Solution
 
-![Architecture](../assets/OfficeScript-Transform-Excel365-in-a-microservice/architecture.png)
+
+
+| ![Architecture](../assets/OfficeScript-Transform-Excel365-in-a-microservice/architecture.png)
+| ---
+| **Pic.1 - Reference Architecture (rc1)**
+
 Above there is the first "reference architecture" that I've designed to accomplish the requirements.
 
 #### Trigger Mail
@@ -38,4 +43,15 @@ As you can see each mail sent/forwarded to a pre-configured mail group is trigge
     > This is achieved by an server-less function but is planned to use the Power Platform AI extension
 
 #### Save Data
-After that the gathered information are saved in "Dataverse" in the state: `pending for approval`
+After that the gathered information are saved in _Dataverse_ in the state: `pending for approval`
+
+#### Approve Data
+In this first release I've preferred introduce a manual step for approve timesheet's entry processed by flow in order to verify eventually errors during processing, so the **Approver** (see Pic.1) for a while has been me self
+> **Approver** vs **Validator.**
+>
+> Idea is that the Approver and Validator could be the same person
+
+For this I've developed a _Canvas App_ that read timesheet entries to approve from _Dataverse_ and present a screen allowing to approve, reject or delete each entry
+
+#### Generate Excel
+The final step
