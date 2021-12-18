@@ -1,4 +1,4 @@
-# Office Script : publish a microservice for accessing your Excel365
+# Office Scripts : publish a microservice for accessing your Excel365
 
 ## Abstract
 
@@ -28,8 +28,6 @@ Before start design & implementation I've made the following assumption:
 
 ### Power Platform Architecture of Solution
 
-
-
 | ![Architecture](../assets/OfficeScript-Transform-Excel365-in-a-microservice/architecture.png)
 | ---
 | **Pic.1 - Reference Architecture (rc1)**
@@ -54,4 +52,32 @@ In this first release I've preferred introduce a manual step for approve timeshe
 For this I've developed a _Canvas App_ that read timesheet entries to approve from _Dataverse_ and present a screen allowing to approve, reject or delete each entry
 
 #### Generate Excel
-The final step
+The final step is to create/overwrite a file excel in sharepoint and for this purpose I choosen to call a Flow from canvas App. There are lot of available "_how to_" concerning that and I don't want go in deep on it however below there are  the main steps applied :
+
+1. Canvas App call a Flow passing the data, got from Dataverse, converted in JSON format
+1. The Flow get JSON data, convert them in CSV format and create a new Excel file with such content
+
+## Delivery of first release
+
+After tests I've delivered solution in the production environment and after a while I got the first **critical issue** but it wasn't related to technical problem rather an uncovered (and unespected) use case.
+
+### The issue (ie. new use case)
+The new use case was that the user that play role of Validator needed to updated Excel file (also writing complex formulas) before a new generation so this means that the **Excel cannot be overwritten** but **it must be a live file** and this implies that the Flow has to work on a pre-existent file updating selectively the cells whithin.
+
+### The Office Script comes to rescue
+
+To solve the issue, I've tried to update the Excel cells directly from flow using Excel connector but It requires that such file adhere to several constraints moreover it highly increases the complexity of the Flow itself.
+So I've seeked for other possible solutions and luckly I came across in the "**[Office Scripts](https://docs.microsoft.com/en-us/office/dev/scripts/overview/excel)**"
+
+## Office Script
+
+The "**[Office Scripts](https://docs.microsoft.com/en-us/office/dev/scripts/overview/excel)**" are scripts allow you to record and replay your Excel actions on different workbooks and worksheets. If you have to perform the same tasks over and over again, you can turn all that work into an easy-to-run Office Script. **Such scripts can be combined with Power Automate to streamline your entire workflow**.
+
+### Script Anatomy
+
+An Office script is essentially a **typescript function**
+
+```typescript
+function main(workbook: ExcelScript.Workbook, ...args: any[]) {
+}
+```
