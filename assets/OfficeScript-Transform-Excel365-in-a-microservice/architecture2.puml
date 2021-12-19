@@ -1,0 +1,58 @@
+@startuml
+
+'autonumber
+
+!include powerapps.png.puml
+!include powerautomate.png.puml
+!include dataverse.png.puml
+!include excel.png.puml
+!include outlook.png.puml
+!include function.png.puml
+!include aibuilder.png.puml
+!include sharepoint.png.puml
+!include osts.png.puml
+
+left to right direction
+'top to bottom direction
+'skinparam linetype ortho
+
+rectangle "Outlook\n<$outlook,scale=.4,color=blue>" as MAIL
+rectangle "Flow\n<$powerautomate,scale=.4,color=blue>" as trigger
+rectangle "Flow\n<$powerautomate,scale=.4,color=blue>" as NEWEXCEL
+rectangle "Text\nAnalysys" as TA
+rectangle "Dataverse\n <$dataverse,scale=.4,color=green>" as CDS
+rectangle "Canvas App\n   <$powerapps,scale=.4,color=purple>" as App
+rectangle "Function\n <$function,scale=.4,color=red>" as FUNC
+''rectangle "AI Model\n <$aibuilder,scale=.4,color=purple>" as AI #line.dashed
+rectangle "<size:12>Sharepoint <$sharepoint,scale=.2,color=green>" as SO #line.dashed {
+  rectangle "Excel\n <$excel,scale=.4,color=green>" as Excel
+  rectangle "Script\n <$osts,scale=.4,color=red>" as OSTS
+}
+
+actor Approver
+actor Validator
+
+MAIL <-- trigger : 1. trigger
+trigger <-> TA : 2. submit
+
+/'
+FUNC -[#gray,dotted,thickness=5,hidden]-> AI: analyse
+note right
+Another "low-code" option
+implementing text analyzer
+is provided by
+Power Platform  <b>AIBuilder
+end note
+'/
+TA -> FUNC: 2.1 invoke
+trigger --> CDS : 3. Save
+
+App -> CDS :  4. Read
+Approver --> App : 5. Approve
+App --> NEWEXCEL : 6. Run
+NEWEXCEL --> Excel: 7. Check In
+NEWEXCEL --> OSTS: 8. Invoke
+OSTS -> Excel : 9. Apply
+NEWEXCEL --> Excel: 10. Check Out
+Excel <-- Validator: Validate & Share
+@enduml

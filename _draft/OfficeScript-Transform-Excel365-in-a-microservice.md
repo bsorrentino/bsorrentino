@@ -102,13 +102,21 @@ For further details take a look at "[Record, edit, and create Office Scripts in 
 
 As you see there are endless possibilities to manipulate the Excel content but, in my opinion, the feature that is the real game changer is that **each script could be invoked by a [Flow][FLW] and it is possible exchange data between them**. Essentially each script becomes in effect a **serverless function** hosted inside Excel that open a number of scenarios never imaged before.
 
-So i've used such feature passing JSON objects containing all timesheet's entries from Canvas through Flow  until script that has the responsibility to apply data against sheet
+So i've used such feature passing JSON objects containing all timesheet's entries from Canvas through Flow until script that has the responsibility to apply data against sheet.
 
-| ![officescript][PIC2]
+| ![officescript][PIC2] |
 | ---
 | **Pic.2 - Usage of Office Script**
 
+Et voila' the issue has resolved just a last consideration: **Since the document could be edited live we need to be sure that during process the file cannot be edited** how to do this?. Luckly the Shareponint connector give us the possibility to perform **[Check In][CKIN] / [Check Out][CKOUT]** on file. So the final solution becomes
 
+| ![officescript][PIC3] |
+| ---
+| **Pic.3 - Reference Architecture (final)**
+
+[PIC2]: ../assets/OfficeScript-Transform-Excel365-in-a-microservice/architecture2.png
+[CKIN]: https://docs.microsoft.com/en-us/connectors/sharepointonline/#check-in-file
+[CKOUT]: https://docs.microsoft.com/en-us/connectors/sharepointonline/#check-out-file
 [PIC2]: ../assets/OfficeScript-Transform-Excel365-in-a-microservice/officescript.png
 [OSTSF]: https://docs.microsoft.com/en-us/office/dev/scripts/develop/power-automate-integration
 [OSTS]: https://docs.microsoft.com/en-gb/office/dev/scripts/tutorials/excel-tutorial

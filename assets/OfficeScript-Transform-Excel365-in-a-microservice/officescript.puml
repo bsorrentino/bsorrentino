@@ -15,8 +15,8 @@ left to right direction
 rectangle "Flow\n<$powerautomate,scale=.4,color=blue>" as NEWEXCEL
 rectangle "Canvas App\n   <$powerapps,scale=.4,color=purple>" as App
 rectangle "<size:12>Sharepoint <$sharepoint,scale=.2,color=green>" as SP #line.dashed {
-rectangle "Excel\n <$excel,scale=.4,color=green>" as Excel
-rectangle "Excel\n <$osts,scale=.4,color=red>" as OSTS
+  rectangle "Excel\n <$excel,scale=.4,color=green>" as Excel
+  rectangle "Script\n <$osts,scale=.4,color=red>" as OSTS
 }
 
 
