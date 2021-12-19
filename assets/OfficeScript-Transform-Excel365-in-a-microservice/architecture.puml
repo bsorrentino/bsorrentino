@@ -27,7 +27,6 @@ rectangle "<size:12>Sharepoint <$sharepoint,scale=.2,color=green>" #line.dashed 
 rectangle "Excel\n <$excel,scale=.4,color=green>" as Excel
 }
 
-
 actor Approver
 actor Validator
 
@@ -47,6 +46,6 @@ trigger --> CDS : 3. Save
 App -> CDS :  4. Read
 Approver --> App : 5. Approve
 App --> NEWEXCEL : 6. Run
-NEWEXCEL -> Excel: 7. Generate Excel
+NEWEXCEL --> Excel: 7. Generate Excel
 Excel <-- Validator: 8. Validate & Share
 @enduml

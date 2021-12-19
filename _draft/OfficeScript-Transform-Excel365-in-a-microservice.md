@@ -1,4 +1,4 @@
-# Office Scripts : publish a serverless microservice from Excel365
+# Office Scripts : publish a serverless function from Excel365
 
 ## Abstract
 
@@ -93,17 +93,24 @@ Form there you can access to **[Office Script object model][OM]** which features
 > * A [`Worksheet`][WS] contains arrays filled with those objects that are present in the individual sheet.
 > * A [`Workbook`][WB] contains arrays of some of those data objects for the entire [`Workbook`][WB].
 
-### Script Development
+### Script Development & Deployment
 
-The **Office Script IDE**  has provided directly inside the Excel itself. It is available from menu **`Automate`** where you could create/edit new/existent scripts using a handy typescript editor available also if you are editing Excel in the web. Take a note that such editor provides full support of intellisense.
+The **Office Script IDE**  has provided directly inside the Excel itself. It is available from menu **`Automate`** where you could create/edit new/existent scripts using a handy typescript editor available also if you are editing Excel in the web. Take a note that such editor provides full support of intellisense. When we save a new script it is stored, by default, in OneDrive `Documents/Office Scrips` as `OSTS` file and it is immediately available for run.
+For further details take a look at "[Record, edit, and create Office Scripts in Excel on the web][OSTS]"
 
-### Script Deployment
+## Let's get back on track: let use "Office Script" in Solution
 
-When we save a new script it is stored, by default, in OneDrive
+As you see there are endless possibilities to manipulate the Excel content but, in my opinion, the feature that is the real game changer is that **each script could be invoked by a [Flow][FLW] and it is possible exchange data between them**. Essentially each script becomes in effect a **serverless function** hosted inside Excel that open a number of scenarios never imaged before.
+
+So i've used such feature passing JSON objects containing all timesheet's entries from Canvas through Flow  until script that has the responsibility to apply data against sheet
+
+| ![officescript][PIC2]
+| ---
+| **Pic.2 - Usage of Office Script**
 
 
-As you see there are endless possibilities to manipulate the Excel content but, in my opinion, the feature that is the real game changer is that **each script could be invoked by a [Flow][FLW] and it is possible exchange data between them**. Essentially each script
-
+[PIC2]: ../assets/OfficeScript-Transform-Excel365-in-a-microservice/officescript.png
+[OSTSF]: https://docs.microsoft.com/en-us/office/dev/scripts/develop/power-automate-integration
 [OSTS]: https://docs.microsoft.com/en-gb/office/dev/scripts/tutorials/excel-tutorial
 [PIC1]: ../assets/OfficeScript-Transform-Excel365-in-a-microservice/architecture.png
 [POT]: https://docs.microsoft.com/en-us/powerapps/teams/overview

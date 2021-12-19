@@ -1,0 +1,27 @@
+@startuml
+
+'autonumber
+
+!include powerapps.png.puml
+!include powerautomate.png.puml
+!include excel.png.puml
+!include sharepoint.png.puml
+!include osts.png.puml
+
+left to right direction
+'top to bottom direction
+'skinparam linetype ortho
+
+rectangle "Flow\n<$powerautomate,scale=.4,color=blue>" as NEWEXCEL
+rectangle "Canvas App\n   <$powerapps,scale=.4,color=purple>" as App
+rectangle "<size:12>Sharepoint <$sharepoint,scale=.2,color=green>" as SP #line.dashed {
+rectangle "Excel\n <$excel,scale=.4,color=green>" as Excel
+rectangle "Excel\n <$osts,scale=.4,color=red>" as OSTS
+}
+
+
+App --> NEWEXCEL : 1. data to JSON\n2. Run ( JSON )
+NEWEXCEL --> OSTS : 3. Invoke\nScript (JSON)
+OSTS --> Excel : 4. Read JSON\n5. Apply
+
+@enduml
