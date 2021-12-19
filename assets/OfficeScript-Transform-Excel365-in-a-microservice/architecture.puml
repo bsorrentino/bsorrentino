@@ -9,6 +9,7 @@
 !include outlook.png.puml
 !include function.png.puml
 !include aibuilder.png.puml
+!include sharepoint.png.puml
 
 left to right direction
 'top to bottom direction
@@ -20,9 +21,11 @@ rectangle "Flow\n<$powerautomate,scale=.4,color=blue>" as NEWEXCEL
 rectangle "Text\nAnalysys" as TA
 rectangle "Dataverse\n <$dataverse,scale=.4,color=green>" as CDS
 rectangle "Canvas App\n   <$powerapps,scale=.4,color=purple>" as App
-rectangle "Excel\n <$excel,scale=.4,color=green>" as Excel
 rectangle "Function\n <$function,scale=.4,color=red>" as FUNC
 rectangle "AI Model\n <$aibuilder,scale=.4,color=purple>" as AI #line.dashed
+rectangle "<size:12>Sharepoint <$sharepoint,scale=.2,color=green>" #line.dashed {
+rectangle "Excel\n <$excel,scale=.4,color=green>" as Excel
+}
 
 
 actor Approver

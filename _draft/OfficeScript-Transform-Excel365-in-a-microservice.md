@@ -23,6 +23,7 @@ After the above considerations I've proposed to use the "Microsoft Power Platfor
 
 ### Assumptions
 
+
 Before start design & implementation I've made the following assumption:
 > Reuse the already in place process to reuse both the mail and the excel sheet "as-is" because this will minimise impact in its adoption.
 
@@ -67,17 +68,40 @@ The new use case was that the user that play role of Validator needed to updated
 ### The Office Script comes to rescue
 
 To solve the issue, I've tried to update the Excel cells directly from flow using Excel connector but It requires that such file adhere to several constraints moreover it highly increases the complexity of the Flow itself.
-So I've seeked for other possible solutions and luckly I came across in the "**[Office Scripts](https://docs.microsoft.com/en-us/office/dev/scripts/overview/excel)**"
+So I've search for other possible solutions and luckly I came across in the "**[Office Scripts][OS]**"
 
 ## Office Script
 
-The "**[Office Scripts](https://docs.microsoft.com/en-us/office/dev/scripts/overview/excel)**" are scripts allow you to record and replay your Excel actions on different workbooks and worksheets. If you have to perform the same tasks over and over again, you can turn all that work into an easy-to-run Office Script. **Such scripts can be combined with Power Automate to streamline your entire workflow**.
+The "**[Office Scripts][OSD]**" are designed for the Office365 on the web and they are scripts allow you to record and replay your Excel actions on different workbooks and worksheets. If you have to perform the same tasks over and over again, you can turn all that work into an easy-to-run Office Script. **Such scripts can be combined with Power Automate to streamline your entire workflow**.
 
 ### Script Anatomy
 
-An Office script is essentially a **typescript function**
+An Office script is essentially a **typescript module** that must contain a `main` function with the [`ExcelScript.Workbook`][WB] type as its first parameter.
 
 ```typescript
 function main(workbook: ExcelScript.Workbook, ...args: any[]) {
 }
 ```
+
+Form there you can access to **[Office Script object model][OM]** which features are outlined below
+
+> **<u>Office Script object model</u>**
+> * A [Workbook][WB] contains one or more [Worksheets][WS].
+> * A [Worksheets][WS] gives access to cells through [Range][RG] objects.
+> * A [Range][RG] represents a group of contiguous cells.
+> * Ranges are used to create and place [Tables][TB], [Charts][CH], [Shapes][SP], and other data visualization or organization objects.
+> * A [Worksheet][WS] contains arrays filled with those objects that are present in the individual sheet.
+> * A [Workbook][WB] contains arrays of some of those data objects for the entire [Workbook][WB].
+
+As you see there are endless possibilities to manipulate the Excel content but in my opinion the real powerful is that each script could be invoked by a [Flow][FLW] and it is possible exchange data between them
+
+[FLW]: https://docs.microsoft.com/en-gb/power-automate/getting-started
+[OS]: https://docs.microsoft.com/en-us/office/dev/scripts/overview/excel
+[OSD]: https://docs.microsoft.com/en-us/office/dev/scripts/overview/excel
+[OM]: https://docs.microsoft.com/en-us/javascript/api/office-scripts/overview?view=office-scripts#common-classes
+[WB]: https://docs.microsoft.com/en-us/javascript/api/office-scripts/excelscript/excelscript.workbook
+[WS]: https://docs.microsoft.com/en-us/javascript/api/office-scripts/excelscript/excelscript.worksheet
+[RG]: https://docs.microsoft.com/en-us/javascript/api/office-scripts/excelscript/excelscript.range
+[TB]: https://docs.microsoft.com/en-us/javascript/api/office-scripts/excelscript/excelscript.table
+[CH]: https://docs.microsoft.com/en-us/javascript/api/office-scripts/excelscript/excelscript.chart
+[SP]: https://docs.microsoft.com/en-us/javascript/api/office-scripts/excelscript/excelscript.shape
