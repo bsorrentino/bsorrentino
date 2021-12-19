@@ -1,4 +1,4 @@
-# Office Scripts : publish a microservice for accessing your Excel365
+# Office Scripts : publish a serverless microservice from Excel365
 
 ## Abstract
 
@@ -19,7 +19,7 @@ So, how to automatise as much as possible this process in order to minimise the 
 
 ## A Power Platform Solution
 
-After the above considerations I've proposed to use the "Microsoft Power Platform" and to avoid extra licenses costs I've decided to use "[Powerapps for Teams](https://docs.microsoft.com/en-us/powerapps/teams/overview)" that is a limited version of "Power Platform" integrated with "Microsoft Teams"
+After the above considerations I've proposed to use the "Microsoft Power Platform" and to avoid extra licenses costs I've decided to use "[Powerapps for Teams][POT]" that is a limited version of "Power Platform" integrated with "Microsoft Teams"
 
 ### Assumptions
 
@@ -29,7 +29,7 @@ Before start design & implementation I've made the following assumption:
 
 ### Power Platform Architecture of Solution
 
-| ![Architecture](../assets/OfficeScript-Transform-Excel365-in-a-microservice/architecture.png)
+| ![Architecture][PIC1]
 | ---
 | **Pic.1 - Reference Architecture (rc1)**
 
@@ -86,15 +86,27 @@ function main(workbook: ExcelScript.Workbook, ...args: any[]) {
 Form there you can access to **[Office Script object model][OM]** which features are outlined below
 
 > **<u>Office Script object model</u>**
-> * A [Workbook][WB] contains one or more [Worksheets][WS].
-> * A [Worksheets][WS] gives access to cells through [Range][RG] objects.
-> * A [Range][RG] represents a group of contiguous cells.
-> * Ranges are used to create and place [Tables][TB], [Charts][CH], [Shapes][SP], and other data visualization or organization objects.
-> * A [Worksheet][WS] contains arrays filled with those objects that are present in the individual sheet.
-> * A [Workbook][WB] contains arrays of some of those data objects for the entire [Workbook][WB].
+> * A [`Workbook`][WB] contains one or more [`Worksheets`][WS].
+> * A [`Worksheets`][WS] gives access to cells through [`Range`][RG] objects.
+> * A [`Range`][RG] represents a group of contiguous cells.
+> * Ranges are used to create and place [`Tables`][TB], [`Charts`][CH], [`Shapes`][SP], and other data visualization or organization objects.
+> * A [`Worksheet`][WS] contains arrays filled with those objects that are present in the individual sheet.
+> * A [`Workbook`][WB] contains arrays of some of those data objects for the entire [`Workbook`][WB].
 
-As you see there are endless possibilities to manipulate the Excel content but in my opinion the real powerful is that each script could be invoked by a [Flow][FLW] and it is possible exchange data between them
+### Script Development
 
+The **Office Script IDE**  has provided directly inside the Excel itself. It is available from menu **`Automate`** where you could create/edit new/existent scripts using a handy typescript editor available also if you are editing Excel in the web. Take a note that such editor provides full support of intellisense.
+
+### Script Deployment
+
+When we save a new script it is stored, by default, in OneDrive
+
+
+As you see there are endless possibilities to manipulate the Excel content but, in my opinion, the feature that is the real game changer is that **each script could be invoked by a [Flow][FLW] and it is possible exchange data between them**. Essentially each script
+
+[OSTS]: https://docs.microsoft.com/en-gb/office/dev/scripts/tutorials/excel-tutorial
+[PIC1]: ../assets/OfficeScript-Transform-Excel365-in-a-microservice/architecture.png
+[POT]: https://docs.microsoft.com/en-us/powerapps/teams/overview
 [FLW]: https://docs.microsoft.com/en-gb/power-automate/getting-started
 [OS]: https://docs.microsoft.com/en-us/office/dev/scripts/overview/excel
 [OSD]: https://docs.microsoft.com/en-us/office/dev/scripts/overview/excel
