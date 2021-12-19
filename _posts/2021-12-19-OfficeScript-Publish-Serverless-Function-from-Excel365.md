@@ -114,13 +114,17 @@ Et voila' the issue has resolved just a last consideration: **Since the document
 | ---
 | **Pic.3 - Reference Architecture (final)**
 
-[PIC2]: ../assets/OfficeScript-Transform-Excel365-in-a-microservice/architecture2.png
+## Conclusion
+
+Happy coding and … enjoy Office Script
+
+[PIC1]: ../../../assets/OfficeScript-Transform-Excel365-in-a-microservice/architecture.png
+[PIC2]: ../../../assets/OfficeScript-Transform-Excel365-in-a-microservice/officescript.png
+[PIC3]: ../../../assets/OfficeScript-Transform-Excel365-in-a-microservice/architecture2.png
 [CKIN]: https://docs.microsoft.com/en-us/connectors/sharepointonline/#check-in-file
 [CKOUT]: https://docs.microsoft.com/en-us/connectors/sharepointonline/#check-out-file
-[PIC2]: ../assets/OfficeScript-Transform-Excel365-in-a-microservice/officescript.png
 [OSTSF]: https://docs.microsoft.com/en-us/office/dev/scripts/develop/power-automate-integration
 [OSTS]: https://docs.microsoft.com/en-gb/office/dev/scripts/tutorials/excel-tutorial
-[PIC1]: ../assets/OfficeScript-Transform-Excel365-in-a-microservice/architecture.png
 [POT]: https://docs.microsoft.com/en-us/powerapps/teams/overview
 [FLW]: https://docs.microsoft.com/en-gb/power-automate/getting-started
 [OS]: https://docs.microsoft.com/en-us/office/dev/scripts/overview/excel
