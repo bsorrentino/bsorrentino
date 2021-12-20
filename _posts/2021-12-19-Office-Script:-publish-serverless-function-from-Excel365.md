@@ -124,10 +124,10 @@ It was not my intention to go into the implementation details, however if you ar
 
 Happy coding and … enjoy Office Script !
 
-[FLW2]: /assets/article1/CallScriptFlow.png
-[PIC1]: /assets/article1/architecture.png
-[PIC2]: /assets/article1/officescript.png
-[PIC3]: /assets/article1/architecture2.png
+[FLW2]: /bsorrentino/assets/article1/CallScriptFlow.png
+[PIC1]: /bsorrentino/assets/article1/architecture.png
+[PIC2]: /bsorrentino/assets/article1/officescript.png
+[PIC3]: /bsorrentino/assets/article1/architecture2.png
 [CKIN]: https://docs.microsoft.com/en-us/connectors/sharepointonline/#check-in-file
 [CKOUT]: https://docs.microsoft.com/en-us/connectors/sharepointonline/#check-out-file
 [OSTSF]: https://docs.microsoft.com/en-us/office/dev/scripts/develop/power-automate-integration
