@@ -38,7 +38,7 @@ Above there is the first "reference architecture" that I've designed to accompli
 #### Trigger Flow from Mail
 As you can see each mail sent/forwarded to a pre-configured mail group triggers a "Power Automate Flow" that :
  1. Identifies the sender
- 1. Analyses the subject to understand the nature of time entry (`Hours Off`, `Holyday`, `Availability`, `Overtime`, ...).
+ 1. Analyses the subject to understand the nature of time entry (`Hours Off`, `Holiday`, `Availability`, `Overtime`, ...).
     > This is achieved by an server-less function but is planned to use the Power Platform AI extension
 
 #### Save Data
