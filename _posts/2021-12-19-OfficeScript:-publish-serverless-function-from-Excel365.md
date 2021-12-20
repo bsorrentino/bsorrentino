@@ -119,10 +119,10 @@ It was not my intention to go into the implementation details, however if you ar
 
 Happy coding and … enjoy Office Script !
 
-[FLW2]: ../assets/OfficeScript-Transform-Excel365-in-a-microservice/CallScriptFlow.png
-[PIC1]: ../assets/OfficeScript-Transform-Excel365-in-a-microservice/architecture.png
-[PIC2]: ../assets/OfficeScript-Transform-Excel365-in-a-microservice/officescript.png
-[PIC3]: ../assets/OfficeScript-Transform-Excel365-in-a-microservice/architecture2.png
+[FLW2]: ../../../assets/OfficeScript-Transform-Excel365-in-a-microservice/CallScriptFlow.png
+[PIC1]: ../../../assets/OfficeScript-Transform-Excel365-in-a-microservice/architecture.png
+[PIC2]: ../../../assets/OfficeScript-Transform-Excel365-in-a-microservice/officescript.png
+[PIC3]: ../../../assets/OfficeScript-Transform-Excel365-in-a-microservice/architecture2.png
 [CKIN]: https://docs.microsoft.com/en-us/connectors/sharepointonline/#check-in-file
 [CKOUT]: https://docs.microsoft.com/en-us/connectors/sharepointonline/#check-out-file
 [OSTSF]: https://docs.microsoft.com/en-us/office/dev/scripts/develop/power-automate-integration
