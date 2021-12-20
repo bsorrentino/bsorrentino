@@ -2,7 +2,7 @@
 layout: post
 title:  "Office Scripts : publish a serverless function from Excel365"
 date:   2021-12-19 15:00:00 +0200
-categories: Powerapps, Powerautomate, OfficeScript, Excel, Sharepoint, Outlook
+categories: Powerapps Powerautomate OfficeScript Excel Sharepoint Outlook
 ---
 
 ## Abstract
