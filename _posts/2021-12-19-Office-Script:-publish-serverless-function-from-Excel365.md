@@ -43,8 +43,7 @@ Above there is the first "reference architecture" that I've designed to accompli
 #### Trigger Flow from Mail
 As you can see each mail sent/forwarded to a pre-configured mail group triggers a "Power Automate Flow" that :
  1. Identifies the sender
- 1. Analyses the subject to understand the nature of time entry (`Hours Off`, `Holiday`, `Availability`, `Overtime`, ...).
-    > This is achieved by an server-less function but is planned to use the Power Platform AI extension
+ 1. Analyses the subject to understand the nature of time entry (`Hours Off`, `Holiday`, `Availability`, `Overtime`, ...). _Currently this is achieved by a server-less function but is planned to use the Power Platform AI extension_
 
 #### Save Data
 After that the gathered information are saved in _Dataverse_ in the state: `pending for approval`
@@ -65,10 +64,10 @@ The final step is to create/overwrite a file excel in sharepoint and for this pu
 
 ## Delivery of first release
 
-After tests I've delivered solution in the production environment and after a while I got the first **critical issue** but it wasn't related to technical problem rather an uncovered (and unespected) use case.
+After tests I've delivered solution in the production environment and after a while I got the first **critical issue** but it wasn't related to technical problem rather an uncovered (and unexpected) use case.
 
 ### The issue (ie. new use case)
-The new use case was that the user that play role of Validator needed to updated Excel file (also writing complex formulas) before a new generation so this means that the **Excel cannot be overwritten** but **it must be a live file** and this implies that the Flow has to work on a pre-existent file updating selectively the cells whithin.
+The new use case was that the user that play role of Validator needed to updated Excel file (also writing complex formulas) before a new generation so this means that the **Excel cannot be overwritten** but **it must be a live file** and this implies that the Flow has to work on a pre-existent file updating selectively the cells within.
 
 ### The Office Script comes to rescue
 
