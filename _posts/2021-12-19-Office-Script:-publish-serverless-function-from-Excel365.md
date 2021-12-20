@@ -57,7 +57,7 @@ In this first release I've preferred introduce a manual step for approve timeshe
 For this I've developed a _Canvas App_ that read timesheet entries to approve from _Dataverse_ and present a screen allowing to approve, reject or delete each entry
 
 #### Generate Excel
-The final step is to create/overwrite a file excel in sharepoint and for this purpose I choosen to call a Flow from canvas App. There are lot of available "_how to_" concerning that and I don't want go in deep on it however below there are  the main steps applied :
+The final step is to create/overwrite a file excel in sharepoint and for this purpose I choose to call a Flow from canvas App. There are lot of available "_how to_" concerning that and I don't want go in deep on it however below there are  the main steps applied :
 
 1. Canvas App call a Flow passing the data, got from Dataverse, converted in JSON format
 1. The Flow get JSON data, convert them in CSV format and create a new Excel file with such content
