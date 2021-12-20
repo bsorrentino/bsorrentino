@@ -30,7 +30,7 @@ rectangle "Excel\n <$excel,scale=.4,color=green>" as Excel
 actor Approver
 actor Validator
 
-MAIL <-- trigger : 1. trigger
+MAIL --> trigger : 1. trigger
 trigger <-> TA : 2. submit
 
 FUNC -[#gray,dotted,thickness=5,hidden]-> AI: analyse

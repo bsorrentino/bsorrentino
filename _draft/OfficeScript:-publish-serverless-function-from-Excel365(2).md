@@ -35,10 +35,10 @@ Before start design & implementation I've made the following assumption:
 
 Above there is the first "reference architecture" that I've designed to accomplish the requirements.
 
-#### Trigger Mail
-As you can see each mail sent/forwarded to a pre-configured mail group is triggered by a "Power Automate Flow" that :
- 1. Identify the sender
- 1. Analyse the subject to understand the nature of time entry (`Hours Off`, `Holyday`, `Availability`, `Overtime`, ...).
+#### Trigger Flow from Mail
+As you can see each mail sent/forwarded to a pre-configured mail group triggers a "Power Automate Flow" that :
+ 1. Identifies the sender
+ 1. Analyses the subject to understand the nature of time entry (`Hours Off`, `Holyday`, `Availability`, `Overtime`, ...).
     > This is achieved by an server-less function but is planned to use the Power Platform AI extension
 
 #### Save Data
@@ -100,15 +100,43 @@ For further details take a look at "[Record, edit, and create Office Scripts in 
 
 ## Let's get back on track: let use "Office Script" in Solution
 
-As you see there are endless possibilities to manipulate the Excel content but, in my opinion, the feature that is the real game changer is that **each script could be invoked by a [Flow][FLW] and it is possible exchange data between them**. Essentially each script becomes in effect a **serverless function** hosted inside Excel that open a number of scenarios never imaged before.
-
-So i've used such feature passing JSON objects containing all timesheet's entries from Canvas through Flow until script that has the responsibility to apply data against sheet.
+As you see there are endless possibilities to manipulate the Excel content but, in my opinion, the feature that is the real game changer is that **each script could be invoked by a [Flow][FLW] and it is possible exchange data between them**. Essentially each script becomes in effect a **serverless function** hosted inside Excel that open a number of scenarios never imaged before. So the architecture changes in the follow way:
 
 | ![officescript][PIC2] |
 | ---
 | **Pic.2 - Usage of Office Script**
 
-Et voila' the issue has resolved just a last consideration: **Since the document could be edited live we need to be sure that during process the file cannot be edited** how to do this?. Luckly the Shareponint connector give us the possibility to perform **[Check In][CKIN] / [Check Out][CKOUT]** on file. So the final solution becomes
+### Passing JSON object to the Script
+The first step in introduction of Office Script has been defining Data Model (ie. JSON Object) below there is the original Model that I've used:
+
+```typescript
+// Timesheet Data Model
+interface Resource {
+  name: string,
+  mail: string,
+
+  forceUpdate?:boolean
+  overtimes?: number,
+  hoursoff?: number,
+  absences?: number
+}
+
+interface WeekData {
+  id: string,
+  year?: number
+  resources: Array<Resource>
+}
+```
+After that the entry function becomes:
+
+```typescript
+// Office Script Entry Point
+function main(workbook: ExcelScript.Workbook, week: WeekData) {
+}
+
+```
+
+Et voila' the issue has resolved just a last consideration: **Since the document could be edited live we need to be sure that during process the file cannot be edited** how to do this?. Luckly the Shareponint connector give us the possibility to perform **[Check Out][CKOUT] / [Check In][CKIN]** on file. So the final solution becomes
 
 | ![officescript][PIC3] |
 | ---
@@ -118,9 +146,10 @@ Et voila' the issue has resolved just a last consideration: **Since the document
 
 Happy coding and … enjoy Office Script
 
-[PIC1]: ../../../assets/OfficeScript-Transform-Excel365-in-a-microservice/architecture.png
-[PIC2]: ../../../assets/OfficeScript-Transform-Excel365-in-a-microservice/officescript.png
-[PIC3]: ../../../assets/OfficeScript-Transform-Excel365-in-a-microservice/architecture2.png
+[FLW2]: ../assets/OfficeScript-Transform-Excel365-in-a-microservice/CallScriptFlow.png
+[PIC1]: ../assets/OfficeScript-Transform-Excel365-in-a-microservice/architecture.png
+[PIC2]: ../assets/OfficeScript-Transform-Excel365-in-a-microservice/officescript.png
+[PIC3]: ../assets/OfficeScript-Transform-Excel365-in-a-microservice/architecture2.png
 [CKIN]: https://docs.microsoft.com/en-us/connectors/sharepointonline/#check-in-file
 [CKOUT]: https://docs.microsoft.com/en-us/connectors/sharepointonline/#check-out-file
 [OSTSF]: https://docs.microsoft.com/en-us/office/dev/scripts/develop/power-automate-integration
