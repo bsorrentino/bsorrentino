@@ -7,11 +7,11 @@ categories: Powerapps Powerautomate OfficeScript Excel Sharepoint Outlook
 
 ## Abstract
 
-Continuing my effort in using and understanding the best use cases for "Low Code" platform, and in particular "Power Platform", I've had a classical challenge in trying to automate a business process consisting in use excel as "single source of truth" and/or as the main target to present process output.
+Continuing my effort in using and understanding the best use cases for "Low Code" platform, and in particular "[Power Platform][PP]", I've had a classical challenge in trying to automate a business process consisting in use excel as "_single source of truth_" and/or as the main target to present process output.
 
 ## The Use Case
 
-The use case that I'd want to describe here is "manage the timesheets of the resources allocated by customers".
+The use case that I'd want to describe here is "**manage the timesheets of the resources allocated by customers**".
 Obviously there are a lot of software that are able to do it, but in this particular case the complication is that the customer use an own system for manage the consultants' timesheets and it isn't open to the providers so them, to keep control on billing hours, need to be aligned on that in someway.
 
 ### Use the Mail
@@ -127,6 +127,7 @@ Happy coding and … enjoy Office Script !
 [PIC1]: /bsorrentino/assets/article1/architecture.png
 [PIC2]: /bsorrentino/assets/article1/officescript.png
 [PIC3]: /bsorrentino/assets/article1/architecture2.png
+[PP]: https://powerplatform.microsoft.com/en-us/
 [CKIN]: https://docs.microsoft.com/en-us/connectors/sharepointonline/#check-in-file
 [CKOUT]: https://docs.microsoft.com/en-us/connectors/sharepointonline/#check-out-file
 [OSTSF]: https://docs.microsoft.com/en-us/office/dev/scripts/develop/power-automate-integration
