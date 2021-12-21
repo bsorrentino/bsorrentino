@@ -99,7 +99,7 @@ Form there you can access to **[Office Script object model][OM]** which features
 
 ### Script Development & Deployment
 
-The **Office Script IDE**  has provided directly inside the Excel itself. It is available from menu **`Automate`** where you could create/edit new/existent scripts using a handy typescript editor available also if you are editing Excel in the web. Take a note that such editor provides full support of intellisense. When we save a new script it is stored, by default, in OneDrive `Documents/Office Scrips` as `OSTS` file and it is immediately available for run.
+The **Office Script IDE**  has provided directly inside the Excel itself. It is available from menu **`Automate`** where you could create/_edit_ new/_existent_ scripts using a handy typescript editor available also if you are editing Excel in the web. Take a note that such editor provides full support of intellisense. When we save a new script it is stored, by default, in OneDrive `Documents/Office Scrips` as `OSTS` file and it is immediately available for run.
 For further details take a look at "[Record, edit, and create Office Scripts in Excel on the web][OSTS]"
 
 ## Let's get back on track: let use "Office Script" in Solution
