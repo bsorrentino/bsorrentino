@@ -50,11 +50,12 @@ struct DynamicFetchRequestView<T: NSManagedObject, Content: View>: View {
 
 }
 ```
-As you can see the View is pretty simple, as said the trick is within initializer where we are able to instantiate a custom `FetchRequest` providing the required arguments. After that the request will be automatically performed by the View when its render is required and the result will be passed to the custom content that is a `@ViewBuilder` provided in initializer itself
+As you can see the View is pretty simple, as said the trick is within initializer where we are able to instantiate a custom `FetchRequest` providing the required arguments. After that, the request will be automatically performed by the View when its render is required and the result will be passed to the custom content that is a `@ViewBuilder` provided in initializer itself
 
 #### `DynamicFetchRequestView` usage sample
 
-Let assume to have a Data Object named `Account` with two attributes
+#### Define the `NSManagedObject`
+Let assume having a Data Object named `Account` with two attributes
 
 ```swift
 class Account : NSManagedObject {
@@ -64,10 +65,11 @@ class Account : NSManagedObject {
 }
 ```
 
-Now I want filtering Accounts in my View by name and to do this I've to build a `DynamicFetchRequestView` extension for `Account` entity as shown in the code snippet below:
+#### Define the `DynamicFetchRequestView` extension by Entity
+Now I want filtering Accounts in my View by name, to do this I've to **make a `DynamicFetchRequestView` extension for `Account` entity** as shown in the code snippet below:
 
 ```Swift
-// Initializer for Account
+// Initializer for Account filtering
 extension DynamicFetchRequestView where T : Account {
 
     init( withSearchText searchText: String, @ViewBuilder content: @escaping (FetchedResults<T>) -> Content) {
@@ -80,7 +82,39 @@ extension DynamicFetchRequestView where T : Account {
 }
 ```
 
-Put all together
+#### Put `searchable` modifier and `DynamicFetchRequestView` together
+In code above we stated that we want perform a search on name attribute using a **search criteria string**. Now we can put all together and develop our final View
+
+```Swift
+struct AccountList: View {
+    @Environment(\.managedObjectContext) var managedObjectContext
+
+    @State private var searchText = ""
+
+    var body: some View {
+
+        NavigationView {
+
+            DynamicFetchRequestView( withSearchText: searchText ) { results in
+
+                List( results, id: \.self ) { account in
+
+                    HStack {
+                      Text( account.name )
+                      Text( "\(account.age)" )
+                    }
+                }
+
+            }
+            .searchable(text: $searchText, placement: .automatic, prompt: "search keys")
+            .navigationBarTitle( Text("Account List"), displayMode: .inline )
+
+        }
+    }
+}
+```
+
+#### Bonus: make a section for each alphabetic character
 
 ```Swift
 struct AccountList: View {
