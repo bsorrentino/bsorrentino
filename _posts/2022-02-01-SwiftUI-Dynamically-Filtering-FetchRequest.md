@@ -5,24 +5,24 @@ date:   2022-02-01 15:00:00 +0200
 categories: SwiftUI
 ---
 
-## The SwiftUI `searchable` modifier
+## The SwiftUI 'searchable' modifier
 
 From **IOS 15** swiftUI has been enriched of new (wished) functionalities. One of the most useful in my opinion is the new modifier [searchable][SEARCH]
 that allow to achieve in pretty straightforward way a full working search bar.
 
 Form first announcement I couldn't wait to use it and as soon as I've updated my XCode I started to refactor one of the my iOS app from UIKit couple `UITableViewController` + `UISearchController` to swiftUI `List` + `Searchable` modifier.
 
-### Problem with `@FetchRequest` dynamic filtering
+### Problem with '@FetchRequest' dynamic filtering
 
 I've applied it on top of a `List` and it worked as expected but the problem was that I would want to use `@FetchRequest` property wrapper  but it seemed not thought for use it in a dynamic filtering scenario like when we want to use with a search bar.
 
 So the problem was:  **is it possible to use use @FetchRequest to perform dynamic filtering ?**.
 
-### Solution using a `DynamicFetchRequestView`
+### Solution using a 'DynamicFetchRequestView'
 
 Luckily I land on this [article](ARTICLE1) from amazing [Paul Hudson][POULH] that explains how is possible use `@FetchRequest` property wrapper for dynamic filtering so i decided to apply the provided solution in my project and develop a more generic SwiftUI View `DynamicFetchRequestView` allowing to apply the dynamic filtering in different scenarios.
 
-#### `DynamicFetchRequestView` implementation
+#### 'DynamicFetchRequestView' implementation
 
 Essentially the solution proposed by Paul Hudson was to **set `@FetchRequest` property wrapper in custom initializer** to which we can pass argument allowing to prepare a FetchRequest on-the-fly.
 Below there is the `DynamicFetchRequestView` implementation
@@ -58,7 +58,7 @@ struct DynamicFetchRequestView<T: NSManagedObject, Content: View>: View {
 ```
 As you can see the View is pretty simple, as said the trick is within initializer where we are able to instantiate a custom `FetchRequest` providing the required arguments. After that, the request will be automatically performed by the View when its render is required and the result will be passed to the custom content that is a `@ViewBuilder` provided in initializer itself
 
-#### `DynamicFetchRequestView` usage sample
+#### 'DynamicFetchRequestView' usage sample
 
 #### Define the `NSManagedObject`
 Let assume having a Data Object named `Account` with two attributes
@@ -71,7 +71,7 @@ class Account : NSManagedObject {
 }
 ```
 
-#### Define the `DynamicFetchRequestView` extension by Entity
+#### Define the 'DynamicFetchRequestView' extension by Entity
 Now I want filtering Accounts in my View by name, to do this I've to **make a `DynamicFetchRequestView` extension for `Account` entity** as shown in the code snippet below:
 
 ```Swift
@@ -88,7 +88,7 @@ extension DynamicFetchRequestView where T : Account {
 }
 ```
 
-#### Put `searchable` modifier and `DynamicFetchRequestView` together
+#### Put 'searchable' modifier and 'DynamicFetchRequestView' together
 In code above we stated that we want perform a search on name attribute using a **search criteria string**. Now we can put all together and develop our final View
 
 ```Swift
