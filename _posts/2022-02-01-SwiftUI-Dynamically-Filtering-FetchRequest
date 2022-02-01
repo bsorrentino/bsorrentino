@@ -1,7 +1,13 @@
+---
+layout: post
+title:  "SwiftUI: Dynamically Filtering FetchRequest"
+date:   2022-02-01 15:00:00 +0200
+categories: SwiftUI
+---
 
 ## The SwiftUI `searchable` modifier
 
-From **IOS 15** swiftUI has been enriched of new (wished) functionalities. One of the most useful in my opinion is the new modifier [searchable](https://developer.apple.com/documentation/swiftui/form/searchable(text:placement:))
+From **IOS 15** swiftUI has been enriched of new (wished) functionalities. One of the most useful in my opinion is the new modifier [searchable][SEARCH]
 that allow to achieve in pretty straightforward way a full working search bar.
 
 Form first announcement I couldn't wait to use it and as soon as I've updated my XCode I started to refactor one of the my iOS app from UIKit couple `UITableViewController` + `UISearchController` to swiftUI `List` + `Searchable` modifier.
@@ -14,7 +20,7 @@ So the problem was:  **is it possible to use use @FetchRequest to perform dynami
 
 ### Solution using a `DynamicFetchRequestView`
 
-Luckily I land on this [article](https://www.hackingwithswift.com/books/ios-swiftui/dynamically-filtering-fetchrequest-with-swiftui) from amazing [Paul Hudson](https://twitter.com/twostraws?s=20) that explains how is possible use `@FetchRequest` property wrapper for dynamic filtering so i decided to apply the provided solution in my project and develop a more generic SwiftUI View `DynamicFetchRequestView` allowing to apply the dynamic filtering in different scenarios.
+Luckily I land on this [article](ARTICLE1) from amazing [Paul Hudson][POULH] that explains how is possible use `@FetchRequest` property wrapper for dynamic filtering so i decided to apply the provided solution in my project and develop a more generic SwiftUI View `DynamicFetchRequestView` allowing to apply the dynamic filtering in different scenarios.
 
 #### `DynamicFetchRequestView` implementation
 
@@ -115,6 +121,7 @@ struct AccountList: View {
 ```
 
 #### Bonus: make a section for each alphabetic character
+In code below we update `AccountList` implementation to include a section for each letter of alphabet
 
 ```Swift
 struct AccountList: View {
@@ -144,7 +151,6 @@ struct AccountList: View {
                         }
                     }
                 }
-
             }
             .searchable(text: $searchText, placement: .automatic, prompt: "search keys")
             .navigationBarTitle( Text("Account List"), displayMode: .inline )
@@ -153,3 +159,14 @@ struct AccountList: View {
     }
 }
 ```
+
+## Conclusion
+
+In this article I shared my experience during the discovery and deepening of SwiftUI knowledge.
+
+Hope this help, in the meanwhile happy coding and … enjoy SwiftUI! 👋
+
+
+[SEARCH]: https://developer.apple.com/documentation/swiftui/form/searchable(text:placement:)
+[ARTICLE1]: https://www.hackingwithswift.com/books/ios-swiftui/dynamically-filtering-fetchrequest-with-swiftui
+[POULH]: https://twitter.com/twostraws?s=20
