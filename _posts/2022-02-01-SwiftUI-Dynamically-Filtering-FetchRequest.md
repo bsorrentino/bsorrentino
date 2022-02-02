@@ -2,6 +2,7 @@
 layout: post
 title:  "SwiftUI: Dynamically Filtering FetchRequest"
 date:   2022-02-01 15:00:00 +0200
+description: How to combine searchable modifier with FetchRequest property wrapper to achieve dynamic filtering 
 categories: SwiftUI
 ---
 
