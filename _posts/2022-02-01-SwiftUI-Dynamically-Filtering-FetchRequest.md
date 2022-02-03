@@ -2,7 +2,7 @@
 layout: post
 title:  "SwiftUI: Dynamically Filtering FetchRequest"
 date:   2022-02-01 15:00:00 +0200
-description: How to combine searchable modifier with FetchRequest property wrapper to achieve dynamic filtering 
+description: How to combine searchable modifier with FetchRequest property wrapper to achieve dynamic filtering
 categories: SwiftUI
 ---
 
@@ -21,7 +21,7 @@ So the problem was:  **is it possible to use use @FetchRequest to perform dynami
 
 ### Solution using a 'DynamicFetchRequestView'
 
-Luckily I land on this [article](ARTICLE1) from amazing [Paul Hudson][POULH] that explains how is possible use `@FetchRequest` property wrapper for dynamic filtering so i decided to apply the provided solution in my project and develop a more generic SwiftUI View `DynamicFetchRequestView` allowing to apply the dynamic filtering in different scenarios.
+Luckily I land on this [article][ARTICLE1] from amazing [Paul Hudson][POULH] that explains how is possible use `@FetchRequest` property wrapper for dynamic filtering so i decided to apply the provided solution in my project and develop a more generic SwiftUI View `DynamicFetchRequestView` allowing to apply the dynamic filtering in different scenarios.
 
 #### 'DynamicFetchRequestView' implementation
 
