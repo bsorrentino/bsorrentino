@@ -4,9 +4,11 @@ As developer, usage of Command Line Interface (CLI) based tools are becoming mor
 
 In my day by day work I use a lot of cli either for interactive use and for batch processing to accomplish various and different tasks
 
-In this article i'd like to focus on os-independent CLI development using nodejs and in particular "how to enhance a pre-existent CLI" using [ZX] an amazing package provided by google.
+In this article i'd like to focus on os-independent CLI development using [NodeJS] and in particular "**how to enhance a pre-existent CLI**" using [ZX] an amazing package provided by google.
 
-## ZX project 
+Firstly a brief introduction to [ZX] project
+
+## ZX project
 
 [ZX] describes itself as **A tool for writing better scripts** and below there is its description pick upped from the site:
 
@@ -46,6 +48,7 @@ function | description
 
 * [How to Write Shell Scripts in Node with Google’s zx Library](https://www.sitepoint.com/google-zx-write-node-shell-scripts/)
 
+[NodeJS]: https://nodejs.org/en/
 [ZX]:  https://www.npmjs.com/package/zx
 [yaml]: https://yaml.org/spec/history/2001-12-10.html
 [glob]: https://en.wikipedia.org/wiki/Glob_(programming)
