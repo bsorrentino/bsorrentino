@@ -44,6 +44,9 @@ function | description
 [minimist](https://www.npmjs.com/package/minimist) | Argument options parser
 [witch](https://www.npmjs.com/package/witch) | require/resolve for binaries
 
+As you can see [ZX] bring a lot of standard-de-facto packages and provides utilities focused on accomplish main CLI needs.
+For this reason I choosen it not only to develop new CLI but also to enrich the existent ones give them more interactivity and implementing common use cases
+
 ## References
 
 * [How to Write Shell Scripts in Node with Google’s zx Library](https://www.sitepoint.com/google-zx-write-node-shell-scripts/)
