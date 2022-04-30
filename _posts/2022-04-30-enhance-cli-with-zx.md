@@ -6,7 +6,7 @@ description: How to enhance a pre-existent CLI in Node with Google’s ZX Librar
 categories: NodeJS
 ---
 
-# The importance of CLI usage
+## The importance of CLI usage
 
 As developer, usage of Command Line Interface (CLI) based tools are becoming more and more important in day by day work, especially now that devops practices is a first-citizen in development world.
 
@@ -164,7 +164,7 @@ try {
 
 ```
 
-# Conclusion
+## Conclusion
 
 I consider [ZX] a good solution to implement or enhance multi-platform CLI based upon [NodeJS].
 
@@ -172,7 +172,7 @@ If you are interested in implementation detail the code is on [Github](https://g
 
 I Hope that such article could help if you are dealing with CLI developing or enhancing. in the meanwhile happy coding and … enjoy [ZX]! 👋
 
-# References
+## References
 
 * [How to Write Shell Scripts in Node with Google’s ZX Library](https://www.sitepoint.com/google-zx-write-node-shell-scripts/)
 
