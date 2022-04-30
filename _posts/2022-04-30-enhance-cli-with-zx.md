@@ -83,7 +83,7 @@ Below the description of main steps that involving import/export tasks that I've
 As you can see there are several steps and I wanted to ask the user to provide the requested information and confirmation for the optional steps.
 So I have used the [ZX] `$` to execute the commands behind-the-scene and `question` for ask info or confirmation, moreover just-in-case, I've also provided command line arguments to skip asking for.
 
-Below some function that I've develop to enrich [PAC] to give you an idea on how is simple use [ZX] to enhance (or implement) a CLI
+Below some functions that I've develop to enrich [PAC] to give you an idea on how is simple use [ZX] to enhance (or implement) a CLI
 
 #### Select Authentication Profile
 
