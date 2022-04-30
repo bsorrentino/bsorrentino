@@ -8,7 +8,7 @@ categories: NodeJS
 
 ## The importance of CLI usage
 
-As developer, usage of Command Line Interface (CLI) based tools are becoming more and more important in day by day works, especially now that devops practices is a first-citizen in development world.
+As developer, usage of Command Line Interface (CLI) based tools are becoming more and more important in day by day work, especially now that devops practices is a first-citizen in development world.
 
 In my day by day work I use a lot of CLI either for interactive use and for batch processing to accomplish various and different tasks
 
