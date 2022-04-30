@@ -1,8 +1,8 @@
 ---
 layout: post
-title:  "Enhance a CLI with ZX"
+title:  "Enhance CLI with ZX"
 date:   2022-04-30 17:00:00 +0200
-description: How to enhance a pre-existent CLI in Node with Google’s ZX Library
+description: How to enhance pre-existent CLI in Node with Google’s ZX Library
 categories: NodeJS
 ---
 
