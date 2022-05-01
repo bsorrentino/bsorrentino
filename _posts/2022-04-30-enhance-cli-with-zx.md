@@ -45,12 +45,12 @@ function | description
 
   packages | description
  --- | ---
-[chalk](https://www.npmjs.com/package/chalk) | Colorize output
-[yaml](https://www.npmjs.com/package/yaml) | Parse/Serialize [yaml]
-[fs-extra](https://www.npmjs.com/package/fs-extra) | File System utility
-[globby](https://www.npmjs.com/package/globby) | User-friendly [glob] matching
-[minimist](https://www.npmjs.com/package/minimist) | Argument options parser
-[witch](https://www.npmjs.com/package/witch) | require/resolve for binaries
+[chalk] | Colorize output
+[yaml] | Parse/Serialize [yaml format]
+[fs-extra] | File System utility
+[globby] | User-friendly [glob] matching
+[minimist]| Argument options parser
+[witch] | require/resolve for binaries
 
 ----
 
@@ -142,7 +142,7 @@ export const askForSolutionFolder = async () => {
 
 #### Import a Solution in a Power Platform (Cloud) Environment
 
-In this example we put all together providing a complete import workflow. We reuse the functions above and the [PAC SOLUTION] subcommand to `pack`ing and `import`ing solution into remote environment related to the selected authentication profile
+In this example we put all together providing a complete import workflow. We reuse the functions above and the [PAC SOLUTION] subcommand to `pack`_ing_ and `import`_ing_ solution into remote environment related to the selected authentication profile
 
 ```javascript
 try {
@@ -178,7 +178,7 @@ I Hope that such article could help if you are dealing with CLI developing or en
 
 [NodeJS]: https://nodejs.org/en/
 [ZX]:  https://www.npmjs.com/package/zx
-[yaml]: https://yaml.org/spec/history/2001-12-10.html
+[yaml format]: https://yaml.org/spec/history/2001-12-10.html
 [glob]: https://en.wikipedia.org/wiki/Glob_(programming)
 [node-fetch]: https://www.npmjs.com/package/node-fetch
 [readline]: https://nodejs.org/api/readline.html
@@ -189,3 +189,9 @@ I Hope that such article could help if you are dealing with CLI developing or en
 [PAC AUTH]: https://docs.microsoft.com/en-us/power-apps/developer/data-platform/cli/reference/auth-command
 [PAC SOLUTION]: https://docs.microsoft.com/en-us/power-apps/developer/data-platform/cli/reference/solution-command
 [zx-powerapps-cli]: https://www.npmjs.com/package/@bsorrentino/zx-powerapps-cli
+[chalk]: https://www.npmjs.com/package/chalk
+[yaml]: https://www.npmjs.com/package/yaml
+[fs-extra]: https://www.npmjs.com/package/fs-extra
+[globby]: https://www.npmjs.com/package/globby
+[minimist]: https://www.npmjs.com/package/minimist
+[witch]: https://www.npmjs.com/package/witch
