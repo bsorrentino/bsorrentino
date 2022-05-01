@@ -166,7 +166,7 @@ try {
 
 ## Conclusion
 
-I consider [ZX] a good solution to implement or enhance multi-platform CLI based upon [NodeJS].
+I consider [ZX] a good solution to enhance or implement multi-platform CLI based upon [NodeJS].
 
 If you are interested in implementation detail the code is on [Github](https://github.com/bsorrentino/zx-powerapps-cli)  
 
