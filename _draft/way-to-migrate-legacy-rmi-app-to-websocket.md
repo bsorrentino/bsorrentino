@@ -19,7 +19,7 @@ I had an old, but perfectly working, large client/server application based on Sw
 
 #### 1. RMI Tunneling over HTTP
 
-The first evaluation was to use [RMI HTTP tunneling] but right from the start it seemed a bit too complicated and since the application heavily uses RMI callbacks, the one-way protocol like HTTP was not suitable for the purpose.
+The first evaluation was to use [RMI HTTP tunneling] but right from the start it seemed a bit too complicated and since the application heavily uses RMI callbacks, the one-way protocol like HTTP was not suitable for the purpose.\
 
 
 
