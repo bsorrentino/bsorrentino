@@ -38,16 +38,19 @@ As you can see it is pretty simple,  the main component is the `CallHandler` tha
 ## LipeRMI : The Fork
 
 As first step I [forked the project](https://github.com/bsorrentino/lipermi) and refactor it as a **multi module maven project*** allowing better management and make easier both extension and test.
+
 Currently it has the following modules:
 
 Module | artifact
 ---- | ----
-core | 
-socket | 
-websocket | 
-rmi-emul | 
-examples | 
-cheerpj |
+core | `lipermi-core`
+socket | `lipermi-socket`
+websocket | `lipermi-websocket`
+rmi-emul | `lipermi-rmi-emul`
+examples | `lipermi-examples`
+cheerpj | `cheerpj`
+
+In this article I'm going to focus on `core`, `socket` and `websocket`, 
 
 ### Core Module
 
