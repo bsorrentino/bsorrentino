@@ -41,18 +41,20 @@ As first step I [forked the project](https://github.com/bsorrentino/lipermi) and
 
 Currently it has the following modules:
 
-Module | artifact
+Module | Summary
 ---- | ----
-core | `lipermi-core`
-socket | `lipermi-socket`
-websocket | `lipermi-websocket`
-rmi-emul | `lipermi-rmi-emul`
-examples | `lipermi-examples`
-cheerpj | `cheerpj`
+core | the core implementation 
+socket | core extension implementing synch socket protocol
+websocket | core reactive extension implementing asynch websocket protocol
+rmi-emul | core extension to emulate RMI API
+examples | various examples
+cheerpj | WebAssembly frontend based upon [CheerpJ] ( EXPERIMENTAL )
 
-In this article I'm going to focus on `core`, `socket` and `websocket`, 
+In this article I'm going to focus on `core`, `socket` and `websocket`, where `core`+`socket` should be considered a modular re-intrepretation that the original project while `websocket` is a completely new implementation that take advantage of the introduced `core` reactive protocol abstraction with usage of a [reactive-stream]
 
 ### Core Module
+
+#### Protocol abstraction
 
 In **core** module I've put greater part of original project's code. Taking a look to the original architecture one of the main goal was decoupling/abstracting the underlying protocol so I introduced some interfaces like `IServer`, `iClient` and `IRemoteCaller` in order to achieve this and as consequence in **core** module there aren't any specific protocol implemetation.
 
@@ -60,26 +62,54 @@ In the picture below there is an overview of the new **architecture** allowing p
 
 | ![hla][PIC2] |
 | ---
-| **Pic.2 - Architecture with protocol abstraction**
+| **Pic.2 - Class Diagram with protocol abstraction**
+
 
 ### Socket Module
 
-In **socket** I've simply implemented all the abstraction provided by **core** essentially reusing code from original project but putting it in the new architecture
+In **socket** I've simply implemented all the synchronous abstraction provided by **core** essentially reusing code from original project but putting it in the new architecture
 
+| ![hla][PIC4] |
+| ---
+| **Pic.4    - Class Diagram using socket implementation**
+
+<!--
 ### RMI emul
 
 The next step has been develop module containing a RMI emulation this because my goal was to minimize effort in migration.
 I have successfully end the work with  reaching a  good level of abstraction
-
+-->
 
 ## LipeRMI : Add reactivity to the framework
 
-Unfortunately The socket promote a synchronous programming model That not fit very well With The asynchronous One promoted by websocket, so l decided to move framework toward Reactive approach Using The reactive-stream standard. Base idea was simply decouple request and response Using events so The request came out from A publisher while response got by subscriber and The entire Lifecycle request/response. Was managed by A completablefuture ( essentially The Java promise)
+Unfortunately The socket promote a synchronous programming model that not fit very well with The asynchronous one promoted by websocket, so I decided to move framework toward **reactive approach** using the [reactive-stream] standard. 
+
+### Design 
+
+Base idea was simply decouple request and response using events so the request came out from a `publisher` while response got by `subscriber` and the entire Lifecycle request/response was managed by a `CompletableFuture` ( essentially The Java promise)
+
+### Reactive protocol abstraction (asynchronous)
+
+As said I've introduced in the `core` module the [reactive-stream] that is a standard for asynchronous stream processing with non-blocking back pressure that encompasses efforts aimed at runtime environments as well as network protocols. It is composed by the following four intefaces :
+
+interface | description
+---- | ----
+`Processor<T,​R>`	| A Processor represents a processing stage—which is both a Subscriber and a Publisher and obeys the contracts of both.
+`Publisher<T>`	| A Publisher is a provider of a potentially unbounded number of sequenced elements, publishing them according to the demand received from its Subscriber(s).
+`Subscriber<T>`	| Will receive call to Subscriber.onSubscribe(Subscription) once after passing an instance of Subscriber to Publisher.subscribe(Subscriber).
+`Subscription`	| A Subscription represents a one-to-one lifecycle of a Subscriber subscribing to a Publisher.
+
+Below the the new `core` architecture that include the `ReactiveClient` abstraction
+
+| ![hla][PIC3] |
+| ---
+| **Pic.3   - Class Diagram with Reactive protocol abstraction**
+
 
 ### Finally Websocket Module
 
-After introduced a reactive-stream Implementation,switching from socket to websocket has been Asimple and rewarding coding exercise.  
-I've used as websocket implementation another open source project xxxx That was simply and effective
+After introduced a [reactive-stream] implementation, switching from socket to websocket has been a simple and rewarding coding exercise.  
+I've used as websocket implementation another open source project [Java-WebSocket] that was simply and effective
 
 
 ## Conclusion
@@ -92,6 +122,11 @@ I've started to migrate legacy project and it is going fine just keep IN mind Th
 [Websocket]: https://xxx.io
 [RMI HTTP tunneling]: https://xxx.io
 [LipeRMI]: https://github.com/jorgenpt/lipermi
+[CheerpJ]: https://docs.leaningtech.com/cheerpj/
+[reactive-stream]: http://www.reactive-streams.org
+[Java-WebSocket]: https://github.com/TooTallNate/Java-WebSocket
 
-[PIC1]: ../assets/draft/hla.png
-[PIC2]: ../assets/draft/hla2.png
+[PIC1]: ../assets/draft/hla-original.png
+[PIC2]: ../assets/draft/hla-core.png
+[PIC3]: ../assets/draft/hla-core-reactive.png
+[PIC4]: ../assets/draft/hla-socket.png
