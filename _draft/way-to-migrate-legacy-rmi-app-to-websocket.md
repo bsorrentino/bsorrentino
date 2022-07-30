@@ -29,9 +29,9 @@ So I've landed on [LipeRMI]  a github hosted project defined as  **a light-weigh
 
 In the picture below there is the **High Level Architecture** as presented in the original project
 
-| ![hla][PIC1] |
+| **Original High Level Architecture**
 | ---
-| **Pic.1 - Original High Level Architecture**
+| ![hla][PIC1] |
 
 As you can see it is pretty simple,  the main component is the `CallHandler` that kwows application interfaces and implementations and provide them both to client and server that directly use socket to made a connection's session between them
 
@@ -60,19 +60,140 @@ In **core** module I've put greater part of original project's code. Taking a lo
 
 In the picture below there is an overview of the new **architecture** allowing protocol abstraction
 
-| ![hla][PIC2] |
+| **Class Diagram with protocol abstraction**
 | ---
-| **Pic.2 - Class Diagram with protocol abstraction**
+| ![hla][PIC2] |
 
 
 ### Socket Module
 
 In **socket** I've simply implemented all the synchronous abstraction provided by **core** essentially reusing code from original project but putting it in the new architecture
 
-| ![hla][PIC4] |
-| ---
-| **Pic.4    - Class Diagram using socket implementation**
 
+| **Class Diagram using socket implementation**
+| ---
+| ![hla][PIC4] |
+
+#### Code Examples
+
+To give you an idea of complexity in using the new LipeRMI implementation below there are some code snippets that I've extracted by working examples
+
+##### Remotable Interfaces
+```java
+
+// Remotable Interface
+public interface IAnotherObject extends Serializable {
+	int getNumber();	
+}
+
+// Remotable Interface
+public interface ITestService extends Serializable {
+
+	public String letsDoIt();
+	
+	public IAnotherObject getAnotherObject();
+	
+	public void throwAExceptionPlease();
+}
+```
+
+##### Sever
+```java
+// Server
+public class TestSocketServer implements Constants {
+
+    // Remotable Interface Implementation
+	static class TestServiceImpl implements ITestService {
+		final CallHandler callHandler;
+		int anotherNumber = 0;
+
+		public TestServiceImpl(CallHandler callHandler) {
+			this.callHandler = callHandler;
+		}
+
+		@Override
+		public String letsDoIt() {
+			log.info("letsDoIt() done.");
+			return "server saying hi";
+		}
+
+		@Override
+		public IAnotherObject getAnotherObject() {
+			log.info("building AnotherObject with anotherNumber= {}", anotherNumber);
+			
+            IAnotherObject ao = new AnotherObjectImpl(anotherNumber++);
+
+            callHandler.exportObject(IAnotherObject.class, ao);
+
+			return ao;
+		}
+
+		@Override
+		public void throwAExceptionPlease() {
+			throw new AssertionError("take it easy!");
+		}
+	}
+
+	public TestSocketServer() throws Exception {
+
+		log.info("Creating Server");
+		SocketServer server = new SocketServer();
+
+		final ITestService service = new TestServiceImpl(server.getCallHandler());
+
+        log.info("Registering implementation");
+        server.getCallHandler().registerGlobal(ITestService.class, service);
+
+        server.start(PORT, GZIPProtocolFilter.Shared);
+
+        log.info("Server listening");
+	
+	}
+
+	public static void main(String[] args) throws Exception{
+		new TestSocketServer();
+	}
+
+
+}
+
+```
+
+##### Client
+
+```java
+// Client
+public class TestSocketClient implements Constants {
+	
+	public static void main(String... args) {
+
+		log.info("Creating Client");
+		try( final SocketClient client = new SocketClient("localhost", PORT, GZIPProtocolFilter.Shared)) {
+
+			log.info("Getting proxy");
+			final ITestService myServiceCaller = client.getGlobal(ITestService.class);
+
+			log.info("Calling the method letsDoIt(): {}", myServiceCaller.letsDoIt());
+
+			try {
+    			log.info("Calling the method throwAExceptionPlease():");
+				myServiceCaller.throwAExceptionPlease();
+			}
+			catch (AssertionError e) {
+				log.info("Catch! {}", e.getMessage());
+			}
+
+			final IAnotherObject ao = myServiceCaller.getAnotherObject();
+
+			log.info("AnotherObject::getNumber(): {}", ao.getNumber());
+							
+		} 
+		
+	}
+	
+}
+
+```
 <!--
 ### RMI emul
 
@@ -84,13 +205,17 @@ I have successfully end the work with  reaching a  good level of abstraction
 
 Unfortunately The socket promote a synchronous programming model that not fit very well with The asynchronous one promoted by websocket, so I decided to move framework toward **reactive approach** using the [reactive-stream] standard. 
 
-### Design 
+### Design guideline 
 
 Base idea was simply decouple request and response using events so the request came out from a `publisher` while response got by `subscriber` and the entire Lifecycle request/response was managed by a `CompletableFuture` ( essentially The Java promise)
 
 ### Reactive protocol abstraction (asynchronous)
 
-As said I've introduced in the `core` module the [reactive-stream] that is a standard for asynchronous stream processing with non-blocking back pressure that encompasses efforts aimed at runtime environments as well as network protocols. It is composed by the following four intefaces :
+As said I've introduced in the `core` module the [reactive-stream] that is a standard for asynchronous stream processing with non-blocking back pressure that encompasses efforts aimed at runtime environments as well as network protocols. 
+
+|  **Class Diagram of reactive stream**
+| ---
+| ![hla][PIC5] |
 
 interface | description
 ---- | ----
@@ -101,20 +226,41 @@ interface | description
 
 Below the the new `core` architecture that include the `ReactiveClient` abstraction
 
-| ![hla][PIC3] |
+| **Class Diagram with Reactive protocol abstraction**
 | ---
-| **Pic.3   - Class Diagram with Reactive protocol abstraction**
+| ![hla][PIC3] |
 
+The implementation of the reactive client is contained by the abstract `ReactiveCLient` class, it is based on the` RemoteCallProcessor` class which is an implementation of the reactive flow `Processor` which acts both as a` Publisher` by publishing the event to trigger the remote call and as a 'Subscriber' by receiving the event containing the result of such remote call. Finally the events' interactions  are coordinated by `ReactiveRemoteCaller`
 
 ### Finally Websocket Module
 
 After introduced a [reactive-stream] implementation, switching from socket to websocket has been a simple and rewarding coding exercise.  
-I've used as websocket implementation another open source project [Java-WebSocket] that was simply and effective
+I've used as websocket implementation another open source project [Java-WebSocket] which is  both simply and effective.
 
+| **Class Diagram using WebSocket implementation**
+| ---
+| ![hla][PIC6] |
 
+As you see from above class diagram there are two new class `WSClientConnectionHandler` and `WSServerConnectionHandler` that manage respectively for client and server the events that coming in and out managing in the same time their consistency over each call.
+
+#### Code Examples
+
+Amazingly the code examples presented above works essentially in the same way also for the websocket, it is enough simply move from `SocketClient` to `LipeRMIWebSocketClient` for the client and from `SocketServer` to `LipeRMIWebSocketServer` thats' all 
+
+```java
+// Client
+ try( final LipeRMIWebSocketClient client = new LipeRMIWebSocketClient(new URI(format( "ws://localhost:%d", PORT)), GZIPProtocolFilter.Shared)) { 
+    ....
+ }
+
+// Server
+final LipeRMIWebSocketServer server = new LipeRMIWebSocketServer();
+...
+```
 ## Conclusion
  
-I've started to migrate legacy project and it is going fine just keep IN mind That it is not effortless but the result is very promising, moreover switching over websocket protocol open new unexpected and exciting scenarios
+I've started to migrate legacy project and it is going fine just keep in mind that it is not effortless but the result is very promising, moreover switching over websocket protocol open new unexpected and exciting scenarios.
+
 
 
 [gRPC]: https://grpc.io
@@ -130,3 +276,5 @@ I've started to migrate legacy project and it is going fine just keep IN mind Th
 [PIC2]: ../assets/draft/hla-core.png
 [PIC3]: ../assets/draft/hla-core-reactive.png
 [PIC4]: ../assets/draft/hla-socket.png
+[PIC5]: ../assets/draft/reactive-stream.png
+[PIC6]:  ../assets/draft/hla-websocket.png
