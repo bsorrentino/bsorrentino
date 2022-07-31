@@ -2,8 +2,8 @@
 
 ## Introduction
 
-Firstly there is one thing that I'd want to underline, that as "migrate" absolutely I don't mean "rewrite" so, if you are interest in such migration, this could be an interesting reading and probably you'd have a new hope to move a java legacy application a step toward its modernization.
-To give you a comprehensive view of the tasks and the implications behind such migration I'll present you a real use case that I've tackle in one of the my job
+First of all there is one thing that I would like to emphasize for the reader, by "migrate" I absolutely do not mean "rewrite" so if you are interested in such "migration", this could be an interesting read and you could probably have a new hope to bring a legacy java application one step closer to its modernization.
+To give you a comprehensive view of which tasks are needed  and the implications behind such migration I'll present you a real use case that I've tackle in one of the my works.
 
 ## Use case
 
@@ -13,17 +13,18 @@ I had an old, but perfectly working, large client/server application based on Sw
 
 1. Move it on the Cloud using Docker/kubernetes
 2. Move toward modern web compliant transport protocol like HTTP / Websocket / gRPC
-Challenges
-1. RMI Tunneling over HTTP
-The first evaluation was to use RMI HTTP tunneling but right from the start it seemed a bit too complicated and since the application heavily uses RMI callbacks, the one-way protocol like HTTP was not suitable for the purpose.
 
-In such sense, other than socket,  Websocket seemed the best fit for purpose protocol, but even if I’ve spent effort to understand how to use Websocket as underlying  protocol of RMI the result were a wast of time
+### Challenge: RMI Tunneling over HTTP
 
-So  another possible solution has been evaluate alternative RMI implementations and i've searching for them trying to identify an Open Source semi-finished product easy to understand and with an flexible and adaptable architecture allowing to plug a new protocol
+The first evaluation was to use [RMI HTTP tunneling] but right from the start it seemed a bit too complicated and since the application heavily uses [RMI Callbacks], the one-way protocol like HTTP was not suitable for the purpose.
 
-So I've landed on [LipeRMI]  a github hosted project defined as  **a light-weight RMI alternative implementation for Java** that seemed to me have the expected requirements. I tested it with a simple but complete application and amazingly it also supported very well the **RMI callbacks**.
+In such sense, other than Socket, Websocket seemed the best fit for purpose protocol, but even if I’ve spent effort to understand how to plug Websocket as underlying protocol of RMI the result were a wast of time.
 
-> The original Implementation was based upon socket but it was lightweight and flexible enough to allow me to be confident in possibility to extend and enhance it to accomplish my needs, and so my journey began 
+So another possible solution has been evaluate alternative RMI implementations and i've searching for them trying to identify an Open Source semi-finished product easy to understand and with an flexible and adaptable architecture allowing to plug a new protocol.
+
+During my internet surfing I've landed on  a github hosted project named [LipeRMI] defined as  **a light-weight RMI alternative implementation for Java** that seemed to me have the expected requirements. I tested it with a simple but complete application and  It worked and amazingly it also supported very well the [RMI Callbacks]. 
+
+Even if the original implementation was based upon socket its architecture was  flexible enough to allow me to be confident in possibility to extend and enhance it to accomplish my needs, and so my journey began 
 
 ## LipeRMI : The original
 
@@ -33,13 +34,13 @@ In the picture below there is the **High Level Architecture** as presented in th
 | ---
 | ![hla][PIC1] |
 
-As you can see it is pretty simple,  the main component is the `CallHandler` that kwows application interfaces and implementations and provide them both to client and server that directly use socket to made a connection's session between them
+As you can see it is pretty simple,  the main component is the `CallHandler` which kwows application interfaces and implementations, both client and server use `CallHandler` and directly involve Sockets to made a connection's session between them.
 
 ## LipeRMI : The Fork
 
-As first step I [forked the project](https://github.com/bsorrentino/lipermi) and refactor it as a **multi module maven project*** allowing better management and make easier both extension and test.
+As a first step I [forked the project](https://github.com/bsorrentino/lipermi) and converted it into a **maven multimodule project** to allow better management by simplifying both the extension model and the tests.
 
-Currently it has the following modules:
+As result of such refactoring I got the following modules:
 
 Module | Summary
 ---- | ----
@@ -224,7 +225,7 @@ interface | description
 `Subscriber<T>`	| Will receive call to Subscriber.onSubscribe(Subscription) once after passing an instance of Subscriber to Publisher.subscribe(Subscriber).
 `Subscription`	| A Subscription represents a one-to-one lifecycle of a Subscriber subscribing to a Publisher.
 
-Below the the new `core` architecture that include the `ReactiveClient` abstraction
+Below the new `core` architecture that include the `ReactiveClient` abstraction
 
 | **Class Diagram with Reactive protocol abstraction**
 | ---
@@ -261,16 +262,18 @@ final LipeRMIWebSocketServer server = new LipeRMIWebSocketServer();
  
 I've started to migrate legacy project and it is going fine just keep in mind that it is not effortless but the result is very promising, moreover switching over websocket protocol open new unexpected and exciting scenarios.
 
+Hope this article can be of help for someone that has the same challenge mine to tackle, in the meanwhile good programming!
 
 
 [gRPC]: https://grpc.io
 [HTTP]: https://xxx.io
 [Websocket]: https://xxx.io
-[RMI HTTP tunneling]: https://xxx.io
+[RMI HTTP tunneling]: https://docs.oracle.com/javase/6/docs/platform/rmi/spec/rmi-arch6.html
 [LipeRMI]: https://github.com/jorgenpt/lipermi
 [CheerpJ]: https://docs.leaningtech.com/cheerpj/
 [reactive-stream]: http://www.reactive-streams.org
 [Java-WebSocket]: https://github.com/TooTallNate/Java-WebSocket
+[RMI Callbacks]: https://docs.oracle.com/cd/E13211_01/wle/rmi/callbak.htm
 
 [PIC1]: ../assets/draft/hla-original.png
 [PIC2]: ../assets/draft/hla-core.png
