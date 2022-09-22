@@ -17,11 +17,11 @@ During **Power Platform** development I use almost exclusively
 
 So I've decided to search for a solution and I landed on this forum topic [Copy/Duplicate a Flow in a Solution]
 that explain how to clone a flow once unpack solution using [PAC].
-Since I've already [enhanced PAC in Nodejs using ZX], I started to implements a new feature in [zx-powerapp-cli].
+Since I've already [enhanced PAC in Nodejs using ZX], I started to implements a new feature in [zx-powerapps-cli].
 
-## Solution: zx-clone-flow command from zx-powerapp-cli package
+## Solution: zx-clone-flow command from zx-powerapps-cli package
 
-Now a new command `zx-clone-flow` is available from the latest version of [zx-powerapp-cli] package. 
+Now a new command `zx-clone-flow` is available from the latest version of [zx-powerapps-cli] package. 
 Usage is very simple once exported a solution from Power Platform Cloud Environment to Local File system (e.g. local git repo)
 using either the macro-command `zx-export-solution` or directly using
 the [PAC]low level ones (`pac solution export` / `pac solution unpack`) it is enough run `zx-clone-flow` providing
@@ -42,7 +42,7 @@ I hope this feature makes Flow development easier as it did for me, in
 the meantime, happy programming and ... enjoy [zx-powerapps-cli]! 👋
 
 
-[zx-powerapp-cli]: https://www.npmjs.com/package/@bsorrentino/zx-powerapps-cli
+[zx-powerapps-cli]: https://www.npmjs.com/package/@bsorrentino/zx-powerapps-cli
 [Copy/Duplicate a Flow in a Solution]: https://powerusers.microsoft.com/t5/Building-Flows/Copy-Duplicate-a-Flow-in-a-Solution/td-p/487483
 [add canvas apps to solution by default]: https://learn.microsoft.com/en-gb/power-apps/maker/canvas-apps/add-app-solution-default
 [enchanced PAC in nodejs using ZX]: https://dev.to/bsorrentino/enhance-cli-with-zx-522i
