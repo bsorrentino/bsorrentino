@@ -1,3 +1,11 @@
+---
+layout: post
+title:  "Powerapps: Clone Flow within Solution"
+date:   2022-09-22 17:00:00 +0200
+description: ow to clone a Powerapps flow within solution using the zx-powerapps-cli
+categories: Powerapps
+---
+
 ## Introduction
 
 In my experience using the **Power Platform** I’ve focused a great part
