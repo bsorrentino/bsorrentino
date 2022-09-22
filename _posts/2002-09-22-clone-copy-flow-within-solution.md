@@ -27,7 +27,7 @@ So I've decided to search for a solution and I landed on this forum topic [Copy/
 that explain how to clone a flow once unpack solution using [PAC].
 Since I've already [enhanced PAC in Nodejs using ZX], I started to implements a new feature in [zx-powerapps-cli].
 
-## Solution: zx-clone-flow command from zx-powerapps-cli package
+## Solution: zx-clone-flow command
 
 Now a new command `zx-clone-flow` is available from the latest version of [zx-powerapps-cli] package. 
 Usage is very simple once exported a solution from Power Platform Cloud Environment to Local File system (e.g. local git repo)
