@@ -36,7 +36,7 @@ Below I’ve recorded a brief video that cover the entire cloning lifecycle from
 [![Clone Powerapps Flow in Solution video](http://img.youtube.com/vi/hkuuyvYP_9w/0.jpg)](https://youtu.be/hkuuyvYP_9w "Clone Powerapps Flow in Solution")
 
 
-## Conclusion  
+## Conclusion
 
 I hope this feature makes Flow development easier as it did for me, in
 the meantime, happy programming and ... enjoy [zx-powerapps-cli]! 👋
