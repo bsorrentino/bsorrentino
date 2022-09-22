@@ -33,7 +33,7 @@ After that you have to import solution to Power Platform Cloud Environment from 
 
 Below I’ve recorded a brief video that cover the entire cloning lifecycle from beginning to the end
 
-[![Clone Powerapps Flow in Solution video](http://img.youtube.com/vi/hkuuyvYP_9w/0.jpg)](https://youtu.be/hkuuyvYP_9w "Clone Powerapps Flow in Solution")
+[![Clone Powerapps Flow in Solution video](http://img.youtube.com/vi/JMHBijiRQc4/0.jpg)](https://youtu.be/JMHBijiRQc4 "Clone Powerapps Flow in Solution")
 
 
 ## Conclusion
@@ -46,6 +46,6 @@ the meantime, happy programming and ... enjoy [zx-powerapps-cli]! 👋
 [Copy/Duplicate a Flow in a Solution]: https://powerusers.microsoft.com/t5/Building-Flows/Copy-Duplicate-a-Flow-in-a-Solution/td-p/487483
 [add canvas apps to solution by default]: https://learn.microsoft.com/en-gb/power-apps/maker/canvas-apps/add-app-solution-default
 [enchanced PAC in nodejs using ZX]: https://dev.to/bsorrentino/enhance-cli-with-zx-522i
-[youtube video]: https://youtu.be/hkuuyvYP_9w
+[youtube video]: https://youtu.be/JMHBijiRQc4
 [PAC]: https://learn.microsoft.com/en-us/power-platform/developer/cli/introduction
 [Microsoft Power Platform CLI (aka PAC)]: https://learn.microsoft.com/en-us/power-platform/developer/cli/introduction
