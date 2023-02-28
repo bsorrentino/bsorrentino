@@ -1,16 +1,22 @@
-# THE POWER OF "JS GENERATORS"
+# The power of "**js generators**"
 
-## generators are old new
+During my dayly work, like every developers, we find out a lots of valuable online material. Sometime it contains tips, code snippets or also complete  tutorials. However, it rarely read articles that open your mind and/or change the development perspective.
 
-## generators are underappreciated
+Luckly I found out an incredible [presentation]([power_of_generators]) from [Anjana Vakil] (and the related [video]([power_of_generators_video])) that pushed me to revaluate a relatively old javascript  feature that I had, until now, understimated that are **generators**.
 
-## generators are actually useful
+Below the summary of the main topics about generators explained through code samples as inspired by [original article]([power_of_generators])
 
-## generators are great teachers 🎓
+## Considerations
 
-## generators are mind-blowing 🤯
+* generators are old but innovative 🚀
+* generators are underappreciated 🤨 
+* generators are actually useful 👍🏻    
+* generators are great teachers 🎓
+* generators are mind-blowing 🤯
+
 ---
-## the basics
+
+## Basics
 
 ### generator is a type of _[iterator]([iterators])_
 has a `.next()` method returning `{ value, done }`
@@ -72,11 +78,11 @@ console.log(letter.toUpperCase());
 [...abcs()] // [ "a", "b", "c" ]
 ```
 
-## Consume Data
+## Generators for **consume data**
 
 ### custom iterables with [@@iterator]([iterable])
 
-### `cardDeck = Object { suits: Array(4), court: Array(4), Symbol(Symbol.iterator): ƒ*() }`
+#### `cardDeck = Object { suits: Array(4), court: Array(4), Symbol(Symbol.iterator): ƒ*() }`
 ```javascript
 cardDeck = ({
     suits: ["♣️", "♦️", "♥️", "♠️"],
@@ -145,9 +151,9 @@ let squares = [
 ```
 `squares = Array(9) [1, 4, 9, 16, 25, 36, 49, 64, 81]`
 
-## recursive iteration with [yield*]
+### recursive iteration with [yield*]
 
-### `binaryTreeNode = ƒ(value)`
+#### `binaryTreeNode = ƒ(value)`
 ```javascript
 function binaryTreeNode(value) {
     let node = { value };
@@ -160,7 +166,7 @@ function binaryTreeNode(value) {
 }
 ```
 
-### `tree = Object {value: "root", leftChild: Object, rightChild: Object, Symbol(Symbol.iterator): ƒ*()}`
+#### `tree = Object {value: "root", leftChild: Object, rightChild: Object, Symbol(Symbol.iterator): ƒ*()}`
 ```javascript
 tree = {
     const root = binaryTreeNode("root");
@@ -183,9 +189,9 @@ Array(6) [
     "leaf R1"
     ]
 ```
-## async iteration with [@@asyncIterator]([asyncIterator])
+### async iteration with [@@asyncIterator]([asyncIterator])
 
-### `getSwapiPagerator = ƒ(endpoint)`
+#### `getSwapiPagerator = ƒ(endpoint)`
 ```javascript
 getSwapiPagerator = (endpoint) =>
     async function* () {
@@ -198,7 +204,7 @@ getSwapiPagerator = (endpoint) =>
         }
     }
 ```    
-### `starWars = Object {characters: Object, planets: Object, ships: Object}`
+#### `starWars = Object {characters: Object, planets: Object, ships: Object}`
 ```javascript
 starWars = ({
     characters: { [Symbol.asyncIterator]: getSwapiPagerator("people") },
@@ -207,7 +213,7 @@ starWars = ({
 })
 ```
 
-### fetch star wars ships
+#### fetch star wars ships
 ```javascript
 {
     const results = [];
@@ -258,9 +264,9 @@ Array(36) [
   35: "V-wing"
 ]
 ```
-> so generators are a great way to produce data
 
-## Produce Data
+## Generators for **produce data**
+so we have understood that generators are a great way to produce data but they can also consume data 
 
 ### _yield_ is a two-way street
 
@@ -369,11 +375,13 @@ run();
 * coroutines & multitasking
 * actor models
 * systems programming
-* functional programming (even m*nads!)
+* functional programming
+
 
 ## Resources
 
-* [The power of js generators]([power of js generators]) by [Anjana Vakil]
+* [The original article]([power_of_generators]) by [Anjana Vakil]
+* [The Power of JS Generators (video)]([power_of_generators_video]) by [Anjana Vakil]
 * [The Miracle of Generators](https://vimeo.com/232221648) by Bodil Stokke
 * [Curious Course on Coroutines and Concurrency (video)](http://www.dabeaz.com/coroutines/) by David Beazley
 * [Generators: The Final Frontier (video)](http://www.dabeaz.com/finalgenerator/) by David Beazley
@@ -384,7 +392,8 @@ run();
 
 
 [Anjana Vakil]: https://twitter.com/AnjanaVakil
-[power of js generators]: (https://observablehq.com/@anjana/the-power-of-js-generators)
+[power_of_generators]: (https://observablehq.com/@anjana/the-power-of-js-generators)
+[power_of_generators_video]: (https://www.youtube.com/watch?v=gu3FfmgkwUc&t=43s)
 [iterators]: https://developer.mozilla.org/en-US/docs/Web/JavaScript/Guide/Iterators_and_Generators#iterators
 [iterable]: https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Iteration_protocols#The_iterable_protocol
 [yield*]: https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Operators/yield*
