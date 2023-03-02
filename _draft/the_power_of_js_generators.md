@@ -19,7 +19,7 @@ Below the summary of the main topics about generators explained through code sam
 ## Basics
 
 ### generator is a type of _[iterator]([iterators])_
-has a `.next()` method returning `{ value, done }`
+It has a `.next()` method returning `{ value:any, done:boolean }` object
 
 ```javascript 
 someIterator.next()
@@ -62,6 +62,7 @@ logger.next(); // running again...
 ```
 
 ### generators are also _[iterable]_
+generator object returned by generator function is iterable
 
 ```javascript
 function* abcs() {
@@ -70,7 +71,7 @@ function* abcs() {
     yield 'c';
 }
 for (let letter of abcs()) {
-console.log(letter.toUpperCase());
+    console.log(letter.toUpperCase());
 }
 // A
 // B
@@ -79,6 +80,7 @@ console.log(letter.toUpperCase());
 ```
 
 ## Generators for **consume data**
+Below we will evaluate how to use generators to consume data
 
 ### custom iterables with [@@iterator]([iterable])
 
@@ -101,7 +103,8 @@ Array(52) [
 "♣️2", "♣️3", "♣️4", "♣️5", "♣️6", "♣️7", "♣️8", "♣️9", "♣️10", "♣️J", "♣️Q", "♣️K", "♣️A", 
 "♦️2", "♦️3", "♦️4", "♦️5","♦️6", "♦️7", "♦️8", "♦️9", "♦️10", "♦️J", "♦️Q", "♦️K", "♦️A",
 "♥️2", "♥️3", "♥️4", "♥️5","♥️6", "♥️7", "♥️8", "♥️9", "♥️10", "♥️J", "♥️Q", "♥️K", "♥️A",
-"♠️2", "♠️3", "♠️4", "♠️5","♠️6", "♠️7", "♠️8", "♠️9", "♠️10", "♠️J", "♠️Q", "♠️K", "♠️A"
+"♠️2", "♠️3", "♠️4", "♠️5","♠️6", "♠️7", "♠️8", "♠️9", "♠️10", "♠️J", "♠️Q", "♠️K", "♠️A" 
+]
 ```
 
 ### lazy evaluation & infinite sequences
@@ -302,13 +305,13 @@ acct.next(50); // { value: 50, done: false }
 acct.next(-10); // { value: 40, done: false }
 acct.next(-60); // { value: "bankrupt!", done: true }
 ```
----
-### generators can **yield control** and get it back later
 
-### generators can function as **coroutines**
+## Generators cooperative features
 
-### passing control back and forth to **cooperate**
----
+* generators can **yield control** and get it back later ✅
+* generators can function as **coroutines** ✅
+* passing control back and forth to **cooperate** ✅
+
 #### Example: Actor-ish message passing!
 
 ```javascript
