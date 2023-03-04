@@ -1,4 +1,11 @@
-# The power of "**js generators**"
+---
+layout: post
+title:  "The power of "js generators" revamped
+date:   2023-03-03 20:05:26 +0200
+categories: git
+---
+
+## Introduction
 
 During my dayly work, like every developers, we find out a lots of valuable online material. Sometime it contains tips, code snippets or also complete  tutorials. However, it rarely read articles that open your mind and/or change the development perspective.
 
@@ -8,7 +15,7 @@ Below the summary of the main topics about generators explained through code sam
 
 ## Considerations
 
-* generators are old but innovative 🚀
+* generators are old but still innovative 🚀
 * generators are underappreciated 🤨 
 * generators are actually useful 👍🏻    
 * generators are great teachers 🎓
@@ -18,7 +25,7 @@ Below the summary of the main topics about generators explained through code sam
 
 ## Basics
 
-### generator is a type of _[iterator]([iterators])_
+### generator object is a type of _[iterator]([iterators])_
 It has a `.next()` method returning `{ value:any, done:boolean }` object
 
 ```javascript 
@@ -31,7 +38,7 @@ someIterator.next()
 ```
 
 ### generator functions return _generator objects_
-`function*` defines a generator function
+`function*` defines a generator function that implictly return a generator object
 
 ```javascript
 function* genFunction() {
@@ -45,7 +52,8 @@ genObject.next();
 // { value: undefined, done: true }
 ```
 
-### `.next()` advances; `yield` pauses; `return` stops
+### generator actions 
+`.next()` advances ▶️; `yield` pauses ⏸️; `return` stops ⏹️
 
 ```javascript
 function* loggerator() {
@@ -62,7 +70,7 @@ logger.next(); // running again...
 ```
 
 ### generators are also _[iterable]_
-generator object returned by generator function is iterable
+generator object returned by generator function behaves like an iterator hence is iterable
 
 ```javascript
 function* abcs() {
@@ -84,7 +92,10 @@ Below we will evaluate how to use generators to consume data
 
 ### custom iterables with [@@iterator]([iterable])
 
-#### `cardDeck = Object { suits: Array(4), court: Array(4), Symbol(Symbol.iterator): ƒ*() }`
+Evaluate how to implement custom iterable objects powerd by generators
+
+#### Example: Create a `CardDeck` object 
+
 ```javascript
 cardDeck = ({
     suits: ["♣️", "♦️", "♥️", "♠️"],
@@ -108,6 +119,10 @@ Array(52) [
 ```
 
 ### lazy evaluation & infinite sequences
+
+Since the generator are lazy evaluated (they weak up only when data is required) we can implement somtehing of awesome like an infinite sequence. 
+
+Below some  examples that make in evidence how is simple an powerful combine generators and iterators
 
 #### `infinityAndBeyond = ƒ*()`
 ```javascript
@@ -145,7 +160,6 @@ function* map(iterable, mapFn) {
     }
 }
 ```
-
 #### square first _N_ integers
 ```javascript
 let squares = [
@@ -155,6 +169,8 @@ let squares = [
 `squares = Array(9) [1, 4, 9, 16, 25, 36, 49, 64, 81]`
 
 ### recursive iteration with [yield*]
+
+It is very interesting that we can yield data in recursive way as shown in example below generating a tree object
 
 #### `binaryTreeNode = ƒ(value)`
 ```javascript
@@ -169,7 +185,8 @@ function binaryTreeNode(value) {
 }
 ```
 
-#### `tree = Object {value: "root", leftChild: Object, rightChild: Object, Symbol(Symbol.iterator): ƒ*()}`
+#### `tree = Object { value, leftChild, rightChild }`
+
 ```javascript
 tree = {
     const root = binaryTreeNode("root");
@@ -193,6 +210,10 @@ Array(6) [
     ]
 ```
 ### async iteration with [@@asyncIterator]([asyncIterator])
+
+And, of course, could not be missed compliance of generators with asynchronous iterations 💪 
+
+In the example below we will fetch asynchronusly starwars ships names from web using [async iterator]([asyncIterator]) powered by generator
 
 #### `getSwapiPagerator = ƒ(endpoint)`
 ```javascript
@@ -269,11 +290,12 @@ Array(36) [
 ```
 
 ## Generators for **produce data**
-so we have understood that generators are a great way to produce data but they can also consume data 
 
-### _yield_ is a two-way street
+so we have understood that generators are a great way to produce data but they can also consume data 😏
 
-pass in a value with `.next(input)`
+### keep in mind that _yield_ is a two-way street
+
+It is enough pass in a value with  `.next(input)` 😎. See example below 
 
 ```javascript
 function* listener() {
@@ -290,6 +312,8 @@ l.next('blah blah'); // heard: blah blah
 ```
 
 ### generators remember state - **state machines**
+
+Like classical javascript function within generator function's scope we can store a state.
 
 ```javascript
 function* bankAccount() {
@@ -308,11 +332,15 @@ acct.next(-60); // { value: "bankrupt!", done: true }
 
 ## Generators cooperative features
 
+Summarizing we can say that generator funcions are perfect enabler for cooperative work and in particular :
+
 * generators can **yield control** and get it back later ✅
 * generators can function as **coroutines** ✅
-* passing control back and forth to **cooperate** ✅
+* generators allow to pass control back and forth to **cooperate** ✅
 
-#### Example: Actor-ish message passing!
+### Example: Actor-ish message passing!
+
+This last example is simple implementation of an actor based system based on a shared queue
 
 ```javascript
 let players = {};
@@ -380,6 +408,8 @@ run();
 * systems programming
 * functional programming
 
+I think generator function is a powerful tool in javascript eco-system  that must be taken into consideration.
+I hope this can be useful like has been to me, in the meantime ** happy coding ** 👋
 
 ## Resources
 
