@@ -1,6 +1,6 @@
 ---
 layout: post
-title:  "The power of "js generators" revamped
+title:  "The power of 'js generators' revamped"
 date:   2023-03-03 20:05:26 +0200
 categories: git
 ---
