@@ -7,7 +7,7 @@ categories: git
 
 ## Introduction
 
-During my dayly work, like every developers, we find out a lots of valuable online material. Sometime it contains tips, code snippets or also complete  tutorials. However, it rarely read articles that open your mind and/or change the development perspective.
+During my daily work, like every developer, we discover a lot of precious online material. Sometimes it contains suggestions, fragments of code or even complete tutorials. However, rarely read articles that open your mind and/or change the development prospect.
 
 Luckly I found out an incredible [presentation]([power_of_generators]) from [Anjana Vakil] (and the related [video]([power_of_generators_video])) that pushed me to revaluate a relatively old javascript  feature that I had, until now, understimated that are **generators**.
 
