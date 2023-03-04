@@ -430,5 +430,4 @@ I hope this can be useful like has been to me, in the meantime ** happy coding *
 [iterators]: https://developer.mozilla.org/en-US/docs/Web/JavaScript/Guide/Iterators_and_Generators#iterators
 [iterable]: https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Iteration_protocols#The_iterable_protocol
 [yield*]: https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Operators/yield*
-[asyncIterator]: 
-https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Symbol/asyncIterator
+[asyncIterator]: https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Symbol/asyncIterator
