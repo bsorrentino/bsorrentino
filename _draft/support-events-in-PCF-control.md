@@ -62,7 +62,7 @@ For 1st party / 3rd party PCF control build with tooling, See **4. Usage Example
 ```xml
 <?xml version="1.0" encoding="utf-8" ?>
 <manifest>
-  <control namespace="Microsoft.CoreControls" constructor="Button" version="0.2.0" display-name-key="Button_Di
+  <control namespace="Microsoft.CoreControls" constructor="Button" version="0.2.0" display-name-key="Button_Control">
     <!-- snippet -->
     <!-- Declare 'OnClick' event in the manfiest -->
     <event name="OnClick" display-name-key="CC_OnClick" description-key="CC_OnClick_Desc"/>
@@ -97,7 +97,7 @@ public updateView(context: IPropBag<IInputs>): VirtualComponent {
 ```xml
 <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
 <manifest>
-  <control namespace="SampleNamespace" constructor="TSIFrameControl" version="1.1.0" display-name-key="TS_IFra
+  <control namespace="SampleNamespace" constructor="TSIFrameControl" version="1.1.0" display-name-key="TS_IFrameControl">
  <!-- snippet -->
         <!-- Declare 2 custom events and 1 common-event in the manifest -->
  <event name="OnTest" display-name-key="CC_OnTest" description-key="CC_OnTest_Desc" hidden="false"/>
