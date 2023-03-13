@@ -1,3 +1,13 @@
+## swift-generate-references-table-from-code.md
+
+in maintaining open source projects the README plays more and more a leading role. A well done README attracts developers and make them more confident of its quality and encourage its usage.
+
+For this reason I spent time to understand how improve README content, release after release. Obviously refine README content  is not effortless and relying on a well defined template could help to simplify work.
+
+In this article I'd like to share with you how to generate a complete references list to put in your README in automatic way. This article referes to Swift based projects but I' think that the idea could be applied to projects developed in other programming languages.
+
+
+
 # swift-comments-parser
 
 Swift language parser to extract meaningful infos from comments to enrich the README
