@@ -6,11 +6,11 @@ For this reason I spent time to understand how improve README content, release a
 
 In this article I'd like to share with you how to generate a complete references list to put in your README in automatic way. 
 
-### Idea
+### The Idea
 
 The Idea is to **add comments in your code referring to useful links** that inspired or helped you to solve a problem (e.g. stackoverflow, blogs, etc...) and provide a  comment parser program ables to collect such links and format them in a references list as result.
 
-> 👉 This article referes to **[Swift] based projects** but the idea could be applied to projects developed in other programming languages.
+> 👉 This article referes to **[Swift based projects]([Swift])** but the idea could be applied to projects developed in other programming languages.
 
 ### The Abstract Syntax Tree ([AST]) 
 
@@ -21,21 +21,21 @@ The [AST] is a tree representation of the abstract syntactic structure of source
 
 ### Defining a <u>comment convention</u>
 
-### Developing a <u>comment parser application</u>
-
-
-----
-
-Swift language parser to extract meaningful infos from comments to enrich the README
-
-## Usage
-
 ```swift
 //  inspired by [How to convert a SwiftUI view to an image](https://www.hackingwithswift.com/quick-start/swiftui/how-to-convert-a-swiftui-view-to-an-image)
 extension View {
 
 }
 ```
+
+### Developing a <u>comment parser application</u>
+
+_TODO_
+
+----
+
+Swift language parser to extract meaningful infos from comments to enrich the README
+
 
 [AST]: https://en.wikipedia.org/wiki/Abstract_syntax_tree
 [Swift]: https://www.swift.org
