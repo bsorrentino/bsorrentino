@@ -44,18 +44,143 @@ In the case of [AST], visitor will be notified on every language syntax element 
 
 ## A Swift MacOS Comment Parser Application  
 
-As said my first implementation is in [Swift] as a MacOS desktop application based on [SwiftUI] framework.Below I'll share with you the main ....
+As said my first implementation is in [Swift] as a MacOS desktop application based on [SwiftUI] framework. Below I'll share with you the main parts of the implementation 
 
 ### 1. register visitor to handle comments detection 
 
+```swift
+import SwiftSyntax
+import SwiftSyntaxParser
+
+/// Visitor 
+final class CommandVisitor: SyntaxVisitor {
+    /// reference storage
+    private(set) var references = Set<String>()
+    
+    init() { super.init(viewMode: .sourceAccurate) }
+
+    /// token syntax handler
+    override func visitPost(_ node: TokenSyntax) {
+        parseComments( node.leadingTrivia, prefix: "leading" )
+        parseComments( node.trailingTrivia, prefix: "trailing" )
+    }
+}
+
+```
 ### 2. run traverse of source code structure for each source file starting from the project folder 
+
+```swift
+
+
+public func parseComment( swiftFiles: AsyncStream<URL>  ) async throws -> Set<String> {
+
+    let visitor = CommandVisitor()
+
+    for await fileUrl in swiftFiles {
+        let fileContents = try String(contentsOf: fileUrl, encoding: .utf8)
+
+        // Parse the source code in sourceText into a syntax tree
+        let sourceFile: SourceFileSyntax = try SyntaxParser.parse(source: fileContents)
+
+        visitor.walk(sourceFile)
+    }
+       
+    return visitor.references
+}
+
+```
 
 ### 3. read comment content
 
+```swift
+
+extension CommandVisitor {      
+    /// select only comments
+    func parseComments( _ trivia: Trivia, prefix: String) {
+         for t in trivia {
+             switch t {
+             case   .lineComment(let comment),
+                    .docLineComment(let comment),
+                    .blockComment(let comment),
+                    .docBlockComment(let comment):
+                 if let match = comment.firstMatch(of: regexComment ) {
+                     references.insert(String(match.1))
+                 }
+                 break
+             default:
+                 break
+             }
+         }
+     }
+}
+
+```
+
 ### 4. verify if it is a link 
+
+```swift
+import RegexBuilder
+
+// [URL regex that starts with HTTP or HTTPS](https://uibakery.io/regex-library/url)
+// /^https?:\/\/(?:www\.)?[-a-zA-Z0-9@:%._\+~#=]{1,256}\.[a-zA-Z0-9()]{1,6}\b(?:[-a-zA-Z0-9()@:%_\+.~#?&\/=]*)$/
+let regexUrl = Regex {
+    "http"
+    Optionally { "s" }
+    "://"
+    Optionally { "www." }
+    Repeat(1...256) {
+        CharacterClass(
+            .anyOf("-@:%._+~#="),
+            ("a"..."z"),
+            ("A"..."Z"),
+            ("0"..."9"))
+    }
+    "."
+    Repeat(1...6) {
+        CharacterClass(
+            .anyOf("()"),
+            ("a"..."z"),
+            ("A"..."Z"),
+            ("0"..."9"))
+    }
+    Anchor.wordBoundary
+    ZeroOrMore {
+        CharacterClass(
+            .anyOf("-()@:%_+.~#?&/="),
+            ("a"..."z"),
+            ("A"..."Z"),
+            ("0"..."9"))
+    }
+}
+
+let anyExceptOpenSquareBracket = CharacterClass.anyOf("[").inverted
+let regexComment = Regex {
+    Capture {
+        Regex {
+            "["
+            OneOrMore(anyExceptOpenSquareBracket)
+            "]"
+            ZeroOrMore(.whitespace)
+            "("
+            Capture { regexUrl }
+            ")"
+        }
+    }
+}
+
+```
 
 ### 5. if yes then store it in a reference list
 
+```swift
+
+let result = await parseComment(at: self.fileUrl  )
+
+comments = result.map( { "* \($0)" } )
+
+
+```
+## Conclusion
 
 
 [AST]: https://en.wikipedia.org/wiki/Abstract_syntax_tree
