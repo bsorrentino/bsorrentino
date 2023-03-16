@@ -42,7 +42,7 @@ In the case of [AST], visitor will be notified on every language syntax element 
 1. verify if it is a link 
 1. if yes then store it in a reference list 
 
-## A Swift MacOS Comment Parser Application  
+## A Swift MacOS Comment Parser Desktop Application  
 
 As said my first implementation is in [Swift] as a MacOS desktop application based on [SwiftUI] framework. Below I'll share with you the main parts of the implementation 
 
@@ -118,11 +118,25 @@ extension CommandVisitor {
 
 ### 4. verify if it is a link 
 
+To verify if comment content contains a link we use the ever-green [regular expression]([regex]). Such expression will be composed by one expression to recognize link text and another one to recognize a URL.
+
+/\[(.+[^\[])\]\(https?:\/\/(?:www\.)?[-a-zA-Z0-9@:%._\+~#=]{1,256}\.[a-zA-Z0-9()]{1,6}\b(?:[-a-zA-Z0-9()@:%_\+.~#?&\/=]*)\)/
+
+epression to recognize link text
+```
+/\[(.+[^\[])\]/
+```
+
+exression to recognize URL ( inspired by [URL regex that starts with HTTP or HTTPS](https://uibakery.io/regex-library/url) )
+```
+/\(https?:\/\/(?:www\.)?[-a-zA-Z0-9@:%._\+~#=]{1,256}\.[a-zA-Z0-9()]{1,6}\b(?:[-a-zA-Z0-9()@:%_\+.~#?&\/=]*)\)/
+```
+
+In the new release 5.7 of [Swift] ....
+
 ```swift
 import RegexBuilder
 
-// [URL regex that starts with HTTP or HTTPS](https://uibakery.io/regex-library/url)
-// /^https?:\/\/(?:www\.)?[-a-zA-Z0-9@:%._\+~#=]{1,256}\.[a-zA-Z0-9()]{1,6}\b(?:[-a-zA-Z0-9()@:%_\+.~#?&\/=]*)$/
 let regexUrl = Regex {
     "http"
     Optionally { "s" }
@@ -190,3 +204,4 @@ comments = result.map( { "* \($0)" } )
 [visitor]: https://en.wikipedia.org/wiki/Visitor_pattern
 [cli]: https://en.wikipedia.org/wiki/Command-line_interface
 [SwiftUI]: https://developer.apple.com/xcode/swiftui/
+[regex]: https://en.wikipedia.org/wiki/Regular_expression
