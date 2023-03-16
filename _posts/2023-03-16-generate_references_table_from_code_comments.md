@@ -1,3 +1,10 @@
+---
+layout: post
+title:  "Generate References Table From Code Comments"
+date:   2023-03-16 15:00:00 +0200
+categories: tools
+---
+
 ## Generate References Table From Code Comments 🤔
 
 In maintaining open source projects the README plays more and more a leading role. A well done README attracts developers and makes them more confident of its quality and encourages its usage.
