@@ -36,17 +36,19 @@ Now we have to define what will be the format of link in our comment. Since the 
 Once we have identified [AST] framework develop an application either desktop or simply a [CLI]  that use it is pretty straightforward. Typically every [AST] framework is based on [Visitor Pattern]([visitor]). [Visitor Pattern]([visitor]) essentially allow to register a visitor on a client that, when will traverse of the objects structure, will be notified on every significant element found.
 
 In the case of [AST], visitor will be notified on every language syntax element detected ( also comments ) so to develop comment parser application we have to:
-1. register visitor to handle comments detection 
-1. run traverse of source code structure for each source file starting from the project folder
+1. declare visitor to handle comments detection 
 1. read comment content
-1. verify if it is a link 
-1. if yes then store it in a reference list 
+   * verify if it is a link 
+   * if yes then store it in a reference list 
+1. run traverse of source code structure for each source file starting from the project folder
 
 ## A Swift MacOS Comment Parser Desktop Application  
 
 As said my first implementation is in [Swift] as a MacOS desktop application based on [SwiftUI] framework. Below I'll share with you the main parts of the implementation 
 
-### 1. register visitor to handle comments detection 
+### 1. declare visitor to handle comments detection 
+
+To define a Visitor compliant with [Swift-Syntax] framework we have to inherit from [SyntaxVisitor] and override the required `visitPost( node: <syntax element> )` methods as showed below
 
 ```swift
 import SwiftSyntax
@@ -61,49 +63,33 @@ final class CommandVisitor: SyntaxVisitor {
 
     /// token syntax handler
     override func visitPost(_ node: TokenSyntax) {
+        // select comments
         parseComments( node.leadingTrivia, prefix: "leading" )
         parseComments( node.trailingTrivia, prefix: "trailing" )
     }
 }
 
 ```
-### 2. run traverse of source code structure for each source file starting from the project folder 
 
-```swift
+### 2. read comment content
 
-
-public func parseComment( swiftFiles: AsyncStream<URL>  ) async throws -> Set<String> {
-
-    let visitor = CommandVisitor()
-
-    for await fileUrl in swiftFiles {
-        let fileContents = try String(contentsOf: fileUrl, encoding: .utf8)
-
-        // Parse the source code in sourceText into a syntax tree
-        let sourceFile: SourceFileSyntax = try SyntaxParser.parse(source: fileContents)
-
-        visitor.walk(sourceFile)
-    }
-       
-    return visitor.references
-}
-
-```
-
-### 3. read comment content
+Once we have captured the candidate `TokenSyntax` we select only the comments, get they content, verify if they are links and, if they are, we store them in a collection  
 
 ```swift
 
 extension CommandVisitor {      
-    /// select only comments
+    
+    /// process comments
     func parseComments( _ trivia: Trivia, prefix: String) {
          for t in trivia {
-             switch t {
+             switch t { // select only comments
              case   .lineComment(let comment),
                     .docLineComment(let comment),
                     .blockComment(let comment),
                     .docBlockComment(let comment):
-                 if let match = comment.firstMatch(of: regexComment ) {
+                 // verify if it is a link (see next paragraph)
+                 if let match = comment.firstMatch(of: regexComment  ) {
+                     // if yes then store it in a reference list 
                      references.insert(String(match.1))
                  }
                  break
@@ -116,23 +102,28 @@ extension CommandVisitor {
 
 ```
 
-### 4. verify if it is a link 
+#### In depth analysis on how verify presence of link in comments
 
-To verify if comment content contains a link we use the ever-green [regular expression]([regex]). Such expression will be composed by one expression to recognize link text and another one to recognize a URL.
+To verify if comment's content contains a link we use the ever-green [regular expression]([regex]). Such expression will be composed by one expression to recognize link text and another one to recognize a URL.
 
 /\[(.+[^\[])\]\(https?:\/\/(?:www\.)?[-a-zA-Z0-9@:%._\+~#=]{1,256}\.[a-zA-Z0-9()]{1,6}\b(?:[-a-zA-Z0-9()@:%_\+.~#?&\/=]*)\)/
 
-epression to recognize link text
+#### expression to recognize link text
 ```
 /\[(.+[^\[])\]/
 ```
 
-exression to recognize URL ( inspired by [URL regex that starts with HTTP or HTTPS](https://uibakery.io/regex-library/url) )
+#### expression to recognize URL ( inspired by [URL regex that starts with HTTP or HTTPS]([regex-url]) )
 ```
 /\(https?:\/\/(?:www\.)?[-a-zA-Z0-9@:%._\+~#=]{1,256}\.[a-zA-Z0-9()]{1,6}\b(?:[-a-zA-Z0-9()@:%_\+.~#?&\/=]*)\)/
 ```
 
-In the new release 5.7 of [Swift] ....
+#### expression complete
+```
+/\[(.+[^\[])\]\(https?:\/\/(?:www\.)?[-a-zA-Z0-9@:%._\+~#=]{1,256}\.[a-zA-Z0-9()]{1,6}\b(?:[-a-zA-Z0-9()@:%_\+.~#?&\/=]*)\)/
+```
+
+Since in the new release 5.7 of [Swift] has been introduced a **result builder-powered [DSL]** for creating regular expressions ( [SE-0351] ) so we have generated [DSL] from previous regular expression
 
 ```swift
 import RegexBuilder
@@ -168,6 +159,8 @@ let regexUrl = Regex {
 }
 
 let anyExceptOpenSquareBracket = CharacterClass.anyOf("[").inverted
+
+// final regular expression
 let regexComment = Regex {
     Capture {
         Regex {
@@ -184,17 +177,55 @@ let regexComment = Regex {
 
 ```
 
-### 5. if yes then store it in a reference list
+### 3. run traverse of source code structure for each source file starting from the project folder 
+
+Lastly we have to walk through source files within a project folder and parse each of them gathering results and formatting them in a reference list
 
 ```swift
 
-let result = await parseComment(at: self.fileUrl  )
+/// parse the source files comments and collect detected links  
+public func parseComment( in swiftFiles: AsyncStream<URL>  ) async throws -> Set<String> {
 
-comments = result.map( { "* \($0)" } )
+    let visitor = CommandVisitor()
 
+    for await fileUrl in swiftFiles {
+        let fileContents = try String(contentsOf: fileUrl, encoding: .utf8)
+
+        // Parse the source code in sourceText into a syntax tree
+        let sourceFile: SourceFileSyntax = try SyntaxParser.parse(source: fileContents)
+
+        visitor.walk(sourceFile)
+    }
+       
+    return visitor.references
+}
+
+//  walk through source files within a project folder
+let swiftFiles = walkDirectory(at: path).filter { $0.pathExtension == "swift" }
+
+let result = await parseComment(of: swiftFiles  )
+
+// formatting result in a reference list
+let reference_list = result.map( { "* \($0)" } )
+
+print( reference_list )
 
 ```
+
 ## Conclusion
+
+Source code is the root-of-truth of every implementation so every kind of information you can extract from it represent a real snapshot of your work in that time. In this article I've share with you the possibility to add value to your comments so you are pushed to keep track of references during development directly in code with a minimum effort that  at the end can become very useful reference list that you can put in the README (or whereever you prefer)
+
+I hope this can be useful like has been to me, in the meantime **happy coding** 👋
+
+
+## References
+
+* [Async sequences, streams, and Combine](https://www.swiftbysundell.com/articles/async-sequences-streams-and-combine/)
+* [Getting started with RegexBuilder on Swift](https://blog.logrocket.com/getting-started-regexbuilder-swift/)
+* [Regular expressions Available from Swift 5.7](https://www.hackingwithswift.com/swift/5.7/regexes)
+* [URL regex that starts with HTTP or HTTPS](https://uibakery.io/regex-library/url)
+* [An overview of SwiftSyntax](https://medium.com/@lucianoalmeida1/an-overview-of-swiftsyntax-cf1ae6d53494)
 
 
 [AST]: https://en.wikipedia.org/wiki/Abstract_syntax_tree
@@ -205,3 +236,7 @@ comments = result.map( { "* \($0)" } )
 [cli]: https://en.wikipedia.org/wiki/Command-line_interface
 [SwiftUI]: https://developer.apple.com/xcode/swiftui/
 [regex]: https://en.wikipedia.org/wiki/Regular_expression
+[SE-0351]: https://github.com/apple/swift-evolution/blob/main/proposals/0351-regex-builder.md
+[DSL]: https://en.wikipedia.org/wiki/Domain-specific_language
+[SyntaxVisitor]: https://swiftinit.org/reference/swift-syntax/swiftsyntax/syntaxvisitor
+[regex-url]: https://uibakery.io/regex-library/url
