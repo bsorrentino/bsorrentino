@@ -49,7 +49,7 @@ In the case of [AST], visitor will be notified on every language syntax element 
    * if yes then store it in a reference list 
 1. run traverse of source code structure for each source file starting from the project folder
 
-## A Swift MacOS Comment Parser Desktop Application  
+## A MacOS comment parser application  
 
 As said my first implementation is in [Swift] as a MacOS desktop application based on [SwiftUI] framework. Below I'll share with you the main parts of the implementation 
 
