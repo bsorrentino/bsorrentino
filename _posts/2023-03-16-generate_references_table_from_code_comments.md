@@ -17,18 +17,18 @@ In this article I'd like to share with you how to generate a complete references
 
 The Idea is to **add comments in your code referring to useful links** that inspired or helped you to solve a problem (e.g. [stackoverflow], blogs, etc...) and provide a comment parser application able to collect such links in a "<u>references list</u>" document. below I'll describe step by step the analysis, design and a bit of implementation (see note below 👇) of an application for generate a references table in markdown format.
 
-> 👉 This article refers to **[Swift based projects]([Swift])** but the idea could be applied to projects developed in other programming languages.
+> 👉 This article refers to **[Swift based projects][Swift]** but the idea could be applied to projects developed in other programming languages.
 
-### Step 1 - The Abstract Syntax Tree ([AST]) 
+### Step 1 - The Abstract Syntax Tree [AST] 
 
 The first step is to evaluate the possibility to parse comments in the code of your chosen programming language so, for this reason you have to search for a library that is able to parse your code and produce an [AST] representation.
 The [AST] is a tree representation of the abstract syntactic structure of source code written in a programming language 
 
-> 👉 For [Swift programming language]([Swift]) the library chosen is [Swift-Syntax] the Apple supported library for parsing, inspecting, generating, and transforming [Swift source code]([Swift]). 
+> 👉 For [Swift programming language][Swift] the library chosen is [Swift-Syntax] the Apple supported library for parsing, inspecting, generating, and transforming [Swift source code][Swift]. 
 
 ### Step 2 - Defining a <u>comment convention</u>
 
-Now we have to define what will be the format of link in our comment. Since the target is to produce markdown the easy way is to use [markdown format]([md-link]) itself that is `[ <link text> ]( <URL> )`.
+Now we have to define what will be the format of link in our comment. Since the target is to produce markdown the easy way is to use [markdown format][md-link] itself that is `[ <link text> ]( <URL> )`.
 
 > A [Swift] example
 >```swift
@@ -40,7 +40,7 @@ Now we have to define what will be the format of link in our comment. Since the 
 
 ### Step 3 - Developing a <u>comment parser application</u>
 
-Once we have identified [AST] framework, developing an application either desktop or simply a [CLI]  that use it is pretty straightforward. Typically every [AST] framework is based on [Visitor Pattern]([visitor]). [Visitor Pattern]([visitor]) essentially allows to register a visitor on a client that, when traversing the object's structure, will be notified on every significant element found.
+Once we have identified [AST] framework, developing an application either desktop or simply a [CLI]  that use it is pretty straightforward. Typically every [AST] framework is based on [Visitor Pattern][visitor]. [Visitor Pattern][visitor] essentially allows to register a visitor on a client that, when traversing the object's structure, will be notified on every significant element found.
 
 In the case of [AST], visitor will be notified on every language syntax element detected ( also comments ) so to develop comment parser application we have to:
 1. declare visitor to handle comments detection 
@@ -111,14 +111,14 @@ extension CommandVisitor {
 
 #### In depth analysis on how verify presence of link in comments
 
-To verify if the comment's content contains a link we use the ever-green [regular expression]([regex]). Such an expression will be composed by one expression to recognize link text and another one to recognize a URL.
+To verify if the comment's content contains a link we use the ever-green [regular expression][regex]. Such an expression will be composed by one expression to recognize link text and another one to recognize a URL.
 
 #### expression to recognize link text
 ```
 /\[(.+[^\[])\]/
 ```
 
-#### expression to recognize URL ( inspired by [URL regex that starts with HTTP or HTTPS]([regex-url]) )
+#### expression to recognize URL ( inspired by [URL regex that starts with HTTP or HTTPS][regex-url] )
 ```
 /\(https?:\/\/(?:www\.)?[-a-zA-Z0-9@:%._\+~#=]{1,256}\.[a-zA-Z0-9()]{1,6}\b(?:[-a-zA-Z0-9()@:%_\+.~#?&\/=]*)\)/
 ```
@@ -221,7 +221,7 @@ print( reference_list )
 
 Source code is the root-of-truth of every implementation so every kind of information you can extract from it represents a real snapshot of your work in that time. In this article I've share with you the possibility to add value to your comments so you are pushed to keep track of references during development directly in code with a minimum effort that at the end can become very useful reference list that you can put in the README (or where ever you prefer)
 
-If you are interested on using my application or go in details of code 🧐 it is on [Github]([project]) 
+If you are interested on using my application or go in details of code 🧐 it is on [Github][project] 
 
 I hope this can be useful like has been to me, in the meantime **happy coding** 👋
 
