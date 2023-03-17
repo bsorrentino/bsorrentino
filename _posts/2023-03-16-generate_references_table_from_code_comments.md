@@ -9,7 +9,7 @@ categories: tools
 
 In maintaining open source projects the README plays more and more a leading role. A well done README attracts developers and makes them more confident of its quality and encourages its usage.
 
-For this reason I spent time understanding how to improve README content, release after release. Obviously, refined README content  is not effortless and relying on a well defined template could help to simplify work.
+For this reason I spent time understanding how to improve README content, release after release. Obviously, refining README content  is not effortless and relying on a well defined template could help to simplify work.
 
 In this article I'd like to share with you how to generate a complete references list to put in your README in an automatic way. 
 
