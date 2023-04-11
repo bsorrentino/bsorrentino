@@ -24,7 +24,7 @@ I've started with an experimental branch using [OpenAI] api through the swift pa
 
 ## Conclusion
 
-The new release of the [PlantUML App fo iPad][PlantUMLapp] with [AI] integration is still in development but I couldn't wait to share with you the first amazing outcomes. for this reason, I've realized a short [video] that contains also a fun introduction of what I call "**AI WARS**". 
+The new release of the [PlantUML App fo iPad][PlantUMLapp] with [AI] integration is still in development but I couldn't wait to share with you the first amazing outcomes. for this reason, I've realized a short [video] that contains a simple but meaningful use case 
 
 Please take a look 👀 and let me know. In the meanwhile, ... enjoy the [AI]🧐👋 
 
@@ -34,4 +34,4 @@ Please take a look 👀 and let me know. In the meanwhile, ... enjoy the [AI]�
 [PlantUMLapp]: https://apps.apple.com/us/app/plantuml-app/id6444164984
 [OpenAI]: https://openai.com
 [OpenAIKit]: https://github.com/marcodotio/OpenAIKit.git
-[video]:  https://
+[video]:  https://youtu.be/4FiPYPe1VsY
