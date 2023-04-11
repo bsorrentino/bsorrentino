@@ -1,4 +1,10 @@
-# PlantUML meets GPT on iPad
+---
+layout: post
+title:  "PlantUML meets OpenAI on iPad"
+date:   2023-04-11 15:00:00 +0200
+categories: app
+---
+# PlantUML meets OpenAI on iPad
 
 ## <u>ChatGPT</u> and the rise of [AI] for everyone
 
