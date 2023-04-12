@@ -32,6 +32,8 @@ I've started with an experimental branch using [OpenAI] api through the swift pa
 
 The new release of the [PlantUML App fo iPad][PlantUMLapp] with [AI] integration is still in development but I couldn't wait to share with you the first amazing outcomes. for this reason, I've realized a short [video] that contains a simple but meaningful use case 
 
+[![IMAGE_ALT](https://youtu.be/4FiPYPe1VsY/0.jpg)](https://youtu.be/4FiPYPe1VsY)
+
 Please take a look 👀 and let me know. In the meanwhile, ... enjoy the [AI]🧐👋 
 
 [ChatGPT]: https://openai.com/blog/chatgpt
