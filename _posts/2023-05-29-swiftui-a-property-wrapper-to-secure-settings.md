@@ -77,7 +77,7 @@ Such implementation relies on a KeychainWrapper implementation (code [here](http
 
 Below a classic usage sample for storing a password
 
-```Swift
+```swift
 
 class OpenAIService : ObservableObject {                            
                                                                       
