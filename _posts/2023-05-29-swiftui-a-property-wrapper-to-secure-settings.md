@@ -21,16 +21,16 @@ like Keychain.
 ## SwiftUI solution
 
 SwiftUI provides a powerful feature named [property wrapper](https://www.hackingwithswift.com/quick-start/swiftui/all-swiftui-property-wrappers-explained-and-compared)
-and there is a built-in one [`@AppStorage`][AppStorage] that reads and writes values from UserDefaults to manage User/App settings. This is a useful feature but the problem here is that such settings are not secured, for this reason I've developed a new property wrapper named `@AppSecureStorage`
+and there is a built-in one [`@AppStorage`][AppStorage] that reads and writes values from [UserDefaults] to manage User/App settings. This is a useful feature but the problem here is that such settings are not secured, for this reason I've developed a new property wrapper named `@AppSecureStorage`
 
 ### AppSecureStorage 
 
 `@AppSecureStorage` is designed to make app data security and privacy easy for developers. The new wrapper is like an alter-ego of the existing
-[`@AppStorage`][AppStorage], offering similar features taking advantage of the built-in security features of the hardware-encrypted keychain storage.
+[`@AppStorage`][AppStorage], offering similar features taking advantage of the built-in security features of the [hardware-encrypted keychain storage][keychain].
 
-Using AppSecureStorage, developers can securely store private user data, such as passwords and/or authentication tokens, without having to worry about managing the data manually or setting up an elaborate authentication structure.
+Using `@AppSecureStorage`, developers can securely store private user data, such as passwords and/or authentication tokens, without having to worry about managing the data manually or setting up an elaborate authentication structure.
 
-All data is stored in the secure hardware encrypted keychain, making it difficult for attackers to access. Of course, developers aren't the only ones who will benefit from this new feature. Consumers can rest assured that their app preferences and private information are secure and can't be accessed by malicious actors.
+All data are stored in the [secure hardware encrypted keychain][keychain], making it difficult for attackers to access, assuring both developer and consumers that their app preferences and private information be secure and can't be accessed by malicious actors.
 
 ### Implementation 
 
@@ -141,7 +141,7 @@ struct OpenAIView : View {
 
 ### Conclusion
 
-Securely storing sensitive information, such as API keys, in iOS apps could be an issue; the property wrapper `@AppSecureStorage` tries to solve this problem by leveraging the built-in security features of the hardware-encrypted keychain storage.
+Securely storing sensitive information, such as API keys, in iOS apps could be an issue; the property wrapper `@AppSecureStorage` tries to solve this problem by leveraging the built-in security features of the [hardware-encrypted keychain storage][keychain].
 
 By using this wrapper, developers can securely store private user data, such as passwords or authentication tokens, without the need for manual management or complex authentication structures.
 
@@ -153,6 +153,8 @@ Hope this could be useful for you, in the meanwhile: happy coding 👋
 * [Secure Secrets in iOS app](https://medium.com/swift-india/secure-secrets-in-ios-app-9f66085800b4)
 * [All SwiftUI property wrappers explained and compared](https://www.hackingwithswift.com/quick-start/swiftui/all-swiftui-property-wrappers-explained-and-compared)
 * [What is the @AppStorage property wrapper?](https://www.hackingwithswift.com/quick-start/swiftui/what-is-the-appstorage-property-wrapper)
+* [Writing somewhere safe: the iOS keychain][keychain]
 
-
+[keychain]: https://www.hackingwithswift.com/read/28/3/writing-somewhere-safe-the-ios-keychain
 [AppStorage]: https://www.hackingwithswift.com/quick-start/swiftui/what-is-the-appstorage-property-wrapper
+[UserDefaults]: https://developer.apple.com/documentation/foundation/userdefaults
