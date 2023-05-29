@@ -5,8 +5,6 @@ date:   2023-05-29 15:00:00 +0200
 categories: app
 ---
 
-# SwiftUI a property wrapper to secure settings
-
 ## Store Secrets on Device
 
 Developing my last app [PlantUML for iPad](https://apps.apple.com/us/app/plantuml-app/id6444164984)
