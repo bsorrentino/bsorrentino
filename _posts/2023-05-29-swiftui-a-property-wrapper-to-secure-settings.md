@@ -75,7 +75,7 @@ Such implementation relies on a KeychainWrapper implementation (code [here](http
 
 ## Usage
 
-Below a classic usage sample for storing a password
+Below a classic usage sample for securely storing an **API KEY** using `@AppSecureStorage`
 
 ```swift
 
