@@ -1,6 +1,6 @@
 ### Hi there 👋
 
-I'm Software Architect with over 20 years of experience. He currently is the CTO of [Softphone](http://www.softphone.it). In 2009 he has led the setup of a Soulsoftware.
+I'm Software Architect with over 20 years of experience. He currently is the CTO of [Softphone](http://www.softphone.it). In 2009 he has led the setup of a [Soulsoftware](https://www.soulsoftware.it).
 I love to contribute to Open Source Software(OSS) because the OSS itself has contributed, in important way, my professional growing
 
 ![Blogger](https://img.shields.io/badge/-Blogger-orange?style=flat-square&logo=blogger&labelColor=E0E0E0&https://soulsoftware-bsc.blogspot.com/)
@@ -35,6 +35,14 @@ I love to contribute to Open Source Software(OSS) because the OSS itself has con
 ![Git](https://img.shields.io/badge/-Git-black?style=flat-square&logo=git)
 ![BitBucket](https://img.shields.io/badge/-BitBucket-darkblue?style=flat-square&logo=bitbucket)
 
+## Activities
+
+- 🌱 I’m currently learning [RUST](https://rustwasm.github.io)
+- 👀 I'm interested in [WebAssembly](https://webassembly.org) that I consider a potential game-changer technology
+- ✍🏻 Currently I'm working 
+   - With [Microsoft Power Platform](https://powerplatform.microsoft.com/en-us/) eco-system 
+   - [zx-powerapps-cli](https://www.npmjs.com/package/@bsorrentino/zx-powerapps-cli)
+   - [PlantUML iPad App](https://github.com/bsorrentino/PlantUML4iPad)
 <!--
 
 **bsorrentino/bsorrentino** is a ✨ _special_ ✨ repository because its `README.md` (this file) appears on your GitHub profile.
