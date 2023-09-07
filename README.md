@@ -13,10 +13,10 @@ _Contributing to Open Source Software (OSS) is important to me since it has sign
 
 ## ⚡ Technologies
  
-![LANGCHAIN](https://img.shields.io/badge/-Langchain-purple?style=flat-square&logoColor=black&logo=LangChain) 
+![langchain](https://img.shields.io/badge/-Langchain-purple?style=flat-square&logoColor=black&logo=LangChain) 
 
 
-![TypeScript](https://img.shields.io/badge/-TypeScript-007ACC?style=flat-square&logo=typescript) ![JavaScript](https://img.shields.io/badge/-JavaScript-black?style=flat-square&logo=javascript) ![Nodejs](https://img.shields.io/badge/-Nodejs-339933?style=flat&logoColor=white&logo=Node.js)
+![typescript](https://badgen.net/badge/-/TypeScript?icon=typescript&label&labelColor=blue&color=555555) ![JavaScript](https://img.shields.io/badge/-JavaScript-black?style=flat-square&logo=javascript) ![Nodejs](https://img.shields.io/badge/-Nodejs-339933?style=flat&logoColor=white&logo=Node.js)
 
 ![Python](https://img.shields.io/badge/-Python-darkblue?style=flat-square&logo=Python)
 ![Swift](https://img.shields.io/badge/-Swift-FA7343?style=flat-square&logoColor=white&logo=Swift)
