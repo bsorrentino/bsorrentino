@@ -4,12 +4,12 @@ I'm a Solution Architect with over 25 years of experience 💪 , I am currently 
 
 _Contributing to Open Source Software (OSS) is important to me since it has significantly contributed to my professional growth._
 
-![Blogger](https://img.shields.io/badge/-Blogger-orange?style=flat-square&logo=blogger&labelColor=E0E0E0&https://soulsoftware-bsc.blogspot.com/)
-![Twitter Follow](https://img.shields.io/twitter/follow/bsorrentinoJ?label=twitter)
-![Linkedin Badge](https://img.shields.io/badge/-Linked%20In-blue?style=flat-square&logo=Linkedin&logoColor=white&link=https://www.linkedin.com/in/bartolomeosorrentino/)
-![Dev.to Badge](https://img.shields.io/badge/-Dev.To-gray?style=flat-square&logo=dev.to&link=https://dev.to/bsorrentino)
-![Stack Overflow Badge](https://img.shields.io/badge/-Stack%20Overflow-gray?style=social&logo=stackoverflow&link=https://stackoverflow.com/users/521197/bsorrentino)
-![Flipboard](https://img.shields.io/badge/-Flipboard-red?style=social&logo=Flipboard&link=https://flipboard.com/@bsorrentino?from=share&utm_source=flipboard&utm_medium=curator_share)
+[![Blogger](https://img.shields.io/badge/-Blogger-orange?style=flat-square&logo=blogger&labelColor=E0E0E)](https://soulsoftware-bsc.blogspot.com/)
+[![Twitter Follow](https://img.shields.io/twitter/follow/bsorrentinoJ?label=twitter)](https://twitter.com/bsorrentinoJ)
+[![Linkedin Badge](https://img.shields.io/badge/-Linked%20In-blue?style=flat-square&logo=Linkedin&logoColor=white)](https://www.linkedin.com/in/bartolomeosorrentino/)
+[![Dev.to Badge](https://img.shields.io/badge/-Dev.To-gray?style=flat-square&logo=dev.to)](link=https://dev.to/bsorrentino)
+[![Stack Overflow Badge](https://img.shields.io/badge/-Stack%20Overflow-gray?style=social&logo=stackoverflow)](https://stackoverflow.com/users/521197/bsorrentino)
+[![Flipboard](https://img.shields.io/badge/-Flipboard-red?style=social&logo=Flipboard)](https://flipboard.com/@bsorrentino?from=share&utm_source=flipboard&utm_medium=curator_share)
 
 ## ⚡ Technologies
  
