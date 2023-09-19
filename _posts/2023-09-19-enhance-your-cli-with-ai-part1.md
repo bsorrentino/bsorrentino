@@ -179,6 +179,7 @@ But is not finished here, We've just scratched the surface in this article, in P
 * [Langchain Framework][langchain]
 * [Langchain.js Agent Types](https://js.langchain.com/docs/modules/agents/agent_types/)
 * [Langsmith platform][LangSmith]
+* [copilot-cli-agent (github project)][project]
 
 [ReACT]: https://www.promptingguide.ai/techniques/react
 [langchain]: https://docs.langchain.com/docs/
