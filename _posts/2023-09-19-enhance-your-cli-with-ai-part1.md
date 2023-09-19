@@ -42,7 +42,8 @@ const model = new ChatOpenAI({ modelName: "gpt-3.5-turbo-0613", temperature: 0})
 
 const tools = [ new SystemCommandTool() ];
 
-const agent = await initializeAgentExecutorWithOptions(tools, model, { agentType: "openai-functions" } );
+const agent = await initializeAgentExecutorWithOptions(tools, model, 
+                                                        { agentType: "openai-functions" } );
 ```
 
 We started by creating a new instance of the `ChatOpenAI` class, initializing it with specific options like the model name, and temperature.
@@ -163,7 +164,7 @@ Part of [LangChain] suite and seamlessly integrated with it there is [LangSmith]
 Let's see the [LangSmith] output  tracing request:
 >  `List files in download folder with their size in Kb`
 
-![LangSmith Output](./assets/enhance-your-cli-with-ai/langsmith.png)
+![LangSmith Output](./enhance-your-cli-with-ai/langsmith.png)
 
 As we can see the Chain perform a first call to LLM model that evaluate prompt, recognize a command and translate it into a command shell for proper operative system, after that delegate execution to SysteCommandTool and after such execution involve again the LLM model to evaluate result and, if there aren't further tasks to do, return result (i.e. complete).
 
