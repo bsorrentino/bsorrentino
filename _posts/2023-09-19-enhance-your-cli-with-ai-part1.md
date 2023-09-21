@@ -7,7 +7,7 @@ categories: ai
 
 ## Potential of AI
 
-Imagine having an AI-powered Command Line Interface (CLI) that can enhance your productivity and make your life easier. With the power of LLM models like GPT 3.5/4, you can simply ask for the right command line for any task, and the AI will provide the appropriate commands for your operating system.
+Imagine having an AI-powered Command Line Interface (CLI) that can enhance your productivity and make your life easier. With the power of [Large Language Model (LLM)][LLM] models like [GPT] 3.5/4, you can simply ask for the right command line for any task, and the AI will provide the appropriate commands for your operating system.
 
 For example, you could ask the AI, 'What is the command to list files in a folder?” and it will instantly give you the correct command, be it 'ls' for Linux or 'dir' for Windows.
 
@@ -25,11 +25,11 @@ Solution has been based on [Langchain] Framework (in particular the [JS/TS relea
 
 ### Why langchain ?
 
-[Langchain] is a powerful framework for building applications that leverage language models. It offers standardized components and abstractions, making it easier to develop apps that are data-aware and capable of interacting with their environment. By using [Langchain], you can tap into the capabilities of language models like GPT 3.5/4 and enable your CLI to understand and process natural language input.
+[Langchain] is a powerful framework for building applications that leverage language models. It offers standardized components and abstractions, making it easier to develop apps that are data-aware and capable of interacting with their environment. By using [Langchain], you can tap into the capabilities of language models like [GPT] 3.5/4 and enable your CLI to understand and process natural language input.
 
 ### OpenAI function Agent
 
-One of the key concepts in [Langchain] is the [Agent][langchain_agents]. The [Agent][langchain_agents] acts as a crucial component with access to a range of tools and functionalities. It is responsible for making decisions based on the user's input and utilizing the appropriate tools within the application. In particular OpenAI function Agent utilizes GPT 3/4's ability to comprehend required function calls, producing necessary inputs.
+One of the key concepts in [Langchain] is the [Agent][langchain_agents]. The [Agent][langchain_agents] acts as a crucial component with access to a range of tools and functionalities. It is responsible for making decisions based on the user's input and utilizing the appropriate tools within the application. In particular OpenAI function Agent utilizes [GPT] 3/4's ability to comprehend required function calls, producing necessary inputs.
 
 ### Let’s create an langchain Agent able to recognize and execute generic system commands
 
@@ -159,18 +159,18 @@ System Command: find /Applications -name Xcode.app 2>/dev/null
 
 ### Debug, Test, Evaluate and Monitor Langchain's calls 
 
-Part of [LangChain] suite and seamlessly integrated with it there is [LangSmith] platform that enable building production-grade LLM applications providing a way to debug, test, evaluate, and monitor chains and intelligent agents built on any LLM framework.
+Part of [LangChain] suite and seamlessly integrated with it there is [LangSmith] platform that enable building production-grade [LLM] applications providing a way to debug, test, evaluate, and monitor chains and intelligent agents built on any [LLM] framework.
 
 Let's see the [LangSmith] output  tracing request:
 >  `List files in download folder with their size in Kb`
 
 ![LangSmith Output](../../../../assets/enhance-your-cli-with-ai/langsmith.png)
 
-As we can see the Chain perform a first call to LLM model that evaluate prompt, recognize a command and translate it into a command shell for proper operative system, after that delegate execution to SysteCommandTool and after such execution involve again the LLM model to evaluate result and, if there aren't further tasks to do, return result (i.e. complete).
+As we can see the Chain perform a first call to [LLM] model that evaluate prompt, recognize a command and translate it into a command shell for proper operative system, after that delegate execution to SysteCommandTool and after such execution involve again the [LLM] model to evaluate result and, if there aren't further tasks to do, return result (i.e. complete).
 
 ## Conclusion
 
-Alrighty! 🚀 So, we've started to see the what happens when you use a bit of AI magic on your CLI. No more digging deep in memory or Googling to find that one command! 🧐 With the might of LLM models like GPT 3.5/4, you've got your very own command-line sidekick. 🦸
+Alrighty! 🚀 So, we've started to see the what happens when you use a bit of AI magic on your CLI. No more digging deep in memory or Googling to find that one command! 🧐 With the might of [LLM] models like [GPT] 3.5/4, you've got your very own command-line sidekick. 🦸
 But is not finished here, We've just scratched the surface in this article, in Part 2, we're gonna dive deeper and explore how to add your own custom command line commands invocable using natural language request. Imagine building your very own CLI shortcuts and commands that make your workflow smoother. So, stay tuned, and let's keep leveling up that CLI game together. Catch you in the next one! ✌️😄
 
 ## References:
@@ -181,6 +181,8 @@ But is not finished here, We've just scratched the surface in this article, in P
 * [Langsmith platform][LangSmith]
 * [copilot-cli-agent (github project)][project]
 
+[LLM]: https://en.wikipedia.org/wiki/Large_language_model
+[GPT]: https://aws.amazon.com/what-is/gpt
 [ReACT]: https://www.promptingguide.ai/techniques/react
 [langchain]: https://docs.langchain.com/docs/
 [langchain.js]: https://js.langchain.com/docs/get_started/introduction/
