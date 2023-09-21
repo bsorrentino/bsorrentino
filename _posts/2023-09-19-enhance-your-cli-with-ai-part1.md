@@ -21,7 +21,7 @@ But we can do more, we can add custom commands that further extends your CLI ena
 
 ## The proposed solution
 
-Solution has been based on Langchain.js Framework and OpenAI Functions Agent.
+Solution has been based on [Langchain] Framework (in particular the [JS/TS release][langchain.js]) and [OpenAI Functions Agent][openai_functions_agent].
 
 ### Why langchain ?
 
@@ -186,5 +186,6 @@ But is not finished here, We've just scratched the surface in this article, in P
 [langchain.js]: https://js.langchain.com/docs/get_started/introduction/
 [LangSmith]: https://smith.langchain.com
 [project]: https://github.com/bsorrentino/copilot-cli-agent
+[openai_functions_agent]: https://js.langchain.com/docs/modules/agents/agent_types/openai_functions_agent
 
 
