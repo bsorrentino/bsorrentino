@@ -15,7 +15,7 @@ The only challenge here is to execute the given command into target environment
 
 ## OpenAI function Calling
 
-This idea revolves around leveraging the capabilities of OpenAI and its powerful function calling features. By integrating AI into the CLI, you can streamline your workflow and save time and effort by quickly obtaining the right commands without extensive manual searching or trial-and-error.
+This idea revolves around leveraging the capabilities of [OpenAI] and its powerful [function calling][open_ai_functions] features. By integrating AI into the CLI, you can streamline your workflow and save time and effort by quickly obtaining the right commands without extensive manual searching or trial-and-error.
 
 But we can do more, we can add custom commands that further extends your CLI enabling the possibility to create very complex workflow in easy way especially because we use the natural language processing to achieve this
 
@@ -25,17 +25,17 @@ Solution has been based on [Langchain] Framework (in particular the [JS/TS relea
 
 ### Why langchain ?
 
-Langchain is a powerful framework for building applications that leverage language models. It offers standardized components and abstractions, making it easier to develop apps that are data-aware and capable of interacting with their environment. By using Langchain, you can tap into the capabilities of language models like GPT 3.5/4 and enable your CLI to understand and process natural language input.
+[Langchain] is a powerful framework for building applications that leverage language models. It offers standardized components and abstractions, making it easier to develop apps that are data-aware and capable of interacting with their environment. By using [Langchain], you can tap into the capabilities of language models like GPT 3.5/4 and enable your CLI to understand and process natural language input.
 
 ### OpenAI function Agent
 
-One of the key concepts in Langchain is the Agent. The Agent acts as a crucial component with access to a range of tools and functionalities. It is responsible for making decisions based on the user's input and utilizing the appropriate tools within the application. In particular OpenAI function Agent utilizes GPT 3/4's ability to comprehend required function calls, producing necessary inputs.
+One of the key concepts in [Langchain] is the [Agent][langchain_agents]. The [Agent][langchain_agents] acts as a crucial component with access to a range of tools and functionalities. It is responsible for making decisions based on the user's input and utilizing the appropriate tools within the application. In particular OpenAI function Agent utilizes GPT 3/4's ability to comprehend required function calls, producing necessary inputs.
 
 ### Let’s create an langchain Agent able to recognize and execute generic system commands
 
-The combination of Langchain and [ReACT] allows you to create specialized tools for each command you want to integrate into your CLI. These tools are designed to understand natural language input, process it, and generate appropriate responses based on the context of the conversation. This integration enables your CLI to handle complex workflows, understand user request, and provide accurate and helpful responses in a conversational manner.
+The combination of [Langchain] and [ReACT] allows you to create specialized tools for each command you want to integrate into your CLI. These tools are designed to understand natural language input, process it, and generate appropriate responses based on the context of the conversation. This integration enables your CLI to handle complex workflows, understand user request, and provide accurate and helpful responses in a conversational manner.
 
-The following Javascript code use the [Langchain.js] framework and the OpenAI Functions Agent.
+The following Javascript code use the [Langchain.js] framework and the [OpenAI Functions Agent][openai_functions_agent].
 
 ```javascript
 const model = new ChatOpenAI({ modelName: "gpt-3.5-turbo-0613", temperature: 0});
@@ -185,7 +185,9 @@ But is not finished here, We've just scratched the surface in this article, in P
 [langchain]: https://docs.langchain.com/docs/
 [langchain.js]: https://js.langchain.com/docs/get_started/introduction/
 [LangSmith]: https://smith.langchain.com
+[OpenAI]: https://openai.com
 [project]: https://github.com/bsorrentino/copilot-cli-agent
 [openai_functions_agent]: https://js.langchain.com/docs/modules/agents/agent_types/openai_functions_agent
-
+[open_ai_functions]: https://platform.openai.com/docs/guides/gpt/function-calling
+[langchain_agents]: https://docs.langchain.com/docs/components/agents/
 
