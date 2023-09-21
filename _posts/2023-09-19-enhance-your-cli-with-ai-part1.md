@@ -175,7 +175,7 @@ But is not finished here, We've just scratched the surface in this article, in P
 
 ## References:
 
-* [ReACT prompint][ReACT]
+* [ReACT promping][ReACT]
 * [Langchain Framework][langchain]
 * [Langchain.js Agent Types](https://js.langchain.com/docs/modules/agents/agent_types/)
 * [Langsmith platform][LangSmith]
