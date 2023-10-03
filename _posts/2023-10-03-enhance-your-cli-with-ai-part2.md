@@ -7,7 +7,7 @@ categories: ai
 
 ## Quick Recap of Part 1
 
-In the first part of our series, we delved deep into the potential of AI-powered Command Line Interfaces (CLI). With the capabilities of Large Language Models like [GPT 3/4][GPT] in combination with [OpenAI's function calling][open_ai_functions] feature and [Langchain] framework, we have developed a CLI able to interpreter system commands expressed in natural language and executed them on the specific system environment.  
+In the [first part][part1] of our series, we delved deep into the potential of AI-powered Command Line Interfaces (CLI). With the capabilities of Large Language Models like [GPT 3/4][GPT] in combination with [OpenAI's function calling][open_ai_functions] feature and [Langchain] framework, we have developed a CLI able to interpreter system commands expressed in natural language and executed them on the specific system environment.  
   
 ### The Key takeaways from Part 1 included:
 
@@ -213,7 +213,7 @@ That’s all, folks! Embracing the power of AI we can starting imagine things th
 The source code is on [GitHub][project], Happy coding! 👋
 
 
-
+[part1]: https://bsorrentino.github.io/bsorrentino/ai/2023/09/19/enhance-your-cli-with-ai-part1.html
 [LLM]: https://en.wikipedia.org/wiki/Large_language_model
 [GPT]: https://en.wikipedia.org/wiki/GPT-3
 [GPT4]: https://en.wikipedia.org/wiki/GPT-4
