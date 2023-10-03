@@ -173,13 +173,13 @@ const agent = await initializeAgentExecutorWithOptions(tools, model, {
 
 🎉 Voila! 🚀 Our custom Agent Tool modules have been dynamically loaded and the [Langchain Agent][langchain_agents] has been initialized with the necessary tools to enable [function calling][open_ai_functions] capabilities. Now, the user can interact with the CLI using natural language prompts to effortlessly invoke these custom commands. 💪
 
-Here are a few examples:
+### Here are a few examples:
 
-User Query:
+**User Query**:
 ```
 > unpack solution "solution_export_1.0.zip" from "/tmp" 
 ```
-Agent Excution Plan (from [LangSmith]):
+**Agent Excution Plan** (from [LangSmith]):
 
 ![](../../../../assets/enhance-your-cli-with-ai/langsmith_unpack.png)
 
@@ -189,12 +189,12 @@ Agent Excution Plan (from [LangSmith]):
 
 But what is really incredible is that [langchain Agent][langchain_agents] is able to create a commands pipeline based on the natural language request 🤩. Let's break down the request:
 
-User Query:
+**User Query**:
 ```
 > unpack solution "solution_export_1.0.zip" from "/tmp". delete solution zip
 ```
 
-Agent Excecution Plan (from [LangSmith]): 
+**Agent Excecution Plan** (from [LangSmith]): 
 
 ![](../../../../assets/enhance-your-cli-with-ai/langsmith_unpack_2.png)
 
