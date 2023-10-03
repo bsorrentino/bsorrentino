@@ -173,7 +173,7 @@ const agent = await initializeAgentExecutorWithOptions(tools, model, {
 
 🎉 Voila! 🚀 Our custom Agent Tool modules have been dynamically loaded and the [Langchain Agent][langchain_agents] has been initialized with the necessary tools to enable [function calling][open_ai_functions] capabilities. Now, the user can interact with the CLI using natural language prompts to effortlessly invoke these custom commands. 💪
 
-### Here are a few examples:
+### Here are few examples:
 
 **User Query**:
 ```
