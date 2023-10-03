@@ -210,7 +210,7 @@ We have also add a cool enhancement with possibility of plug custom command in d
 
 That’s all, folks! Embracing the power of AI we can starting imagine things that before was unimaginable, I hope that this article helps to better understand the revolution that we are living now and  be excited thinking that we can be a part of such revolution.
 
-The source code is on [GitHub[project]],  Happy coding! 👋
+The source code is on [GitHub][project], Happy coding! 👋
 
 
 
