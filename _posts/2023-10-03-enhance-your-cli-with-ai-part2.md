@@ -15,7 +15,7 @@ In the [first part][part1] of our series, we delved deep into the potential of A
 2. The [Langchain] Framework offers standardized components and abstractions for developing data-aware applications.
 3. The [OpenAI function Agent][openai_functions_agent] can comprehend function calls and generate necessary inputs using LLM models like [GPT 3/4][GPT].
 
-## Add Custom Command CLI
+## Adding Custom Command
 
 As promised, in this article we're gonna dive deeper and explore how to add your own custom command line commands invocable using natural language requests. Imagine building your very own CLI shortcuts and commands that make your workflow smoother.
 
@@ -179,7 +179,7 @@ const agent = await initializeAgentExecutorWithOptions(tools, model, {
 ```
 > unpack solution "solution_export_1.0.zip" from "/tmp" 
 ```
-**Agent Excution Plan** (from [LangSmith]):
+**Agent Execution Plan** (from [LangSmith]):
 
 ![](../../../../assets/enhance-your-cli-with-ai/langsmith_unpack.png)
 
@@ -194,7 +194,7 @@ But what is really incredible is that [langchain Agent][langchain_agents] is abl
 > unpack solution "solution_export_1.0.zip" from "/tmp". delete solution zip
 ```
 
-**Agent Excecution Plan** (from [LangSmith]): 
+**Agent Execution Plan** (from [LangSmith]): 
 
 ![](../../../../assets/enhance-your-cli-with-ai/langsmith_unpack_2.png)
 
