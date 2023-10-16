@@ -7,18 +7,18 @@ categories: ai
 
 ## Problem: Use multiple AI Chat at same time.
 
-After the launch of ChatGPT, which is quickly changing the way we handle tasks we need, we are witnessing the birth of numerous alternatives. Each of these specializes in a particular task and tries to stand out from the others.
+After the launch of [ChatGPT], which is quickly changing the way we handle tasks we need, we are witnessing the birth of numerous alternatives and each of these specialises in a particular task and tries to stand out from the others.
 
 This presents us with the following dilemma: 
 > **Do we choose one AI chat and always use that, or do we use more than one, selecting the best response each time?**
 
-My choice has been to use more than one. Specifically, in my day-to-day work, I use: ChatGPT, Phind, Bard, and Perplexity. These guarantee a wide range of responses that I can assess each time.
+My choice has been to use more than one. Specifically, in my day-to-day work, I use: [ChatGPT], [Phind], [Bard], and [Perplexity]. These guarantee a wide range of responses that I can assess each time.
 
 Of course, such choice means that I must submit the same prompt to multiple AI chats, which can sometimes be tedious task.
 
 ## A Solution
 
-To solve this problem, I decided to develop a Browser Web Extension that could help me submit the same prompt to multiple AI chats simultaneously.
+To solve this problem, I decided to develop a **Browser Web Extension** that could help me submit the same prompt to multiple AI chats simultaneously.
 
 In this article, I will briefly explain how it works and how to get and use it if, like me, you use more than one.
 
