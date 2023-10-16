@@ -16,7 +16,7 @@ My choice has been to use more than one. Specifically, in my day-to-day work, I 
 
 Of course, such choice means that I must submit the same prompt to multiple AI chats, which can sometimes be tedious task.
 
-## One Solution
+## A Solution
 
 To solve this problem, I decided to develop a Browser Web Extension that could help me submit the same prompt to multiple AI chats simultaneously.
 
