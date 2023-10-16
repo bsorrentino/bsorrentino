@@ -79,7 +79,7 @@ After a couple of hours of development and bit more ones of tests finally I’ve
 
 ![pic1](../../../../assets/ai-multi-prompt-browser-extension/pic1.png)
 
-It seems work as expected and I’m using it intensively following the approach “_Eat your own dog food_” (aka [dogfooding]) to assure quality and improvements as much as I can**.**
+It seems work as expected and I’m using it intensively following the approach “_Eat your own dog food_” (aka [dogfooding]) to assure quality and improvements as much as I can.
 
 ### Usage tips 🔧
 
