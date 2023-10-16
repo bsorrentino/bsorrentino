@@ -107,8 +107,8 @@ I've released the project on [GitHub], including the [Safari implementation][saf
 Feel free to fork the repo and collaborate to its enhance … thanks and happy AI chatting 💬.
 
 
-[chatgpt]: https://www.chatgpt.ai/
-[bard]: https://bard.ai/
+[chatgpt]: https://chat.openai.com
+[bard]: https://bard.google.com/
 [perplexity]: https://perplexity.ai/
 [phind]: https://phind.com/
 [github]: https://github.com/julienc91/ai-multi-prompt-browser-extension
