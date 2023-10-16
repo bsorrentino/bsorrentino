@@ -105,7 +105,7 @@ Give it a try and enhance your AI chat experience 😊
 
 I've released the project on [GitHub], including the [Safari implementation][safari], but have not yet published it on an online market. To try it out, you'll need to clone the repo and following the steps [load unpack extension][load-unpacked] to load the extension on your browser.
 
-Feel free to fork the repo and collaborate to its enhance … thanks and happy AI chatting 💬.
+Feel free to fork the repo and collaborate to its enhance … thanks and happy AI chatting 💬🤖.
 
 
 [chatgpt]: https://chat.openai.com/
