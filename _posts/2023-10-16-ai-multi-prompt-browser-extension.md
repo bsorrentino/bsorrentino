@@ -9,7 +9,8 @@ categories: ai
 
 After the launch of ChatGPT, which is quickly changing the way we handle tasks we need, we are witnessing the birth of numerous alternatives. Each of these specializes in a particular task and tries to stand out from the others.
 
- This presents us with the following dilemma: Do we choose one AI chat and always use that, or do we use more than one, selecting the best response each time?
+This presents us with the following dilemma: 
+> **Do we choose one AI chat and always use that, or do we use more than one, selecting the best response each time?**
 
 My choice has been to use more than one. Specifically, in my day-to-day work, I use: ChatGPT, Phind, Bard, and Perplexity. These guarantee a wide range of responses that I can assess each time.
 
