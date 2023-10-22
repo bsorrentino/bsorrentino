@@ -1,7 +1,7 @@
 ---
 layout: post
 title:  "Evolving and maintain Backward Compatibility in Swift"
-date:   2022-02-01 15:00:00 +0200
+date:   2023-10-22
 description: A Deep Dive with @available and #available attributes
 categories: Swift
 ---
