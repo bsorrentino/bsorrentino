@@ -1,4 +1,12 @@
-### A Deep Dive with `@available` and `#available`
+---
+layout: post
+title:  "Evolving and maintain Backward Compatibility in Swift"
+date:   2022-02-01 15:00:00 +0200
+description: A Deep Dive with `@available` and `#available attributes
+categories: Swift
+---
+
+### A Deep Dive with `@available` and `#available` Attributes
 > Maintaining Backward Compatibility in Swift: 
 
 In the ever-evolving world of iOS development, ensuring backward compatibility is crucial. As Apple introduces new features and deprecates old ones, developers are faced with the challenge of ensuring their apps run smoothly across different iOS versions. In this article, we'll explore how to leverage Swift's `@available` and `#available` attributes to maintain backward compatibility, using a practical example of a `CopyToClipboardButton` SwiftUI view.
