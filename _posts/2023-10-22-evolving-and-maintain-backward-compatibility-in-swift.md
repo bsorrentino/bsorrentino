@@ -1,6 +1,6 @@
 ---
 layout: post
-title:  "Swift: Evolution and maintenance of backward compatibility. Exploring @available and #available attributes."
+title:  "Swift: Evolution and backward compatibility. Exploring @available and #available attributes."
 date:   2023-10-22
 description: A Deep Dive with @available and #available attributes
 categories: Swift
