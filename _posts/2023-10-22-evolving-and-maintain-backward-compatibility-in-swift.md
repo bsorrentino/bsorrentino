@@ -12,9 +12,9 @@ In the ever-evolving world of iOS development, ensuring backward compatibility i
 
 ### Understanding `@available` and `#available`
 
-1. `#available`: This is a <u>**runtime check**</u> that allows you to conditionally execute code based on the current platform's version. It's particularly useful for branching logic based on the OS/version.
+1. `#available`: This is a **<u>runtime check</u>** that allows you to conditionally execute code based on the current platform's version. It's particularly useful for branching logic based on the OS/version.
 
-2. `@available`: This attribute is used to indicate the availability of an API or a piece of code for specific platforms and versions. It essentially a <u>**compile time check**</u> that tells the compiler which versions of iOS (or other platforms) the annotated API is available for.
+2. `@available`: This attribute is used to indicate the availability of an API or a piece of code for specific platforms and versions. It essentially a **<u>compile time check</u>** that tells the compiler which versions of iOS (or other platforms) the annotated API is available for.
 
 I've underlined the main differences between the two attributes where `@available` is a compile time check while `#available` is a runtime check this means that:
 
