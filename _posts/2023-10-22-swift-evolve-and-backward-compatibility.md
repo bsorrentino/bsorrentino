@@ -19,7 +19,7 @@ In the ever-evolving world of iOS development, ensuring backward compatibility i
 
 I've underlined the main differences between the two attributes where `@available` is a compile time check while `#available` is a runtime check this means that:
 
-> Use `#available` like an `if` statement based upon OS/version while use `@available` if you want **avoid that complier compiles specific code** present only on particular OS/version (e.g. new API) giving you an error during development with a lower OS deployment target.
+> Use `#available` like an `if` statement based upon OS/version while use `@available` if you want **avoid that compiler compiles specific code** present only on particular OS/version (e.g. new API) giving you an error during development with a lower OS deployment target.
 
 ### A Practical Example: `CopyToClipboardButton` SwiftUI View
 
