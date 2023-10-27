@@ -1,16 +1,56 @@
-# Validating External Data in Full Stack Applications
+# Typescript: Validating External Data in Full Stack Applications
 
-When building applications, developers often encounter scenarios where they need to fetch external data. This data might come from various sources, and there's always a risk that the data might not be in the expected format or shape, leading to potential bugs. This article delves into the importance of validating external data sources, especially in full-stack applications, and why relying solely on TypeScript might not be enough.
+## Introduction
+
+During my experience using [langchain.js] with [typescript] to implement the powerful “functions calling” features, I've meet for first time the [Zod] framework for functions schema definition. I was fascinated by meaningful syntax in the schema declaration and I decided to delve into to better understand its usage and possibilities. during my search I landed on this YouTube [video][youtube] from [ByteGrad] and quickly everything has been perfectly clear for me: “**ALWAYS use Zod in  typescript applications**” and below I’ll explain the main reasons of such choice. 
 
 ### The Challenge with External Data
 
-Whether you're fetching data from a server, receiving user input, or accessing local storage, the data you receive might not always be what you expect. This unpredictability can introduce vulnerabilities and errors into your application. For instance, while building a full-stack Next.js application, the frontend might fetch data from:
+When building applications, developers often encounter scenarios where they need to fetch external data. This data might come from various sources, and there's always a risk (mostly related to change to the cloud api version or some bugfix deployed quickly in production) that the data might not be in the expected format or shape, leading to potential bugs. This article delves into the importance of validating external data sources, especially in full-stack applications, and why relying solely on TypeScript might not be enough.
+
+Whether you're fetching data from a server, receiving user input, or accessing local storage, the data you receive might not always be what you expect. This unpredictability can introduce vulnerabilities and errors into your application. For instance, while building a full-stack Javascript/Typescript application, the frontend might fetch data from:
 
 1. **Backend Server**: Your own backend might send data that the frontend consumes. However, changes in the backend data structure can affect the frontend's functionality.
-2. **Third-party APIs**: Data from third-party sources might not always conform to expected structures.
+2. **Third-party APIs**: Data from third-party sources might not always conform to expected structures. in particular for unstable Cloud Api that could change without notice.
 3. **User Input**: Users might provide data through forms, which can vary in format and content.
 4. **Local Storage**: Data retrieved from local storage might change over time or might not be in the expected format.
 5. **URL Parameters**: Data can also be stored and retrieved from URLs, such as search parameters.
+
+### Backend Server / Third-party APIs
+
+For simplicy we promote the Backeen Server and Third-party APIs as the representative examples of external data sources validation.
+
+```typescript
+
+// design time schema declaration
+type Product = {
+    name: string;
+    price: number;
+}
+// run time schema declaration
+const productSchema = z.object({
+  name: z.string(),
+  price: z.number(),
+});
+
+export default function Product() {
+  useEffect(() => {
+    fetch("/api/product")
+      .then((res) => res.json())
+      .then((product: Product) => {
+
+        // use Zod to validate the product
+        const validatedProduct = productSchema.safeParse(product); // no exceptions thrown
+        
+        if (!validatedProduct.success) {
+          console.error(validatedProduct.error);
+        }
+
+        console.log( validatedProduct.data );
+      });
+  }, []);
+}
+```
 
 ### Why TypeScript Alone Isn't Enough
 
@@ -32,4 +72,7 @@ While TypeScript is an invaluable tool for type checking, it's essential to use 
 
 Note: This article is based on the first segment of the video. There are more segments to the video, and the article can be expanded further based on the complete transcription. Would you like to continue with the next segment?
 
-inspired by [youtube video](https://youtu.be/AeQ3f4zmSMs?si=t3X77ZEhVXVqkihj)
+inspired by [Video: ALWAYS use Zod in your typescript app][youtube] from [ByteGrad]
+
+[youtube]: https://youtu.be/AeQ3f4zmSMs?si=ZSR9Q0Q-QFeSDzWj
+[ByteGrad]: https://www.youtube.com/@ByteGrad
