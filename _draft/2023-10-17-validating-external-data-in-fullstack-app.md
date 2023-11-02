@@ -18,7 +18,35 @@ Whether you're fetching data from a server, receiving user input, or accessing l
 
 ### Backend Server / Third-party APIs
 
-For simplicy we promote the Backeen Server and Third-party APIs as the representative examples of external data sources validation.
+For simplicy we promote the Backend Server and Third-party APIs as the representative examples of external data sources validation.
+
+### Design time schema validation
+
+Typescript is a strongly typed language that allow us to define types, such types are validated at design time, that is during development directly inside your IDE and during compile (transpile) time by Typescript compiler. 
+
+So, for example, we can define a new Product type schema that we expect as result from our server call
+
+```typescript
+
+// design time schema declaration
+type Product = {
+    name: string;
+    price: number;
+}
+
+export default function queryProduct() {
+  
+    fetch(`/api/product/${productId}`)
+      .then((res) => res.json())
+      .then((product: Product) => {
+
+        console.log( product );
+      });
+
+}
+```
+
+in this case neither the IDE than the cmpiler can help in data validation, we just assume that the data returned by server is compliant with our schema 
 
 ```typescript
 
