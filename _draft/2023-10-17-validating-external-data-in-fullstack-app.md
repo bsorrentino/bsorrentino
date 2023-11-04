@@ -22,12 +22,12 @@ For simplicy we promote the Backend Server and Third-party APIs as the represent
 
 ### Design time schema validation
 
-Typescript is a strongly typed language that allow us to define types, such types are validated at design time, that is during development directly inside your IDE and during compile (transpile) time by Typescript compiler. 
+TypeScript is a powerful tool that offers static type checking, ensuring that variables conform to specific types. However, when it comes to validating the shape of external data, TypeScript might fall short.
+TypeScript is a strongly typed language that enables us to define types. These types are validated both during development into an IDE and upon compilation/transpilation by the TypeScript compiler.
 
-So, for example, we can define a new Product type schema that we expect as result from our server call
+So, for example, we can define a new Product type schema that we expect as result from our server call as code below
 
 ```typescript
-
 // design time schema declaration
 type Product = {
     name: string;
@@ -36,17 +36,42 @@ type Product = {
 
 export default function queryProduct() {
   
-    fetch(`/api/product/${productId}`)
-      .then((res) => res.json())
-      .then((product: Product) => {
+  fetch(`/api/product/${productId}`)
+    .then((res) => res.json())
+    .then((product: Product) => { // assume that the data returned by server is compliant with our schema
 
-        console.log( product );
-      });
-
+      console.log( `product: ${product.name} - ${product.price}` );
+    });
 }
 ```
 
-in this case neither the IDE than the cmpiler can help in data validation, we just assume that the data returned by server is compliant with our schema 
+In this case neither the IDE than the cmpiler can help in data validation, we just assume that the data returned by server is compliant with our schema.
+Unfortunately, if it no will be so, we risk that our code can break during data usage unless we perform a ad-hoc validation developing boring and ripetitive code but, the worst part is that we MUST keep this validation code in-sync with our data schema. Below an example of such validation data
+
+```typescript
+function validateProduct(data: any): Product {
+    if (typeof data !== 'object' || data === null) {
+        return false;
+    }
+    
+    if (!('name' in data) || typeof data.name !== 'string') {
+        return false;
+    }
+    
+    if (!('price' in data) || typeof data.price !== 'number') {
+        return false;
+    }
+    
+    return true;
+}
+```
+
+Obviously I’ve made a simple data schema for give a proof of concept  but we can easily  imagine that the code complexity will increase linearly with the increase od data schema complexity.
+
+### Zod comes to play
+
+To avoid problems highlighted before, we can use a “schema declaration and validation” library like Zod. Zod is easy to use and effective, so let's apply it to the code we reviewed.
+
 
 ```typescript
 
