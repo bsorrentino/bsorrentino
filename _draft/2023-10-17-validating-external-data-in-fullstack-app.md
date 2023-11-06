@@ -2,7 +2,7 @@
 
 ## Introduction
 
-During my experience using [langchain.js] with [typescript] to implement the powerful “functions calling” features, I've meet for first time the [Zod] framework for functions schema definition. I was fascinated by meaningful syntax in the schema declaration and I decided to delve into to better understand its usage and possibilities. during my search I landed on this YouTube [video][youtube] from [ByteGrad] and quickly everything has been perfectly clear for me: “**ALWAYS use Zod in  typescript applications**” and below I’ll explain the main reasons of such choice. 
+During my experience using [langchain.js] with [typescript] to implement the powerful “functions calling” features, I've meet for first time the [zod] framework for functions schema definition. I was fascinated by meaningful syntax in the schema declaration and I decided to delve into to better understand its usage and possibilities. during my search I landed on this YouTube [video][youtube] from [ByteGrad] and quickly everything has been perfectly clear for me: “**ALWAYS use zod in  typescript applications**” and below I’ll explain the main reasons of such choice. 
 
 ### The Challenge with External Data
 
@@ -68,10 +68,9 @@ function validateProduct(data: any): Product {
 
 Obviously I’ve made a simple data schema for give a proof of concept  but we can easily  imagine that the code complexity will increase linearly with the increase od data schema complexity.
 
-### Zod comes to play
+### zod comes to play
 
-To avoid problems highlighted before, we can use a “schema declaration and validation” library like Zod. Zod is easy to use and effective, so let's apply it to the code we reviewed.
-
+To avoid problems highlighted before, we can use a “schema declaration and validation” library like [zod]. [zod] is easy to use and effective, so let's apply it to the code we reviewed.
 
 ```typescript
 
@@ -92,7 +91,7 @@ export default function Product() {
       .then((res) => res.json())
       .then((product: Product) => {
 
-        // use Zod to validate the product
+        // use zod to validate the product
         const validatedProduct = productSchema.safeParse(product); // no exceptions thrown
         
         if (!validatedProduct.success) {
@@ -105,6 +104,8 @@ export default function Product() {
 }
 ```
 
+As you can see [zod] allow us to build a runtime schema declaration (`z.object(..)`) and provides methods to validate it against external data coming from third party.
+
 ### Why TypeScript Alone Isn't Enough
 
 TypeScript is a powerful tool that offers static type checking, ensuring that variables conform to specific types. However, when it comes to validating the shape of external data, TypeScript might fall short.
@@ -113,7 +114,7 @@ Consider a scenario where the frontend expects a product object with a `name` pr
 
 ### The Solution: Schema Validators
 
-To ensure that the data is in the expected shape, developers can use schema validators. Tools like Zod or Yup can validate the shape of the data at runtime, ensuring that it matches the expected schema.
+To ensure that the data is in the expected shape, developers can use schema validators. Tools like zod or Yup can validate the shape of the data at runtime, ensuring that it matches the expected schema.
 
 For instance, when fetching product data, a schema validator can check if the received data has the required properties (`name` and `price`) and if they are of the correct type (string and number, respectively). If the backend starts sending an `ID` instead of a `name`, the schema validator will catch this discrepancy, preventing potential runtime errors.
 
@@ -129,3 +130,4 @@ inspired by [Video: ALWAYS use Zod in your typescript app][youtube] from [ByteGr
 
 [youtube]: https://youtu.be/AeQ3f4zmSMs?si=ZSR9Q0Q-QFeSDzWj
 [ByteGrad]: https://www.youtube.com/@ByteGrad
+[zod]: https://www.npmjs.com/package/zod
