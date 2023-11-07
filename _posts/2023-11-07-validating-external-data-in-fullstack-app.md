@@ -147,10 +147,9 @@ export default function Product() {
 }
 ```
 
-### Conclusion
+## Conclusion
 
 While [typeScript] is an invaluable tool for type checking, it's essential to use schema validators when dealing with external data sources in full-stack applications. By validating the shape of external data, developers can ensure the robustness and reliability of their applications, preventing potential bugs and vulnerabilities. As said I'll use tools like [zod] whenever I need and I highly recommend you to do the same, In the meanwhile … happy coding 👋
----
 
 ## References 
 
