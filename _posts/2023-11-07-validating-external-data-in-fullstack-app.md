@@ -12,7 +12,7 @@ During my experience using [langchain.js] with [typescript] to implement the pow
 
 ## The Challenge with External Data
 
-When building applications, developers often encounter scenarios where they need to fetch external data. This data might come from various sources, and there's always a risk (mostly related to change to the cloud api version or some bugfix deployed quickly in production) that the data might not be in the expected format or shape, leading to potential bugs. This article delves into the importance of validating external data sources, especially in full-stack applications, and why relying solely on TypeScript might not be enough.
+When building applications, developers often encounter scenarios where they need to fetch external data. This data might come from various sources, and there's always a risk (mostly related to change to the cloud api version or some bugfix deployed quickly in production) that the data might not be in the expected format or shape, leading to potential bugs. This article delves into the importance of validating external data sources, especially in full-stack applications, and why relying solely on [typescript] might not be enough.
 
 Whether you're fetching data from a server, receiving user input, or accessing local storage, the data you receive might not always be what you expect. This unpredictability can introduce vulnerabilities and errors into your application. For instance, while building a full-stack Javascript/Typescript application, the frontend might fetch data from:
 
@@ -28,7 +28,7 @@ For simplicy we promote the Backend Server and Third-party APIs as the represent
 
 ### Design time schema validation
 
-[TypeScript] is a strongly typed language that allows us to specify data types. Its static type-checking feature helps to ensure that variables adhere to their assigned types. This type-checking occurs during development in an IDE, and at compile/transpile time. However, when [typeScript] comes to validating the shape of external data, it might fall short. For example, we can define a new `Product` type with shape that we expect as result from our server call 
+[Typescript] is a strongly typed language that allows us to specify data types. Its static type-checking feature helps to ensure that variables adhere to their assigned types. This type-checking occurs during development in an IDE, and at compile/transpile time. However, when [typescript] comes to validating the shape of external data, it might fall short. For example, we can define a new `Product` type with shape that we expect as result from our server call 
 
 ```typescript
 // typescript type: design time schema declaration
@@ -110,9 +110,9 @@ export default function Product() {
 
 As you can see [zod] allow us to build a runtime schema declaration (`z.object(..)`) and provides methods to validate it against external data coming from third party.
 
-### Syncing schema definitions with typeScript types in zod 😮
+### Syncing schema definitions with typescript types in zod 😮
 
-Well, this protects us from unexpected external data changes, making our code much more robust and reliable. However, we still have the problem of keeping the schema definition in sync with the [typescript] types definition (as said, the one that helps us in developing our application), but don't worry, [zod] has thought of this too with the `infer` keyword, which is capable of inferring the [typeScript] type from the object schema definition. Magic? No at all, just [zod] team  has applied  many of the endless possibilities offered by the types system implemented by [typeScript]. Let’s refactor for last time the code with such feature
+Well, this protects us from unexpected external data changes, making our code much more robust and reliable. However, we still have the problem of keeping the schema definition in sync with the [typescript] types definition (as said, the one that helps us in developing our application), but don't worry, [zod] has thought of this too with the `infer` keyword, which is capable of inferring the [typescript] type from the object schema definition. Magic? No at all, just [zod] team  has applied  many of the endless possibilities offered by the types system implemented by [typescript]. Let’s refactor for last time the code with such feature
 
 ```typescript
 // zod object schema: run time schema declaration
@@ -149,7 +149,7 @@ export default function Product() {
 
 ## Conclusion
 
-While [typeScript] is an invaluable tool for type checking, it's essential to use schema validators when dealing with external data sources in full-stack applications. By validating the shape of external data, developers can ensure the robustness and reliability of their applications, preventing potential bugs and vulnerabilities. As said I'll use tools like [zod] whenever I need and I highly recommend you to do the same, In the meanwhile … happy coding 👋
+While [typescript] is an invaluable tool for type checking, it's essential to use schema validators when dealing with external data sources in full-stack applications. By validating the shape of external data, developers can ensure the robustness and reliability of their applications, preventing potential bugs and vulnerabilities. As said I'll use tools like [zod] whenever I need and I highly recommend you to do the same, In the meanwhile … happy coding 👋
 
 ## References 
 
