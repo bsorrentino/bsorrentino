@@ -72,7 +72,7 @@ function validateProduct(data: any): Product {
 
 Obviously I’ve made a simple data schema for give a proof of concept but we can easily imagine that the code complexity will increase linearly with the increase of data schema complexity.
 
-### The Solution: Schema Validators - zod comes to play 🧐
+### The Solution: Schema Validators - Zod comes to play 🧐
 
 To ensure that the data is in the expected shape, avoiding  problems highlighted before, developers can use schema validators. Library like [zod] helps to validate the shape of the data at runtime, ensuring that it matches the expected schema.[zod] is easy to use and effective, so let's apply it to the code we reviewed.
 
@@ -110,7 +110,7 @@ export default function Product() {
 
 As you can see [zod] allow us to build a runtime schema declaration (`z.object(..)`) and provides methods to validate it against external data coming from third party.
 
-### Syncing schema definitions with typescript types in zod 😮
+### Syncing schema definitions with typescript types in Zod 😮
 
 Well, this protects us from unexpected external data changes, making our code much more robust and reliable. However, we still have the problem of keeping the schema definition in sync with the [typescript] types definition (as said, the one that helps us in developing our application), but don't worry, [zod] has thought of this too with the `infer` keyword, which is capable of inferring the [typescript] type from the object schema definition. Magic? No at all, just [zod] team  has applied  many of the endless possibilities offered by the types system implemented by [typescript]. Let’s refactor for last time the code with such feature
 
