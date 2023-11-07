@@ -8,7 +8,7 @@ categories: typescript
 
 ## Introduction
 
-During my experience using [langchain.js] with [typescript] to implement the powerful “functions calling” features, I've meet for first time the [zod] framework for functions schema definition. I was fascinated by meaningful syntax in the schema declaration and I decided to delve into to better understand its usage and possibilities. during my search I landed on this [YouTube video][youtube] from [ByteGrad] and quickly everything has been perfectly clear for me: “**ALWAYS use zod in typescript applications**” and below I’ll explain the main reasons of such choice. 
+During my experience using [langchain.js] with [typescript] to implement the powerful “[functions calling][function-calling]” features, I've meet for first time the [zod] framework for functions schema definition. I was fascinated by meaningful syntax in the schema declaration and I decided to delve into to better understand its usage and possibilities. during my search I landed on this [YouTube video][youtube] from [ByteGrad] and quickly everything has been perfectly clear for me: “**ALWAYS use zod in typescript applications**” and below I’ll explain the main reasons of such choice. 
 
 ## The Challenge with External Data
 
@@ -161,3 +161,4 @@ While [typeScript] is an invaluable tool for type checking, it's essential to us
 [ByteGrad]: https://www.youtube.com/@ByteGrad
 [zod]: https://www.npmjs.com/package/zod
 [typescript]: https://www.typescriptlang.org
+[function-calling]: https://platform.openai.com/docs/guides/function-calling
