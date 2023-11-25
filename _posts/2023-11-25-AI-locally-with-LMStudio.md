@@ -43,6 +43,7 @@ In my experience dealing in developing AI powered applications using [langchain]
 | ![][sh6] |  
 
 7\. **Efficient Storage Management:** Users can manage the models on their system efficiently, adding or removing them as needed to manage storage space effectively.
+
 |  file management 🗂️|
 | ------- |
 | ![][sh7] |  
