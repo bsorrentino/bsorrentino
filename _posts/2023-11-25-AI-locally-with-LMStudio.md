@@ -15,29 +15,27 @@ In my experience dealing in developing AI powered applications using [langchain]
 [LM Studio]'s user-friendly interface and cross-platform availability make it an attractive choice for a wide range of users. Key features and usage guidelines include:
 
 1. **Platform Compatibility:** [LM Studio] is available for Apple, Windows, and Linux systems, ensuring wide accessibility.
-
 2. **Ease of Installation:** The installation process is straightforward, making the software accessible even to those with limited technical background.
-
 3. **Model Exploration and Selection:** Users can browse and select from a variety of models available on the Hugging Face platform. [LM Studio] provides detailed information for each model, aiding in informed decision-making.
-> |  search model 🔍|
-> | ------- |
-> | ![][sh3] |  
+|  search model 🔍|
+| ------- |
+| ![][sh3] |  
 4. **Model Management:** The software allows for efficient management of different model versions, including quantized versions, tailored to the user's system specifications.
-> |  manage model 👀|
-> | ------- |
-> | ![][sh4] |  
+|  manage model 👀|
+| ------- |
+| ![][sh4] |  
 5. **Interactive Chat Interface:** An integral feature of [LM Studio] is its chat interface, which allows users to interact with the models. This interface includes adjustable settings for various model parameters, enhancing user control.
-> | chat with model 💬📋|
-> | ------- |
-> | ![][sh5] |  
+| chat with model 💬📋|
+| ------- |
+| ![][sh5] |  
 6. **Developer Tools:** For developers looking to integrate large language models into their applications, [LM Studio] offers a local server feature. This feature **is compatible with [OpenAI's API][openai-api]** 🤩, facilitating easy integration .
-> | start server 🚀|
-> | ------- |
-> | ![][sh6] |  
+| start server 🚀|
+| ------- |
+| ![][sh6] |  
 7. **Efficient Storage Management:** Users can manage the models on their system efficiently, adding or removing them as needed to manage storage space effectively.
-> |  file management 🗂️|
-> | ------- |
-> | ![][sh7] |  
+|  file management 🗂️|
+| ------- |
+| ![][sh7] |  
 
 
 ### Conclusion
