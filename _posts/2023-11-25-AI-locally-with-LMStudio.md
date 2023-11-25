@@ -37,7 +37,7 @@ In my experience dealing in developing AI powered applications using [langchain]
 | ------- |
 | ![][sh5] |  
 
-6. **Developer Tools:** For developers looking to integrate large language models into their applications, [LM Studio] offers a local server feature. This feature is compatible with OpenAI's API, facilitating easy integration.
+6. **Developer Tools:** For developers looking to integrate large language models into their applications, [LM Studio] offers a local server feature. This feature **is compatible with [OpenAI's API][openai-api]** 🤩, facilitating easy integration .
 
 | start server 🚀|
 | ------- |
@@ -63,6 +63,7 @@ Let me know your experience on its usage 💬👋
 [LM Studio]: https://lmstudio.ai
 [video1]: https://www.youtube.com/watch?v=yBI1nPep72Q
 [langchain]: https://www.langchain.com
+[openai-api]: https://openai.com/blog/openai-api
 [sh3]: ../../../../assets/LMStudio/LMStudio_1.png
 [sh4]: ../../../../assets/LMStudio/LMStudio_2.png
 [sh5]: ../../../../assets/LMStudio/LMStudio_3.png
