@@ -9,7 +9,7 @@ categories: ai
 
 Easily interact with multiple AI chats like [ChatGPT], [Bard], [Copilot], [Phind] and [Perplexity] simultaneously. Say goodbye to the hassle of submitting the same prompt to different AI platforms. 🤖💻
 
-👩‍💻 Designed for Chrome ( and Safari ), this extension is a must-have in your AI-toolchain for amplify your AI chat experience.
+👩‍💻 Designed for Chrome ( and Safari ), this extension is a must-have in your AI-toolchain for amplify your AI chat experience. take a look at video below 👀
 
 [![AI - Multi Prompt Chrome Extension](https://img.youtube.com/vi/Avz-t9oAZ6Y/0.jpg)](https://www.youtube.com/watch?v=Avz-t9oAZ6Y&ab_channel=BartolomeoSorrentino "AI - Multi Prompt Chrome Extension")
 
