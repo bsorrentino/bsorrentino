@@ -10,7 +10,7 @@ categories: SwiftData SwiftUI
 
 As described in my previous article [SwiftUI: Dynamically Filtering FetchRequest][article1] from **IOS 15** swiftUI has been enriched by a useful modifier [searchable][SEARCH] that allow to achieve, in pretty straightforward way a full working search bar.
 
-I alredy dealt with problem with `@FetchRequest` dynamic filtering  and I've created a [DynamicFetchRequestView][DynamicFetchRequestView] to solve this problem, but now I'm involved in porting [CoreData] based application to new [SwiftData]  approach and I've refactor the [CoreData] based [DynamicFetchRequestView][DynamicFetchRequestView] to [DynamicQuerytView][DynamicQueryRequestView] that allow to achieve dynamic filtering also using new [SwiftData] `@Query` property wrapper.
+I alredy dealt with problem with `@FetchRequest` dynamic filtering  and I've created a `DynamicFetchRequestView` to solve this problem, but now I'm involved in porting [CoreData] based application to new [SwiftData]  approach and I've refactor the [CoreData] based [DynamicFetchRequestView][DynamicFetchRequestView] to `DynamicQuerytView` that allow to achieve dynamic filtering also using new [SwiftData] `@Query` property wrapper.
 
 ### Problem with '@Query' dynamic filtering
 
@@ -128,7 +128,9 @@ Hope this help, in the meanwhile happy coding and … enjoy [SwiftData]! 👋
 
 
 [article1]: https://bsorrentino.github.io/bsorrentino/swiftui/2022/02/01/SwiftUI-Dynamically-Filtering-FetchRequest.html
-[Query]: https://developer.apple.com/documentation/swiftdata/query
+[SEARCH]: https://developer.apple.com/documentation/swiftui/form/searchable(text:placement:)
+[query]: https://developer.apple.com/documentation/swiftdata/query
 [SwiftData]: https://developer.apple.com/xcode/swiftdata/ 
 [CoreData]: https://developer.apple.com/documentation/coredata/
 [SwiftUI]: https://developer.apple.com/xcode/swiftui/
+
