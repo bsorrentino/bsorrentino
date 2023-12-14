@@ -79,7 +79,7 @@ As you can see the View is pretty simple, as said the trick is inside initialize
 
 Now we can use the **powerful of Swift extension tecnique**,  to add a convenience initializer for each Entity on which we want have a dynamic filtering.
 
-```Swift
+```swift
 // Add Initializer for 'Snippet' filtering
 extension DynamicQueryView where T : Snippet { // 👀
 
@@ -96,7 +96,7 @@ extension DynamicQueryView where T : Snippet { // 👀
 
 We are ready to translate the previous example using the new `DynamicQueryView` to achieve a dynamic filtering by title.
 
-```Swift
+```swift
 struct ContentView: View {
     @State var searchTitle:String?
 
