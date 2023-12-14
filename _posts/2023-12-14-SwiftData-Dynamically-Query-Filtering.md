@@ -10,7 +10,7 @@ categories: SwiftData SwiftUI
 
 As described in my previous article [SwiftUI: Dynamically Filtering FetchRequest][article1] from **IOS 15** [SwiftUI] has been enriched by a useful modifier [searchable][SEARCH] that allow to achieve, in pretty straightforward way a full working search bar.
 
-I alredy dealt with problem with `@FetchRequest` dynamic filtering  and I've created a `DynamicFetchRequestView` to solve this problem, but now I'm involved in porting [CoreData] based application to new [SwiftData]  approach and I've refactor the [CoreData] based [DynamicFetchRequestView][DynamicFetchRequestView] to `DynamicQuerytView` that allow to achieve dynamic filtering also using new [SwiftData] `@Query` property wrapper.
+I alredy dealt with problem with `@FetchRequest` dynamic filtering  and I've created a `DynamicFetchRequestView` to solve this problem, but now I'm involved in porting [CoreData] based application to new [SwiftData]  approach and I've refactor the [CoreData] based `DynamicFetchRequestView` to `DynamicQuerytView` that allow to achieve dynamic filtering also using new [SwiftData] `@Query` property wrapper.
 
 ### Problem with '@Query' dynamic filtering
 
