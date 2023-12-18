@@ -1,0 +1,9 @@
+@startuml
+participant LLM
+participant Environment
+LLM -> Environment: Textual description of the environment, goal, and possible actions
+Environment -> LLM: Record of the actions and observations
+LLM -> LLM: Generate thoughts
+LLM -> Environment: Generate action
+Environment -> LLM: Execute action
+@enduml

@@ -1,0 +1,22 @@
+@startuml
+
+left to right direction
+
+' Define the rectangles and agents
+rectangle Task <<prompt>>
+rectangle "Agent" as A {
+    rectangle LLM
+    rectangle Tools
+}
+
+rectangle Environment
+
+' Define the relationships
+Task --> A 
+A ..> LLM 
+LLM --> LLM : "Reasoning"
+LLM --> Tools
+Tools --> Environment : "Action"
+Environment --> LLM : "Result"
+
+@enduml

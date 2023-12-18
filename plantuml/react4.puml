@@ -1,0 +1,19 @@
+@startuml
+participant "User" as User
+participant "ReACT Agent" as ReACTAgent
+participant "Thought" as Thought
+participant "Action" as Action
+participant "Observation" as Observation
+participant "FinalAnswer" as FinalAnswer
+
+User -> ReACTAgent: Input (Question or Command)
+ReACTAgent -> Thought: Generate Thought
+Thought -> ReACTAgent: Return Thought
+ReACTAgent -> Action: Generate Action
+Action -> ReACTAgent: Return Action
+ReACTAgent -> Observation: Generate Observation
+Observation -> ReACTAgent: Return Observation
+ReACTAgent -> FinalAnswer: Generate FinalAnswer
+FinalAnswer -> ReACTAgent: Return FinalAnswer
+ReACTAgent -> User: Return Answer
+@enduml

@@ -1,0 +1,26 @@
+@startuml
+
+actor User
+entity "ReACT Agent" as Agent
+database "External Database" as Database
+control "Internal Reasoning" as Reasoning
+
+User -> Agent : Send Query
+activate Agent
+
+Agent -> Reasoning : Invoke Reasoning
+activate Reasoning
+Reasoning -> Reasoning : Process Information
+Reasoning --> Agent : Reasoning Results
+deactivate Reasoning
+
+Agent -> Database : Retrieve Data
+activate Database
+Database --> Agent : Data Results
+deactivate Database
+
+Agent -> Agent : Generate Response
+Agent --> User : Return Response
+deactivate Agent
+
+@enduml

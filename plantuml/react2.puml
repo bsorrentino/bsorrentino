@@ -1,0 +1,38 @@
+@startuml
+title Function Calling as React Agent
+
+participant User
+participant ReACTAgent
+participant ReACTInternalSystem
+participant EntityLinking
+participant KnowledgeGraph
+participant NLG
+
+User->>ReACTAgent: Issue a query or request
+activate ReACTAgent
+
+ReACTAgent->>ReACTInternalSystem: Parse the query or request
+activate ReACTInternalSystem
+
+ReACTInternalSystem->>EntityLinking: Identify entities in the query or request
+activate EntityLinking
+
+EntityLinking->>KnowledgeGraph: Retrieve relevant information from the knowledge graph
+activate KnowledgeGraph
+
+KnowledgeGraph-->>EntityLinking: Provide relevant information
+deactivate KnowledgeGraph
+
+EntityLinking-->>ReACTInternalSystem: Return identified entities and their information
+deactivate EntityLinking
+
+ReACTInternalSystem->>NLG: Generate a response based on the query or request, entities, and information
+activate NLG
+
+NLG->>ReACTAgent: Return the generated response
+deactivate NLG
+
+ReACTAgent->>User: Send the generated response back to the user
+deactivate ReACTAgent
+
+@enduml

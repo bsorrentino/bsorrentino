@@ -1,0 +1,37 @@
+@startuml
+
+left to right direction
+
+
+' Define the outer rectangle with alias AlloyDB
+rectangle "Text chunking" as TC
+rectangle "Embedding generation" as EG <<AI model>>
+rectangle VectorDB {
+  ' Define the nested rectangles
+  rectangle "Table text_chunk" as TTC
+  rectangle "Table document" as TD
+}
+
+' Define the standalone rectangles for Documents
+rectangle Document1 as D1
+rectangle Document2 as D2
+rectangle Document3 as D3
+
+' Define the relationships
+D1 --> TC : Read
+D2 --> TC : Read
+D3 --> TC : Read
+TC --> TTC : Insert
+TC --> TD : Insert
+TTC .right. TD
+TTC --> EG : On insert
+EG --> TTC : Update
+note left of EG
+  AI Model that perform conversion 
+  from text to vector
+end note
+
+' Label the outer rectangle
+
+
+@enduml

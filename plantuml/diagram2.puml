@@ -1,0 +1,32 @@
+@startuml
+
+left to right direction
+
+' Define standalone rectangles
+Actor USER
+Actor BUILDER
+
+rectangle "Query" as QUERY_SERVICE { 
+    rectangle "EMBEDDING MODEL" as EMBEDDING_MODEL_1
+    rectangle "VECTOR DATABASE" as VECTOR_DATABASE
+    rectangle "GENERATIVE MODEL" as GENERATIVE_MODEL
+}
+rectangle "Upsert" as INGESTION_SERVICE {
+    rectangle DOCUMENTS 
+    rectangle "EMBEDDING MODEL" as EMBEDDING_MODEL_2
+}
+
+' Define the rectangle that contains other rectangles
+
+' Define relationships
+USER -down-> QUERY_SERVICE :  QUERY
+QUERY_SERVICE ..> EMBEDDING_MODEL_1
+EMBEDDING_MODEL_1 -down-> VECTOR_DATABASE : QUERY +\n EMBEDDING
+EMBEDDING_MODEL_2 -right-> VECTOR_DATABASE : \n\n\nEMBEDDINGS +\n METADATA\n\n\n\n
+VECTOR_DATABASE -down-> GENERATIVE_MODEL : QUERY +\n CONTEXT
+GENERATIVE_MODEL .up.> USER : \nRESPONSE
+DOCUMENTS -down-> EMBEDDING_MODEL_2 : DOCUMENTS
+BUILDER --> INGESTION_SERVICE : "INGEST\nDOCUMENTS"
+INGESTION_SERVICE ..> DOCUMENTS
+
+@enduml
