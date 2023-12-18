@@ -5,9 +5,11 @@ date:   2023-07-19
 categories: ai
 ---
 
-I've published the first [Azure Function] with [langchain] and [python] language, using [Azure OpenAI] 🥳. 
+I've developed the first project based on [Azure Function] with [langchain] and [python] language, using [Azure OpenAI] 🥳. 
 
 The fast(est) way of doing it, is fork/clone the awesome project [function-python-ai-langchain](prj) directly from [Azure Samples] that provide also a complete [infrastructure-as-code] based upon [bicep] ready to go.
+
+Hope this could be useful for you, in the meanwhile: happy coding 👋
 
 [prj]: https://github.com/Azure-Samples/function-python-ai-langchain
 [Azure Samples]: https://github.com/Azure-Samples
