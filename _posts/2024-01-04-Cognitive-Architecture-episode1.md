@@ -1,8 +1,8 @@
 ---
 layout: post
-title:  "Cognitive Architecture in smart applications (episode 1)"
+title:  "Cognitive Architecture of smart applications (episode 1)"
 date:   2024-01-04
-description: "Understand cognitive architecture to build smart applications"
+description: "Understand Cognitive Architecture to build smart applications"
 categories: ai
 ---
 
