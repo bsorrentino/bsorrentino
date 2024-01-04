@@ -6,9 +6,12 @@ description: "Understand Cognitive Architecture to build smart applications"
 categories: ai
 ---
 
-## What is our role in AI landscape 
 
-But before delving into details of cognitive architecture, let's understand our role in this emerging field and whether such architecture could be really useful for our goals.
+## Introduction
+
+Before exploring cognitive architecture, let's clarify our role in the AI landscape. This will help us determine if such architecture can be really useful for our objectives.
+
+### What is our role in AI landscape ?
 
 First we have to determine whether we are AI users or AI developers. The diagram below illustrates the different aspects of the AI landscape, specifically focusing on the [OpenAI] ecosystem (although this can be generalised to other AI providers). By understanding our goals with AI, we can identify the specific role we need to take on.
 
