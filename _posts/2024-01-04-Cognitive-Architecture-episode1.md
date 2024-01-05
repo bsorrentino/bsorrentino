@@ -8,7 +8,7 @@ categories: ai
 
 ![cover](../../../../assets/cognitive-architecture/cognitive-architecture-cover.png)
 
-----
+<br/>
 
 The raise of AI and in particular of the [LLM], has started a race to create groundbreaking  applications that use Al to deliver innovative and disruptive services. But before exploring the architecture behind such applications, let's first understand our role in this emerging field. This will help us determine if learning such architecture can be really useful for our objectives.
 
