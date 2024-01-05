@@ -7,7 +7,7 @@ categories: ai
 
 I've developed the first project based on [Azure Function] with [langchain] and [python] language, using [Azure OpenAI] 🥳. 
 
-The fast(est) way of doing it, is fork/clone the awesome project [function-python-ai-langchain](prj) directly from [Azure Samples] that provide also a complete [infrastructure-as-code] based upon [bicep] ready to go.
+The fast(est) way of doing it, is fork/clone the awesome project [function-python-ai-langchain][prj] directly from [Azure Samples] that provide also a complete [infrastructure-as-code] based upon [bicep] ready to go.
 
 Hope this could be useful for you, in the meanwhile: happy coding 👋
 
