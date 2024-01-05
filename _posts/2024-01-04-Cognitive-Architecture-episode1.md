@@ -44,7 +44,7 @@ As AI developer  we have to consider accessing to AI models using [PaaS] service
 
 ### Conclusion 
 
-Well, in this article we have just introduced the Cognitive Architecture concept and the challenges that we will face as AI developer of smart application. In the next article, we will explore bit more the cognitive architecture, including the most commonly used patterns and when and how to apply them to popular use cases. In the meanwhile ... happy "cognitive" coding
+Well, in this article we have just introduced the Cognitive Architecture concept and the challenges that we will face as AI developer of smart application. In the next article, we will explore bit more the cognitive architecture, including the most commonly used patterns and when and how to apply them to popular use cases. In the meanwhile ... happy "cognitive" coding! 👋
 
 ### References
 
