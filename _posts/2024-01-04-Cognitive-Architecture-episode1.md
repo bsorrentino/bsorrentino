@@ -7,13 +7,12 @@ categories: ai
 ---
 
 
-## Introduction
+The raise of AI and in particular of the [LLM], has started a race to create groundbreaking  applications that use Al to deliver innovative and disruptive services. But before exploring the architecture behind such applications, let's first understand our role in this emerging field. This will help us determine if learning such architecture can be really useful for our objectives.
 
-Before exploring cognitive architecture, let's clarify our role in the AI landscape. This will help us determine if such architecture can be really useful for our objectives.
 
-### What is our role in AI landscape ?
+## What is our role in AI landscape ?
 
-First we have to determine whether we are AI users or AI developers. The diagram below illustrates the different aspects of the AI landscape, specifically focusing on the [OpenAI] ecosystem (although this can be generalised to other AI providers). By understanding our goals with AI, we can identify the specific role we need to take on.
+To clarify our role in the AI landscape, we need to determine if we are AI users or AI developers. The diagram below illustrates the different aspects of the AI landscape, specifically focusing on the [OpenAI] ecosystem (although this can be generalised to other AI providers). By understanding our goals with AI, we can identify the specific role we need to take on.
 
 ![image1](../../../../assets/cognitive-architecture/img_01.png)
 
@@ -31,9 +30,7 @@ If answer is yes, we have to start learning the new emerging cognitive architect
 
 ## The Cognitive Architecture
 
-The raise of AI and in particular of the [LLM], has started a race to create game changer applications that use Al to deliver innovative and disruptive services.
-
-For this reason new application architecture involving [LLM] has been developed focusing on:
+These new smart applications require a new approach of development to maximise the use of AI capabilities. As a result, a new application architecture that incorporates [LLM] has been developed, with a focus on:
 
 * how provide context to the application
 * how does the application “reason” over it
