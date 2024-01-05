@@ -1,0 +1,30 @@
+@startuml
+!include brain.png.puml 
+!include dev.png.puml 
+
+'skinparam linetype ortho
+skinparam shadowing<<AI>> true
+skinparam shadowing<<Dev>> true
+
+skinparam Arrow {
+    Color Blue
+    FontColor Blue
+}
+skinparam rectangle {
+    'BackgroundColor LightBlue
+    BorderColor DarkBlue
+    FontColor DarkBlue
+}
+
+left to right direction
+rectangle "Application" {
+    rectangle "Context\n<$dev,scale=.6>" as context<<Dev>>
+    rectangle "Reasoning\n\n<$brain,scale=.6>" <<AI>> as reasoning
+    rectangle "Process\n<$dev,scale=.6>" as result<<Dev>>
+}
+context --> reasoning: [1] submit
+reasoning --> result: [2]: result
+result ..> context: [4] update
+
+
+@enduml
