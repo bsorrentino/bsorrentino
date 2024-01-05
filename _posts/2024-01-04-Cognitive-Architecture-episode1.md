@@ -32,9 +32,9 @@ If answer is yes, we have to start learning the new emerging cognitive architect
 
 These new smart applications require a new approach of development to maximise the use of AI capabilities. As a result, a new application architecture that incorporates [LLM] has been developed, with a focus on:
 
-* how provide context to the application
-* how does the application “reason” over it
-* how application use outcome from reasoning
+> * **how provide context to the application**
+> * **how does the application “_<u>reason</u>_” over it**
+> * **how application use outcome from reasoning**
 
 The methods and patterns used to complete these tasks are referred to as the **<u>cognitive architecture</u> of an application** which is a  cool term to describe this new kind of smart applications. 
 
