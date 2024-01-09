@@ -5,7 +5,7 @@ date:   2024-01-09
 categories: ai
 ---
 
-![Cover Image](../assets/ai-multi-prompt-browser-extension/cover.png)
+![Cover Image](../../../../assets/ai-multi-prompt-browser-extension/cover.png)
 
 <br>
 
