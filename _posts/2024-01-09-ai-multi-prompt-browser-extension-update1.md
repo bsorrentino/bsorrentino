@@ -19,6 +19,8 @@ The most requested feature is now available 😎. You can automatically open a c
 
 Now, other than [ChatGPT], [Bard], [Copilot], [Phind] and [Perplexity], we have added also [DeepSeek Coder][Deepseek] a promising code generation model providing also an [online playground chat][deepseek_chat].
 
+<b/>
+<b/>
 
 🔗 Check it out on the [Chrome Web Store][chrome] and enhance your productivity today! thanks and happy AI chatting 💬🤖.
 
