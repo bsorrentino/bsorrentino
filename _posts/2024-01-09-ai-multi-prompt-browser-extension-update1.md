@@ -5,6 +5,10 @@ date:   2024-01-09
 categories: ai
 ---
 
+![Cover Image](../assets/ai-multi-prompt-browser-extension/cover.png)
+
+<br>
+
 🎉 News for [AI Multi Prompt Browser Extension][chrome] users. the version `1.3.0` has been released
 
 #### Automatic Open Chat Tab
