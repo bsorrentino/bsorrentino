@@ -96,18 +96,25 @@ _by Sam Schillace, Deputy CTO / Microsoft_
 
 ## Interest
 
-- 🧠 started to work on AI using language model and [langchain] framework
-- keep going on With [Microsoft Power Platform] eco-system 
-- 🌱 I’m continuing to learning [RUST](https://rustwasm.github.io)
+- 🧠 started to work on AI using language model and [langchain] framework. Take a look 👀 to:
+   - [langchain-labs]
+      > AI experimentation using langchain framework
+   - [copilot-cli-agent] 
+      > Enhance your CLI with AIFunctions Agent
+   - [AI-Multiprompt-Extension]
+      > A Chrome/Safari Web Extension that allows to simultaneously submit a prompt to multiple AI chats
+   - [PlantUML4iPad]
+      > An AI powered PlantUML Editor App for iPad
+- keep going on With [Microsoft Power Platform] eco-system. Take a look 👀 to:
+    - [zx-powerapps-cli]
+       > [zx] scripts for interactive use of powerapps cli (PAC).
+    - [OfficeScripts-CLI]
+       > CLI for manage Office Script (OSTS) files. based on [Office365-cli][m365]
+    - [PlantUML-PowerPlatform]
+      > PlantUML sprites, macros, and other includes for PowerPlatform services
+   
+- 🌱 I’m continuing to learning [RUST]
 - 👀 I'm interested in [WebAssembly] that I consider a potential game-changer technology.
-- ✍🏻 OS projects under development focus
-   - [zx-powerapps-cli](https://www.npmjs.com/package/@bsorrentino/zx-powerapps-cli)
-   - [PlantUML iPad App](https://github.com/bsorrentino/PlantUML4iPad)
-
-
-[WebAssembly]: https://webassembly.org
-[Microsoft Power Platform]: https://powerplatform.microsoft.com/en-us/
-[langchain]: https://docs.langchain.com/docs/
 
 <!--
 **bsorrentino/bsorrentino** is a ✨ _special_ ✨ repository because its `README.md` (this file) appears on your GitHub profile.
@@ -123,3 +130,17 @@ Here are some ideas to get you started:
 - 😄 Pronouns: ...
 - ⚡ Fun fact: ...
 -->
+
+[RUST]: https://rustwasm.github.io
+[WebAssembly]: https://webassembly.org
+[Microsoft Power Platform]: https://powerplatform.microsoft.com/en-us/
+[langchain]: https://docs.langchain.com/docs/
+[zx-powerapps-cli]: https://www.npmjs.com/package/@bsorrentino
+[langchain-labs]: https://github.com/bsorrentino/langchain-labs
+[copilot-cli-agent]: https://github.com/bsorrentino/copilot-cli-agent
+[zx]: https://www.npmjs.com/package/zx
+[AI-MultiPrompt-Extension]: https://github.com/bsorrentino/AI-MultiPrompt-Extension
+[PlantUML4iPad]: https://github.com/bsorrentino/PlantUML4iPad
+[OfficeScripts-CLI]: https://github.com/bsorrentino/OfficeScripts-CLI
+[m365]: https://pnp.github.io/cli-microsoft365/
+[PlantUML-PowerPlatform]: https://github.com/bsorrentino/PlantUML-PowerPlatform
