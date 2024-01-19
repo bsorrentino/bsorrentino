@@ -1,0 +1,25 @@
+@startuml "aiagents"
+actor "PM" as HUMAN_PM<<human>>
+actor "QA" as HUMAN_QA<<human>>
+rectangle "AI Agent Team" as AI_AGENT_TEAM #lightblue {
+    rectangle "Coder" as CODER<<Agent>>
+    rectangle "Tester" as TESTER<<Agent>>
+    rectangle "PM" as API<<Agent>>
+}
+rectangle "Human Architecs" as AI_AGENT_ARCHITECTS #lightgreen {
+    actor "DevOps" as DA<<human>>
+    actor "Technical" as TA<<human>>
+    actor "Secutiry" as SA<<human>>
+    actor "Integration" as IA<<human>>
+}
+HUMAN_PM -right-> AI_AGENT_ARCHITECTS: Submit Requirements
+AI_AGENT_ARCHITECTS -down-> API: Hi level requirements\nto\nDetailed level requirements
+TA -right[hidden]- SA
+API <-right-> CODER
+API <-down-> TESTER
+'CODER <-right[hidden]-> TESTER
+'TESTER <-right[hidden]-> API
+'API -right[hidden]-> HUMAN_QA
+API -left-> HUMAN_QA: Coding result
+HUMAN_QA -up-> HUMAN_PM: Report Result
+@enduml
