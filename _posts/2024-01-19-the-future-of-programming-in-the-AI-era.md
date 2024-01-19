@@ -8,7 +8,7 @@ categories: ai
 ---
 
 
-## Will AI Make Programmers Obsolete?
+### Will AI Make Programmers Obsolete?
 
 I'm involved in AI research and development and, as programmer, I'm interested in the future of programming in the dawn of this new era. Obviously I'm also interested in the future of AI and try to gather as much as possible information concerning it. 
 
