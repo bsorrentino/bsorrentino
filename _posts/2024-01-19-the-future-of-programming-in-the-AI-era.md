@@ -24,11 +24,11 @@ Matthew, based on his programming experience, highlights three main consideratio
 
 He states that currently he adopts a development process where he plays the role of orchestrator  between  ChatGPT code generation, Copilot review and Test like described in picture below
 
-![](../../../../assets/the-end-of-programming/image01.png)
+![image01](../../../../assets/the-end-of-programming/image01.png)
 
 He also  envisions a future where a human project manager interfaces with an AI team of coders and testers, leading to a significant reduction in the need for human programmers as shown in picture below
 
-![](../../../../assets/the-end-of-programming/image02.png)
+![image02](../../../../assets/the-end-of-programming/image02.png)
 
 ### My thoughts about this vision 
 
@@ -40,7 +40,7 @@ What is missing in the big picture is that, alongside the human PM, there should
 
 Just to clarify, roles such as: Integration Architect, Security Architect, Technical Architect, DevOps Architect should be in the picture. Below a new diagram that involve architects in the process
 
-![](../../../../assets/the-end-of-programming/aiagents.png)
+![image03](../../../../assets/the-end-of-programming/aiagents.png)
 
 ### Conclusion 
 
