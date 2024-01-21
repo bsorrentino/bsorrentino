@@ -6,6 +6,9 @@ description: How to combine searchable modifier with new @Query property wrapper
 categories: SwiftData SwiftUI
 ---
 
+![cover](../../../../assets/swiftdata-dynamically-query-filtering/cover.png)
+<br>
+
 ## The SwiftUI 'searchable' modifier
 
 As described in my previous article [SwiftUI: Dynamically Filtering FetchRequest][article1] from **IOS 15** [SwiftUI] has been enriched by an useful modifier [searchable][SEARCH] that allow to achieve, in pretty straightforward way a full working search bar.
