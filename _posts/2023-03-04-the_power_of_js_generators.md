@@ -5,6 +5,9 @@ date:   2023-03-03 20:05:26 +0200
 categories: git
 ---
 
+![cover][../../../../assets/the-power-of-js-generators/cover.png]
+<br>
+
 ## Introduction
 
 During my daily work, like every developer, we discover a lot of precious online material. Sometimes it contains suggestions, fragments of code or even complete tutorials. However, rarely read articles that open your mind and/or change the development prospect.
