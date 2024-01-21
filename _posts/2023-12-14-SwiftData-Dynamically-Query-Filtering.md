@@ -3,7 +3,7 @@ layout: post
 title:  "SwiftData: Dynamically Query Filtering"
 date:   2023-12-14 12:00:00 +0100
 description: How to combine searchable modifier with new @Query property wrapper to achieve dynamic filtering
-categories: SwiftData SwiftUI
+categories: swift
 ---
 
 ![cover](../../../../assets/swiftdata-dynamically-query-filtering/cover.png)
