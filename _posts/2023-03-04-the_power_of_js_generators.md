@@ -5,7 +5,7 @@ date:   2023-03-03 20:05:26 +0200
 categories: git
 ---
 
-![cover][../../../../assets/the-power-of-js-generators/cover.png]
+![cover](../../../../assets/the-power-of-js-generators/cover.png)
 <br>
 
 ## Introduction
