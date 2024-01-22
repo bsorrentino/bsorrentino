@@ -46,6 +46,6 @@ Just to clarify, roles such as: Integration Architect, Security Architect, Techn
 ### Conclusion 
 
 In my experience, I have found that the most successful architects I know began their careers by developing software. This leads me to wonder: 
-> if AI eliminates the need for programming, how will it affect the professional growth of the new architects generation?
+> if AI eliminates the need for programming, how will it affect the professional growth of the new software architects generation?
 
 I believe that **AI will not be the "End Of Programming"** but it will definitely revolutionise the way programming will be  done in the future. I don't know exactly how it will change, but I am excited to see and understand the impact it will have and embrace the new challenges that this changes will imply. In the meanwhile enjoy coding! 👋
