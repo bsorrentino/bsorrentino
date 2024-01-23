@@ -7,7 +7,7 @@ categories: ai
 
 ---
 ![cover](../../../../assets/the-end-of-programming/cover.png)
-
+<br>
 
 ### Will AI Make Programmers Obsolete?
 

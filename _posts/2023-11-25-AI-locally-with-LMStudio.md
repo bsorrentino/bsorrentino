@@ -6,6 +6,10 @@ description: "A dive into LM Studio: Simplifying Local Deployment of Open-Source
 categories: ai
 ---
 
+![Cover Image](../../../../assets/LMStudio/cover.png)
+
+<br>
+
 ### Introduction
 
 In my experience dealing in developing AI powered applications using [langchain] framework, I arrived to need to involve a local LLM model. So I started searching for some guides or videos and at the end I landed on video: "[Run ANY Open-Source Model LOCALLY][video1]". Seeing this very interesting video, I have realized that in the fast-paced realm of AI, open-source large language models have become increasingly accessible, particularly thanks to the [🤗 Hugging Face] portal and I discovered existence of [LM Studio] a freely downloadable tool designed to simplify the deployment and run of open-source large language models on local machines. Below I summarise the main features offered by [LM Studio] which enable users to quickly explore and test the “open-source LLM”’s world
