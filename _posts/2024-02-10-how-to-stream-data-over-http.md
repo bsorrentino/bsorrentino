@@ -20,8 +20,6 @@ This article presents a practical guide to using [HTTP streaming] (aka "_chunked
 
 [HTTP streaming] is a way of sending data over HTTP using a mechanism called **chunked transfer encoding**. This means that the server can send the response in multiple chunks, each with its own size and content. The client can start processing the response as soon as it receives the first chunk, without waiting for the whole response to be complete. This can reduce the latency and the memory usage of both the server and the client.
 
-![sequence](../../../../assets/http_streaming/http-streaming.png)
-
 **Compatibility**
 > HTTP streaming is supported by most modern browsers and HTTP clients, and it works well with plain HTTP and HTTPS. 
 
@@ -38,7 +36,7 @@ This article presents a practical guide to using [HTTP streaming] (aka "_chunked
 
 I choosen to use plain javascript, [Node.js] and standard [Fetch API] for implementing the examples as proof of concept, avoiding any third-party frameworks so we will not be sidetracked by technology details, but we will focus on the streaming architecture. 
 
-## [❗IMPORTANT❗] The Async Generator
+## ❗IMPORTANT❗ The Async Generator
 
 Because to implement the [chunked transfer encoding over HTTP][HTTP Streaming] we need to split our overall computation in smaller tasks which can return a partial (_and consistent_) result, we will explore the [async generators][async generator]  an incredible built-in javascript tool that is ideal for this goal. 
 
@@ -142,11 +140,13 @@ It's DONE! ✅ now you can see data chunks coming from the server as soon as the
 **Take a Note 👀:** 
 > We have both an [async generator] in the server to produce chunks of data and in the client to consume them.
 
+
 # Advantages
 
 -   **Snappy User Experience**: You can start showing data as soon as it's available.
 -   **Scalable API**: No memory usage spikes from accumulating results in memory.
 -   **Uses plain HTTP and a standard JavaScript API**. There are no connections to manage or complicated frameworks that might become obsolete in a few years.
+
 
 # Disadvantages
 
@@ -199,12 +199,12 @@ server.listen(PORT, () =>
 ```
 
 # Conclusion
- d d
+
 In this article we have seen a practical guide to using HTTP streaming for efficient data visualization in web applications. We have explored the use of [chunked transfer encoding over HTTP][HTTP streaming] its advantages and disadvantages. We have also delved into the power of [async generator functions][async generator function] and their use in implementing HTTP Streaming. Finally, we have seen a real use case of streaming data over HTTP using [Node.js], [Fetch API], and [OpenAI streaming API].  
 
 Hope that this knowledge will be helpful. In the meanwhile, enjoy coding! 👋 
 
-# References
+# References
 
 * [Implement HTTP Streaming with Node.js and Fetch API][ref1]
 
