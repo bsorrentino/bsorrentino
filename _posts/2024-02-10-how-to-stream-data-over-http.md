@@ -13,7 +13,7 @@ categories: web
 
 This article presents a practical guide to using [HTTP streaming] (aka "_chunked transfer encoding over HTTP_" ) for efficient data visualization in web applications. 
 
-> I was inspired to write this article from the experience I had working on AI projects that leverage the streaming support provided by [OpenAI API] and I'd want to share my findings hoping that could be useful.
+I was inspired to write this article from the experience I had working on AI projects that leverage the streaming support provided by [OpenAI API] and I'd want to share my findings hoping that could be useful.
 
 ## What is HTTP streaming?
 
@@ -31,7 +31,7 @@ This article presents a practical guide to using [HTTP streaming] (aka "_chunked
 
 [HTTP streaming] can be useful for web applications that need to visualize a large amount of data, such as charts, graphs, maps, tables or a time-consuming response like a complex AI response, this mainly to offer a User a more engaging interactive experience.
 
-## Proof Of Concept
+## Proof of Concept
 
 I choosen to use plain javascript, [Node.js] and standard [Fetch API] for implementing the examples as proof of concept, avoiding any third-party frameworks so we will not be sidetracked by technology details, but we will focus on the streaming architecture. 
 
@@ -155,8 +155,7 @@ It's DONE! ✅ now you can see data chunks coming from the server as soon as the
     -   The application must be able to determine if the stream has not completed and behave accordingly.
 -   **Needs formatting assumptions** as part of the contract or usage of an unconventional format.
 
-
-# Bonus 💯: Streaming response from OpenAI Chat
+## Bonus 💯: Streaming response from OpenAI Chat
 
 As said at beginning I delved into [HTTP Streaming] to be able to leverage the streaming support provided by [OpenAI streaming API]. Essentially the streaming version of the API, instead to return whole answer, return an [async iterable object][async iteration] 🤩.
 So, we can use the same approach as we did before 😉 to stream over HTTP the data chunks coming from the OpenAI server as shown below:
@@ -197,13 +196,13 @@ server.listen(PORT, () =>
 })();
 ```
 
-# Conclusion
+## Conclusion
 
 In this article we have seen a practical guide to using HTTP streaming for efficient data visualization in web applications. We have explored the use of [chunked transfer encoding over HTTP][HTTP streaming] its advantages and disadvantages. We have also delved into the power of [async generator functions][async generator function] and their use in implementing HTTP Streaming. Finally, we have seen a real use case of streaming data over HTTP using [Node.js], [Fetch API], and [OpenAI streaming API].  
 
 Hope that this knowledge will be helpful. In the meanwhile, enjoy coding! 👋 
 
-# References
+## References
 
 * [Implement HTTP Streaming with Node.js and Fetch API][ref1]
 
