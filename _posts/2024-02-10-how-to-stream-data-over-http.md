@@ -204,7 +204,7 @@ In this article we have seen a practical guide to using HTTP streaming for effic
 
 Hope that this knowledge will be helpful. In the meanwhile, enjoy coding! 👋 
 
-# References
+# References
 
 * [Implement HTTP Streaming with Node.js and Fetch API][ref1]
 
