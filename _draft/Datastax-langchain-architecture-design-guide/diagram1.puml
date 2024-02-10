@@ -1,0 +1,45 @@
+@startuml
+
+'skinparam linetype ortho
+
+queue "Event Stream" as EventStream
+
+rectangle StreamProcessor {
+    rectangle "Preprocessing" as Preprocessing
+    rectangle "LLM Application" as LLMApplication
+    rectangle "Postprocessing" as Postprocessing
+    rectangle "Output" as Output
+}
+
+rectangle Observability {
+    note left of Observability
+        Metrics, Logs, etc.
+    end note
+}
+
+rectangle LLMService {
+    note right of LLMService
+        eg., OpenAI
+    end note
+}
+
+rectangle LLMTracing {
+    note right of LLMTracing
+        eg., LangSmith
+    end note
+}
+
+StreamProcessor -[hidden]left-> EventStream
+EventStream -right-> Preprocessing
+Preprocessing -right-> LLMApplication
+LLMApplication -right-> Postprocessing
+Postprocessing -right-> Output
+LLMApplication -down-> LLMService
+LLMApplication -down-> LLMTracing
+LLMApplication -up-> Observability
+
+note top of StreamProcessor
+    eg., Kafka Consumer, Celery, RabbitMQ, SQS
+end note
+
+@enduml
