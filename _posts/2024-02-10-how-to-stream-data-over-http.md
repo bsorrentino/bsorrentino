@@ -9,14 +9,13 @@ categories: web
 ![cover](../../../../assets/http_streaming/http-streaming.png)
 <br>
 
-
-# Abstract
+## Abstract
 
 This article presents a practical guide to using [HTTP streaming] (aka "_chunked transfer encoding over HTTP_" ) for efficient data visualization in web applications. 
 
 > I was inspired to write this article from the experience I had working on AI projects that leverage the streaming support provided by [OpenAI API] and I'd want to share my findings hoping that could be useful.
 
-# What is HTTP streaming?
+## What is HTTP streaming?
 
 [HTTP streaming] is a way of sending data over HTTP using a mechanism called **chunked transfer encoding**. This means that the server can send the response in multiple chunks, each with its own size and content. The client can start processing the response as soon as it receives the first chunk, without waiting for the whole response to be complete. This can reduce the latency and the memory usage of both the server and the client.
 
@@ -28,26 +27,26 @@ This article presents a practical guide to using [HTTP streaming] (aka "_chunked
 >
 > **For simplicity This article will focus on HTTP/1.1**.
 
-# Why use HTTP streaming?
+## Why use HTTP streaming?
 
 [HTTP streaming] can be useful for web applications that need to visualize a large amount of data, such as charts, graphs, maps, tables or a time-consuming response like a complex AI response, this mainly to offer a User a more engaging interactive experience.
 
-# Proof Of Concept
+## Proof Of Concept
 
 I choosen to use plain javascript, [Node.js] and standard [Fetch API] for implementing the examples as proof of concept, avoiding any third-party frameworks so we will not be sidetracked by technology details, but we will focus on the streaming architecture. 
 
-## ❗IMPORTANT❗ The Async Generator
+### ❗IMPORTANT❗ The Async Generator
 
 Because to implement the [chunked transfer encoding over HTTP][HTTP Streaming] we need to split our overall computation in smaller tasks which can return a partial (_and consistent_) result, we will explore the [async generators][async generator]  an incredible built-in javascript tool that is ideal for this goal. 
 
-### Anatomy of Async Generator function
+#### Anatomy of Async Generator function
 
 - An [async generator function] is a particular function that return an [AsyncGenerator object][async generator] conforms to both the [async iterable][async iteration] and the [async iterator][async iteration] protocol. 
 - An [async generator function] allows [yielding][yield] an intermediate result during an iterative process suspending current execution and giving the possibility to use such result by code that are waiting for it.
 
 Ultimately an [async generator function] (`function*`) combines the features of [async functions] and [generator functions], where you can use both the [await] and [yield] keywords within the function body, so you can handle asynchronous tasks ergonomically with [await], while leveraging the lazy nature of [generator functions]. 
 
-## Server Side Implementation
+### Server Side Implementation
 
 The Assumption is to have an [async generator function] that produces data in chunks. As prrof of concept here is a simple function that sends out data chunks, with a delay between each one: 
 
@@ -90,14 +89,14 @@ server.listen(PORT, () =>
 
 As you can see from the code above, the implementation of [chunked transfer encoding over HTTP] in [Node.js] is pretty straight forward, we iterate over data chunks asynchronously and write them to HTTP response that's all. 
 
-## Client Side Implementation
+### Client Side Implementation
 
 On the client side we use [fetch API] to handle streaming response from the server. In this case we can [attach a Reader] to a response's body using `getReader()`, that locks to the stream and waits for each chunk of data sent by server. 
 
 **Decoding the data chunks**
 > Since the data chunk are encoded we need to decode it first to be able to use it.
 
-### Bonus 💯 : Wrap around the Reader with an asynchronous generator function 
+#### Bonus 💯 : Wrap around the Reader with an asynchronous generator function 
 
 We can wrap around the Reader with an asynchronous generator function that allows fetching data in a streaming fashion yielding each chunk of data as soon as it is available. 
 
@@ -141,14 +140,14 @@ It's DONE! ✅ now you can see data chunks coming from the server as soon as the
 > We have both an [async generator] in the server to produce chunks of data and in the client to consume them.
 
 
-# Advantages
+## Advantages
 
 -   **Snappy User Experience**: You can start showing data as soon as it's available.
 -   **Scalable API**: No memory usage spikes from accumulating results in memory.
 -   **Uses plain HTTP and a standard JavaScript API**. There are no connections to manage or complicated frameworks that might become obsolete in a few years.
 
 
-# Disadvantages
+## Disadvantages
 
 -   **Implementation is slightly more involved** than using regular API calls.
 -   **Error handling becomes more difficult** because HTTP status code 200 will be sent as soon as streaming starts.
