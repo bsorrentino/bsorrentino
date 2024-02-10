@@ -1,0 +1,22 @@
+@startuml http streaming
+title Chunked Transfer Encoding over HTTP
+hide footbox
+'actor "Browser" as Client
+participant "Web App" as Client
+participant "Web Server" as Server
+'database "Data Source" as ds
+
+Client -> Server: GET /resource HTTP/1.1
+Server -> Client: Transfer-Encoding: chunked\nContent-Type: text/plain\nHTTP/1.1 200 OK
+Server -> : request data
+
+loop #C9EEEDFF "until data ends" 
+    Server /-- : fetch data
+    activate Server #0096FFFF
+    Server -> Server : Prepare chunk
+    Server --> Client : write chunk 
+    deactivate Server
+    activate Client #FF9300FF 
+    Client -> Client: decode chunk
+end
+@enduml
