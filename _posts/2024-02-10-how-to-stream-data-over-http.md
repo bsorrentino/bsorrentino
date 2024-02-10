@@ -155,7 +155,7 @@ It's DONE! ✅ now you can see data chunks coming from the server as soon as the
     -   The application must be able to determine if the stream has not completed and behave accordingly.
 -   **Needs formatting assumptions** as part of the contract or usage of an unconventional format.
 
-## Bonus 💯: Streaming response from OpenAI Chat
+## Bonus 💯: Streaming response from OpenAI Chat API
 
 As said at beginning I delved into [HTTP Streaming] to be able to leverage the streaming support provided by [OpenAI streaming API]. Essentially the streaming version of the API, instead to return whole answer, return an [async iterable object][async iteration] 🤩.
 So, we can use the same approach as we did before 😉 to stream over HTTP the data chunks coming from the OpenAI server as shown below:
