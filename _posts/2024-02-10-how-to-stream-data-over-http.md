@@ -87,7 +87,7 @@ server.listen(PORT, () =>
     console.log(`Server running at http://localhost:${PORT}/`) );
 ```
 
-As you can see from the code above, the implementation of [chunked transfer encoding over HTTP] in [Node.js] is pretty straight forward, we iterate over data chunks asynchronously and write them to HTTP response that's all. 
+As you can see from the code above, the implementation of [chunked transfer encoding over HTTP][HTTP Streaming] in [Node.js] is pretty straight forward, we iterate over data chunks asynchronously and write them to HTTP response that's all. 
 
 ### Client Side Implementation
 
