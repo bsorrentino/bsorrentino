@@ -205,7 +205,7 @@ Hope that this knowledge will be helpful. In the meanwhile, enjoy coding! 👋
 ## References
 
 * [Implement HTTP Streaming with Node.js and Fetch API][ref1]
-
+* [The power of 'js generators' revamped][ref2]
 
 [async functions]: https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Statements/async_function
 [generator functions]: https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/GeneratorFunction
@@ -225,3 +225,4 @@ Hope that this knowledge will be helpful. In the meanwhile, enjoy coding! 👋
 
 [ref1]: https://www.loginradius.com/blog/engineering/guest-post/http-streaming-with-nodejs-and-fetch-api/
 
+[ref2]: https://bsorrentino.github.io/bsorrentino/git/2023/03/03/the_power_of_js_generators.html

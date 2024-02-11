@@ -212,7 +212,7 @@ Array(6) [
     "leaf R1"
     ]
 ```
-### async iteration with [@@asyncIterator]([asyncIterator])
+### async iteration with [async iterator]([asyncIterator])
 
 And, of course, could not be missed compliance of generators with asynchronous iterations 💪 
 
