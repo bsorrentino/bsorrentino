@@ -94,7 +94,7 @@ As you can see from the code above, the implementation of [chunked transfer enco
 On the client side we use [fetch API] to handle streaming response from the server. In this case we can [attach a Reader] to a response's body using `getReader()`, that locks to the stream and waits for each chunk of data sent by server. 
 
 **Decoding the data chunks**
-> Since the data chunk are encoded we need to decode it first to be able to use it.
+> Since the data chunk is encoded we need to decode it first to be able to use it.
 
 #### Bonus 💯 : Wrap around the Reader with an asynchronous generator function 
 
@@ -140,17 +140,17 @@ It's DONE! ✅ now you can see data chunks coming from the server as soon as the
 > We have both an [async generator] in the server to produce chunks of data and in the client to consume them.
 
 
-## Advantages
+## Advantages 🙂
 
 -   **Snappy User Experience**: You can start showing data as soon as it's available.
 -   **Scalable API**: No memory usage spikes from accumulating results in memory.
 -   **Uses plain HTTP and a standard JavaScript API**. There are no connections to manage or complicated frameworks that might become obsolete in a few years.
 
 
-## Disadvantages
+## Disadvantages 🤔
 
 -   **Implementation is slightly more involved** than using regular API calls.
--   **Error handling becomes more difficult** because HTTP status code 200 will be sent as soon as streaming starts.
+-   **Error handling becomes more difficult** because HTTP status code 200 will be sent as soon as streaming starts (see cover image).
     -   What do we do when something goes wrong in the middle of the stream?
     -   The application must be able to determine if the stream has not completed and behave accordingly.
 -   **Needs formatting assumptions** as part of the contract or usage of an unconventional format.
