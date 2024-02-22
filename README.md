@@ -135,7 +135,7 @@ Here are some ideas to get you started:
 [WebAssembly]: https://webassembly.org
 [Microsoft Power Platform]: https://powerplatform.microsoft.com/en-us/
 [langchain]: https://docs.langchain.com/docs/
-[zx-powerapps-cli]: https://www.npmjs.com/package/@bsorrentino
+[zx-powerapps-cli]: https://www.npmjs.com/package/@bsorrentino/zx-powerapps-cli
 [langchain-labs]: https://github.com/bsorrentino/langchain-labs
 [copilot-cli-agent]: https://github.com/bsorrentino/copilot-cli-agent
 [zx]: https://www.npmjs.com/package/zx
