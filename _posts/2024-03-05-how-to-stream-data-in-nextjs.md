@@ -84,7 +84,7 @@ In the code above the `StreamingResponse` is the custom [Response] subclass that
 
 ### Create a NextJS Route Handler that stream data
 
-We have almost done, to test streaming data, we can create a [NextJS Rout Handler][Route Handlers] that handle a `GET` request that return a response that fetch, encode and stringify the data from an async generator that is exactly our previously implementd `StreamingResponse`
+We have almost done! To test streaming data, we can create a [NextJS Route Handler][Route Handlers] that handle a `GET` http request that return a response that fetch, format and encode the data from an [async generator] that is exactly our earlier implemented `StreamingResponse` class.
 
 ```typescript
 // file: app/api/stream-data/route.ts
