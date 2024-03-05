@@ -11,16 +11,19 @@ categories: web
 
 ## Let's continue
 
-Continuing the in-depth analysis started with the previous article "[How to stream data over HTTP using Node and Fetch API][part1]", in this one we will see how to apply [HTTP streaming] within [Next.js] the well-known React framework to create complete web applications. 
+Continuing the in-depth analysis started with the previous article "[How to stream data over HTTP using Node and Fetch API][part1]", in this one we will see how to apply [HTTP streaming] within [Next.js] the well-known [React] framework to create complete web applications. 
 
-Summarizing, in the [previous article][part1] we have dealt with:
-* How to split our overall computation in smaller tasks which can return a partial (_and consistent_) result using the [async generators][async generator]
-* How to return data chunk over http using [Node.js] [http.ServerResponse] from the Server
-* How to use a [readable stream] form [Fetch API] to consume the data chunk over http in the Client
+
+In the [previous article][part1], we covered how to: 
+
+* Divide our overall computation into smaller tasks that can return a partial (and consistent) result using [async generators][async generator]
+* Send data chunks over HTTP using [Node.js] [ServerResponse] from the Server 
+* Use a [readable stream] from [Fetch API] to receive the data chunks over HTTP on the Client 
 
 ## Next.js implementation
 
-Take note that the implementation will be based on [typescript] to make in evidence the objects' type  that we are going to use. In [Next.js] the main implementation topics are:
+In [Next.js] the main implementation steps are:
+> Take note that the implementation will be based on [typescript] to make in evidence the objects' type  that we are going to use. 
 
 * Create an instance of [ReadableStream] that fetch data from an [async generator]
 * Create a [Response object][Response] specialization that accept a [ReadableStream] as result body 
@@ -28,6 +31,8 @@ Take note that the implementation will be based on [typescript] to make in evide
 * Create a client side [React] component that consume the data chunk over http.
 
 ### Create a ReadableStream from an async generator
+
+We will create a [ReadableStream] that fetch data from an [async generator] using [TextEncoder] to encode the data chunks.
 
 ```typescript
 
@@ -47,13 +52,13 @@ export const makeStream = <T extends Record<string, unknown>>(generator: AsyncGe
 }
 ```
 
-In the code above we have created a `makeStream` function that takes in an [async generator] and return a [ReadableStream]. As you see we can pass to the [ReadableStream]’s `constructor`, a callback function that is used when the stream starts to produce data. when invoked to this function is provided a controller object where we can put the fetched data on a queue.  
+The `makeStream` function takes in an [async generator] and return a [ReadableStream]. As you see we can pass to the [ReadableStream]’s `constructor`, a callback function that is used when the stream starts to produce data. Once invoked, to this function is provided a controller object where we can put the fetched data on a queue.  
 
-So in summary, it's taking an [async generator] of data, encoding each chunk to binary data, and piping that data through a [ReadableStream] so that the stream can be consumed asynchronously.
+So in summary, it's taking an [async generator] of data, encoding each chunk to binary data, and piping that data through a [ReadableStream] so that the stream can be consumed asynchronously. This allows you to generate data on demand and stream it to the client efficiently without buffering everything in memory. The client can then read from the stream over time as the data becomes available.
 
-This allows you to generate data on demand and stream it to the client efficiently without buffering everything in memory. The client can then read from the stream over time as the data becomes available.
+### Create a specialized Response object
 
-### Create a specialized Response Object
+Now we create a custom subclass of [Response] able to manage a [ReadableStream] 
 
 ```typescript
 /**
@@ -75,7 +80,7 @@ class StreamingResponse extends Response {
 
 ```
 
-In the code above we have created `StreamingResponse` a custom [Response] subclass that accepts a [ReadableStream] as response body. This allows to return a response ables to streaming data from a [Next.js Route Handler][Route Handlers].
+In the code above the `StreamingResponse` is the custom [Response] subclass that accepts a [ReadableStream] as response body. This allows to return a response able to streaming data from a [Next.js Route Handler][Route Handlers]. 
 
 ### Create a NextJS Route Handler that stream data
 
@@ -199,21 +204,23 @@ In this article we have seen a practical guide to using HTTP streaming for effic
 
 Hope that this knowledge will be helpful. In the meanwhile, enjoy coding! 👋 
 
-> 💻 The code is available in [Github][repo] 💻
+> 💻 The code is available on [Github][repo] 💻
 
 ## References
 
 * [How to stream data over HTTP using Node and Fetch API][part1]
 
 [repo]: https://github.com/bsorrentino/http-streaming
+[typescript]: https://www.typescriptlang.org
 [Next.js]: https://nextjs.org
 [React]: https://reactjs.org
 [part1]: https://bsorrentino.github.io/bsorrentino/web/2024/02/10/how-to-stream-data-over-http.html
-[http.ServerResponse]: https://nodejs.org/api/http.html#class-httpserverresponse
+[ServerResponse]: https://nodejs.org/api/http.html#class-httpserverresponse
 [ReadableStream]: https://developer.mozilla.org/en-US/docs/Web/API/ReadableStream
 [Response]: https://developer.mozilla.org/en-US/docs/Web/API/Response
 [Route Handlers]: https://nextjs.org/docs/app/building-your-application/routing/route-handlers
 [Server Components]: https://nextjs.org/docs/app/building-your-application/rendering/server-components
+[TextEncoder]: https://developer.mozilla.org/en-US/docs/Web/API/TextEncoder
 [HTTP streaming]: https://en.wikipedia.org/wiki/Chunked_transfer_encoding
 [Fetch API]: https://developer.mozilla.org/en-US/docs/Web/API/Fetch_API
 [readable stream]: https://developer.mozilla.org/en-US/docs/Web/API/Streams_API/Using_readable_streams
