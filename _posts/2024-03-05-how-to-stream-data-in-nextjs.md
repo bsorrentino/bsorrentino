@@ -131,8 +131,7 @@ export async function GET(req: NextRequest ) {
 
 The last step is to create a **Client Side React Component** to consume and show streamed chunck of data.
 
-Like in the [previous article][part1] we have developed the function `streamingFetch` using the [Fetch API] to handle streaming response from the server through a [body reader][attach a Reader] and we employ it in the `useEffect` [React] hook as shown below 
-
+As we did in the [previous article][part1], we used the [Fetch API] to create the function `streamingFetch`, which can handle streaming response from the server using a [body reader][attach a Reader]. We use this function in the `useEffect` [React] hook as follows:  
 
 ```typescript
 // file: app/components/RenderStreamData.tsx
