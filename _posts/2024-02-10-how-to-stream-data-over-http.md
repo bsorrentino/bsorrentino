@@ -48,7 +48,7 @@ Ultimately an [async generator function] (`function*`) combines the features of 
 
 ### Server Side Implementation
 
-The Assumption is to have an [async generator function] that produces data in chunks. As prrof of concept here is a simple function that sends out data chunks, with a delay between each one: 
+The Assumption is to have an [async generator function] that produces data in chunks. As proof of concept here is a simple function that sends out data chunks, with a delay between each one: 
 
 ```javascript
 async function* generateData() {
