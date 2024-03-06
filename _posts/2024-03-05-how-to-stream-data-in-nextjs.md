@@ -201,7 +201,7 @@ Et voilà ✅, we have all the main components to implement succesfully streamin
 
 In this article we have seen a practical guide to using HTTP streaming for efficient data visualization in [Next.js] web applications. We have explored how create and customize an instance of [ReadableStream], creating a Response object  specialization that accepts it as a result body. To test we have used a [NextJS Route Handler][Route Handlers]. Additionally, to consume data chunk over http, we have developed a client-side [React] component that is the right way to achieve the benefit to streaming data from a server.
 
-Hope that this knowledge will be helpful, stay tune because the next article will be dedicated to implement http streaming from the [Next.js Server Actions][server actions]. In the meanwhile, enjoy coding! 👋 
+Hope that this knowledge will be helpful, stay tune because the next article will be dedicated to implement http streaming from the amazing [Next.js Server Actions][server actions]. In the meanwhile, enjoy coding! 👋 
 
 > 💻 The code is available on [Github][repo] 💻
 
