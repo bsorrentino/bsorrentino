@@ -1,3 +1,15 @@
+---
+layout: post
+title:  AI Agent on IOS with LangGraph for Swift
+date:   2024-03-21
+description: "Brings the power of LangGraph, for making cyclical graphs, to the Swift language. "
+categories: ai
+
+---
+![cover](../../../../assets/langgraph-swift/langgraph-swift-cover.png)
+<br>
+
+
 ##  LangChain from python to other languages  
 
 [Langchain] framework (Python) has rapidly gained success in the open source community because has been one of the first to provide a structured approach (the chain) to develop LLM powered and context-aware reasoning applications. This success is also evidenced by the number of ports to other programming languages like: 
@@ -21,13 +33,18 @@ I've published a first stable version of [LangGraph for Swift][langgraph.swift] 
  
 ## LangGraph for Swift and LangChain for Swift 
 
-As said [LangGraph for Swift][langgraph.swift] is designed to work seamlessly with [LangChain for Swift][Langchain-swift], and to proof that , I’ve ported the original [AgentExecutor] from LangChain for Swift to LangGraph where We can see the versatility and the powerful of this new approach. For the complete code [take look here 👀][AgentExecutor.new]. 
+As said [LangGraph for Swift][langgraph.swift] is designed to work seamlessly with [LangChain for Swift][Langchain-swift], and to proof that , I’ve ported the original [AgentExecutor] from LangChain for Swift to LangGraph where We can see the versatility and the powerful of this new approach. A meaningful code summary is presented below, for the complete code [take look here 👀][AgentExecutor.new]. 
 
+### Create a Graph instance
 ```Swift
 let workflow = GraphState {
         AgentExecutorState()
     }
-    
+```
+
+### Define (and add) Nodes
+
+```Swift
 try workflow.addNode("call_agent" ) { state in
     
     guard let input = state.input else {
@@ -59,27 +76,36 @@ try workflow.addNode("call_action" ) { state in
     let result = try await toolExecutor( action )
     return [ "intermediate_steps" : (action, result) ]
 }
+```
 
-try workflow.setEntryPoint("call_agent")
+### Define (and add) Edges
 
+```Swift
 try workflow.addConditionalEdge( sourceId: "call_agent", condition: { state in
     
     guard let agentOutcome = state.agentOutcome else {
         throw executionError("'agent_outcome' property not found in state!")
     }
 
-    switch agentOutcome {
-    case .finish:
-        return "finish"
-    case .action:
-        return "continue"
-    }
+    return switch agentOutcome {
+        case .finish:
+            "finish"
+        case .action:
+            "continue"
+        }
 
 }, edgeMapping: [
     "continue" : "call_action",
     "finish": END])
 
 try workflow.addEdge(sourceId: "call_action", targetId: "call_agent")
+
+```
+
+### Compile & Run Graph
+
+```Swift
+try workflow.setEntryPoint("call_agent")
 
 let runner = try workflow.compile()
 
