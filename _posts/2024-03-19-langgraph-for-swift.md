@@ -10,7 +10,7 @@ categories: ai
 <br>
 
 
-##  LangChain from python to other languages  
+##  LangChain, from `python` to other languages  
 
 [Langchain] framework (Python) has rapidly gained success in the open source community because has been one of the first to provide a structured approach (the chain) to develop LLM powered and context-aware reasoning applications. This success is also evidenced by the number of ports to other programming languages like: 
 
