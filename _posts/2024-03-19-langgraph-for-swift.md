@@ -1,6 +1,6 @@
 ---
 layout: post
-title:  AI Agent on IOS with LangGraph for Swift
+title:  AI Agent on iOS with LangGraph for Swift
 date:   2024-03-21
 description: "Brings the power of LangGraph, for making cyclical graphs, to the Swift language. "
 categories: ai
@@ -24,19 +24,20 @@ categories: ai
 On the jan 2024, [langchain has announced LangGraph][langgraph.blog] a module built on top of LangChain to better enable creation of cyclical graphs, often needed for agent runtimes.  
 > LangGraph allows to build agents cooperation in a very simple and meaningful way enabling a new level of smart application based upon agent cooperation. 
 
-## Why LangGraph for Swift 
+## Why LangGraph for Swift ❓
 
-Since I’m developing IOS app powered by LLM that needs Agents cooperation, I’ve decided to develop and alter-ego of original [LangGraph]  project in [Swift].
+Since I’m developing iOS app powered by LLM that needs Agents cooperation, I’ve decided to develop and alter-ego of original [LangGraph]  project in [Swift].
 
 I've published a first stable version of [LangGraph for Swift][langgraph.swift] that follows the original [LangGraph] project's design as closely as possible. Like the original, [LangGraph for Swift][langgraph.swift] is meant to work together with "[LangChain for Swift][Langchain-swift]" to give AI developers a simple way to make cyclical graphs, especially for AI agents collaborations scenarios.  
 
  
-## LangGraph for Swift and LangChain for Swift 
+## Use LangGraph for Swift with LangChain for Swift 
 
 As said [LangGraph for Swift][langgraph.swift] is designed to work seamlessly with [LangChain for Swift][Langchain-swift], and to proof that , I’ve ported the original [AgentExecutor] from LangChain for Swift to LangGraph where We can see the versatility and the powerful of this new approach. A meaningful code summary is presented below, for the complete code [take look here 👀][AgentExecutor.new]. 
 
 ### Create a Graph instance
-```Swift
+
+```swift
 let workflow = GraphState {
         AgentExecutorState()
     }
@@ -44,7 +45,7 @@ let workflow = GraphState {
 
 ### Define (and add) Nodes
 
-```Swift
+```swift
 try workflow.addNode("call_agent" ) { state in
     
     guard let input = state.input else {
@@ -80,7 +81,7 @@ try workflow.addNode("call_action" ) { state in
 
 ### Define (and add) Edges
 
-```Swift
+```swift
 try workflow.addConditionalEdge( sourceId: "call_agent", condition: { state in
     
     guard let agentOutcome = state.agentOutcome else {
@@ -104,7 +105,7 @@ try workflow.addEdge(sourceId: "call_action", targetId: "call_agent")
 
 ### Compile & Run Graph
 
-```Swift
+```swift
 try workflow.setEntryPoint("call_agent")
 
 let runner = try workflow.compile()
@@ -116,7 +117,7 @@ print( result )
 
 ## Conclusion 
 
-In conclusion, [LangGraph for Swift][langgraph.swift] is an exciting new project that brings the power and flexibility of the original [LangGraph] project to IOS platform. By working jointly with [LangChain for Swift][Langchain-swift], developers can easily create cyclical graphs and build advanced AI systems. We encourage [Swift] developers to explore this new project and contribute to its growth and development. In the meanwhile, enjoy coding! 👋 
+In conclusion, [LangGraph for Swift][langgraph.swift] is an exciting new project that brings the power and flexibility of the original [LangGraph] project to iOS platform. By working jointly with [LangChain for Swift][Langchain-swift], developers can easily create cyclical graphs and build advanced AI systems. We encourage [Swift] developers to explore this new project and contribute to its growth and development. In the meanwhile, enjoy coding! 👋 
 
 [AgentExecutor.new]: https://github.com/bsorrentino/LangGraph-Swift/blob/main/LangChainDemo/LangChainDemo/AgentExecutor.swift
 [AgentExecutor]: https://github.com/buhe/langchain-swift/blob/main/Sources/LangChain/agents/Agent.swift
