@@ -35,7 +35,7 @@ I've published a first stable version of [LangGraph for Swift][langgraph.swift] 
 
 As said [LangGraph for Swift][langgraph.swift] is designed to work seamlessly with [LangChain for Swift][Langchain-swift], and to proof that , I’ve ported the original [AgentExecutor] from LangChain for Swift to LangGraph where We can see the versatility and the powerful of this new approach. A meaningful code summary is presented below, for the complete code [take look here 👀][AgentExecutor.new]. 
 
-### Create a Graph instance
+#### Create a Graph instance
 
 ```swift
 let workflow = GraphState {
@@ -43,7 +43,7 @@ let workflow = GraphState {
     }
 ```
 
-### Define (and add) Nodes
+#### Define (and add) Nodes
 
 ```swift
 try workflow.addNode("call_agent" ) { state in
@@ -79,7 +79,7 @@ try workflow.addNode("call_action" ) { state in
 }
 ```
 
-### Define (and add) Edges
+#### Define (and add) Edges
 
 ```swift
 try workflow.addConditionalEdge( sourceId: "call_agent", condition: { state in
@@ -103,7 +103,7 @@ try workflow.addEdge(sourceId: "call_action", targetId: "call_agent")
 
 ```
 
-### Compile & Run Graph
+#### Compile & Run Graph
 
 ```swift
 try workflow.setEntryPoint("call_agent")
