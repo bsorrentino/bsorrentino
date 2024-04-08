@@ -1,0 +1,45 @@
+@startuml
+!include openai.puml 
+actor "User" as user<<Drawer>>
+rectangle "\nAgent Vision\n\n    <$openai,scale=.2>" as describeDiagram<<GPT-4V>>
+note right of describeDiagram
+This agent is skilled on:
+
+describe a diagram producing a 
+<b>structured output
+end note
+hexagon "Check Type" as checkType<<Conditional Edge>>
+rectangle "\nAgent Translator(1)\n\n          <$openai,scale=.2>" as plantUmlSequential<<GPT 3.5 turbo>>
+note left of plantUmlSequential
+This agent is skilled on:
+
+<b>PlantUML sequence diagram
+end note
+rectangle "\nAgent Translator(2)\n\n          <$openai,scale=.2>" as plantUmlGeneric<<GPT 3.5 turbo>>
+note right of plantUmlGeneric
+This agent is skilled on:
+
+<b>PlantUML generic process diagram
+end note
+rectangle "\nprocess PlantUML script" as process<<App>>
+'circle "Stop" as stop<<Termination of the process>>
+
+/'
+legend
+- Start with the user process 'VISION'.
+- Describe the diagram in 'DESCRIBE DIAGRAM'.
+- Check the type of diagram in 'CHECK TYPE'.
+- Based on the type, use 'PLANT UML SEQUENTIAL' for sequential diagrams.
+- If the type is generic, use 'PLANT UML GENERIC'.
+- Finally, the process ends at 'STOP'.
+end legend
+'/
+
+user --> describeDiagram : submit drawing
+describeDiagram --> checkType : sumbit diagram description
+checkType --> plantUmlSequential : If type is sequential
+checkType --> plantUmlGeneric : If type is generic
+plantUmlSequential --> process : translate
+plantUmlGeneric --> process : transtale
+'process --> stop
+@enduml
