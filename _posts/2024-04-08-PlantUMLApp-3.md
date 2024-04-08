@@ -1,6 +1,6 @@
 ---
 layout: post
-title:  "PlantUMLApp 3.0 - let's play with AI multimodality "
+title:  "PlantUMLApp 3.0 - Let's play with AI multimodality "
 date:   2024-04-08 08:00:00 +0200
 categories: app
 ---
@@ -33,7 +33,8 @@ This agent is skilled on PlantUML generic process diagram. It gets the diagram d
 ## Conclusion 
 
 The **Multi-Modality** is a capability for enabling AI to interact with and interpret the diverse range of information that humans encounter in everyday life. Unlock such capability can be crucial to amplify the effectiveness of your AI process.
-I've started to explore it and in the next App version I'd like to introduce a process to auto-correct errors providing to the agents execution feedbacks, soo stay tuned! In the meanwhile, enjoy coding! 👋 
+I've started to explore it and, in the next App version, I'd like to introduce a process to **auto-correct errors** providing to the agents the execution feedbacks.
+So stay tuned! In the meanwhile, enjoy coding! 👋 
 
 
 ## References
