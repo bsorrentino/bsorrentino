@@ -1,6 +1,6 @@
 ---
 layout: post
-title:  "PlantUMLApp 3.0 - Let's play with AI multimodality "
+title:  "PlantUMLApp 3.0 - Let's play with AI Multi-Modality "
 date:   2024-04-08 08:00:00 +0200
 categories: app
 ---
