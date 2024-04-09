@@ -23,10 +23,10 @@ As you can see I've used three Agents with different capabilities:
 This agent able to process images, it is skilled on describe a diagram producing a **structured output** containing also the diagram tipology useful to involve the right Agent for further processing.
 > This increase the flexibility of system because the image is translated in structured data that can be processed by agents with differents skills and goals
 
-### Agent Tranlator(1)
+### Agent Translator(1)
 This agent is skilled on PlantUML sequence diagram. It get the diagram data and translate them in the PlantUML script
 
-### Agent Tranlator(2)
+### Agent Transator(2)
 This agent is skilled on PlantUML generic process diagram. It gets the diagram data and translate them  in PlantUML script
 
 
