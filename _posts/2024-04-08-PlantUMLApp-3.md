@@ -26,7 +26,7 @@ This agent able to process images, it is skilled on describe a diagram producing
 ### Agent Translator(1)
 This agent is skilled on PlantUML sequence diagram. It get the diagram data and translate them in the PlantUML script
 
-### Agent Transator(2)
+### Agent Translator(2)
 This agent is skilled on PlantUML generic process diagram. It gets the diagram data and translate them  in PlantUML script
 
 
