@@ -39,6 +39,7 @@ So stay tuned! In the meanwhile, enjoy coding! 👋
 
 ## References
 
+* [Github](https://github.com/bsorrentino/PlantUML4iPad)
 * [Video (YouTube Short)][YouTube]
 * [App Store][app]
 * [AI Agent on iOS with LangGraph for Swift](https://bsorrentino.github.io/bsorrentino/ai/2024/03/21/langgraph-for-swift.html)
