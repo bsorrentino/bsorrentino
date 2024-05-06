@@ -1,0 +1,25 @@
+@startuml
+!include vision.png.puml
+!include vscode.png.puml
+!include openai.puml
+!include plantuml.png.puml
+
+rectangle "Visual Studio Code" {
+    rectangle "extension\n <$vscode,scale=.19,color=#3477C5>" as ext 
+    usecase "agent vision\n <$vision,scale=.45,color=red>" as vision
+    usecase "agent\ntranslator\n  <$openai,scale=.15,color=green>" as translator
+}
+cloud "     internet     \n" {
+    file "image" as remote_image<<url>>
+}
+rectangle "workspace"  #line.dashed {
+    file "image" as image<<file>>
+    rectangle " plantuml\n  <$plantuml,scale=.5,color=purple>" as diagram
+}
+image -down[hidden]-> diagram
+ext .left.> image : "           open                "
+ext .right.> remote_image: "                open        "
+ext --> vision: " 1. image data"
+vision --> translator: " 2. image description"
+translator .left.> diagram: " 3. generate                      "
+@enduml
