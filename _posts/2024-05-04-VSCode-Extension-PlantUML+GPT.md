@@ -50,3 +50,4 @@ So, stay tuned! In the meanwhile, enjoy coding! 👋  
 [LangGraph]: https://js.langchain.com/docs/langgraph
 [OpenAI]: https://openai.com/api
 [Vision]: https://platform.openai.com/docs/guides/vision
+[PlantUML]: https://plantuml.com/
