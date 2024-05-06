@@ -1,6 +1,6 @@
 ---
 layout: post
-title:  "Upgrade PlantUML+GPT Visual Studio Extension with AI Multi-Modality "
+title:  "PlantUML+GPT - Visual Studio Extension with AI Multi-Modality"
 date:   2024-05-06 08:00:00 +0200
 categories: app
 ---
@@ -15,16 +15,15 @@ Version `0.4.x` now includes the new multi-modality feature. This update allows 
 
 ![](../../../../assets/plantuml-app/create-diagram-from-image.gif) 
 
-## The Multi Agents Collaboration 
+## The Multi Agents Collaboration 
 
 In this extension I've used Multi-Agents-Collaboration using the [LangGraph] framework from the awesome [Langchain] project, applying the process shown in the diagram below: 
 
 ![](../../../../assets/plantuml-app/drawing-to-diagram.png) 
 
+As you can see, I've used three Agents with different capabilities:
 
-As you can see, I've used three Agents with different capabilities: 
-
-### Agent Vision  
+### Agent Vision  
 
 This agent can process images, it is skilled in describing a diagram producing a structured output containing also the diagram typology useful to involve the right Agent for further processing. 
 
