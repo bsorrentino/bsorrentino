@@ -1,0 +1,33 @@
+@startuml
+rectangle "correction" {
+    circle start as start_1
+    'circle stop as stop_1
+    usecase "evaluate_result" as evaluate_result_1<<Node>>
+    usecase "agent_review" as agent_review_1<<Node>>
+    card "check state" as condition1_1<<Condition>>
+    
+}
+circle start
+circle stop
+usecase "agent_describer"<<Node>>
+usecase "agent_sequence_plantuml"<<Node>>
+usecase "agent_generic_plantuml"<<Node>>
+usecase "evaluate_result"<<Node>>
+card "check state" as condition1<<Condition>>
+start -down-> "agent_describer"
+"agent_describer" -down-> condition1
+condition1 --> "agent_sequence_plantuml": "sequence"
+condition1 --> "agent_generic_plantuml": "generic"
+"agent_sequence_plantuml" -down-> "evaluate_result"
+"agent_generic_plantuml" -down-> "evaluate_result"
+"evaluate_result" -right-> start_1
+"evaluate_result" -down[hidden]-> stop
+
+start_1 -down-> evaluate_result_1
+"agent_review_1" -down-> evaluate_result_1
+"evaluate_result_1" -down-> condition1_1
+condition1_1 --> agent_review_1: "ERROR"
+condition1_1 --> stop: "UNKNOWN"
+condition1_1 --> stop: "OK"
+
+@enduml
