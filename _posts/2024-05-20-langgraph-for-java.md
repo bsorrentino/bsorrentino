@@ -46,7 +46,7 @@ Below the diagram representing the implemented graph, for the complete code [tak
 
 [LangGraph4j] is a side project that try to brings flexibility of the original [LangGraph] to develop stateful, multi-agents applications with LLMs in Java. Currently, I haven't relased a stable version yet, only the developer one `1.0-SNAPSHOT`. Let me know if you are interest in its usage and evolution. In the meanwhile, enjoy coding! 👋 
 
-[article1]: 2024/03/21/langgraph-for-swift.html
+[article1]: https://bsorrentino.github.io/bsorrentino/ai/2024/03/21/langgraph-for-swift.html
 [LangGraph.swift]: https://github.com/bsorrentino/LangGraph-Swift
 [LangGraph]: https://python.langchain.com/docs/langgraph 
 [LangChain]: https://python.langchain.com/docs/get_started/introduction
@@ -54,6 +54,7 @@ Below the diagram representing the implemented graph, for the complete code [tak
 [LangGraph4j]: https://github.com/bsorrentino/langgraph4j
 [agentexecutor.code]: https://github.com/bsorrentino/langgraph4j/tree/main/agents-jdk8/src/main/java/dev/langchain4j/agentexecutor
 [image_to_diagram.code]: https://github.com/bsorrentino/langgraph4j/tree/main/agents-jdk8/src/main/java/dev/langchain4j/image_to_diagram
+
 
 [AgentExecutor.new]: https://github.com/bsorrentino/LangGraph-Swift/blob/main/LangChainDemo/LangChainDemo/AgentExecutor.swift
 [AgentExecutor]: https://github.com/buhe/langchain-swift/blob/main/Sources/LangChain/agents/Agent.swift
