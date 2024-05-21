@@ -46,9 +46,9 @@ Below the diagram representing the implemented graph, for the complete code [tak
 
 [LangGraph4j] is a side project that try to brings flexibility of the original [LangGraph] to develop stateful, multi-agents applications with LLMs in Java. Currently, I haven't relased a stable version yet, only the developer one `1.0-SNAPSHOT`. Let me know if you are interest in its usage and evolution. In the meanwhile, enjoy coding! 👋 
 
-[cover]: /bsorrrentino/assets/langgraph-java/langgraph4j-cover.png
-[Diagram01]: /bsorrrentino/assets/langgraph-java/agentexecutor.puml.png
-[Diagram02]: /bsorrrentino/assets/langgraph-java/image_to_diagram_with_correction.puml.png
+[cover]: /bsorrentino/assets/langgraph-java/langgraph4j-cover.png
+[Diagram01]: /bsorrentino/assets/langgraph-java/agentexecutor.puml.png
+[Diagram02]: /bsorrentino/assets/langgraph-java/image_to_diagram_with_correction.puml.png
 
 [article1]: https://bsorrentino.github.io/bsorrentino/ai/2024/03/21/langgraph-for-swift.html
 [LangGraph.swift]: https://github.com/bsorrentino/LangGraph-Swift
