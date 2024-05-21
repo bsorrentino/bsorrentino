@@ -1,6 +1,6 @@
 ---
 layout: post
-title:  My experience trying to explain “reactive” word meaning 
+title:  My experience (trying) to explain “reactive” word meaning 
 date:   2018-10-14
 description: "Reactive programming explained by concepts"
 categories: programming
@@ -31,7 +31,7 @@ Here the problem has become little bit more complex to explain … the matter wa
 
 At the end, trying to win this challenge, I’ve decided to draw a simple comics using a very interesting ‘Restaurant Metaphor’, discovered by surfing in the ‘reactive world’ sea, that I’ve named “Reactive Serving” .
 
-# Reactive Serving
+# Reactive Serving
 
 Let’s image that you became a new owner of little restaurant with only few tables (just three for example) and you have to deal with recruit the staff. What are your choices ? Assuming that you need of one chef, how many waiters you would have on board ?
 
@@ -71,13 +71,14 @@ more “reactive” are waiter and chef … more effective your service is.
 
 If you want increase number of the tables in your restaurant you have to understand how much reactive your waiter is and, if you need another one, for sure you’ll search for another reactive guy. This mean that the required costs and resources depends on your ability to manage such issues
 
-# Move out of the metaphor:
+## Move out of the metaphor
 
-While the thread play role of waiter, processing capability of the chef and customer of the request, you (as owner) plays the role of system resource manager
+> While **the thread play role of waiter**, processing capability of the chef and customer of the request, you (as owner) plays the role of system resource manager
 
 # Conclusion
 
-The question is … In your case, what service model will you choose for your restaurant ? Approach 1 or 2 ?
+The question is: 
+> In your case, what service model will you choose for your restaurant ? Approach 1 or 2 ?
 
 Classic vs Reactive
 > ![pic03][pic03]
