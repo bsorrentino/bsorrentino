@@ -123,10 +123,10 @@ It was not my intention to go into the implementation details, however if you ar
 
 Happy coding and … enjoy Office Script !
 
-[FLW2]: /bsorrentino/assets/2021-12-19/CallScriptFlow.png
-[PIC1]: /bsorrentino/assets/2021-12-19/architecture.png
-[PIC2]: /bsorrentino/assets/2021-12-19/officescript.png
-[PIC3]: /bsorrentino/assets/2021-12-19/architecture2.png
+[FLW2]: /bsorrentino/assets/office-script/CallScriptFlow.png
+[PIC1]: /bsorrentino/assets/office-script/architecture.png
+[PIC2]: /bsorrentino/assets/office-script/officescript.png
+[PIC3]: /bsorrentino/assets/office-script/architecture2.png
 [PP]: https://powerplatform.microsoft.com/en-us/
 [CKIN]: https://docs.microsoft.com/en-us/connectors/sharepointonline/#check-in-file
 [CKOUT]: https://docs.microsoft.com/en-us/connectors/sharepointonline/#check-out-file
