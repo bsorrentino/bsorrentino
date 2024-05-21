@@ -19,7 +19,7 @@ As said, I developed [LangGraph-Swift] to reuse my knowledege around [LangGraph]
 
 ## Why LangGraph for Java ❓
 
-Since I've dealt with companies which IT department is mainly based on Java technology and they would want explore and experiment LLM in their application, I've choose to use [LangChain4j] framework and, as consecuence,  I've decided to develop [LangGraph4j] to reuse, again, my knowledege around both [LangGraph] and [LangChain].
+Since I've dealt with companies which IT department is mainly based on Java technology and they would want explore and experiment LLM in their application, I've choose to use [LangChain4j] framework and, as consequence,  I've decided to develop [LangGraph4j] to reuse, again, my knowledge around both [LangGraph] and [LangChain].
 
 ## Use LangGraph4j with LangChain4j 
 
