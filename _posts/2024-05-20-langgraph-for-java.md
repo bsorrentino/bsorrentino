@@ -56,10 +56,3 @@ Below the diagram representing the implemented graph, for the complete code [tak
 [image_to_diagram.code]: https://github.com/bsorrentino/langgraph4j/tree/main/agents-jdk8/src/main/java/dev/langchain4j/image_to_diagram
 
 
-[AgentExecutor.new]: https://github.com/bsorrentino/LangGraph-Swift/blob/main/LangChainDemo/LangChainDemo/AgentExecutor.swift
-[AgentExecutor]: https://github.com/buhe/langchain-swift/blob/main/Sources/LangChain/agents/Agent.swift
-[Swift]: https://www.swift.org
-[langgraph.blog]: https://blog.langchain.dev/langgraph/
-[langchain.js]: https://js.langchain.com/docs/get_started/introduction
-
-[Langchain-swift]: https://github.com/buhe/langchain-swift
