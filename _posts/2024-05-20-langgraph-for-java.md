@@ -12,7 +12,7 @@ categories: ai
 
 ##  LangChain and LangGraph
 
-In the previous article [AI Agent on iOS with LangGraph for Swift][article1] I've introduced [LangGraph-Swift] an implemetation of [LangGraph] a library, powered by [LangChain] for building stateful, multi-agent applications with LLMs that lets you coordinate and checkpoint multiple chains across cyclic computational steps using regular `python` or `Javascript` functions. 
+In the previous article [AI Agent on iOS with LangGraph for Swift][article1] I've introduced [LangGraph-Swift] an implementation of [LangGraph] a library, powered by [LangChain] for building stateful, multi-agent applications with LLMs that lets you coordinate and checkpoint multiple chains across cyclic computational steps using regular `python` or `Javascript` functions. 
 
 As said, I developed [LangGraph-Swift] to reuse my knowledege around [LangGraph] and [LangChain] for building 
 [LangChain] iOS apps powered by LLM.
