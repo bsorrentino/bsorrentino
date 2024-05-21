@@ -6,7 +6,7 @@ description: "Brings the power of LangGraph, for multi-agent LLM application wit
 categories: ai
 
 ---
-![cover](../../../../assets/langgraph-java/langgraph4j-cover.png)
+![cover]
 <br>
 
 
@@ -29,7 +29,7 @@ Since I've dealt with companies which IT department is mainly based on Java tech
 
 The agent executor is the runtime for an agent. This is what actually calls the agent, executes the actions it chooses, passes the action outputs back to the agent, and repeats. Below the diagram representing the implemented graph, for the complete code [take look here 👀][agentexecutor.code]
 
-![Diagram](../../../../assets/langgraph-java/agentexecutor.puml.png)
+![Diagram01]
 
 ### Image To Diagram
 
@@ -40,11 +40,15 @@ Take note that to ensure precision in diagram generation, the type of diagram id
 Finally, in the case that there are errors in result of PlantUML code we have established a supplementary flow that provided a correction process consisting of iteration between both verification and rewrite steps. 
 Below the diagram representing the implemented graph, for the complete code [take look here 👀][image_to_diagram.code]
 
-![Diagram](../../../../assets/langgraph-java/image_to_diagram_with_correction.puml.png)
+![Diagram02]
 
 ## Conclusion 
 
 [LangGraph4j] is a side project that try to brings flexibility of the original [LangGraph] to develop stateful, multi-agents applications with LLMs in Java. Currently, I haven't relased a stable version yet, only the developer one `1.0-SNAPSHOT`. Let me know if you are interest in its usage and evolution. In the meanwhile, enjoy coding! 👋 
+
+[cover]: /bsorrrentino/assets/langgraph-java/langgraph4j-cover.png
+[Diagram01]: /bsorrrentino/assets/langgraph-java/agentexecutor.puml.png
+[Diagram02]: /bsorrrentino/assets/langgraph-java/image_to_diagram_with_correction.puml.png
 
 [article1]: https://bsorrentino.github.io/bsorrentino/ai/2024/03/21/langgraph-for-swift.html
 [LangGraph.swift]: https://github.com/bsorrentino/LangGraph-Swift
