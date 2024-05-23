@@ -1,6 +1,6 @@
 ### Hi there 👋
 
-I'm a Solution Architect with over 25 years of experience 💪 , I am currently the CTO of [Softphone](http://www.softphone.it) and in 2009, I led the setup of [Soulsoftware](https://www.soulsoftware.it) a software deveòopment company.
+I'm a Solution Architect with over 25 years of experience 💪 , I am currently the CTO of [Softphone](http://www.softphone.it) and in 2009, I led the setup of [Soulsoftware](https://www.soulsoftware.it) a software development company.
 
 _Contributing to Open Source Software (OSS) is important to me since it has significantly contributed to my professional growth._
 
