@@ -8,7 +8,7 @@ categories: git
 ### Why I needed to do it
 
 
-Lately I’ve dealt with an [issue]  on my project [cordova broadcaster](https://github.com/bsorrentino/cordova-broadcaster) plugin
+Lately I’ve dealt with an [issue]  on my project [cordova broadcaster] plugin
 
 
 I’ve fixed it, committed and published to NPM  the new release of plugin.
@@ -28,7 +28,7 @@ I was happy for contribution and also because I had quickly answered to the requ
 Then I’ve started to search for a solution and “googling” I got a lot of results related to fix last commit using amendment ( `—amend`).
 
 
-After a bit, finally, I found it on [SuperUser](http://superuser.com/a/751909/687383) and, once applied, the [commit](https://github.com/bsorrentino/cordova-broadcaster/commit/2bf397565010ae7105e6bdb64873b64848a80296)’s comment is, magically updated in the right way.
+After a bit, finally, I found it on [SuperUser] and, once applied, the [commit]’s comment is, magically updated in the right way.
 
 
 > … Just one word: **“Awesome”**.
@@ -44,17 +44,13 @@ Checkout the master branch and perform a git rebase as shown below
 $ git rebase -i <commit hash you want to change>^
 ```
 
-This start a process for rebasing commits against a point in time and will open your default editor (usually `vi`) with a list of commits and actions (see [here][rebase] for each one. By default, the action is pick that means: include such commit.
+This start a process for rebasing commits against a point in time and will open your default editor (usually `vi`) with a list of commits and actions (see [here][rebase] for each one. By default, the action is `pick` that means: _include such commit_.
 
+* For any commit you wish to change the message, change from `pick` to `reword`. After that, save and close editor (in **vi** `:wq`).
 
-For any commit you wish to change the message, change from `pick` to `reword`. After that, save and close editor (in **vi** `:wq`).
-
-
-For each commit, you'll get an editor to edit the commit message. Change it as you see fit, save and close editor  (in **vi**  `:wq`).
-
+* For each commit, you'll get an editor to edit the commit message. Change it as you see fit, save and close editor  (in **vi**  `:wq`).
 
 Once you're done editing all the commit messages, you'll return to the command prompt, and have a new tree with the updated messages.
-
 You can now upload them to github by using:
 
 ```
@@ -74,5 +70,8 @@ I can’t image to work without git anymore
 
 Happy Coding 👋
 
+[cordova broadcaster]: https://github.com/bsorrentino/cordova-broadcaster
 [issue]: https://github.com/bsorrentino/cordova-broadcaster/issues/10
 [rebase]: https://help.github.com/articles/about-git-rebase/#commands-available-while-rebasing
+[SuperUser]: http://superuser.com/a/751909/687383
+[commit]: https://github.com/bsorrentino/cordova-broadcaster/commit/2bf397565010ae7105e6bdb64873b64848a80296
