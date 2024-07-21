@@ -32,10 +32,10 @@ In [Jetty Servlet Container][Jetty] the main implementation steps are: 
 
 - **Initiate asynchronous processing** for a given request using `ServletRequest.startAsync()` method.
   > `ServletRequest.startAsync()` is part of the [Servlet 3.0 API][Servlet], which introduced asynchronous processing to servlets. This allowing the [Servlet] to handle tasks that may take a long time to complete without blocking the main request-handling thread.  
-- **Acquire a `PrintWriter` from response** 
-- **Perform an asynchronous task for generate chunks of data**, writing them to the response through `PrintWriter` 
-- **Complete asynchronous processing once finished**
-- **Serve a html page (<i>index.html</i>)** containing javascript code that will fetch data stream (consume the data chunk over http.) 
+- Acquire a `PrintWriter` from response
+- **Perform an asynchronous task** for generate chunks of data**, writing them to the response through `PrintWriter` 
+- Complete asynchronous processing once finished
+- **Serve a html page (<i>index.html</i>)** thta contains javascript code that will fetch data stream (<i>consume the data chunk over http.</i>) 
 
 The server code concerns the `HttpServlet.doGET` implementation, I’ve reported the meaningful pieces, the complete implementation is [here][java-code]. 
 
