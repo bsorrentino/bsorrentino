@@ -207,7 +207,7 @@ I hope that this knowledge will be helpful, in the meanwhile, enjoy coding! 👋
 
 > 💻 The complete code is available on [Github][repo] 💻 
 
-## References 
+## References 
 
 * [How to stream data over HTTP using Node and Fetch API][part1]
 * [How to stream data over HTTP using NextJS][part2]
