@@ -141,7 +141,7 @@ mvn exec:java@test  
 
 Et voilà ✅, we have all the main elements to implement successfully streaming data over http using Java Servlet. 
 
-## Bonus 💯: Streaming response using java-async-generator library 
+## Bonus 💯: Using java-async-generator library 
 
 To achieve [chunked transfer encoding over HTTP][HTTP Streaming], we must break the main computation into smaller tasks that yield partial (_yet consistent_) results. Javascript offers a powerful built-in tool for this purpose: [async generators][async generator], which are perfect for the task. Java lacks an async generator equivalent, however, we've created a library, the [java-async-generator], to try bridge this gap. 
 The library uses the `CompletableFuture` that is the java concept closer to the [Promise] in javascript. Below the [Servlet] code that use [java-async-generator] for streaming data 
