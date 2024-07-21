@@ -1,18 +1,18 @@
 ---
 layout: post
 title:  How to stream data over HTTP using Java Servlet and Fetch API
-date:   2024-07-20
+date:   2024-07-21
 description: "A guide to using HTTP streaming for efficient data visualization in Java Servlet applications"
 categories: web
 
 ---
-![cover](../assets/http_streaming/http-streaming.png)
+![cover](../../../../assets/http_streaming/http-streaming.png)
 <br>
 
 
 ## Yet another article on http streaming
 
-Since the previous article [How to stream data over HTTP using Node and Fetch API][part1], received positive feedback, let’s continue to evaluate how to apply [HTTP streaming] using Java Servlet Container and Fetch API. In this article we will see how to apply [HTTP streaming] within [Jetty] a well-known [Java Servlet Container]. 
+Since the previous article [How to stream data over HTTP using Node and Fetch API][part1], received positive feedback, let’s continue to evaluate how to apply [HTTP streaming] using Java [Servlet] Container and [Fetch API]. In this article we will see how to apply [HTTP streaming] within [Jetty] a well-known Java [Servlet] Container. 
 
 ## Requirements
 
@@ -31,7 +31,7 @@ Here are the specific data streaming requirements for this scenario.
 In [Jetty Servlet Container][Jetty] the main implementation steps are: 
 
 - **Initiate asynchronous processing** for a given request using `ServletRequest.startAsync()` method.
-  > `ServletRequest.startAsync()` is part of the [Servlet 3.0 API][JSR-315], which introduced asynchronous processing to servlets. This allowing the servlet to handle tasks that may take a long time to complete without blocking the main request-handling thread.  
+  > `ServletRequest.startAsync()` is part of the [Servlet 3.0 API][Servlet], which introduced asynchronous processing to servlets. This allowing the [Servlet] to handle tasks that may take a long time to complete without blocking the main request-handling thread.  
 - Acquire a `PrintWriter` from response 
 - Perform an asynchronous task for generate chunks of data, writing them to the response through `PrintWriter` 
 - Complete asynchronous processing once finished - Serve a html page containing javascript that will fetch data stream (consume the data chunk over http.) 
@@ -54,6 +54,7 @@ protected void doGet(HttpServletRequest request, HttpServletResponse response) t
 
             for (int chunk = 0; chunk < 10; ++chunk) {
 
+                TimeUnit.SECONDS.sleep(1); // simulate time to accomplish task
                 var data = new ChunkOfData(chunk);
 
                 try {
@@ -63,7 +64,6 @@ protected void doGet(HttpServletRequest request, HttpServletResponse response) t
                     log.warn("error serializing data!. skip it.", e);
                 }
                 writer.flush();
-                TimeUnit.SECONDS.sleep(1);
             }
         } catch (InterruptedException e) {
             log.error("got an interrupt on processing!", e);
@@ -78,13 +78,13 @@ protected void doGet(HttpServletRequest request, HttpServletResponse response) t
 
 As said the `request.startAsync()` starts the asynchronous processing, while the process for streaming data is performed using `CompletableFuture.runAsync()` that is asynchronously completed by a task running in the `ForkJoinPool.commonPool()` after it runs the given action. 
 
-As you can see, data streaming is straightforward. You must write each chunk of data to the response’s writer and then flush it. Once completed entire process, you must terminate both writer (close) and asynchronous context (complete) 
+As you can see, data streaming is straightforward. You must write each chunk of data to the response’s writer and then flush it. Once completed entire process, you must terminate both writer (`close()`) and asynchronous context (`complete()`) 
 
 ### Client - Web Component. 
 
-The last step is to create a Web Component to consume and show streamed chunk of data. 
+The last step is to create a [Web Component] to consume and show streamed chunks of data. 
 
-As we did in the [previous article], we used the [Fetch API] to create the function `streamingResponse()`, which can handle streaming response from the server using a [body reader]. We use this function in the `connectedCallback()` method, a lifecycle hook in Web Components, that is invoked each time a custom element is appended to the DOM. 
+As we did in the [previous article][part1], we used the [Fetch API] to create the function `streamingResponse()`, which can handle streaming response from the server using a [body reader][readable stream] . We use this function in the `connectedCallback()` method, a lifecycle hook in Web Components, that is invoked each time a custom element is appended to the DOM. 
 
 ```javascript
 
@@ -143,17 +143,64 @@ Et voilà ✅, we have all the main elements to implement successfully streaming
 ## Bonus 💯: Streaming response using java-async-generator library 
 
 To achieve [chunked transfer encoding over HTTP][HTTP Streaming], we must break the main computation into smaller tasks that yield partial (_yet consistent_) results. Javascript offers a powerful built-in tool for this purpose: [async generators][async generator], which are perfect for the task. Java lacks an async generator equivalent, however, we've created a library, the [java-async-generator], to try bridge this gap. 
-The library uses the `CompletableFuture` that is the java concept closer to the Promise in javascript. Below the servlet code that use [java-async-generator] for streaming data 
+The library uses the `CompletableFuture` that is the java concept closer to the [Promise] in javascript. Below the [Servlet] code that use [java-async-generator] for streaming data 
 
+
+Below how to looks like the `HttpServlet.doGET` implementation using async generator
 
 ```java
 
+protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+    response.setContentType("application/json");
+    response.setCharacterEncoding("UTF-8");
+
+    // Start asynchronous processing
+    var asyncContext = request.startAsync();
+
+    // Acquire a writer from response
+    final PrintWriter writer = response.getWriter();
+
+    // create async generator
+    var startAsyncTasks = AsyncGeneratorQueue.of(new LinkedBlockingQueue<>(), 
+                                                    this::taskEmitter );
+    // start async generator
+    startAsyncTasks.forEachAsync( chunk -> {
+        try {
+            var serializedData = objectMapper.writeValueAsString(chunk);
+            writer.println(serializedData);
+        } catch (IOException e) {
+            StreamingServer.log.warn("error serializing data!. skip it.", e);
+        }
+        writer.flush();
+
+    }).whenComplete((result, ex) -> {
+        writer.close();
+        asyncContext.complete();
+    });
+}
+
+
+private void taskEmitter( BlockingQueue<AsyncGenerator.Data<ChunkOfData>> emitter ) {
+    try {
+        for (int chunk = 0; chunk < 10; ++chunk) {
+            TimeUnit.SECONDS.sleep(1); // simulate time to accomplish task
+            // add task to emitter
+            emitter.add( AsyncGenerator.Data.of(new ChunkOfData(chunk)));
+        }
+    }
+    catch (InterruptedException e) {
+        StreamingServer.log.error("got an interrupt on processing!", e);
+        throw new RuntimeException(e);
+    }
+}
 
 ```
 
+The main difference respects the previous server implementation is the creation of an `AsyncIteratorQueue`, a specialization of `AsyncIterator`, designed to enqueue asynchronous tasks with a blocking queue and retrieve each task's outcome within a for-each iteration. As you can see the async tasks are emitted by `taskEmitter()` method, providing a well-defined and coherent data stream from the emitting source to the receiver, simplifying implementation of more complex streaming scenarios. 
+
 ## Conclusion 
 
-This article has presented a practical guide to streaming data over HTTP using Java Servlet and how to consume and display it from javascript using the fetch API. Streaming data is preferable to polling or long-polling in terms of efficiency, responsiveness, and scalability. This technique can enhance the functionality and interactivity of web applications that need to show live or near-live data. Feel free to try out this method and share your feedback with us. 
+This article has presented a practical guide to streaming data over HTTP using Java [Servlet] and how to consume and display it from javascript using the fetch API. Streaming data is preferable to polling or long-polling in terms of efficiency, responsiveness, and scalability. This technique can enhance the functionality and interactivity of web applications that need to show live or near-live data. Feel free to try out this method and share your feedback with us. 
 
 I hope that this knowledge will be helpful, in the meanwhile, enjoy coding! 👋 
 
@@ -162,17 +209,18 @@ I hope that this knowledge will be helpful, in the meanwhile, enjoy coding! 👋
 ## References 
 
 * [How to stream data over HTTP using Node and Fetch API][part1]
+* [How to stream data over HTTP using NextJS][part2]
 
+[Web Component]: https://developer.mozilla.org/en-US/docs/Web/Web_Components
 [java-async-generator]: https://github.com/bsorrentino/java-async-generator
 [Jetty]: https://www.eclipse.org/jetty/
-[JSR-315]: https://download.oracle.com/otndocs/jcp/servlet-3.0-fr-oth-JSpec/
-[server actions]: https://nextjs.org/docs/app/building-your-application/data-fetching/server-actions-and-mutations
-
+[Servlet]: https://javaee.github.io/servlet-spec/
 [repo]: https://github.com/bsorrentino/http-streaming
 [java-code]: https://github.com/bsorrentino/http-streaming/tree/main/java
-
+[Promise]: https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Promise
 [typescript]: https://www.typescriptlang.org
 [part1]: https://bsorrentino.github.io/bsorrentino/web/2024/02/10/how-to-stream-data-over-http.html
+[part2]: https://bsorrentino.github.io/bsorrentino/web/2024/03/05/how-to-stream-data-in-nextjs.html
 [ServerResponse]: https://nodejs.org/api/http.html#class-httpserverresponse
 [ReadableStream]: https://developer.mozilla.org/en-US/docs/Web/API/ReadableStream
 [Response]: https://developer.mozilla.org/en-US/docs/Web/API/Response
@@ -196,9 +244,7 @@ I hope that this knowledge will be helpful, in the meanwhile, enjoy coding! 👋
 [OpenAI API]: https://platform.openai.com/docs/api-reference
 
 [ref1]: https://www.loginradius.com/blog/engineering/guest-post/http-streaming-with-nodejs-and-fetch-api/
-
 [ref2]: https://bsorrentino.github.io/bsorrentino/git/2023/03/03/the_power_of_js_generators.html
-
-
 [Next.js]: https://nextjs.org
 [React]: https://reactjs.org
+[server actions]: https://nextjs.org/docs/app/building-your-application/data-fetching/server-actions-and-mutations
