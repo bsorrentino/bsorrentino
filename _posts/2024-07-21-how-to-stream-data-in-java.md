@@ -211,6 +211,7 @@ I hope that this knowledge will be helpful, in the meanwhile, enjoy coding! 👋
 
 * [How to stream data over HTTP using Node and Fetch API][part1]
 * [How to stream data over HTTP using NextJS][part2]
+* [a Java version of Javascript async generator][java-async-generator]
 
 [Web Component]: https://developer.mozilla.org/en-US/docs/Web/Web_Components
 [java-async-generator]: https://github.com/bsorrentino/java-async-generator
