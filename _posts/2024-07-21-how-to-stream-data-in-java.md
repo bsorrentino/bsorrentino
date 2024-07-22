@@ -3,7 +3,7 @@ layout: post
 title:  How to stream data over HTTP using Java Servlet and Fetch API
 date:   2024-07-21
 description: "A guide to using HTTP streaming for efficient data visualization in Java Servlet applications"
-categories: web
+categories: java
 
 ---
 ![cover](../../../../assets/http_streaming/http-streaming.png)
