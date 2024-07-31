@@ -51,7 +51,7 @@ Below the diagram representing the implemented graph, for the complete code [tak
 [Diagram02]: /bsorrentino/assets/langgraph-java/image_to_diagram_with_correction.puml.png
 
 [article1]: https://bsorrentino.github.io/bsorrentino/ai/2024/03/21/langgraph-for-swift.html
-[LangGraph.swift]: https://github.com/bsorrentino/LangGraph-Swift
+[LangGraph-swift]: https://github.com/bsorrentino/LangGraph-Swift
 [LangGraph]: https://python.langchain.com/docs/langgraph 
 [LangChain]: https://python.langchain.com/docs/get_started/introduction
 [LangChain4j]: https://github.com/langchain4j
