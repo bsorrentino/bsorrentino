@@ -19,7 +19,7 @@ As said, I developed [LangGraph-Swift] to reuse my knowledege around [LangGraph]
 
 ## Why LangGraph for Java ❓
 
-Since I've dealt with companies which IT department is mainly based on Java technology and they would want explore and experiment LLM in their application, I've choose to use [LangChain4j] framework and, as consequence,  I've decided to develop [LangGraph4j] to reuse, again, my knowledge around both [LangGraph] and [LangChain].
+Since I work with companies which IT department is mainly based on Java technology and they would want explore and experiment LLM in their application, I've choose to use [LangChain4j] framework and, as consequence,  I've decided to develop [LangGraph4j] to reuse, again, my knowledge around both [LangGraph] and [LangChain].
 
 ## Use LangGraph4j with LangChain4j 
 
@@ -51,7 +51,7 @@ Below the diagram representing the implemented graph, for the complete code [tak
 [Diagram02]: /bsorrentino/assets/langgraph-java/image_to_diagram_with_correction.puml.png
 
 [article1]: https://bsorrentino.github.io/bsorrentino/ai/2024/03/21/langgraph-for-swift.html
-[LangGraph-swift]: https://github.com/bsorrentino/LangGraph-Swift
+[LangGraph-Swift]: https://github.com/bsorrentino/LangGraph-Swift
 [LangGraph]: https://python.langchain.com/docs/langgraph 
 [LangChain]: https://python.langchain.com/docs/get_started/introduction
 [LangChain4j]: https://github.com/langchain4j
