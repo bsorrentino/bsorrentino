@@ -78,6 +78,9 @@ _by Sam Schillace, Deputy CTO / Microsoft_
 - 🌱 I’m continuing to learning [RUST]
 - 👀 I'm interested in [WebAssembly] that I consider a potential game-changer technology.
 
+****
+
+![Profile views](https://komarev.com/ghpvc/?username=bsorrentino&color=blue)
 <!--
 **bsorrentino/bsorrentino** is a ✨ _special_ ✨ repository because its `README.md` (this file) appears on your GitHub profile.
 
