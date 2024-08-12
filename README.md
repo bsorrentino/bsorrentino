@@ -10,10 +10,10 @@ style=for-the-badge
 style=flat-square
 -->
 
- &nbsp; | &nbsp;
- ---|---
- **👩‍👩‍👦‍👦&nbsp;Social**  | ![Linkedin Badge](https://img.shields.io/badge/-Linked%20In-blue?style=flat-square&logo=Linkedin&logoColor=white&link=https://www.linkedin.com/in/bartolomeosorrentino/) ![Twitter Follow](https://img.shields.io/twitter/follow/bsorrentinoJ?label=twitter) ![Mastodon](https://img.shields.io/badge/-Mastodon-blue?style=social&logo=mastodon&link=https://mastodon.world/@bsorrentino) [![Flipboard](https://img.shields.io/badge/-Flipboard-red?style=social&logo=Flipboard)](https://flipboard.com/@bsorrentino?from=share&utm_source=flipboard&utm_medium=curator_share)[![Stack Overflow Badge](https://img.shields.io/badge/-Stack%20Overflow-gray?style=social&logo=stackoverflow)](https://stackoverflow.com/users/521197/bsorrentino)
-**📜&nbsp;Articles** | ![Blogger](https://img.shields.io/badge/-Blogger-orange?style=flat-square&logo=blogger&labelColor=E0E0E0&https://soulsoftware-bsc.blogspot.com/) ![Dev.to Badge](https://img.shields.io/badge/-Dev.To-gray?style=flat-square&logo=dev.to&link=https://dev.to/bsorrentino) ![Medium](https://img.shields.io/badge/-Medium-black?logo=medium&link=https://medium.com/@bsorrentino) ![InfoQ](https://img.shields.io/badge/-InfoQ-blue?logo=infoq&link=https://www.infoq.com/profile/Bartolomeo-Sorrentino.1/)
+👩‍👩‍👦‍👦&nbsp;Social & 📜&nbsp;Articles |
+ ---
+ ![Linkedin Badge](https://img.shields.io/badge/-Linked%20In-blue?style=flat-square&logo=Linkedin&logoColor=white&link=https://www.linkedin.com/in/bartolomeosorrentino/) ![Twitter Follow](https://img.shields.io/twitter/follow/bsorrentinoJ?label=twitter) ![Mastodon](https://img.shields.io/badge/-Mastodon-blue?style=social&logo=mastodon&link=https://mastodon.world/@bsorrentino) [![Flipboard](https://img.shields.io/badge/-Flipboard-red?style=social&logo=Flipboard)](https://flipboard.com/@bsorrentino?from=share&utm_source=flipboard&utm_medium=curator_share)[![Stack Overflow Badge](https://img.shields.io/badge/-Stack%20Overflow-gray?style=social&logo=stackoverflow)](https://stackoverflow.com/users/521197/bsorrentino)
+![Blogger](https://img.shields.io/badge/-Blogger-orange?style=flat-square&logo=blogger&labelColor=E0E0E0&https://soulsoftware-bsc.blogspot.com/) ![Dev.to Badge](https://img.shields.io/badge/-Dev.To-gray?style=flat-square&logo=dev.to&link=https://dev.to/bsorrentino) ![Medium](https://img.shields.io/badge/-Medium-black?logo=medium&link=https://medium.com/@bsorrentino) ![InfoQ](https://img.shields.io/badge/-InfoQ-blue?logo=infoq&link=https://www.infoq.com/profile/Bartolomeo-Sorrentino.1/)
 
  ⚡&nbsp;Technologies | &nbsp;
  ---|---
@@ -38,21 +38,6 @@ _by Sam Schillace, Deputy CTO / Microsoft_
 ### Digital Transformation 
 
 > Businesses must embrace digital transformation, and combining low-code technologies with a company-wide mindset shift that could be key to their success for  the near future challenges
-
-## 📊 GitHub Stats:
-
-![Your GitHub Stats](https://github-readme-stats.vercel.app/api?username=bsorrentino&show_icons=true&theme=dark&count_private=true)
-
-![Top Languages](https://github-readme-stats.vercel.app/api/top-langs/?username=bsorrentino&layout=compact&theme=dark)
-
-### 🔥 Streak Stats:
-
-![GitHub Streak](https://streak-stats.demolab.com/?user=bsorrentino&theme=dark)
-
-### 🏆 GitHub Trophies:
-
-![Trophies](https://github-profile-trophy.vercel.app/?username=bsorrentino&theme=dark)
-
 
 ## Projects & Interest
 
@@ -80,7 +65,23 @@ _by Sam Schillace, Deputy CTO / Microsoft_
 
 ****
 
+## 📊 GitHub Stats: 
+
 ![Profile views](https://komarev.com/ghpvc/?username=bsorrentino&color=blue)
+
+![Your GitHub Stats](https://github-readme-stats.vercel.app/api?username=bsorrentino&show_icons=true&theme=dark&count_private=true)
+
+![Top Languages](https://github-readme-stats.vercel.app/api/top-langs/?username=bsorrentino&layout=compact&theme=dark)
+
+### 🔥 Streak Stats:
+
+![GitHub Streak](https://streak-stats.demolab.com/?user=bsorrentino&theme=dark)
+
+### 🏆 GitHub Trophies:
+
+![Trophies](https://github-profile-trophy.vercel.app/?username=bsorrentino&theme=dark)
+
+
 <!--
 **bsorrentino/bsorrentino** is a ✨ _special_ ✨ repository because its `README.md` (this file) appears on your GitHub profile.
 
