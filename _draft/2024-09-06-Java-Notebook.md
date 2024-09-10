@@ -106,9 +106,9 @@ Lately I've been working on [Langgraph4J] which is a Java implementation of the 
 ### The Java Jupyter Kernel
 After a bit of researches (and also a weird thought of trying to throw myself into a DIY implementation) I landed on [rapaio-jupyter-kernel][java.jupyter] which is a Jupyter Kernel that supports Java 🤩. The project states:
 
-> Jupyter kernel for Java language based on [JShell]. It implements Jupyter message specification version `5.4`, and it requires Java = `22`.
+> Jupyter kernel for Java language based on JShell. It implements Jupyter message specification version `5.4`, and it requires Java = `22`.
 
-It is really amazing,I'm starting to use it and WOW!🤯. Take a look of some of its [features][examples] presented as a notebook itself:
+It is really amazing, I'm starting to use it and WOW!🤯. Take a look of some of its [features][examples], below I've summarized the most representative ones:
 
 ### Java Jupyter notebook example
 ---
