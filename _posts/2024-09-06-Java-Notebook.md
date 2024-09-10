@@ -30,7 +30,7 @@ Below are some of the advantages of [Jupyter] notebook
 
 Considering the advantages that offer [Jupyter] notebooks, would be great for software developers to use such notebook approach to develop, for example, **USE CASE TESTS** for projects or providing useful **INTERACTIVE HOW-TO**. 
 
-**The question here is**: 
+The question here is: 
 > IS IT POSSIBLE TO USE A JUPYTER NOTEBOOK FOR PROGRAMMING LANGUAGE OTHER THAN PYTHON❓🤔
 
 The answer is **YES**🤩.
@@ -44,7 +44,9 @@ The [Jupyter] tools have been architected to support multiple programming langua
 The kernel is how the [Jupyter] notebook server evaluates blocks of code written by the user inside the notebook document (`.ipynb`), so it is sufficient to have a kernel that can evaluate the code of the programming language of your choice to have it supported by [Jupyter] notebook. 
 Of course, it is easy to deduce that every potential programming language that a [Jupyter] Kernel can support should support Read–eval–print loop ([REPL]) feature.
 
-So, the question becomes: ARE THERE JUPYTER KERNEL OTHER THAN PYTHON ONE?
+The question becomes: 
+
+> ARE THERE JUPYTER KERNEL OTHER THAN PYTHON ONE❓🤔
 
 The answer is **Yes**🤩. 
 
@@ -217,6 +219,7 @@ The versatility of [Jupyter] notebooks extends beyond Python, the integration of
 I hope that this knowledge will be helpful, in the meanwhile, enjoy coding! 👋 
 
 > 💻 My sperimentations of Java notebooks are on [Github][repo] 💻 
+
 
 [Jupyter]: https://jupyter.org
 [REPL]: https://en.wikipedia.org/wiki/Read–eval–print_loop
