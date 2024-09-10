@@ -101,7 +101,7 @@ So the question becomes: ARE THERE JUPYTER KERNEL OTHER THAN PYTHON ONE ?
 
 The answer is **Yes**🤩. 
 
-Lately I've been working on Langgraph4J which is a Java implementation of the more famous [Langgraph.js] which is a Javascript library used to create agent and multi-agent workflows by [Langchain]. Interesting note is that [Langchain.js] uses Javascript [Jupyter] notebooks powered by a [DENO Jupiter Kernel][deno.jupyter] to implement and document [How-Tos]. So I faced with a dilemma on how to use (or possibly simulate) the same approach in Java. So without much hope I started looking for a [Jupyter] Kernel that supported Java considering that from the JDK 9 version there was the introduction of [JShell] that enabled the REPL for Java.
+Lately I've been working on [Langgraph4J] which is a Java implementation of the more famous [Langgraph.js] which is a Javascript library used to create agent and multi-agent workflows by [Langchain]. Interesting note is that [Langchain.js] uses Javascript [Jupyter] notebooks powered by a [DENO Jupiter Kernel][deno.jupyter] to implement and document [How-Tos]. So I faced with a dilemma on how to use (or possibly simulate) the same approach in Java. So without much hope I started looking for a [Jupyter] Kernel that supported Java considering that from the JDK 9 version there was the introduction of [JShell] that enabled the REPL for Java.
 
 ### The Java Jupyter Kernel
 After a bit of researches (and also a weird thought of trying to throw myself into a DIY implementation) I landed on [rapaio-jupyter-kernel][java.jupyter] which is a Jupyter Kernel that supports Java 🤩. The project states:
@@ -269,3 +269,4 @@ It is really amazing,I'm starting to use it and WOW!🤯. Take a look of some of
 [How-Tos]: https://github.com/langchain-ai/langgraphjs/tree/main/examples/how-tos
 [examples]: https://github.com/padreati/rapaio-jupyter-kernel/blob/main/example.ipynb
 [JShell]: https://en.wikipedia.org/wiki/JShell
+[Langgraph4J]: https://github.com/bsorrentino/langgraph4j
