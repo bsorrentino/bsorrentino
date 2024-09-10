@@ -210,11 +210,13 @@ It is amazing; I'm starting to use it and WOW!🤯. Take a look of some of its [
 >
 ---
 
-## Conclusions
+## Conclusion
 
 The versatility of [Jupyter] notebooks extends beyond Python, the integration of kernels like [rapaio-jupyter-kernel][java.jupyter] break new ground for Java developers. My preferred feature is the possibility to write HOW-TOs interactively documenting them contextually, but there are a bunch of potential use cases and it’s up to you to explore them, so let’s explore and let me know.
 
 I hope that this knowledge will be helpful, in the meanwhile, enjoy coding! 👋 
+
+> 💻 My sperimentations of Java notebooks are on [Github][repo] 💻 
 
 [Jupyter]: https://jupyter.org
 [REPL]: https://en.wikipedia.org/wiki/Read–eval–print_loop
@@ -226,3 +228,4 @@ I hope that this knowledge will be helpful, in the meanwhile, enjoy coding! 👋
 [examples]: https://github.com/padreati/rapaio-jupyter-kernel/blob/main/example.ipynb
 [JShell]: https://en.wikipedia.org/wiki/JShell
 [Langgraph4J]: https://github.com/bsorrentino/langgraph4j
+[repo]: https://github.com/bsorrentino/langgraph4j/tree/main/how-tos
