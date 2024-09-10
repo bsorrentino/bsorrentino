@@ -2,7 +2,7 @@
 layout: post
 title:  Jupyter Notebook for Java
 date:   2024-09-06
-description: "Use the Jupyter notebook for Java programming"
+description: "Using Jupyter Notebook for Java Prototyping"
 categories: java
 
 ---
