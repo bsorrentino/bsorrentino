@@ -161,21 +161,14 @@ It is really amazing,I'm starting to use it and WOW!🤯. Take a look of some of
 > %dependency /resolve
 > ```
 >
-> `Adding dependency com.github.javafaker:javafaker:1.0.2`
->
-> `Solving dependencies`
->
-> `Resolved artifacts count: 5`
->
-> `Add to classpath: /home/ati/work/rapaio-jupyter-kernel/target/mima_cache/com/github/javafaker/javafaker/1.0.2/javafaker-1.0.2.jar`
->
-> `Add to classpath: /home/ati/work/rapaio-jupyter-kernel/target/mima_cache/org/apache/commons/commons-lang3/3.5/commons-lang3-3.5.jar`
->
-> `Add to classpath: /home/ati/work/rapaio-jupyter-kernel/target/mima_cache/org/yaml/snakeyaml/1.23/snakeyaml-1.23-android.jar`
->
-> `Add to classpath: /home/ati/work/rapaio-jupyter-kernel/target/mima_cache/com/github/mifmif/generex/1.0.2/generex-1.0.2.jar`
->
-> `Add to classpath: /home/ati/work/rapaio-jupyter-kernel/target/mima_cache/dk/brics/automaton/automaton/1.11-8/automaton-1.11-8.jar`
+> Adding dependency com.github.javafaker:javafaker:1.0.2
+> Solving dependencies
+> Resolved artifacts count: 5
+> Add to classpath: /home/ati/work/rapaio-jupyter-kernel/target/mima_cache/com/github/javafaker/javafaker/1.0.2/javafaker-1.0.2.jar
+> Add to classpath: /home/ati/work/rapaio-jupyter-kernel/target/mima_cache/org/apache/commons/commons-lang3/3.5/commons-lang3-3.5.jar
+> Add to classpath: /home/ati/work/rapaio-jupyter-kernel/target/mima_cache/org/yaml/snakeyaml/1.23/snakeyaml-1.23-android.jar
+> Add to classpath: /home/ati/work/rapaio-jupyter-kernel/target/mima_cache/com/github/mifmif/generex/1.0.2/generex-1.0.2.jar
+> Add to classpath: /home/ati/work/rapaio-jupyter-kernel/target/mima_cache/dk/brics/automaton/automaton/1.11-8/automaton-1.11-8.jar
 > 
 > When added you can import and use the dependency.
 > ```java
