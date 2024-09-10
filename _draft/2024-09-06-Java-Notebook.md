@@ -249,8 +249,8 @@ It is really amazing,I'm starting to use it and WOW!🤯. Take a look of some of
 > ```java
 > String id = display("text/markdown", "Markdown *test* **snippet**:\n* bullet 1\n* bullet 2");
 > ```
->> ```java
->> updateDisplay(id, "text/html", "Html <i>test</i> <b>snippet</b>:<p><ulist><li>bullet 1</li><li>bullet 2</li></ulist></p>")
+> ```java
+> updateDisplay(id, "text/html", "Html <i>test</i> <b>snippet</b>:<p><ulist><li>bullet 1</li><li>bullet 2</li></ulist></p>")
 > ```
 > A Java object is displayed as a String using *`Objects.toString`*. As such, if the object has an implementation of *`toString`*, that method will be called.
 > ```java
