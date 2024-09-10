@@ -160,6 +160,7 @@ It is really amazing,I'm starting to use it and WOW!🤯. Take a look of some of
 > %dependency /add com.github.javafaker:javafaker:1.0.2
 > %dependency /resolve
 > ```
+>
 > ```
 > Adding dependency com.github.javafaker:javafaker:1.0.2
 > Solving dependencies
