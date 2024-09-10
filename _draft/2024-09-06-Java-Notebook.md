@@ -150,7 +150,7 @@ It is really amazing,I'm starting to use it and WOW!🤯. Take a look of some of
 > ```java
 > String version = "1.0.2";
 > ```
-> ```java
+> ```bash
 > %dependency /add com.github.javafaker:javafaker:\{version}
 > ```
 > `Adding dependency com.github.javafaker:javafaker:1.0.2`
@@ -160,7 +160,7 @@ It is really amazing,I'm starting to use it and WOW!🤯. Take a look of some of
 > %dependency /add com.github.javafaker:javafaker:1.0.2
 > %dependency /resolve
 > ```
->
+> ```
 > Adding dependency com.github.javafaker:javafaker:1.0.2
 > Solving dependencies
 > Resolved artifacts count: 5
@@ -169,7 +169,8 @@ It is really amazing,I'm starting to use it and WOW!🤯. Take a look of some of
 > Add to classpath: /home/ati/work/rapaio-jupyter-kernel/target/mima_cache/org/yaml/snakeyaml/1.23/snakeyaml-1.23-android.jar
 > Add to classpath: /home/ati/work/rapaio-jupyter-kernel/target/mima_cache/com/github/mifmif/generex/1.0.2/generex-1.0.2.jar
 > Add to classpath: /home/ati/work/rapaio-jupyter-kernel/target/mima_cache/dk/brics/automaton/automaton/1.11-8/automaton-1.11-8.jar
-> 
+> ```
+>
 > When added you can import and use the dependency.
 > ```java
 > import com.github.javafaker.Faker;
@@ -179,7 +180,7 @@ It is really amazing,I'm starting to use it and WOW!🤯. Take a look of some of
 > Hayley Anderson
 > ### Resolving conflict dependencies
 > You there are conflicts you can manage them with optional. Let's take an example which have conflicts:
-> ```java
+> ```bash
 > %dependency /add com.google.guava:guava:20.0 --optional
 > %dependency /add com.google.inject:guice:4.2.2
 > %dependency /add com.google.guava:guava:25.1-android
