@@ -58,7 +58,7 @@ After a bit of research (and a weird thought of trying to throw myself into a DI
 
 It is amazing; I'm starting to use it and WOW!🤯. Take a look of some of its [features][examples], below I've summarized the most representative ones:
 
-### Java Jupyter notebook example
+### Java Jupyter notebook features
 ---
 
 > You can write normal Java.
