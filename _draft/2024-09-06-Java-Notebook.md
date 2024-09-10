@@ -6,7 +6,7 @@ description: "Use the Jupyter notebook for Java programming"
 categories: java
 
 ---
-![cover](../../../../assets/java-notebook/cover.png)
+![cover](../assets/java-notebook/cover.png)
 <br>
 
 ## The powerful of Jupyter Notebook
