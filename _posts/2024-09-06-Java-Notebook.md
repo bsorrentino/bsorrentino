@@ -11,14 +11,14 @@ categories: java
 
 ## The powerful of Jupyter Notebook
 
-[Jupyter] Notebooks are an excellent tool, originally developed to help data scientists and engineers to simplify their work with data using python programming language; in fact, the interactive nature of notebooks makes them ideal for quickly see the code results without setting up a development environment, compiling, packaging and so on. This particular feature has been crucial for adoption  in data science, machine learning, and statistical modeling where development skill was less essential than data manipulation expertise.
+[Jupyter] Notebooks are an excellent tool, originally developed to help data scientists and engineers to simplify their work with data using python programming language. In fact, the interactive nature of notebooks makes them ideal for quickly seeing the code results without setting up a development environment, compiling, packaging and so on. This feature has been crucial for adoption in data science, machine learning, and statistical modeling where development skill was less essential than data manipulation expertise. 
 
 ### Advantages
 
 Below are some of the advantages of [Jupyter] notebook  
 
 1. **Interactive Development**: Notebooks allow developers to write code in small chunks, test them immediately, and visualize results. This interactive workflow promotes faster iteration and debugging, ideal for data exploration, algorithm development, and quick prototyping.
-2. **Rich Visualizations**: Typically Notebook are integrated with powerful visualization libraries that are able to display plots, graphs, and other visual outputs inline.
+2. **Rich Visualizations**: Typically, Notebook is integrated with powerful visualization libraries that can display plots, graphs, and other visual outputs inline. 
 3. **Documentation and Code Together**: Notebooks combine executable code with markdown cells, allowing developers to document their code, explain logic, etc.., creating more readable and maintainable codebases.
 4. **Collaboration**: By sharing notebooks, team members can review and run code without setting up a development environment, making collaboration easier, especially in cross-functional teams involving non-technical stakeholders.
 5. **Reproducibility**: Notebooks can be rerun from top to bottom, ensuring that any analysis or test can be consistently reproduced. This is crucial for debugging, testing, or presenting results.
@@ -28,33 +28,35 @@ Below are some of the advantages of [Jupyter] notebook
 
 ## Break the Python barrier
 
-Considering the advantages that offer [Jupyter] notebooks, would be great for software developer use such notebook approach to develop, for example, **USE CASE TESTS** for projects  or providing useful **INTERACTIVE HOW-TO**.
+Considering the advantages that offer [Jupyter] notebooks, would be great for software developers to use such notebook approach to develop, for example, **USE CASE TESTS** for projects or providing useful **INTERACTIVE HOW-TO**. 
 
 **The question here is**: 
-> IS IT POSSIBLE USE JUPYTER NOTEBOOK FOR PROGRAMMING LANGUAGE OTHER THAN PYTHON ?
+> IS IT POSSIBLE TO USE A JUPYTER NOTEBOOK FOR PROGRAMMING LANGUAGE OTHER THAN PYTHON❓🤔
 
 The answer is **YES**🤩.
 
 ### The Jupiter Architecture
 
-The [Jupyter] tools has been architected to support multiple programming languages though the **Kernel** concept, see diagram below:
+The [Jupyter] tools have been architected to support multiple programming languages though the **Kernel** concept, see diagram below:
 
 ![jupyter-architecture](../../../../assets/java-notebook/jupyter-architecture.png)
 
-The kernel is how the [Jupyter] notebook server evaluates blocks of code written by the user inside the notebook document (`.ipynb`), so it is sufficient to have a kernel that can evaluate the code of the programming language of your choice to have it supported by [Jupyter] notebook. Of course, it is easy to deduce that every potential programming language that a [Jupyter] Kernel can support should be evaluable in the Read–eval–print loop ([REPL]) way.
+The kernel is how the [Jupyter] notebook server evaluates blocks of code written by the user inside the notebook document (`.ipynb`), so it is sufficient to have a kernel that can evaluate the code of the programming language of your choice to have it supported by [Jupyter] notebook. 
+Of course, it is easy to deduce that every potential programming language that a [Jupyter] Kernel can support should support Read–eval–print loop ([REPL]) feature.
 
-So the question becomes: ARE THERE JUPYTER KERNEL OTHER THAN PYTHON ONE ?
+So, the question becomes: ARE THERE JUPYTER KERNEL OTHER THAN PYTHON ONE?
 
 The answer is **Yes**🤩. 
 
-Lately I've been working on [Langgraph4J] which is a Java implementation of the more famous [Langgraph.js] which is a Javascript library used to create agent and multi-agent workflows by [Langchain]. Interesting note is that [Langchain.js] uses Javascript [Jupyter] notebooks powered by a [DENO Jupiter Kernel][deno.jupyter] to implement and document [How-Tos]. So I faced with a dilemma on how to use (or possibly simulate) the same approach in Java. So without much hope I started looking for a [Jupyter] Kernel that supported Java considering that from the JDK 9 version there was the introduction of [JShell] that enabled the REPL for Java.
+Lately I've been working on [Langgraph4J] which is a Java implementation of the more famous [Langgraph.js] which is a Javascript library used to create agent and multi-agent workflows by [Langchain]. Interesting note is that [Langchain.js] uses Javascript [Jupyter] notebooks powered by a [DENO Jupiter Kernel][deno.jupyter] to implement and document [How-Tos]. 
+So, I faced a dilemma on how to use (or possibly simulate) the same approach in Java and, without much hope, I started looking for a [Jupyter] Kernel that supported Java considering that, from the JDK 9 version, there was the introduction of JShell that enabled the [REPL] for Java. 
 
 ### The Java Jupyter Kernel
-After a bit of researches (and also a weird thought of trying to throw myself into a DIY implementation) I landed on [rapaio-jupyter-kernel][java.jupyter] which is a Jupyter Kernel that supports Java 🤩. The project states:
+After a bit of research (and a weird thought of trying to throw myself into a DIY implementation) I landed on [rapaio-jupyter-kernel][java.jupyter] which is a Jupyter Kernel that supports Java 🤩. The project states:
 
 > Jupyter kernel for Java language based on JShell. It implements Jupyter message specification version `5.4`, and it requires Java = `22`.
 
-It is really amazing, I'm starting to use it and WOW!🤯. Take a look of some of its [features][examples], below I've summarized the most representative ones:
+It is amazing; I'm starting to use it and WOW!🤯. Take a look of some of its [features][examples], below I've summarized the most representative ones:
 
 ### Java Jupyter notebook example
 ---
