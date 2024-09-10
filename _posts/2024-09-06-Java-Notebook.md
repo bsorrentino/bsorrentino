@@ -153,11 +153,9 @@ It is amazing; I'm starting to use it and WOW!🤯. Take a look of some of its [
 > %%bash
 > java --version
 > ```
-> ```
-> openjdk 22.0.2 2024-07-16
+> `openjdk 22.0.2 2024-07-16
 > OpenJDK Runtime Environment Corretto-22.0.2.9.1 (build 22.0.2+9-FR)
-> OpenJDK 64-Bit Server VM Corretto-22.0.2.9.1 (build 22.0.2+9-FR, mixed mode, sharing)
-> ```
+> OpenJDK 64-Bit Server VM Corretto-22.0.2.9.1 (build 22.0.2+9-FR, mixed mode, sharing)`
 
 >
 > You can even define variables. In fact all the lines below cell magic marker are executed as a bash script.
