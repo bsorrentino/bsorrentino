@@ -105,9 +105,11 @@ The answer is **Yes**🤩.
 Lately I've been working on Langgraph4J which is a Java implementation of the more famous [Langgraph.js] which is a Javascript library used to create agent and multi-agent workflows by [Langchain]. Interesting note is that [Langchain.js] uses Javascript Jupyter notebooks powered by a [DENO Jupiter Kernel][deno.jupyter] to implement and document [How-Tos]. So I faced with a dilemma on how to use (or possibly simulate) the same approach in Java. So without much hope I started looking for a Jupyter Kernel that supported Java considering that from the JDK 9 version there was the introduction of JShell that enabled the REPL for Java.
 
 ### The Java Jupyter Kernel
-After a bit of researches (and also a weird thought of trying to throw myself into a DIY implementation) I landed on [rapaio-jupyter-kernel][java.jupyter] which is a Jupyter Kernel that supports Java 🤩.
+After a bit of researches (and also a weird thought of trying to throw myself into a DIY implementation) I landed on [rapaio-jupyter-kernel][java.jupyter] which is a Jupyter Kernel that supports Java 🤩. The project states:
 
-It is really amazing, take a look of some of its [features][examples] presented as a notebook itself:
+> Jupyter kernel for Java language based on [JShell]. It implements Jupyter message specification version `5.4`, and it requires Java = `22`.
+
+It is really amazing,I'm starting to use it and WOW!🤯. Take a look of some of its [features][examples] presented as a notebook itself:
 
 ### Java Jupyter notebook example
 
@@ -134,7 +136,7 @@ It is really amazing, take a look of some of its [features][examples] presented 
 > int add(int a, int b) { return a+b; }
 > add(2,3)
 > ```
-> 5
+> `5`
 > ### Magic commands
 > Besides Java code, a cell can contain special commands implemented by the kernel. These are called magic code and there are two types: magic lines and magic cells. 
 > **Magic lines** are lines which are prefixed with `%`. After the prefix it is followed by the magic command and the optional parameters. Below is an example of magic line:
@@ -142,7 +144,7 @@ It is really amazing, take a look of some of its [features][examples] presented 
 > // magic line which asks JShell to list the types defined in this notebook in this moment
 > %jshell /types
 > ```
-> `[0m[0m[1;30m|    record Complex[0m[0m`
+> `|    record Complex`
 > ### Magic commands interpolation
 > Sometimes there is a need to run a magic command in a more dynamic way. This can be done using magic interpolation.
 > Magic interpolation is the interpolation of marked content which starts with `\{` and ends with `}`. Any content decorated with those markers is evaluated in jshell and the result is transformed in a String which replaces the decorated content in the magic command.
@@ -152,29 +154,23 @@ It is really amazing, take a look of some of its [features][examples] presented 
 > ```java
 > %dependency /add com.github.javafaker:javafaker:\{version}
 > ```
-> ---
-> Adding dependency [0m[1m[32mcom.github.javafaker:javafaker:1.0.2
-> [0m
->
-> ---
+> Adding dependency com.github.javafaker:javafaker:1.0.2
 > ### Dependency management 🤩
 > You can add dependencies using `%dependency /add` and after adding all dependencies you can call `%dependency /resolve`
 > ```java
 > %dependency /add com.github.javafaker:javafaker:1.0.2
 > %dependency /resolve
 > ```
-> ---
-> Adding dependency [0m[1m[32mcom.github.javafaker:javafaker:1.0.2
-> [0mSolving dependencies
+> ```
+> Adding dependency com.github.javafaker:javafaker:1.0.2
+> Solving dependencies
 > Resolved artifacts count: 5
-> Add to classpath: [0m[32m/home/ati/work/rapaio-jupyter-kernel/target/mima_cache/com/github/javafaker/javafaker/1.0.2/javafaker-1.0.2.jar[0m
-> [0mAdd to classpath: [0m[32m/home/ati/work/rapaio-jupyter-kernel/target/mima_cache/org/apache/commons/commons-lang3/3.5/commons-lang3-3.5.jar[0m
-> [0mAdd to classpath: [0m[32m/home/ati/work/rapaio-jupyter-kernel/target/mima_cache/org/yaml/snakeyaml/1.23/snakeyaml-1.23-android.jar[0m
-> [0mAdd to classpath: [0m[32m/home/ati/work/rapaio-jupyter-kernel/target/mima_cache/com/github/mifmif/generex/1.0.2/generex-1.0.2.jar[0m
-> [0mAdd to classpath: [0m[32m/home/ati/work/rapaio-jupyter-kernel/target/mima_cache/dk/brics/automaton/automaton/1.11-8/automaton-1.11-8.jar[0m
-> [0m
->
-> ---
+> Add to classpath: /home/ati/work/rapaio-jupyter-kernel/target/mima_cache/com/github/javafaker/javafaker/1.0.2/javafaker-1.0.2.jar
+> Add to classpath: /home/ati/work/rapaio-jupyter-kernel/target/mima_cache/org/apache/commons/commons-lang3/3.5/commons-lang3-3.5.jar
+> Add to classpath: /home/ati/work/rapaio-jupyter-kernel/target/mima_cache/org/yaml/snakeyaml/1.23/snakeyaml-1.23-android.jar
+> Add to classpath: /home/ati/work/rapaio-jupyter-kernel/target/mima_cache/com/github/mifmif/generex/1.0.2/generex-1.0.2.jar
+> Add to classpath: /home/ati/work/rapaio-jupyter-kernel/target/mima_cache/dk/brics/automaton/automaton/1.11-8/automaton-1.11-8.jar
+> ```
 > When added you can import and use the dependency.
 > ```java
 > import com.github.javafaker.Faker;
@@ -207,22 +203,23 @@ It is really amazing, take a look of some of its [features][examples] presented 
 > %%bash
 > java --version
 > ```
-> ---
+> ```
 > openjdk 22.0.2 2024-07-16
 > OpenJDK Runtime Environment Corretto-22.0.2.9.1 (build 22.0.2+9-FR)
 > OpenJDK 64-Bit Server VM Corretto-22.0.2.9.1 (build 22.0.2+9-FR, mixed mode, sharing)
+> ```
+
 >
-> ---
 > You can even define variables. In fact all the lines below cell magic marker are executed as a bash script.
 > ```bash
 > %%bash
 > name="John"
 > echo "Hello $name"
 > ```
-> ---
-> Hello John
 >
-> ---
+> `Hello John`
+>
+>
 > ### Show an image for immediate inspection
 > ```java
 > %image https://www.google.com/logos/doodles/2024/paris-games-sailing-6753651837110529.4-law.gif
@@ -242,32 +239,27 @@ It is really amazing, take a look of some of its [features][examples] presented 
 > ```java
 > display("text/markdown", "Markdown *test* **snippet**:\n* bullet 1\n* bullet 2")
 > ```
-> ---
+>
 > Markdown *test* **snippet**:
 > * bullet 1
 > * bullet 2
 >
-> ---
+>
 > `display` command returns an id which identifies the piece of output from the notebook which handles the display. Notice that we captured the id of the display. This id can be used to update the same display with a different content. For example we can update the content of that display with a html snippet, using the MIME type for interpretation.
 > ```java
 > String id = display("text/markdown", "Markdown *test* **snippet**:\n* bullet 1\n* bullet 2");
 > ```
-> ---
-> Html <i>test</i> <b>snippet</b>:<p><ulist><li>bullet 1</li><li>bullet 2</li></ulist></p>
->
-> ---
 >> ```java
->> updateDisplay(id, "text/html", 
->>               "Html <i>test</i> <b>snippet</b>:<p><ulist><li>bullet 1</li><li>bullet 2</li></ulist></p>")
+>> updateDisplay(id, "text/html", "Html <i>test</i> <b>snippet</b>:<p><ulist><li>bullet 1</li><li>bullet 2</li></ulist></p>")
 > ```
-> A Java object is displayed as a String using *Objects.toString*. As such, if the object has an implementation of *toString*, that method will be called.
+> A Java object is displayed as a String using *`Objects.toString`*. As such, if the object has an implementation of *`toString`*, that method will be called.
 > ```java
 > new Complex(10,Math.PI);
 > ```
-> ---
-> Complex[a=10.0, b=3.141592653589793]
 >
-> ---
+> `Complex[a=10.0, b=3.141592653589793]`
+>
+>
 
 [REPL]: https://en.wikipedia.org/wiki/Read–eval–print_loop
 [deno.jupyter]: https://deno.com/blog/v1.37
