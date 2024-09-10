@@ -6,7 +6,7 @@ description: "Use the Jupyter notebook for Java programming"
 categories: java
 
 ---
-![cover](../assets/java-notebook/cover.png)
+![cover](../../../../assets/java-notebook/cover.png)
 <br>
 
 ## The powerful of Jupyter Notebook
@@ -225,7 +225,7 @@ It is really amazing, I'm starting to use it and WOW!🤯. Take a look of some o
 > %image https://www.google.com/logos/doodles/2024/paris-games-sailing-6753651837110529.4-law.gif
 > ```
 >     
-> ![png](../assets/java-notebook/image1.gif)
+> ![png](../../../../assets/java-notebook/image1.gif)
 >     
 > ### Display data
 > Jupyter notebooks uses outputs to display objects of various types. By default when an object is returned as the result of the last code operation, that result is displayed. 
