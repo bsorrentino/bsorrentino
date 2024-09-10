@@ -100,7 +100,7 @@ It is amazing; I'm starting to use it and WOW!🤯. Take a look of some of its [
 > ```java
 > String version = "1.0.2";
 > ```
-> ```bash
+> ```java
 > %dependency /add com.github.javafaker:javafaker:\{version}
 > ```
 > `Adding dependency com.github.javafaker:javafaker:1.0.2`
@@ -110,16 +110,15 @@ It is amazing; I'm starting to use it and WOW!🤯. Take a look of some of its [
 > %dependency /add com.github.javafaker:javafaker:1.0.2
 > %dependency /resolve
 > ```
-> ```
-> Adding dependency com.github.javafaker:javafaker:1.0.2
+>
+> `Adding dependency com.github.javafaker:javafaker:1.0.2
 > Solving dependencies
 > Resolved artifacts count: 5
 > Add to classpath: /home/ati/work/rapaio-jupyter-kernel/target/mima_cache/com/github/javafaker/javafaker/1.0.2/javafaker-1.0.2.jar
 > Add to classpath: /home/ati/work/rapaio-jupyter-kernel/target/mima_cache/org/apache/commons/commons-lang3/3.5/commons-lang3-3.5.jar
 > Add to classpath: /home/ati/work/rapaio-jupyter-kernel/target/mima_cache/org/yaml/snakeyaml/1.23/snakeyaml-1.23-android.jar
 > Add to classpath: /home/ati/work/rapaio-jupyter-kernel/target/mima_cache/com/github/mifmif/generex/1.0.2/generex-1.0.2.jar
-> Add to classpath: /home/ati/work/rapaio-jupyter-kernel/target/mima_cache/dk/brics/automaton/automaton/1.11-8/automaton-1.11-8.jar
-> ```
+> Add to classpath: /home/ati/work/rapaio-jupyter-kernel/target/mima_cache/dk/brics/automaton/automaton/1.11-8/automaton-1.11-8.jar`
 >
 > When added you can import and use the dependency.
 > ```java
@@ -127,10 +126,10 @@ It is amazing; I'm starting to use it and WOW!🤯. Take a look of some of its [
 > var faker = new Faker();
 > faker.name().fullName()
 > ```
-> Hayley Anderson
+> `Hayley Anderson`
 > ### Resolving conflict dependencies
 > You there are conflicts you can manage them with optional. Let's take an example which have conflicts:
-> ```bash
+> ```java
 > %dependency /add com.google.guava:guava:20.0 --optional
 > %dependency /add com.google.inject:guice:4.2.2
 > %dependency /add com.google.guava:guava:25.1-android
@@ -149,7 +148,7 @@ It is amazing; I'm starting to use it and WOW!🤯. Take a look of some of its [
 > ```
 > ### Execute bash commands
 > You can execute bash scripting commands. Here we display the java version number.
-> ```bash
+> ```java
 > %%bash
 > java --version
 > ```
@@ -158,7 +157,7 @@ It is amazing; I'm starting to use it and WOW!🤯. Take a look of some of its [
 > OpenJDK 64-Bit Server VM Corretto-22.0.2.9.1 (build 22.0.2+9-FR, mixed mode, sharing)`
 >
 > You can even define variables. In fact all the lines below cell magic marker are executed as a bash script.
-> ```bash
+> ```java
 > %%bash
 > name="John"
 > echo "Hello $name"
