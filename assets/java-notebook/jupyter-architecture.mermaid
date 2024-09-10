@@ -1,0 +1,53 @@
+---
+config:
+    flowchart:
+        subGraphTitleMargin:
+            top: 20
+            bottom: 20
+---
+graph TD
+    A[User's Browser] --> B[Jupyter Notebook Web Application]
+    B <--> C(Notebook Server)
+    C(Jupyter Notebook Server) -->|USE ONE|Kernel
+    %% C <--> D[Kernel]
+    C -->|CONVERT TO| NBConvert
+    G[Client Libraries] <--> B
+    H["IPython"]
+    O["Other Language Kernel"]
+ 
+    F["Notebook Document (.ipynb)<br><br>"] <-->|USE|C
+    F <-->|UPDATE| B
+    
+    subgraph "Client-Side"
+    A
+    B
+    G
+    end
+    
+    subgraph Server-Side
+    C
+
+    Kernel
+    NBConvert
+    end
+
+    
+    subgraph Kernel["Kernel"]
+    H
+    O
+    end
+    
+   subgraph NBConvert
+    PDF
+    HTML
+    MARKDOWN
+    end
+ 
+    %% style A fill:#f9f,stroke:#333,stroke-width:2px
+    %% style B fill:#bbf,stroke:#333,stroke-width:2px
+    %% style C fill:#dfd,stroke:#333,stroke-width:2px
+    style Kernel color:yellow,stroke:black,stroke-width:3px
+    style NBConvert stroke:black,stroke-width:3px
+    style F color:white,fill:black,stroke:white,stroke-width:2px
+    %% style G fill:#dff,stroke:#333,stroke-width:2px
+    %% style H fill:#fdf,stroke:#333,stroke-width:2px

@@ -39,62 +39,8 @@ The answer is **YES**🤩.
 
 The [Jupyter] tools has been architected to support multiple programming languages though the **Kernel** concept, see diagram below:
 
-```mermaid
----
-config:
-    flowchart:
-        subGraphTitleMargin:
-            top: 20
-            bottom: 20
----
-graph TD
-    A[User's Browser] --> B[Jupyter Notebook Web Application]
-    B <--> C(Notebook Server)
-    C(Jupyter Notebook Server) -->|USE ONE|Kernel
-    %% C <--> D[Kernel]
-    C -->|CONVERT TO| NBConvert
-    G[Client Libraries] <--> B
-    H["IPython"]
-    O["Other Language Kernel"]
- 
-    F["Notebook Document (.ipynb)<br><br>"] <-->|USE|C
-    F <-->|UPDATE| B
-    
-    subgraph "Client-Side"
-    A
-    B
-    G
-    end
-    
-    subgraph Server-Side
-    C
+![jupyter-architecture](../../../../assets/java-notebook/jupyter-architecture.png)
 
-    Kernel
-    NBConvert
-    end
-
-    
-    subgraph Kernel["Kernel"]
-    H
-    O
-    end
-    
-   subgraph NBConvert
-    PDF
-    HTML
-    MARKDOWN
-    end
- 
-    %% style A fill:#f9f,stroke:#333,stroke-width:2px
-    %% style B fill:#bbf,stroke:#333,stroke-width:2px
-    %% style C fill:#dfd,stroke:#333,stroke-width:2px
-    style Kernel color:yellow,stroke:black,stroke-width:3px
-    style NBConvert stroke:black,stroke-width:3px
-    style F color:white,fill:black,stroke:white,stroke-width:2px
-    %% style G fill:#dff,stroke:#333,stroke-width:2px
-    %% style H fill:#fdf,stroke:#333,stroke-width:2px
-
-```
 The kernel is how the [Jupyter] notebook server evaluates blocks of code written by the user inside the notebook document (`.ipynb`), so it is sufficient to have a kernel that can evaluate the code of the programming language of your choice to have it supported by [Jupyter] notebook. Of course, it is easy to deduce that every potential programming language that a [Jupyter] Kernel can support should be evaluable in the Read–eval–print loop ([REPL]) way.
 
 So the question becomes: ARE THERE JUPYTER KERNEL OTHER THAN PYTHON ONE ?
