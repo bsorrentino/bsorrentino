@@ -111,7 +111,7 @@ After a bit of researches (and also a weird thought of trying to throw myself in
 It is really amazing,I'm starting to use it and WOW!🤯. Take a look of some of its [features][examples] presented as a notebook itself:
 
 ### Java Jupyter notebook example
-
+---
 
 > You can write normal Java.
 > ```java
@@ -259,13 +259,17 @@ It is really amazing,I'm starting to use it and WOW!🤯. Take a look of some of
 > `Complex[a=10.0, b=3.141592653589793]`
 >
 >
+---
+
+## Conclusions
+
 
 [Jupyter]: https://jupyter.org
 [REPL]: https://en.wikipedia.org/wiki/Read–eval–print_loop
 [deno.jupyter]: https://deno.com/blog/v1.37
 [java.jupyter]: https://github.com/padreati/rapaio-jupyter-kernel
 [Langgraph.js]: https://langchain-ai.github.io/langgraphjs/
-[LangchainAI]: https://github.com/hwchase17/langchain
+[Langchain]: https://github.com/hwchase17/langchain
 [How-Tos]: https://github.com/langchain-ai/langgraphjs/tree/main/examples/how-tos
 [examples]: https://github.com/padreati/rapaio-jupyter-kernel/blob/main/example.ipynb
 [JShell]: https://en.wikipedia.org/wiki/JShell
