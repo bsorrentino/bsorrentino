@@ -95,7 +95,7 @@ graph TD
     %% style H fill:#fdf,stroke:#333,stroke-width:2px
 
 ```
-The kernel is how the [Jupyter] notebook server evaluates blocks of code written by the user inside the notebook document (.ipynb), so it is sufficient to have a kernel that can evaluate the code of the programming language of your choice to have it supported by [Jupyter] notebook. Of course, it is easy to deduce that every potential programming language that a [Jupyter] Kernel can support should be evaluable in the Read–eval–print loop ([REPL]) way.
+The kernel is how the [Jupyter] notebook server evaluates blocks of code written by the user inside the notebook document (`.ipynb`), so it is sufficient to have a kernel that can evaluate the code of the programming language of your choice to have it supported by [Jupyter] notebook. Of course, it is easy to deduce that every potential programming language that a [Jupyter] Kernel can support should be evaluable in the Read–eval–print loop ([REPL]) way.
 
 So the question becomes: ARE THERE JUPYTER KERNEL OTHER THAN PYTHON ONE ?
 
