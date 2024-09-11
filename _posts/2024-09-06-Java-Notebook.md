@@ -50,7 +50,7 @@ The question becomes:
 
 The answer is **Yes**🤩. 
 
-Lately I've been working on [Langgraph4J] which is a Java implementation of the more famous [Langgraph.js] which is a Javascript library used to create agent and multi-agent workflows by [Langchain]. Interesting note is that [Langchain.js] uses Javascript [Jupyter] notebooks powered by a [DENO Jupiter Kernel][deno.jupyter] to implement and document [How-Tos]. 
+Lately I've been working on [Langgraph4J] which is a Java implementation of the more famous [Langgraph.js] which is a Javascript library used to create agent and multi-agent workflows by [Langchain]. Interesting note is that [Langgraph.js] uses Javascript [Jupyter] notebooks powered by a [DENO Jupiter Kernel][deno.jupyter] to implement and document [How-Tos]. 
 So, I faced a dilemma on how to use (or possibly simulate) the same approach in Java and, without much hope, I started looking for a [Jupyter] Kernel that supported Java considering that, from the JDK 9 version, there was the introduction of JShell that enabled the [REPL] for Java. 
 
 ### The Java Jupyter Kernel
