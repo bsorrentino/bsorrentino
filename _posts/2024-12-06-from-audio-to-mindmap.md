@@ -27,7 +27,7 @@ The agentic architecture is composed by a series of agents, each one responsible
 
 1. **summary-to-mindmap**: This agent is responsible to arrange the key points in a kind of ontology providing a hierarchical representation of information
 
-1. **mindmap-to-mermaid**: This agent is responsible totransform the mind-map representation in a [mermaid](https://mermaid.js.org) syntax ready for the visualization
+1. **mindmap-to-mermaid**: This agent is responsible to transform the mind-map representation in a [mermaid](https://mermaid.js.org) syntax ready for the visualization
 
 Notes: 👈 
 > As shown in the diagram, the architecture allows you to bypass the transcription stage if you already have a transcription.
@@ -36,7 +36,7 @@ Notes: 👈
 
 I've developed a demo app for the [AssemblyAI Challenge](https://dev.to/challenges/assemblyai) as a   *Sophisticated Speech-to-Text* use case.
 
-The application in available [here](https://bsorrentino.github.io/MapifyAI/) for access to full functionality you need both an **[AssemblyAI] Api Key** and a **[OpenAI] Api Key**. 
+The application is available [here](https://bsorrentino.github.io/MapifyAI/),  for access to voice functionality you need an **[AssemblyAI] Api Key** while for ather agents you need an **[OpenAI] Api Key**.
 
 Below there are some representative screenshots
 
