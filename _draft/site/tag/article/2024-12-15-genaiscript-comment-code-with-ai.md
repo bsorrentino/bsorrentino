@@ -124,5 +124,6 @@ As you can see from diagram the implementation is composed by the following step
 
 ## Conclusion
 
+[project]: https://github.com/bsorrentino/genaiscript-labs
 [GenAIScript]: https://microsoft.github.io/genaiscript/]
 [Tree-Sitter]: https://tree-sitter.github.io/tree-sitter/
