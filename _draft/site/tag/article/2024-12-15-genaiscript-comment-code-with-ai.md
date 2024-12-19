@@ -70,7 +70,7 @@ Using the AST, we can provide to AI consistent piece of code so it can:
  
  This approach is especially powerful because it works with the intrinsic structure of the code, ensuring precise and context-aware documentation.
 
-##### GenAIScript comes to rescue
+##### GenAIScript comes to rescue 🚀
 
 Now the problem was to find a AST framework supporting as many programming languages as possible for developing and testing this new approach based on RAG technique.
 As sayed previously when we choose a tech-stack it is very important the eco-system and, in the case of [GenAIScript], 
