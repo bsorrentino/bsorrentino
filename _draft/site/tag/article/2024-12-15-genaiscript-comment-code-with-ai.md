@@ -76,7 +76,7 @@ Now the problem was to find a AST framework supporting as many programming langu
 As sayed previously when we choose a tech-stack it is very important the eco-system and, in the case of [GenAIScript], 
 the choice was really right because it comes with [Tree-Sitter] an AST tool with an incremental parsing library that can build a concrete syntax tree for a source file.
 
-#### Step 3 - Implementing commenter per Java file
+#### Step 3 - Implementing Commenter per Java file
 
 Once I've verified Java support by [Tree-Sitter], I started implementation of the Commenter CLI. The sequence diagram below summarize the main steps of implementation
 
@@ -111,6 +111,18 @@ sequenceDiagram
     %% - For each chunk, Splitter sends content to LLM and receives chunk + content back.
     %% - Splitter performs a join and sends back to Source File.
 ```
+
+As you can see from diagram the implementation is composed by the following steps:
+
+1. Each Java source file is loaded an the content submitted to AST
+2. AST extract syntax tree and invoke Splitter
+3. Splitter extracts all the language constructs of interest (in the case of comment we have interest in syntax declaration like class, interface, records, methods, etc ... ) and produces the chunks
+4. for each chunk the LLM model is invoked and the chunk itself is provided to LLM that reviews the implementation and produces its comment accordly
+5. Comment + Chunk is provided back to AST parser to verify that what LLM has produced is still valid in Java
+6. Finally all the chunk and related comments are joined and saved back to the file
+
+
+## Conclusion
 
 [GenAIScript]: https://microsoft.github.io/genaiscript/]
 [Tree-Sitter]: https://tree-sitter.github.io/tree-sitter/
