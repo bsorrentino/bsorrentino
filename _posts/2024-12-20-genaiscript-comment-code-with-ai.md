@@ -8,6 +8,7 @@ categories: ai
 ---
 ![cover](../../../../assets/genaiscript-comment-code-with-ai/cover.png)
 <br>
+<br>
 
 ## **Introduction - Value of documenting code**
 
