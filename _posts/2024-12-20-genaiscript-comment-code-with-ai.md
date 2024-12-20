@@ -29,7 +29,7 @@ I believe this task is better suited for a batch processing approach, which can 
 
 I've decided to use Agentic Architecture and, as usual in the classical development experience, I started with the tech-stack-selection searching for the best AI-Agents based frameworks that fit for purpose. During my experience in AI development I have dealt with several AI-Agents frameworks (like for example langgraph), and everyone provides a great AI agent architecture out-of-box but the real value is in the tools ecosystem that they integrate as standard. The result of my tech-stack-selection has been the [GenAIScript].
 
-**What is GenAIScript**
+#### **What is GenAIScript**
 
 It is an open-source scripting environment that integrates Generative AI capabilities directly into JavaScript, enabling developers to programmatically construct prompts for Large Language Models (LLMs) and orchestrate their interactions with various tools and data sources. [GenAIScript] facilitates the ingestion of diverse document formats—such as PDFs, DOCX, and CSVs—and supports the generation of structured outputs, including files and edits. This functionality streamlines tasks that involve AI analysis by automating complex processes within a cohesive scripting framework.
 
@@ -52,7 +52,7 @@ How can I divide a source code file into meaningful pieces that could be comment
 
 The answer is the **Abstract Syntax Tree (AST)**
 
-##### **Abstract Syntax Tree (AST)**
+#### **Abstract Syntax Tree (AST)**
 
 This approach involves analyzing the structure of code by parsing it into a tree-like representation where each node corresponds to a construct in the source code, such as variables, expressions, or statements. The AST provides a hierarchical view of the code's syntax, abstracting away irrelevant details like formatting.
 
@@ -64,7 +64,7 @@ Using the AST, we can provide to AI consistent piece of code so it can:
 
 This approach is especially powerful because it works with the intrinsic structure of the code, ensuring precise and context-aware documentation.
 
-##### **GenAIScript comes to rescue 🚀**
+#### **GenAIScript comes to rescue 🚀**
 
 Now the problem was to find an AST framework supporting as many programming languages as possible for developing and testing this new approach based on RAG technique. As said previously when we choose a tech-stack it is very important the ecosystem and, in the case of [GenAIScript](https://microsoft.github.io/genaiscript/), the choice was really right because it comes with [Tree-Sitter] an AST tool with an incremental parsing library that can build a concrete syntax tree for a source file.
 
@@ -72,9 +72,12 @@ Now the problem was to find an AST framework supporting as many programming lang
 
 Once I've verified Java support by [Tree-Sitter], I started implementation of the Commenter CLI. The sequence diagram below summarize the main steps of implementation
 
+![diagram](../../../../assets/genaiscript-comment-code-with-ai/commenter-cli.png)
+
+<!--
 ```mermaid
 sequenceDiagram
-    title Commenter Sequence 
+    title COMMENTER CLI Sequence 
     participant source\_file as source\_file
     participant ast as AST
     participant splitter as splitter
@@ -101,6 +104,7 @@ sequenceDiagram
     %% - For each chunk, Splitter sends content to LLM and receives chunk + content back.
     %% - Splitter performs a join and sends back to Source File.
 ```
+-->
 
 As you can see from diagram the implementation is composed by the following steps:
 
