@@ -6,7 +6,7 @@ description: "Comments your java code with AI using GenAIScript"
 categories: ai
 
 ---
-![cover]()
+![cover](../../../../assets/genaiscript-comment-code-with-ai/cover.png)
 <br>
 
 ## Introduction - Value of documenting code
@@ -122,8 +122,18 @@ As you can see from diagram the implementation is composed by the following step
 6. Finally all the chunk and related comments are joined and saved back to the file
 
 
-## Conclusion
+## Conclusion 🎉
+
+In this article, we explored a technique to use AI to comment code within a codebase 
+
+The implementation of the Commenter CLI for Java files demonstrated the practical application of this approach. By integrating AST parsing with AI models, we can automate the generation of high-quality comments, making the code more understandable and maintainable.
+
+This method not only saves time but also improves the overall quality of the documentation, making it easier for developers to understand and work with the codebase. As we continue to refine and expand this approach, we can look forward to even more powerful and versatile tools for code documentation.
+
+For more information and to explore the project further, check out the [GenAIScript project][project].
+
+In the meanwhile Happy AI coding! 
 
 [project]: https://github.com/bsorrentino/genaiscript-labs
-[GenAIScript]: https://microsoft.github.io/genaiscript/]
+[GenAIScript]: https://microsoft.github.io/genaiscript/
 [Tree-Sitter]: https://tree-sitter.github.io/tree-sitter/
