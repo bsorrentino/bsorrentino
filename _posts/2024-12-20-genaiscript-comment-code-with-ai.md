@@ -119,7 +119,7 @@ As you can see from diagram the implementation is composed by the following step
 
 ## **Conclusion**
 
-In this article, we explored a technique to use AI for generation of high-quality comments to existent code within a codebase.
+In this article, we explored a technique to use AI for generation of high-quality comments to existent code within a codebase. The focus has been on Java code, but **the same approach can be easily applied to other programming languages as well**.
 
 This method not only saves time but also improves the overall quality of the documentation, making it easier for developers to understand and work with the codebase.
 
