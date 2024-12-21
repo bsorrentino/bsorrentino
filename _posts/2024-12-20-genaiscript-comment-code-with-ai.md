@@ -51,7 +51,7 @@ One of the most used techniques for reducing context on which the LLM has to rea
 
 How can I divide a source code file into meaningful pieces that could be commented on as much as possible in an independent way?
 
-The answer is the **Abstract Syntax Tree (AST)**.
+The answer is the [**Abstract Syntax Tree (AST)**][AST].
 
 #### **Abstract Syntax Tree (AST)**
 
@@ -128,6 +128,7 @@ If you want to give a try to the **Commenter tool**, check it out from [github p
 
 In the meanwhile, Happy AI coding! 👋
 
+[AST]: https://en.wikipedia.org/wiki/Abstract_syntax_tree
 [project]: https://github.com/bsorrentino/genaiscript-labs
 [GenAIScript]: https://microsoft.github.io/genaiscript/
 [Tree-Sitter]: https://tree-sitter.github.io/tree-sitter/
