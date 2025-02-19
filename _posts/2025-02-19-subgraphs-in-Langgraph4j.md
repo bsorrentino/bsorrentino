@@ -23,30 +23,35 @@ Key features and aspects of subgraphs in LangGraph4j:
 *   **Enabling different teams to work on different parts of a graph** independently, provided the subgraph interface (input and output schemas) is respected.
 
 ## Ways to add subgraphs:
-*   As a **state subgraph**: 
-    > Merges the subgraph with its parent, creating a seamless integration where the parent graph and subgraph share everything (also interruptions 🤩).
 
-    **Note:**
-    > Merging happens during graph compilation, and subgraph nodes are renamed to avoid conflicts.
-    To get the real name of merged subgraph nodes from outside the graph, use `SubGraphNode.formatId( subgraphId, subgraphNodeId )`
+### As a 'State Subgraph' 
+Merges the subgraph with its parent, creating a seamless integration where the parent graph and subgraph share everything (also interruptions 🤩).
 
-*   As a **compiled subgraph**: 
-    > Useful when the parent graph and subgraph are indepednent but share the state.
+**Note:**
+> Merging happens during graph compilation, and subgraph nodes are renamed to avoid conflicts.
+To get the real name of merged subgraph nodes from outside the graph, use `SubGraphNode.formatId( subgraphId, subgraphNodeId )`
 
-    **Note:**
-    > The parent graph and subgraph state schemas should share at least one key for communication. Extra keys passed to or returned from the subgraph node will be ignored.
+### As a 'Compiled Subgraph' 
+Useful when the parent graph and subgraph are indepednent but share the state.
 
-*   As a **node action**: 
-    >  Useful when a subgraph with a completely different schema is needed. 
-    Requires a node function to transform the input (parent) state to the subgraph state and transform the results back to the parent state.
+**Note:**
+> The parent graph and subgraph state schemas should share at least one key for communication. Extra keys passed to or returned from the subgraph node will be ignored.
 
-## Visualization**:
+### As a 'node action' 
+Useful when a subgraph with a completely different schema is needed. 
+Requires a node function to transform the input (parent) state to the subgraph state and transform the results back to the parent state.
+
+## Visualization
 
 LangGraph4j includes the `StateGraph.getGraph()` method to get a visualization format (e.g., PlantUML, Mermaid.js). For state subgraphs, `StateGraph.getGraph()` provides the visualization format before merging, while `CompiledGraph.getGraph()` shows it after merging.
 
-## Streaming: 
+## Streaming
 
 Streaming is automatically enabled when adding both state subgraphs and compiled subgraphs, but it is up to the user to implement it when using subgraphs as node actions.
+
+## Conclusion 
+
+[LangGraph4j] is a side project that try to brings flexibility of the original [LangGraph] to develop stateful, multi-agents applications with LLMs in Java. I've released the subgraph features to continue evolving library preparing it for use in production environment . Let me know if you are interest in its usage and evolution. In the meanwhile, enjoy coding! 👋 
 
 [cover]: ../../../../assets/langgraph-java/langgraph4j-cover-2.png
 [LangGraph4j]: https://github.com/bsorrentino/langgraph4j
