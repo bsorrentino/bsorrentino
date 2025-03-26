@@ -13,8 +13,7 @@ categories: ai
 
 Based on project [langgraph-builder] we have integrate the [LangGraph4j] part (take a look to the [fork]) so we can now visually scaffolding a [LangGraph4j] graph and generate java code
 
-👉 Explore it here: 👀 - https://bsorrentino.github.io/langgraph4j/generator/generator/index.html
-
+👉 Explore it here: 👀 - [official doc] 
 ----
 
 ![builder](../../../../assets/langgraph-java/generator.gif)
@@ -25,3 +24,4 @@ Enjoy with [LangGraph4j] coding! 👋
 [LangGraph4j]: https://bsorrentino.github.io/langgraph4j
 [langgraph-builder]: https://github.com/langchain-ai/langgraph-builder
 [fork]: https://github.com/bsorrentino/langgraph-builder
+[official doc]: https://bsorrentino.github.io/langgraph4j/generator/generator/index.html
