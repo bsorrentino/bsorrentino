@@ -1,17 +1,18 @@
 ---
 layout: post
-title:  Langgraph4j - Multi-Agent handoff implementation with Spring AI
+title:  LangGraph4j - Multi-Agent handoff implementation with Spring AI
 date:   2025-05-10
-description: "Implement Multi-Agent handoff using function calls feature"
+description: "Implement multi-Agent handoff using function calls feature"
 categories: ai
 
 ---
 ![cover]
 <br>
+<hr>
 
-Multi-agent architectures are the new trend in Artificial Intelligence field for realizing complex and innovative solutions. One of the architectural pattern  that has garnered attention is "Agents Handoff". In this article we will explore an approach to developing this multi-agent architecture providing also a practical implementation using [Langgraph4j] and [Spring AI]. 
+**Multi-agent architectures** are the new trend in Artificial Intelligence field for realizing complex and innovative solutions. One of the architectural patterns that has garnered attention is "**Agents Handoff**". In this article we will explore an approach to developing this multi-agent architecture providing also a practical implementation using [Langgraph4j] and [Spring AI]. 
 
-##  Understanding Multi-Agent Architecture 
+##  Understanding multi-Agent Architecture 
 
 Multi-agent systems consist of multiple interacting agents, each designed to perform specific tasks. These agents can be homogeneous or heterogeneous, functioning independently or collaboratively to achieve common goals. The essence of multi-agent architecture lies in the coordination and communication among agents, ensuring seamless execution of complex processes. 
 
@@ -27,7 +28,7 @@ We will examine the concept of using [function calls] (aka `tools`) as an enable
 
 Function calls in AI models serve as the backbone for agents allowing them to invoke specific functions, share data, and execute tasks collaboratively. By leveraging function calls, developers can design agents that interact dynamically, responding to changes in the environment and adapting to new information in real-time. 
 
-The following diagram illustrates the architecture of a [ReAct] Agent, highlighting the significance of function calls within this framework. 
+The following diagram illustrates the architecture of a [ReAct Agent], highlighting the significance of function calls within this framework. 
 
  Diagram1 - _ReAct Agent: Function Calling Anatomy_ |
   --- |
@@ -41,7 +42,7 @@ Given that LLM creates a clear action plan based on its input, **what if another
 
 _Diagram2_ - _Action as Agent_ |
   --- |
-![diagram2](../../../../assets/agent-handoff/diagram2.png)
+![diagram2](../../../../assets/agent-handoff/diagram2.png) |
 
 This means that: If we **describe the functionalities of an action such as the agent capabilities**, we can rely on the actions execution plan to automatically achieve the agent handoff by utilizing its infrastructure for execution and result gathering. 
 
@@ -60,8 +61,7 @@ Iteratively we can continue to add new actions as agents making complex multi ag
 
 _Diagram3_ - _Multiple Actions as Agents_ |
   --- |
-![diagram3](../../../../assets/agent-handoff/diagram3.png)
-
+![diagram3](../../../../assets/agent-handoff/diagram3.png) |
 
 ## Reference Implementation using [Langgraph4j] and [Spring AI]
 
