@@ -96,8 +96,10 @@ public class AgentMarketplace extends AbstractAgentExecutor<AgentMarketplace.Bui
         // build the Agent 
         public AgentMarketplace build() throws GraphStateException {
             this.name("marketplace") // set name
-                .description("marketplace agent, ask for information about products") // agent description (tool description)
-                .parameterDescription("all information request about the products") // agent input description (tool parameter description)
+                // agent description (tool description)
+                .description("marketplace agent, ask for information about products")
+                // agent input description (tool parameter description) 
+                .parameterDescription("all information request about the products") 
                 .defaultSystem( """
                     You are the agent that provides the information on the product marketplace.
                 """) // set the system prompt
@@ -151,8 +153,10 @@ public class AgentPayment extends AbstractAgentExecutor<AgentPayment.Builder> {
 
         public AgentPayment build() throws GraphStateException {
             this.name("payment") // set name
-                .description("payment agent, request purchase and payment transactions") // agent description (tool description)
-                .parameterDescription("all information about purchasing to allow the payment") // agent input description (tool parameter description)
+                // agent description (tool description)
+                .description("payment agent, request purchase and payment transactions") 
+                // agent input description (tool parameter description)
+                .parameterDescription("all information about purchasing to allow the payment") 
                 .defaultSystem( """
                 You are the agent that provides payment service.
                 """) // set the system prompt
