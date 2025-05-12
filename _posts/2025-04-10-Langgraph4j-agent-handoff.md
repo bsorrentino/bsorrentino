@@ -28,7 +28,7 @@ We will examine the concept of using [function calls] (aka `tools`) as an enable
 
 Function calls in AI models serve as the backbone for agents allowing them to invoke specific functions, share data, and execute tasks collaboratively. By leveraging function calls, developers can design agents that interact dynamically, responding to changes in the environment and adapting to new information in real-time. 
 
-The diagram below presents the architecture of a [ReAct Agent], highligting the role that function calls play within the framework.
+The diagram below presents the architecture of a [ReAct Agent], highlighting the role that function calls play within the framework.
 
  Diagram1 - _ReAct Agent: Function Calling Anatomy_ |
   --- |
