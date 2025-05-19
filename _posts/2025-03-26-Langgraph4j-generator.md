@@ -23,5 +23,5 @@ Enjoy with [LangGraph4j] coding! 👋
 [cover]: ../../../../assets/langgraph-java/cover-generator.png
 [LangGraph4j]: https://bsorrentino.github.io/langgraph4j
 [langgraph-builder]: https://github.com/langchain-ai/langgraph-builder
-[fork]: https://github.com/bsorrentino/langgraph-builder
-[official doc]: https://bsorrentino.github.io/langgraph4j/generator/generator/index.html
+[fork]: https://github.com/langgraph4j/langgraph-builder
+[official doc]: https://langgraph4j.github.io/langgraph4j-builder/
