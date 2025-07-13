@@ -1,7 +1,7 @@
 ---
 layout: post
 title:  LangGraph4j: Implementing Human-in-the-Loop at ease
-date:   2025-05-10
+date:   2025-07-13
 description: "Implement an Agent that has an action approval workflow"
 categories: ai
 
