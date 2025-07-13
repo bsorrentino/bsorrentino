@@ -9,12 +9,16 @@ categories: ai
 ![cover]
 <br>
 <hr>
+<br>
+<br>
 
 <!-- # LangGraph4j: Implementing Human-in-the-Loop at ease -->
 
+## Introduction
+
 In the world of AI agents, especially those performing actions with real-world consequences, ensuring control and oversight is crucial. The "Human-in-the-Loop" (HITL) pattern is a critical design choice that introduces a step for human approval before an agent executes an action with potentially impacting consequences. This not only enhances safety but also builds trust in the system that is exactly what we want our customers feels when we deliver in production AI powered workflows.
 
-## Key Takeaways
+## Key takeaways
 
 This article will guide you through the process of evolving a classic ReAct agent to support a human approval workflow using the [`Langgraph4j`][langgraph4j] library. We'll see how the `Langgraph4j` architecture makes it straightforward to implement such control flows.
 In particular we focus on:
