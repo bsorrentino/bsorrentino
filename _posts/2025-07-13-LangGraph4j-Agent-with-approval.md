@@ -10,7 +10,6 @@ categories: ai
 <br>
 <hr>
 <br>
-<br>
 
 <!-- # LangGraph4j: Implementing Human-in-the-Loop at ease -->
 
@@ -41,19 +40,9 @@ The standard ReAct (Reasoning and Acting) agent operates in a simple loop. The a
 
 This flow can be visualized as follows:
 
-```mermaid
-flowchart TD
-	__START__((start))
-	__END__((stop))
-	agent("agent")
-	action("actions
-    (tools)")
-	__START__:::__START__ --> agent:::agent
-	agent:::agent -.->|continue| action:::action
-	agent:::agent -.->|end| __END__:::__END__
-	action:::action --> agent:::agent
-```
-*Diagram 1: A simple, cyclical agent that alternates between reasoning (agent) and execution (action).*
+![diagram1](../../../../assets/agent-with-approval/agent_actions_flow.png)
+
+***Diagram 1**: A simple, cyclical agent that alternates between reasoning (agent) and execution (action).*
 
 While effective for many tasks, this simple loop lacks a clear entry point for external intervention. How can we pause the agent and ask for permission before it calls a specific tool?
 
@@ -63,30 +52,9 @@ To introduce more control, we first need to make the agent's action-taking proce
 
 This architectural shift gives us a more granular and flexible graph.
 
-```mermaid
----
-title: ReAct Agent with action dispatcher
----
-flowchart TD
-	__START__((start))
-	__END__((stop))
-	model("model")
-	action_dispatcher("action_dispatcher")
-	threadCount("action1
-    (tool1)")
-	execTest("action2
-    (tool2)")
-	__START__:::__START__ --> model:::model
-	model:::model -.->|continue| action_dispatcher:::action_dispatcher
-	model:::model -.->|end| __END__:::__END__
-	threadCount:::threadCount --> action_dispatcher:::action_dispatcher
-	execTest:::execTest --> action_dispatcher:::action_dispatcher
-	action_dispatcher:::action_dispatcher -.-> model:::model
-	action_dispatcher:::action_dispatcher -.-> __END__:::__END__
-	action_dispatcher:::action_dispatcher -.-> threadCount:::threadCount
-	action_dispatcher:::action_dispatcher -.-> execTest:::execTest
-```
-*Diagram 2: The dispatcher model. The model decides which action to take, and the dispatcher routes the execution to the appropriate action node.*
+![diagram 2](../../../../assets/agent-with-approval/react_agent_dispatcher.png)
+
+***Diagram 2**: The dispatcher model. The model decides which action to take, and the dispatcher routes the execution to the appropriate action node.*
 
 Now, each tool (`action1`, `action2`, etc.) is a distinct node in our graph. This separation is the key to enabling fine-grained control.
 
@@ -105,36 +73,9 @@ The workflow is as follows:
 
 This creates a robust and safe execution flow.
 
-```mermaid
----
-title: ReAct Agent with approval workflow
----
-flowchart TD
-	__START__((start))
-	__END__((stop))
-	model("model")
-	action_dispatcher("action_dispatcher")
-	threadCount("action1
-    (tool1)")
-	approval_execTest("approval_action2")
-	execTest("action2
-    (tool2)")
-	__START__:::__START__ --> model:::model
-    action_dispatcher:::action_dispatcher
-	model:::model -.->|continue| action_dispatcher:::action_dispatcher
-	model:::model -.->|end| __END__:::__END__
-	threadCount:::threadCount --> action_dispatcher:::action_dispatcher
-	approval_execTest:::approval_execTest -.->|REJECTED| model:::model
-    execTest:::execTest
-	approval_execTest:::approval_execTest -.->|APPROVED| execTest:::execTest
-	execTest:::execTest --> action_dispatcher:::action_dispatcher
-	action_dispatcher:::action_dispatcher -.-> model:::model
-	action_dispatcher:::action_dispatcher -.-> __END__:::__END__
-	action_dispatcher:::action_dispatcher -.-> threadCount:::threadCount
-	approval_execTest:::approval_execTest
-	action_dispatcher:::action_dispatcher -.-> approval_execTest:::approval_execTest
-```
-*Diagram 3: The complete HITL workflow. The `approval_action2` node acts as a gatekeeper for `action2`.*
+![diagram 3](../../../../assets/agent-with-approval/react_agent_approval.png)
+
+***Diagram 3**: The complete HITL workflow. The `approval_action2` node acts as a gatekeeper for `action2`.*
 
 ## A Practical Example
 
