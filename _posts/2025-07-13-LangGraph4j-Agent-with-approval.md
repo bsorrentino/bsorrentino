@@ -86,10 +86,10 @@ The key is to use [`AgentExecutorEx`][AgentExecutorEx] and its `approvalOn` meth
 Here is a code snippet from the example that illustrates how to set up and handle the approval mechanism:
 
 ```java
-// 1. Configure the agent to require approval on the "execTest" tool
+// 1. Configure the agent to require approval on the "action2" tool
 var agent = AgentExecutorEx.builder()
         .chatModel(chatModel)
-        .toolsFromObject( new TestTool()) // add actions (aka tools)
+        .toolsFromObject( new Tools() ) // add actions (aka tools)
         .approvalOn( "action2", ( nodeId, state ) ->
                 InterruptionMetadata.builder( nodeId, state )
                         .addMetadata( "label", "confirm execution of action2?")
@@ -123,9 +123,11 @@ while( true ) {
 
     // 6. Resume the execution by updating the state with the user's decision.
     if (Objects.equals(answer, "Y") || Objects.equals(answer, "y")) {
-        runnableConfig = agent.updateState(runnableConfig, Map.of(AgentEx.APPROVAL_RESULT_PROPERTY, AgentEx.ApprovalState.APPROVED.name()));
+        runnableConfig = agent.updateState(runnableConfig, 
+                Map.of(AgentEx.APPROVAL_RESULT_PROPERTY, AgentEx.ApprovalState.APPROVED.name()));
     } else {
-        runnableConfig = agent.updateState(runnableConfig, Map.of(AgentEx.APPROVAL_RESULT_PROPERTY, AgentEx.ApprovalState.REJECTED.name()));
+        runnableConfig = agent.updateState(runnableConfig, 
+                Map.of(AgentEx.APPROVAL_RESULT_PROPERTY, AgentEx.ApprovalState.REJECTED.name()));
     }
     input = null; // Clear input for the next iteration, as we are resuming.
 }
@@ -148,7 +150,9 @@ The Human-in-the-Loop pattern is essential for creating safe and reliable AI age
 
 Hope this could help your AI Java developing journey, in the meanwhile happy AI coding! 👋
 
-[cover]: ../../../../assets/agent-with-approval/cover.png
+
+
+[cover]: ../../../../assets/agent-with-approval/cover2.png
 [langgraph4j]: https://github.com/langgraph4j/langgraph4j
 [langchain4j]: https://github.com/langchain4j/langchain4j
 [Spring AI]: https://spring.io/projects/spring-ai
