@@ -89,7 +89,7 @@ Here is a code snippet from the example that illustrates how to set up and handl
 // 1. Configure the agent to require approval on the "action2" tool
 var agent = AgentExecutorEx.builder()
         .chatModel(chatModel)
-        .toolsFromObject( new Tools() ) // add actions (aka tools)
+        .toolsFromObject( new Tools() ) // add actions 'action1', 'action2'
         .approvalOn( "action2", ( nodeId, state ) ->
                 InterruptionMetadata.builder( nodeId, state )
                         .addMetadata( "label", "confirm execution of action2?")
