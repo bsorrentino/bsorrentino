@@ -19,9 +19,9 @@ categories: ai
 This article will guide you through the process of evolving a classic ReAct agent to support a human approval workflow using the [`Langgraph4j`][langgraph4j] library. We'll see how the `Langgraph4j` architecture makes it straightforward to implement such control flows.
 In particular we focus on:
 
-- How to evolve the classical Agent Executor implementation (refer to **Diagram 1**) to support a human approval flow.
-    + Move from the standard agent loop to an extended agent loop supporting an action dispatcher and a node for each action (see **Diagram 2**).
-    + Wrap an action with an approval node (see **Diagram 3**).
+- How to evolve the classical Agent Executor implementation (refer to [**Diagram 1**](#diagram1)) to support a human approval flow.
+    + Move from the standard agent loop to an extended agent loop supporting an action dispatcher and a node for each action (see [**Diagram 2**](#diagram2)).
+    + Wrap an action with an approval node (see [**Diagram 3**](#diagram3)).
 - A detailed implementation example using `Langgraph4j` integrated with `Langchain4j`.
 
 ## Introduction
@@ -36,6 +36,7 @@ The standard ReAct (Reasoning and Acting) agent operates in a simple loop. The a
 
 This flow can be visualized as follows:
 
+<a name="diagram1"></a>
 ![diagram1](../../../../assets/agent-with-approval/agent_actions_flow.png)
 
 ***Diagram 1**: A simple, cyclical agent that alternates between reasoning (agent) and execution (action).*
@@ -48,6 +49,7 @@ To introduce more control, we first need to make the agent's action-taking proce
 
 This architectural shift gives us a more granular and flexible graph.
 
+<a name="diagram2"></a>
 ![diagram 2](../../../../assets/agent-with-approval/react_agent_dispatcher.png)
 
 ***Diagram 2**: The dispatcher model. The model decides which action to take, and the dispatcher routes the execution to the appropriate action node.*
@@ -69,6 +71,7 @@ The workflow is as follows:
 
 This creates a robust and safe execution flow.
 
+<a name="diagram3"></a>
 ![diagram 3](../../../../assets/agent-with-approval/react_agent_approval.png)
 
 ***Diagram 3**: The complete HITL workflow. The `approval_action2` node acts as a gatekeeper for `action2`.*
