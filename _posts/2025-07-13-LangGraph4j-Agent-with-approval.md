@@ -16,13 +16,13 @@ categories: ai
 
 ## Key takeaways
 
-This article will guide you through the process of evolving a classic ReAct agent to support a human approval workflow using the [`LangGraph4j`][langgraph4j] library. We'll see how the `LangGraph4j` architecture makes it straightforward to implement such control flows.
+This article will guide you through the process of evolving a classic ReAct agent to support a human approval workflow using the [`LangGraph4j`][langgraph4j] library. We'll see how the [`LangGraph4j`][langgraph4j] architecture makes it straightforward to implement such control flows.
 In particular we focus on:
 
 - How to evolve the classical Agent Executor implementation (refer to [**Diagram 1**](#diagram1)) to support a human approval flow.
     + Move from the standard agent loop to an extended agent loop supporting an action dispatcher and a node for each action (see [**Diagram 2**](#diagram2)).
     + Wrap an action with an approval node (see [**Diagram 3**](#diagram3)).
-- A detailed implementation example using `LangGraph4j` integrated with `LangChain4j`.
+- A detailed implementation example using [`LangGraph4j`][langgraph4j] integrated with [`LangChain4j`][langchain4j].
 
 ## Introduction
 
@@ -80,12 +80,12 @@ This creates a robust and safe execution flow.
 
 ### LangGraph4j implementation notes
 
-`LangGraph4j` provides a standard [`AgentExecutor`][AgentExecutor] (aka ReACT Agent) implementation and an extended one, [`AgentExecutorEx`][AgentExecutorEx], which supports a human approval workflow. These implementations are available with both [`LangChain4j`][langchain4j] and [`Spring AI`][SpringAI] integrations. 
-> In this article, we will focus on the integration with `LangChain4j` (see the implementation in [`langchain4j-agent`][langchain4j-agent] module) but it is available also using [Spring AI] (see the implementation in [spring-ai-agent][springai-agent] module).
+[`LangGraph4j`][langgraph4j] provides a standard [`AgentExecutor`][AgentExecutor] (aka ReACT Agent) implementation and an extended one, [`AgentExecutorEx`][AgentExecutorEx], which supports a human approval workflow. These implementations are available with both [`LangChain4j`][langchain4j] and [`Spring AI`][SpringAI] integrations. 
+> In this article, we will focus on the integration with [`LangChain4j`][langchain4j] (see the implementation in [`langchain4j-agent`][langchain4j-agent] module) but it is available also using [Spring AI] (see the implementation in [spring-ai-agent][springai-agent] module).
 
 ### Let put all together
 
-To see how this is implemented in code, you can look at the [`DemoConsoleController.java`][DemoConsoleController] class within the `langchain4j-agent` test sources. This example demonstrates how to build and run an agent with a conditional human approval step, showcasing the power and flexibility of `LangGraph4j`.
+To see how this is implemented in code, you can look at the [`DemoConsoleController.java`][DemoConsoleController] class within the `langchain4j-agent` test sources. This example demonstrates how to build and run an agent with a conditional human approval step, showcasing the power and flexibility of [`LangGraph4j`][langgraph4j].
 
 The key is to use [`AgentExecutorEx`][AgentExecutorEx] and its `approvalOn` method. This method allows you to specify a node where the graph execution should be interrupted. When the execution reaches this point, the graph pauses and returns an [`InterruptionMetadata`][InterruptionMetadata] object, which signals that human input is required.
 
@@ -147,12 +147,12 @@ This code demonstrates the complete cycle:
 5.  **User Interaction**: We use the metadata to prompt the user for a decision.
 6.  **Resumption**: The `agent.updateState` method is used to inject the user's choice (`APPROVED` or `REJECTED`) back into the graph's state, allowing the execution to resume from where it left off.
 
-This example highlights how `LangGraph4j` provides a clean and powerful mechanism for implementing Human-in-the-Loop workflows.
+This example highlights how [`LangGraph4j`][langgraph4j] provides a clean and powerful mechanism for implementing Human-in-the-Loop workflows.
 
 
 ## Conclusion
 
-The Human-in-the-Loop pattern is essential for creating safe and reliable AI agents. As we've seen, `LangGraph4j`'s is suited for implementing such complex control flows. By evolving from a simple agent loop to a modular graph with dispatcher and approval nodes, you can build sophisticated, human-supervised agents with confidence.
+The Human-in-the-Loop pattern is essential for creating safe and reliable AI agents. As we've seen, [`LangGraph4j`][langgraph4j]'s is suited for implementing such complex control flows. By evolving from a simple agent loop to a modular graph with dispatcher and approval nodes, you can build sophisticated, human-supervised agents with confidence.
 
 Hope this could help your AI Java developing journey, in the meanwhile happy AI coding! 👋
 
