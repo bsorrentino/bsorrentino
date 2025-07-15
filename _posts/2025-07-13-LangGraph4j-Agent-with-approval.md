@@ -13,9 +13,6 @@ categories: ai
 
 <!-- # LangGraph4j: Implementing Human-in-the-Loop at ease -->
 
-## Introduction
-
-In the world of AI agents, especially those performing actions with real-world consequences, ensuring control and oversight is crucial. The "Human-in-the-Loop" (HITL) pattern is a critical design choice that introduces a step for human approval before an agent executes an action with potentially impacting consequences. This not only enhances safety but also builds trust in the system that is exactly what we want our customers feels when we deliver in production AI powered workflows.
 
 ## Key takeaways
 
@@ -25,12 +22,11 @@ In particular we focus on:
 - How to evolve the classical Agent Executor implementation (refer to **Diagram 1**) to support a human approval flow.
     + Move from the standard agent loop to an extended agent loop supporting an action dispatcher and a node for each action (see **Diagram 2**).
     + Wrap an action with an approval node (see **Diagram 3**).
-- A detailed implementation example using `Langgraph4j` and `Langchain4j`.
+- A detailed implementation example using `Langgraph4j` integrated with `Langchain4j`.
 
-## Implementation notes
+## Introduction
 
-`Langgraph4j` provides a standard [`AgentExecutor`][AgentExecutor] (aka ReACT Agent) implementation and an extended one, [`AgentExecutorEx`][AgentExecutorEx], which supports a human approval workflow. These implementations are available with both [`Langchain4j`][langchain4j] and [`Spring AI`][SpringAI] integrations. 
-> In this article, we will focus on the integration with `Langchain4j` (see the implementation in [`langchain4j-agent`][langchain4j-agent] module).
+In the world of AI agents, especially those performing actions with real-world consequences, ensuring control and oversight is crucial. The "Human-in-the-Loop" (HITL) pattern is a critical design choice that introduces a step for human approval before an agent executes an action with potentially impacting consequences. This not only enhances safety but also builds trust in the system that is exactly what we want our customers feels when we deliver in production AI powered workflows.
 
 ## From the standard agent to agent with approval
 
@@ -78,6 +74,13 @@ This creates a robust and safe execution flow.
 ***Diagram 3**: The complete HITL workflow. The `approval_action2` node acts as a gatekeeper for `action2`.*
 
 ## A Practical Example
+
+### Langgraph4j implementation notes
+
+`Langgraph4j` provides a standard [`AgentExecutor`][AgentExecutor] (aka ReACT Agent) implementation and an extended one, [`AgentExecutorEx`][AgentExecutorEx], which supports a human approval workflow. These implementations are available with both [`Langchain4j`][langchain4j] and [`Spring AI`][SpringAI] integrations. 
+> In this article, we will focus on the integration with `Langchain4j` (see the implementation in [`langchain4j-agent`][langchain4j-agent] module) but it is available also using [Spring AI] (see the implementation in [spring-ai-agent][springai-agent] module).
+
+### Let put all together
 
 To see how this is implemented in code, you can look at the [`DemoConsoleController.java`][DemoConsoleController] class within the `langchain4j-agent` test sources. This example demonstrates how to build and run an agent with a conditional human approval step, showcasing the power and flexibility of `Langgraph4j`.
 
@@ -157,6 +160,7 @@ Hope this could help your AI Java developing journey, in the meanwhile happy AI 
 [langchain4j]: https://github.com/langchain4j/langchain4j
 [Spring AI]: https://spring.io/projects/spring-ai
 [langchain4j-agent]: https://github.com/langgraph4j/langgraph4j/tree/main/langchain4j/langchain4j-agent
+[springai-agent]: https://github.com/langgraph4j/langgraph4j/tree/main/spring-ai/spring-ai-agent
 [AgentExecutor]: https://langgraph4j.github.io/langgraph4j/apidocs/org/bsc/langgraph4j/agentexecutor/AgentExecutor.html
 [AgentExecutorEx]: https://langgraph4j.github.io/langgraph4j/apidocs/org/bsc/langgraph4j/agentexecutor/AgentExecutorEx.html
 [DemoConsoleController]: https://github.com/langgraph4j/langgraph4j/tree/main/langchain4j/langchain4j-agent/src/test/java/org/bsc/langgraph4j/agentexecutor/app/DemoConsoleController.java
