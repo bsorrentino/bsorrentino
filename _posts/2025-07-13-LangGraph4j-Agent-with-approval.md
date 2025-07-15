@@ -80,8 +80,8 @@ This creates a robust and safe execution flow.
 
 ### LangGraph4j implementation notes
 
-[`LangGraph4j`][langgraph4j] provides a standard [`AgentExecutor`][AgentExecutor] (aka ReACT Agent) implementation and an extended one, [`AgentExecutorEx`][AgentExecutorEx], which supports a human approval workflow. These implementations are available with both [`LangChain4j`][langchain4j] and [`Spring AI`][SpringAI] integrations. 
-> In this article, we will focus on the integration with [`LangChain4j`][langchain4j] (see the implementation in [`langchain4j-agent`][langchain4j-agent] module) but it is available also using [Spring AI] (see the implementation in [spring-ai-agent][springai-agent] module).
+[`LangGraph4j`][langgraph4j] provides a standard [`AgentExecutor`][AgentExecutor] (aka ReACT Agent) implementation and an extended one, [`AgentExecutorEx`][AgentExecutorEx], which supports a human approval workflow. These implementations are available with both [`LangChain4j`][langchain4j] and [`Spring AI`][spring-ai] integrations. 
+> In this article, we will focus on the integration with [`LangChain4j`][langchain4j] (see the implementation in [`langchain4j-agent`][langchain4j-agent] module) but it is available also using [Spring AI][spring-ai] (see the implementation in [spring-ai-agent][springai-agent] module).
 
 ### Let put all together
 
@@ -161,7 +161,7 @@ Hope this could help your AI Java developing journey, in the meanwhile happy AI 
 [cover]: ../../../../assets/agent-with-approval/cover2.png
 [langgraph4j]: https://github.com/langgraph4j/langgraph4j
 [langchain4j]: https://github.com/langchain4j/langchain4j
-[Spring AI]: https://spring.io/projects/spring-ai
+[spring-ai]: https://spring.io/projects/spring-ai
 [langchain4j-agent]: https://github.com/langgraph4j/langgraph4j/tree/main/langchain4j/langchain4j-agent
 [springai-agent]: https://github.com/langgraph4j/langgraph4j/tree/main/spring-ai/spring-ai-agent
 [AgentExecutor]: https://langgraph4j.github.io/langgraph4j/apidocs/org/bsc/langgraph4j/agentexecutor/AgentExecutor.html
