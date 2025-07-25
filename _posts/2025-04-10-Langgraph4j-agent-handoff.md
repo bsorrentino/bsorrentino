@@ -32,7 +32,7 @@ The diagram below presents the architecture of a [ReAct Agent], highlighting the
 
  Diagram1 - _ReAct Agent: Function Calling Anatomy_ |
   --- |
- ![diagram1](../../../../assets/agent-handoff/diagram1.png) |
+ ![diagram1](../../../../assets/langgraph-java/agent-handoff/diagram1.png) |
 
 It is interesting to note that the LLM reasoning process formulates an **actions execution plan**, which supports the underlying infrastructure responsible for **dispatching, executing, and gathering results** of actions. 
 
@@ -42,7 +42,7 @@ Given that LLM creates a clear action plan based on its input, **what if another
 
 _Diagram2_ - _Action as Agent_ |
   --- |
-![diagram2](../../../../assets/agent-handoff/diagram2.png) |
+![diagram2](../../../../assets/langgraph-java/agent-handoff/diagram2.png) |
 
 This means that: If we **describe the functionalities of an action such as the agent capabilities**, we can rely on the actions execution plan to automatically achieve the agent handoff by utilizing its infrastructure for execution and result gathering. 
 
@@ -61,7 +61,7 @@ Iteratively we can continue to add new actions as agents making complex multi ag
 
 _Diagram3_ - _Multiple Actions as Agents_ |
   --- |
-![diagram3](../../../../assets/agent-handoff/diagram3.png) |
+![diagram3](../../../../assets/langgraph-java/agent-handoff/diagram3.png) |
 
 ## Reference Implementation using [Langgraph4j] and [Spring AI]
 
@@ -231,7 +231,7 @@ By treating actions as agents, we can build sophisticated systems that mimic hum
 Hope this helps in some way your AI development journey, Happy AI coding! 👋 
 
 
-[cover]: ../../../../assets/agent-handoff/cover.png
+[cover]: ../../../../assets/langgraph-java/agent-handoff/cover.png
 [Langgraph4j]: https://github.com/bsorrentino/langgraph4j
 [Spring AI]: https://spring.io/projects/spring-ai
 [function calls]: https://platform.openai.com/docs/guides/function-calling

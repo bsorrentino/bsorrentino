@@ -37,7 +37,7 @@ The standard ReAct (Reasoning and Acting) agent operates in a simple loop. The a
 This flow can be visualized as follows:
 
 <a name="diagram1"></a>
-![diagram1](../../../../assets/agent-with-approval/agent_actions_flow.png)
+![diagram1](../../../../assets/langgraph-java/agent-with-approval/agent_actions_flow.png)
 
 ***Diagram 1**: A simple, cyclical agent that alternates between reasoning (agent) and execution (action).*
 
@@ -50,7 +50,7 @@ To introduce more control, we first need to make the agent's action-taking proce
 This architectural shift gives us a more granular and flexible graph.
 
 <a name="diagram2"></a>
-![diagram 2](../../../../assets/agent-with-approval/react_agent_dispatcher.png)
+![diagram 2](../../../../assets/langgraph-java/agent-with-approval/react_agent_dispatcher.png)
 
 ***Diagram 2**: The dispatcher model. The model decides which action to take, and the dispatcher routes the execution to the appropriate action node.*
 
@@ -72,7 +72,7 @@ The workflow is as follows:
 This creates a robust and safe execution flow.
 
 <a name="diagram3"></a>
-![diagram 3](../../../../assets/agent-with-approval/react_agent_approval.png)
+![diagram 3](../../../../assets/langgraph-java/agent-with-approval/react_agent_approval.png)
 
 ***Diagram 3**: The complete HITL workflow. The `approval_action2` node acts as a gatekeeper for `action2`.*
 
@@ -158,7 +158,7 @@ Hope this could help your AI Java developing journey, in the meanwhile happy AI 
 
 
 
-[cover]: ../../../../assets/agent-with-approval/cover2.png
+[cover]: ../../../../assets/langgraph-java/agent-with-approval/cover2.png
 [langgraph4j]: https://github.com/langgraph4j/langgraph4j
 [langchain4j]: https://github.com/langchain4j/langchain4j
 [spring-ai]: https://spring.io/projects/spring-ai
