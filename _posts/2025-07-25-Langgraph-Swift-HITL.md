@@ -149,7 +149,7 @@ The `updateState` method on the compiled graph allows you to do this.
                                     result.lastState!.data) )
 ```
 
-In this example, we update the value of `add2` to 13 before resuming the workflow. The final result will then be 50, reflecting the updated state.
+In this example, we update the value of `add2` to `13` before resuming the workflow. After resuming the final result will then be 50, reflecting the updated state 👍🏻.
 
 ## Conclusion
 
