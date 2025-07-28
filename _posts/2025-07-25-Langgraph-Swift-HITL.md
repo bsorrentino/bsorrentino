@@ -1,6 +1,6 @@
 ---
 layout: post
-title:  Implementing Pause and Resume in Agentic Flows with LangGraph-Swift
+title:  Pause and Resume in Agentic Flows with LangGraph-Swift
 date:   2025-07-25
 description: "How to implement Human-in-the-Loop in LangGraph for Swift"
 categories: ai
