@@ -11,8 +11,6 @@ categories: ai
 <hr>
 <br>
 
-****
-
 ## AI Agents ecosystem evolution
 
 The rapid evolution of artificial intelligence has brought a new wave of innovation: the rise of AI agents. These agents—autonomous, intelligent, and capable of interacting with users and services—are changing how we build applications, automate workflows, and even communicate online. However, as this ecosystem expands, a new challenge has emerged: interoperability. How can these agents reliably talk to each other, work with external tools, and offer seamless experiences to human users?
@@ -32,8 +30,6 @@ This challenge has led to the development of new standards—protocols that defi
 **Purpose:** Standardizing Agent-to-User Communication  
 [AG-UI] bridges the gap between AI agents and their human users, ensuring that interactions are intuitive, consistent, and user-friendly. It defines the structure for how agents present information, take user input, and handle conversations—regardless of the underlying platform or application.
 
----
-
 ## LangGraph4j and AG-UI
 
 **[LangGraph4j]** is a powerful Java-based framework designed for building and orchestrating AI agent workflows. It is already capable to use **MCP** servers inside workflow steps and has also experimented integration with **A2A** (see [here](https://github.com/langgraph4j/langgraph4j-examples/blob/main/spring-ai/a2a-server-implby-a2a4j)).
@@ -52,6 +48,8 @@ The architecture of the [langgraph4j-copilotkit] integration is designed to enab
 
 The following diagram illustrates a diagram that shows the sequence of messages exchanged between main actors of the architecture:
 
+
+<!-- 
 ```mermaid
 sequenceDiagram
     participant User
@@ -69,6 +67,9 @@ sequenceDiagram
     Backend (langgraph4j-copilotkit)-->>-Frontend (CopilotKit): Streams AG-UI response
     Frontend (CopilotKit)-->>-User: Renders UI updates
 ```
+ -->
+
+![diagram](../../../../assets/langgraph-java/ag-ui/agent_workflow_ui.png)
 
 **Explanation of the diagram:**
 
@@ -106,43 +107,37 @@ export function SimpleChatWithApproval() {
     name: "sendEmail",
     description: "Sends an email after user approval.",
     parameters: [
-      { name: "arg0", type: "string" },
-      { name: "arg1", type: "string" },
-      { name: "arg2", type: "string" },
+      { name: "address", type: "string" },
+      { name: "subject", type: "string" },
+      { name: "body", type: "string" },
     ],
     renderAndWaitForResponse: ({ args, status, respond }) => {
       console.debug( "renderAndWaitForResponse", respond, status, args );
 
       if (status === "inProgress") {
         return (
-          <div className="fixed inset-0 flex items-center justify-center bg-black bg-opacity-50 z-50">
-            <div className="p-6 rounded shadow-lg">
-              <h2 className="text-lg font-bold mb-2">Sending Email</h2>
-              <p>Preparing to send email...</p>
-            </div>
+          <div>
+            <h2>Sending Email</h2>
+            <p>Preparing to send email...</p>
           </div>
         );
       }
       if (status === "executing") {
         return (
-            <div className="fixed inset-0 flex items-center justify-center z-50">
-            <div className="bg-white text-black p-6 rounded shadow-lg border border-black">
-              <h2 className="text-lg font-bold mb-2">Confirm Email</h2>
-              <p>
-              Send email to <b>{args.arg0}</b> with subject "<b>{args.arg1}</b>"?
-              </p>
-              <p><i>{args.arg2}</i></p>
-              <div className="mt-4 flex gap-2">
-              <button className="bg-blue-500 text-white px-4 py-2 rounded" onClick={() => respond?.('APPROVED') }>
-                Approve
-              </button>
-              <button className="bg-blue-300 px-4 py-2 rounded" onClick={() => respond?.('REJECTED')}>
-                Cancel
-              </button>
+            <div>
+              <h2>Confirm Email</h2>
+              <p>Send email to <b>{args.address}</b> with subject "<b>{args.subject}</b>"?</p>
+              <p><i>{args.body}</i></p>
+              <div>
+                <button onClick={() => respond?.('APPROVED')}>
+                  Approve
+                </button>
+                <button onClick={() => respond?.('REJECTED')}>
+                  Cancel
+                 </button>
               </div>
             </div>
-            </div>
-      );
+          );
       }
      return <></>
   }});
@@ -169,8 +164,7 @@ Here is the relevant code from `src/test/java/org/bsc/langgraph4j/agui/AGUIAgent
 
 ```java
 public class AGUIAgentExecutor extends AGUILangGraphAgent {
-    // ...
-
+    // define tools
     public static class Tools {
 
         @Tool( description = "Send an email to someone")
@@ -182,20 +176,14 @@ public class AGUIAgentExecutor extends AGUILangGraphAgent {
             // This is a placeholder for the actual implementation
             return format("mail sent to %s with subject %s", to, subject);
         }
-        // ...
     }
-
-    // ...
 
     @Override
     GraphData buildStateGraph() throws GraphStateException {
 
-        var model = ofNullable(System.getenv("OPENAI_API_KEY"))
-                .map( key -> AiModel.OPENAI_GPT_4O_MINI.model.get())
-                .orElseGet(AiModel.OLLAMA_QWEN2_5_7B.model);
-
+        // Create agent
         var agent =  AgentExecutorEx.builder()
-                .chatModel(model, true)
+                .chatModel(LLM, true)
                 .toolsFromObject(new Tools())
                 .approvalOn( "sendEmail",
                          (nodeId, state ) ->
@@ -204,11 +192,10 @@ public class AGUIAgentExecutor extends AGUILangGraphAgent {
                 )
                 .build();
 
-        // ...
-
         return new GraphData( agent ) ;
     }
 
+    // invoke on interruption to provide approval information back to the client
     @Override
     <State extends AgentState> List<Approval> onInterruption(AGUIType.RunAgentInput input, InterruptionMetadata<State> state ) {
 
@@ -230,18 +217,16 @@ public class AGUIAgentExecutor extends AGUILangGraphAgent {
                 .orElseGet(List::of);
 
     }
-
-    // ...
 }
 ```
 
 This setup allows for a seamless HITL workflow where the user has the final say on critical actions, all orchestrated through the AG-UI protocol and the [langgraph4j-copilotkit] integration.
 
----
+### Demo
 
 ![demo](../../../../assets/langgraph-java/ag-ui/image.gif)
 
----
+
 
 ## Conclusion 
 
