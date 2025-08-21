@@ -1,6 +1,6 @@
 ---
 layout: post
-title:  LangGraph4j Meets AG-UI: Building UI/UX in the AI Agents era
+title:  LangGraph4j Meets AG-UI - Building UI/UX in the AI Agents era
 date:   2025-07-13
 description: "Standardize the Agent-to-User Communication"
 categories: ai
