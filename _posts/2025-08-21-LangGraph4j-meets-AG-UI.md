@@ -49,27 +49,6 @@ The architecture of the [langgraph4j-copilotkit] integration is designed to enab
 
 The following diagram illustrates a diagram that shows the sequence of messages exchanged between main actors of the architecture:
 
-
-<!-- 
-```mermaid
-sequenceDiagram
-    participant User
-    participant Frontend (CopilotKit)
-    participant Backend (langgraph4j-copilotkit)
-    participant LangGraph4j Agent
-    participant Tools/Services
-
-    User->>+Frontend (CopilotKit): Interacts with UI
-    Frontend (CopilotKit)->>+Backend (langgraph4j-copilotkit): Sends AG-UI request
-    Backend (langgraph4j-copilotkit)->>+LangGraph4j Agent: Executes workflow
-    LangGraph4j Agent->>+Tools/Services: Calls a tool
-    Tools/Services-->>-LangGraph4j Agent: Returns tool result
-    LangGraph4j Agent-->>-Backend (langgraph4j-copilotkit): Returns intermediate result
-    Backend (langgraph4j-copilotkit)-->>-Frontend (CopilotKit): Streams AG-UI response
-    Frontend (CopilotKit)-->>-User: Renders UI updates
-```
- -->
-
 ![diagram](../../../../assets/langgraph-java/ag-ui/agent_workflow_ui.png)
 
 **Explanation of the diagram:**
