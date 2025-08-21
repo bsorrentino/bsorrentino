@@ -39,7 +39,8 @@ This challenge has led to the development of new standards—protocols that defi
 With its latest project, [langgraph4j-copilotkit], we have evaluated how to make [LangGraph4j] compliant with the [AG-UI] protocol,  integrating [CopilotKit] that is its reference implementation for help and enhance developer experience in building better either User Interfaces (UI) and User eXperience (UX).
 
 **Why AG-UI Compliance Matters**
-> By aligning with AG-UI, LangGraph4j agents can present rich, interactive interfaces to users—whether embedded in web apps, desktop tools, or chatbots. This standardization means that developers can focus on building great agent logic, while relying on AG-UI to handle the complexities of user interaction.
+> By aligning with AG-UI, LangGraph4j agents can present rich, interactive interfaces to user, whether embedded in web apps, desktop tools, or chatbots. This standardization means that developers can focus on building great agent logic, while relying on AG-UI to handle the complexities of user interaction.
+
 
 
 ## Architecture
