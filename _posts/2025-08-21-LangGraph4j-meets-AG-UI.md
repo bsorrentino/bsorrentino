@@ -215,6 +215,8 @@ We consider crucial keep working to improve support of them in [LangGraph4j] to 
 
 As more frameworks and tools adopt these protocols, we can expect to see a new generation of AI-powered applications that are more flexible, extensible and, with [AG-UI], more user-centric than ever before.
 
+Hope this could help your AI Java developing journey, in the meanwhile happy AI coding! 👋
+
 [AG-UI]: https://ag-ui.com
 [LangGraph4j]: https://github.com/langgraph4j/langgraph4j
 [langgraph4j-copilotkit]: https://github.com/langgraph4j/langgraph4j-copilotkit
