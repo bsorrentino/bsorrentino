@@ -6,7 +6,7 @@ description: "Standardize the Agent-to-User Communication"
 categories: ai
 
 ---
-![cover](../../../../assets/langgraph-java/langgraph4j-cover-2.png)
+![cover](../../../../assets/langgraph-java/ag-ui/cover.png)
 <br>
 <hr>
 <br>
