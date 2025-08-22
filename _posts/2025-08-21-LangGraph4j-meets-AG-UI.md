@@ -74,8 +74,7 @@ This example demonstrates how to implement a "Human-in-the-Loop" (HITL) approval
 
 The frontend uses `@copilotkit/react-core` and `@copilotkit/react-ui` to create the chat interface and handle the approval action. The `useCopilotAction` hook is used to define the `sendEmail` action. When the action is triggered, it renders a confirmation dialog asking the user for approval.
 
-Here is the relevant code from `src/webui/src/app/component/chatApproval.tsx`:
-
+**`chatApproval.tsx`**
 ```typescript
 "use client";
 import { useCopilotAction } from "@copilotkit/react-core";
@@ -140,8 +139,7 @@ export function SimpleChatWithApproval() {
 
 The backend is a [LangGraph4j] agent that defines the `sendEmail` tool. The `AgentExecutorEx` is configured to require approval for the `sendEmail` tool. When the tool is about to be executed, the agent will be interrupted, and an approval request will be sent to the frontend.
 
-Here is the relevant code from `src/test/java/org/bsc/langgraph4j/agui/AGUIAgentExecutor.java`:
-
+**`AGUIAgentExecutor.java`**:
 ```java
 public class AGUIAgentExecutor extends AGUILangGraphAgent {
     // define tools
@@ -175,11 +173,11 @@ public class AGUIAgentExecutor extends AGUILangGraphAgent {
         return new GraphData( agent ) ;
     }
 
-    // invoke on interruption to provide approval information back to the client
+    // invoked on interruption to provide approval information back to the client
     @Override
-    <State extends AgentState> List<Approval> onInterruption(AGUIType.RunAgentInput input, InterruptionMetadata<State> state ) {
+    <State extends AgentState> List<Approval> onInterruption(AGUIType.RunAgentInput input, InterruptionMetadata<State> metadata ) {
 
-        var messages = state.state().<List<Message>>value("messages")
+        var messages = metadata.state().value("messages");
                 .orElseThrow( () -> new IllegalStateException("messages not found into given state"));
 
         return lastOf(messages)
