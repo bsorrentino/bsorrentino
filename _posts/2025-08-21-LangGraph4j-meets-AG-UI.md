@@ -57,7 +57,7 @@ The architecture of the [langgraph4j-copilotkit] integration is designed to enab
 
 The following diagram illustrates a diagram that shows the sequence of messages exchanged between main actors of the architecture:
 
-![diagram](../../../../assets/langgraph-java/ag-ui/agent_workflow_ui.png)
+![diagram](../../../../assets/langgraph-java/ag-ui/agui_integration_flow.png)
 
 **Explanation of the diagram:**
 
