@@ -17,30 +17,38 @@ The rapid evolution of artificial intelligence has brought a new wave of innovat
 
 This challenge has led to the development of new standards—protocols that define how AI agents communicate with the world and each other. Among the most notable are:
 
-### 1. MCP (Multi-Component Protocol)
-**Purpose:** Standardizing Agent-to-Tools/Services Communication  
+* [MCP] (Model Context Protocol)
+   > **Purpose:** Standardizing Agent-to-Tools/Services Communication  
+* [A2A] (Agent-to-Agent Protocol)
+   > **Purpose:** Standardizing Agent-to-Agent Communication 
+* [AG-UI] (Front-end apps connect to AI agents)
+   > **Purpose:** Standardizing Agent-to-User Communication  
 
+
+In this article we will focus on [AG-UI] protocol an how it helps us to develop an effective User eXperience in using AI Agents
+
+<!--
+### 1. MCP (Model Context Protocol)
 [MCP] defines how AI agents communicate with various tools and services. By using MCP, developers can ensure that their agents can interact with a wide range of external APIs and software components, facilitating complex automation and integration scenarios.
 
-### 2. A2A (Agent-to-Agent Protocol)
-**Purpose:** Standardizing Agent-to-Agent Communication  
-[A2A] focuses on enabling agents to interact directly with each other. This protocol is crucial for building distributed, collaborative, or competitive networks of agents—where agents can delegate tasks, negotiate, or share knowledge autonomously.
 
-### 3. AG-UI (Agent Graphical User Interface Protocol)
-**Purpose:** Standardizing Agent-to-User Communication  
+### 2. A2A (Agent-to-Agent Protocol)
+[A2A] focuses on enabling agents to interact directly with each other. This protocol is crucial for building distributed, collaborative, or competitive networks of agents—where agents can delegate tasks, negotiate, or share knowledge autonomously.
+-->
+
+### What is AG-UI protocol ?
 [AG-UI] bridges the gap between AI agents and their human users, ensuring that interactions are intuitive, consistent, and user-friendly. It defines the structure for how agents present information, take user input, and handle conversations—regardless of the underlying platform or application.
+
+### Why AG-UI Compliance Matters 
+> By aligning with AG-UI, LangGraph4j agents can present rich, interactive interfaces to user, whether embedded in web apps, desktop tools, or chatbots. This standardization means that developers can focus on building great agent logic, while relying on AG-UI to handle the complexities of user interaction.
 
 ## LangGraph4j and AG-UI
 
-**[LangGraph4j]** is a powerful Java-based framework designed for building and orchestrating AI agent workflows. It is already capable to use **MCP** servers inside workflow steps and has also experimented integration with **A2A** (see [here](https://github.com/langgraph4j/langgraph4j-examples/blob/main/spring-ai/a2a-server-implby-a2a4j)).
+**[LangGraph4j]** is a Java-based framework designed for building and orchestrating AI agent workflows. It is already capable to use **MCP** servers inside workflow steps and has also experimented integration with **A2A** (see [here](https://github.com/langgraph4j/langgraph4j-examples/blob/main/spring-ai/a2a-server-implby-a2a4j)).
 
 ### Copilotkit integration
 
 With its latest project, [langgraph4j-copilotkit], we have evaluated how to make [LangGraph4j] compliant with the [AG-UI] protocol,  integrating [CopilotKit] that is its reference implementation for help and enhance developer experience in building better either User Interfaces (UI) and User eXperience (UX).
-
-**Why AG-UI Compliance Matters**
-> By aligning with AG-UI, LangGraph4j agents can present rich, interactive interfaces to user, whether embedded in web apps, desktop tools, or chatbots. This standardization means that developers can focus on building great agent logic, while relying on AG-UI to handle the complexities of user interaction.
-
 
 
 ## Architecture
