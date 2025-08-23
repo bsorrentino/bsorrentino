@@ -17,12 +17,12 @@ The rapid evolution of artificial intelligence has brought a new wave of innovat
 
 This challenge has led to the development of new standards—protocols that define how AI agents communicate with the world and each other. Among the most notable are:
 
-* [MCP] (Model Context Protocol)
-   > **Purpose:** Standardizing Agent-to-Tools/Services Communication  
-* [A2A] (Agent-to-Agent Protocol)
-   > **Purpose:** Standardizing Agent-to-Agent Communication 
-* [AG-UI] (Front-end apps connect to AI agents)
-   > **Purpose:** Standardizing Agent-to-User Communication  
+* [MCP] (**Agent-to-Tools**)
+   > Standardizing Agent to Tools/Services Communication  
+* [A2A] (**Agent-to-Agent Protocol**)
+   > Standardizing Agent to Agent Communication 
+* [AG-UI] (**Agent-to-User**)
+   > Standardizing Agent to User Communication  
 
 
 In this article we will focus on [AG-UI] protocol an how it helps us to develop an effective User eXperience in using AI Agents
@@ -40,7 +40,7 @@ In this article we will focus on [AG-UI] protocol an how it helps us to develop 
 [AG-UI] bridges the gap between AI agents and their human users, ensuring that interactions are intuitive, consistent, and user-friendly. It defines the structure for how agents present information, take user input, and handle conversations—regardless of the underlying platform or application.
 
 ### Why AG-UI Compliance Matters 
-> By aligning with AG-UI, LangGraph4j agents can present rich, interactive interfaces to user, whether embedded in web apps, desktop tools, or chatbots. This standardization means that developers can focus on building great agent logic, while relying on AG-UI to handle the complexities of user interaction.
+By aligning with AG-UI, LangGraph4j agents can present rich, interactive interfaces to user, whether embedded in web apps, desktop tools, or chatbots. This standardization means that developers can focus on building great agent logic, while relying on AG-UI to handle the complexities of user interaction.
 
 ## LangGraph4j and AG-UI
 
