@@ -26,7 +26,7 @@ This challenge has led to the development of new standards—protocols that defi
 
 <br/>
 
-> **In this article we will focus on [AG-UI] protocol an how it helps us to develop an effective User eXperience in using AI Agents**
+**In this article we will focus on [AG-UI] protocol an how it helps us to develop an effective User eXperience in using AI Agents**
 
 <!--
 ### 1. MCP (Model Context Protocol)
