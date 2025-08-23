@@ -1,6 +1,6 @@
 ---
 layout: post
-title:  LangGraph4j Meets AG-UI - Building UI/UX in the AI Agents era
+title:  LangGraph4j Meets AG-UI - Building UI/UX in the AI Agents Era
 date:   2025-08-21
 description: "Standardize the Agent-to-User Communication"
 categories: ai
@@ -38,14 +38,14 @@ This challenge has led to the development of new standards—protocols that defi
 -->
 
 ### What is AG-UI protocol ?
-[AG-UI] bridges the gap between AI agents and their human users, ensuring that interactions are intuitive, consistent, and user-friendly. It defines the structure for how agents present information, take user input, and handle conversations—regardless of the underlying platform or application.
+**[AG-UI]** bridges the gap between AI agents and their human users, ensuring that interactions are intuitive, consistent, and user-friendly. It defines the structure for how agents present information, take user input, and handle conversations—regardless of the underlying platform or application.
 
 ### Why AG-UI Compliance Matters 
-By aligning with AG-UI, LangGraph4j agents can present rich, interactive interfaces to user, whether embedded in web apps, desktop tools, or chatbots. This standardization means that developers can focus on building great agent logic, while relying on AG-UI to handle the complexities of user interaction.
+By aligning with [AG-UI], LangGraph4j agents can present rich, interactive interfaces to user, whether embedded in web apps, desktop tools, or chatbots. This standardization means that developers can focus on building great agent logic, while relying on [AG-UI] to handle the complexities of user interaction.
 
 ## LangGraph4j and AG-UI
 
-**[LangGraph4j]** is a Java-based framework designed for building and orchestrating AI agent workflows. It is already capable to use **MCP** servers inside workflow steps and has also experimented integration with **A2A** (see [here](https://github.com/langgraph4j/langgraph4j-examples/blob/main/spring-ai/a2a-server-implby-a2a4j)).
+**[LangGraph4j]** is a Java-based framework designed for building and orchestrating AI agent workflows. It is already capable to use **[MCP]** servers inside workflow steps and has also experimented integration with **[A2A]** (see [here](https://github.com/langgraph4j/langgraph4j-examples/blob/main/spring-ai/a2a-server-implby-a2a4j)).
 
 ### Copilotkit integration
 
@@ -64,13 +64,9 @@ The following diagram illustrates a diagram that shows the sequence of messages 
 
 1.  **User & Frontend (CopilotKit):** The user interacts with a web application that has the [CopilotKit] SDK integrated. CopilotKit handles the UI rendering and state management, translating user actions into requests compliant with the [AG-UI] protocol.
 
-2.  **Backend (langgraph4j-copilotkit):** A backend server, built with a framework like Spring Boot, includes the [langgraph4j-copilotkit] library. This library exposes an endpoint that listens for AG-UI requests from the frontend. It acts as a bridge, translating the incoming requests into executable commands for the [LangGraph4j] agent.
+2.  **Backend (langgraph4j-copilotkit):** A backend server, built with a framework like Spring Boot, includes the [langgraph4j-copilotkit] library. This library exposes an endpoint that listens for [AG-UI] requests from the frontend. It acts as a bridge, translating incoming requests into executable commands for the [LangGraph4j] agent, and in turn translates the agent's responses into compatible [AG-UI] events.
 
-3.  **LangGraph4j Agent:** This is the core of the AI logic. The agent, defined as a [LangGraph4j] graph, processes the request, executes its defined workflow, and can call external tools or services as needed. The state of the graph is managed across interactions.
-
-4.  **Tools/Services:** These are external components that the agent can interact with via the **MCP** protocol. They can be anything from a database, a third-party API, or another AI service.
-
-The communication is typically asynchronous and streaming. As the [LangGraph4j] agent produces results or requires further input, [langgraph4j-copilotkit] streams these events back to the frontend in the AG-UI format. CopilotKit then dynamically updates the UI, creating a responsive and interactive user experience.
+The communication is typically asynchronous and streaming. As the [LangGraph4j] agent produces results or requires further input, [langgraph4j-copilotkit] streams these events back to the frontend in the [AG-UI] format. CopilotKit then dynamically updates the UI, creating a responsive and interactive user experience.
 
 This architecture decouples the frontend presentation layer from the backend agentic logic, allowing developers to build sophisticated AI agents with [LangGraph4j] while providing a rich, standardized user interface with `CopilotKit`.
 
