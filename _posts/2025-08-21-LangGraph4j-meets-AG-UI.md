@@ -217,6 +217,8 @@ As more frameworks and tools adopt these protocols, we can expect to see a new g
 
 Hope this could help your AI Java developing journey, in the meanwhile happy AI coding! 👋
 
+
+
 [AG-UI]: https://ag-ui.com
 [LangGraph4j]: https://github.com/langgraph4j/langgraph4j
 [langgraph4j-copilotkit]: https://github.com/langgraph4j/langgraph4j-copilotkit
