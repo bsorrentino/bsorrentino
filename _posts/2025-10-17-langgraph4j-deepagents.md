@@ -1,6 +1,6 @@
 ---
 layout: post
-title:  LangGraph4j Deep Agents (Agentic 2.0)
+title:  🧠🤖 LangGraph4j Deep Agents (Agentic 2.0)
 date:   2025-10-17
 description: "Move beyond one-loop “shallow” agents to explicit planning hierarchical delegation, persistent memory, and rigorous context engineering."
 categories: ai
@@ -10,9 +10,6 @@ categories: ai
 <br>
 <hr>
 <br>
-
-
-# 🧠🤖 LangGraph4j Deep Agents (Agentic 2.0)
 
 
 ## Why Deep Agents (Agent 2.0)?
