@@ -15,7 +15,7 @@ categories: ai
 ## Why Deep Agents (Agent 2.0)?
 
 Classic agents often run a simple loop: **think → call a tool → observe → repeat**. That’s great for quick, transactional queries, but it breaks down on multi-hour or multi-day tasks (hallucinations, loss of goal, looping, no recovery).  
-**Deep Agents** try fix this by **changing the architecture**, not just the prompt:
+**Deep Agents** try fix this by **changing the architecture** (not just the prompt) based on the four pillars below:
 
 1. **Explicit Planning** – The agent continuously maintains a plan (e.g., a TODO in Markdown) with clear statuses instead of hiding intent in a just chain-of-thought.
 2. **Hierarchical Delegation (Sub-Agents)** – An **Orchestrator** delegates to specialized agents (Researcher, Coder, Writer, …), each working in a clean context and returning synthesized results.
