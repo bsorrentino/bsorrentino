@@ -1,6 +1,6 @@
 ---
 layout: post
-title:  🧠🤖 LangGraph4j Deep Agents (Agentic 2.0)
+title:  🧠🤖 LangGraph4j Deep Agents (Agent 2.0)
 date:   2025-10-17
 description: "Move beyond one-loop “shallow” agents to explicit planning hierarchical delegation, persistent memory, and rigorous context engineering."
 categories: ai
@@ -41,8 +41,7 @@ Let's look at a sequence diagram for a Deep Agent handling a complex request:
 Below a representative code snippet that implements the Deep Agents in the diagram 
 
 ```java
-// Create a Researche Sub Agent
-
+// Create a Research Sub Agent
 var researchSubagent = DeepAgent.SubAgent.builder()
     .name("research-agent")
     .description("""
@@ -59,6 +58,7 @@ var researchSubagent = DeepAgent.SubAgent.builder()
     .tools( List.of( "internet_search" ))
     .build();
 
+// Create a Critique Sub Agent
 var critiqueSubAgent =  DeepAgent.SubAgent.builder()
         .name("critique-agent")
         .description("Used to critique the final report. Give this agent some information about how you want it to critique the report.")
@@ -73,6 +73,7 @@ var critiqueSubAgent =  DeepAgent.SubAgent.builder()
             """)
         .build();
 
+// Create a Main Agent
 var deepAgent = DeepAgent.builder()
         .instructions("""
         You are an expert researcher. Your job is to conduct thorough research, and then write a polished report.
