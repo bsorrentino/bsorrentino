@@ -29,10 +29,10 @@ Classic agents often run a simple loop: **think → call a tool → observe → 
 
 ## Reference Implementation in Java using LangGraph4j 
 
-Since the [LangGraph4j] is inpired by more popular [LangGraph] python version, I've decided to adapt its python based [Deep Agents reference implementation](https://github.com/langchain-ai/deepagents) to Java using [LangGraph4j] and [Spring AI].
+Since the [LangGraph4j] is inpired by (more popular) [LangGraph] python version, I've decided to adapt its python based [Deep Agents reference implementation](https://github.com/langchain-ai/deepagents) to Java using [LangGraph4j] and [Spring AI].
 
 
-The project is on [Github](https://github.com/langgraph4j/langgraph4j-deepagents.git), this repository demonstrates the four pillars of Deep Agents. It includes sample code that create a **Deep Researcher Agent** that use [Tavily] as web search engine and **OpenAI gpt-4o-mini model**.
+The project is on [Github](https://github.com/langgraph4j/langgraph4j-deepagents.git). This repository demonstrates the four pillars of Deep Agents, it includes sample code that create a **Deep Researcher Agent** that use [Tavily] as web search engine and **OpenAI gpt-4o-mini model**.
 
 Let's look at a sequence diagram for a Deep Agent handling a complex request: 
 
