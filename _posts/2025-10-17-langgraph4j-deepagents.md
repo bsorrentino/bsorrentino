@@ -148,7 +148,7 @@ var deepAgent = DeepAgent.builder()
 
 # Conclusions
 
-Deep Agents architecture isa try **to move beyond one-loop “shallow” agents** to explicit planning hierarchical delegation, persistent memory, and rigorous context engineering. [LangGraph4j] can help to experiment in Labs and deliver in production complex Agentic Workflow on top of JVM. 
+Deep Agents architecture is a try **to move beyond one-loop “shallow” agents** to explicit planning hierarchical delegation, persistent memory, and rigorous context engineering. [LangGraph4j] can help to experiment in Labs and deliver in production complex Agentic Workflow on top of JVM. 
 Checkout project, try it and let me know your feedback and ... happy AI coding! 👋
 
 # References
