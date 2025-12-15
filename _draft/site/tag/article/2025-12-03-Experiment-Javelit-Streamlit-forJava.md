@@ -62,6 +62,7 @@ As [Streamlit] in [Javelit] entire application constist in just one `main` metho
 ```java
 public class JtAgentExecutorApp {
 
+
     public static void main(String[] args) {
 
         var app = new JtAgentExecutorApp();
@@ -69,46 +70,57 @@ public class JtAgentExecutorApp {
         app.view();
     }
 
-    void view() {
+    public void view() {
         Jt.title("LangGraph4J React Agent").use();
 
-        // Select preferred Chat model
-        var chatModel = getChatModelView();
+        var chatModel = JtSelectAiModel.get();
 
         try {
+            var agent = buildAgent(chatModel);
 
-            // setup LangGraph4j agent
-            var agent = buildAgent(chatModel.get(), streaming);
-            // input the message for the agent
+            if (Jt.toggle("Show PlantUML Diagram").value(false).use()) {
+                JtPlantUMLImage.build(agent.getGraph(GraphRepresentation.Type.PLANTUML,
+                                "ReAct Agent",
+                                false))
+                        .ifPresent(cb -> {
+                            cb.use();
+                            Jt.divider("plantuml-divider").use();
+                        });
+            }
+
             var userMessage = Jt.textArea("user message:")
                     .placeholder("user message")
                     .labelVisibility(JtComponent.LabelVisibility.HIDDEN)
                     .use();
-            // button for start agent
+
             var start = Jt.button("start agent")
                     .disabled(userMessage.isBlank())
                     .use();
 
             if (start) {
 
+                var spinner = SpinnerComponent.builder()
+                        .message("**starting the agent** ....")
+                        .showTime(true)
+                        .use();
+
+                var outputComponent = Jt.expander("Workflow Steps").use();
+
+                var input = Map.<String, Object>of("messages", new UserMessage(userMessage));
+
+                var runnableConfig = RunnableConfig.builder()
+                        .threadId("test-01")
+                        .build();
+
+                var generator = agent.stream(input, runnableConfig);
+
+
                 try {
+
                     final var startTime = Instant.now();
-
-                    // container for the output messages from langGraph4j
-                    var outputComponent = Jt.expander("Workflow Steps").use();
-
-                    var input = Map.<String, Object>of("messages", new UserMessage(userMessage));
-
-                    var runnableConfig = RunnableConfig.builder()
-                            .threadId("test-01")
-                            .build();
-
-                    var generator = agent.stream(input, runnableConfig);
-
 
                     var output = generator.stream()
                             .peek(s -> {
-
                                 Jt.sessionState().remove("streaming");
                                 Jt.info("""
                                         #### %s
@@ -118,13 +130,12 @@ public class JtAgentExecutorApp {
                                                 .map(Object::toString)
                                                 .collect(Collectors.joining("\n\n")))
                                 ).use(outputComponent);
-
                             })
                             .reduce((a, b) -> b)
                             .orElseThrow();
 
                     var response = output.state().lastMessage()
-                            .map(Content::getText)
+                            .map(Object::toString)
                             .orElse("No response found");
 
                     final var elapsedTime = Duration.between(startTime, Instant.now());
@@ -134,6 +145,7 @@ public class JtAgentExecutorApp {
                 } catch (Exception e) {
                     Jt.error(e.getMessage()).use(spinner);
                 }
+
             }
         } catch (Exception e) {
             Jt.error(e.getMessage()).use();
@@ -141,7 +153,23 @@ public class JtAgentExecutorApp {
 
     }
 
+    public CompiledGraph<AgentExecutor.State> buildAgent(ChatModel chatModel) throws Exception {
+        var saver = new MemorySaver();
+
+        var compileConfig = CompileConfig.builder()
+                .checkpointSaver(saver)
+                .build();
+
+        return AgentExecutor.builder()
+                .chatModel(chatModel)
+                .toolsFromObject(new TestTools())
+                .build()
+                .compile(compileConfig);
+
+    }
+
 }
+
 
 ```
 
