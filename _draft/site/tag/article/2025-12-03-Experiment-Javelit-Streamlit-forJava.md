@@ -1,4 +1,4 @@
-# Experimenting with Javelit a Streamlit for Java
+# Experimenting with Javelit the Streamlit for Java
 
 ## Introduction
 
@@ -55,97 +55,63 @@ javelit run App.java
 ## Use Javelit with LangGraph4j
 
 I've decided to use [Javelit] to develop some examples of [LangGraph4j] usage and below I'll show you how have used [Javelit] to implement a demo app to run the **LangGraph4j powerd React Agent**. 
-For simplicity I'll report only the main code snippets but for a complete code take a look to [] for spingAI based implementation or [] for the LangChain4j based implementation. 
+For simplicity I'll report only the main code snippets but for a complete code take a look to [] for [spring AI] based implementation or [`JtAgentExecutorApp.java`](https://github.com/langgraph4j/langgraph4j/blob/main/spring-ai/spring-ai-agent/src/test/java/JtAgentExecutorApp.java) for the LangChain4j based implementation. 
 
 As [Streamlit] in [Javelit] entire application constist in just one `main` method.
 
 ```java
 public class JtAgentExecutorApp {
 
-
     public static void main(String[] args) {
 
-        var app = new JtAgentExecutorApp();
-
-        app.view();
-    }
-
-    public void view() {
         Jt.title("LangGraph4J React Agent").use();
 
-        var chatModel = JtSelectAiModel.get();
-
         try {
-            var agent = buildAgent(chatModel);
+            // create a LangGraph4j Agent
+            var agent = AgentExecutor.builder()
+                .chatModel(/* instantiate the preferred ChatModel */)
+                .toolsFromObject( new MyTools() /* Custom Tools */  )
+                .build()
+                .compile(); 
 
-            if (Jt.toggle("Show PlantUML Diagram").value(false).use()) {
-                JtPlantUMLImage.build(agent.getGraph(GraphRepresentation.Type.PLANTUML,
-                                "ReAct Agent",
-                                false))
-                        .ifPresent(cb -> {
-                            cb.use();
-                            Jt.divider("plantuml-divider").use();
-                        });
-            }
-
+            // input: the user message
             var userMessage = Jt.textArea("user message:")
                     .placeholder("user message")
                     .labelVisibility(JtComponent.LabelVisibility.HIDDEN)
                     .use();
 
+            // button: start agent processing 
             var start = Jt.button("start agent")
                     .disabled(userMessage.isBlank())
                     .use();
 
-            if (start) {
-
-                var spinner = SpinnerComponent.builder()
-                        .message("**starting the agent** ....")
-                        .showTime(true)
-                        .use();
+            if (start) { // if button pressed
 
                 var outputComponent = Jt.expander("Workflow Steps").use();
 
-                var input = Map.<String, Object>of("messages", new UserMessage(userMessage));
+                var input = GraphInput.args(Map.of("messages", new UserMessage(userMessage)));
 
-                var runnableConfig = RunnableConfig.builder()
-                        .threadId("test-01")
-                        .build();
+                var generator = agent.stream(input);
 
-                var generator = agent.stream(input, runnableConfig);
+                final var startTime = Instant.now();
 
-
-                try {
-
-                    final var startTime = Instant.now();
-
-                    var output = generator.stream()
-                            .peek(s -> {
-                                Jt.sessionState().remove("streaming");
-                                Jt.info("""
-                                        #### %s
-                                        %s
-                                        """.formatted(s.node(),
-                                        s.state().messages().stream()
-                                                .map(Object::toString)
-                                                .collect(Collectors.joining("\n\n")))
-                                ).use(outputComponent);
-                            })
-                            .reduce((a, b) -> b)
-                            .orElseThrow();
-
-                    var response = output.state().lastMessage()
-                            .map(Object::toString)
-                            .orElse("No response found");
-
-                    final var elapsedTime = Duration.between(startTime, Instant.now());
-
-                    Jt.success("finished in %ds%n%n%s".formatted(elapsedTime.toSeconds(), response))
-                            .use(spinner);
-                } catch (Exception e) {
-                    Jt.error(e.getMessage()).use(spinner);
+                for( var step : generator ) {
+                
+                    Jt.sessionState().remove("streaming");
+                    Jt.info("""
+                            #### %s
+                            %s
+                            """.formatted(s.node(),
+                            s.state().messages().stream()
+                                    .map(Object::toString)
+                                    .collect(Collectors.joining("\n\n")))
+                    ).use(outputComponent);
                 }
 
+                final var elapsedTime = Duration.between(startTime, Instant.now());
+
+                Jt.success("finished in %ds%n".formatted(elapsedTime.toSeconds())).use();
+                
             }
         } catch (Exception e) {
             Jt.error(e.getMessage()).use();
@@ -153,27 +119,29 @@ public class JtAgentExecutorApp {
 
     }
 
-    public CompiledGraph<AgentExecutor.State> buildAgent(ChatModel chatModel) throws Exception {
-        var saver = new MemorySaver();
-
-        var compileConfig = CompileConfig.builder()
-                .checkpointSaver(saver)
-                .build();
-
-        return AgentExecutor.builder()
-                .chatModel(chatModel)
-                .toolsFromObject(new TestTools())
-                .build()
-                .compile(compileConfig);
-
-    }
-
 }
-
-
 ```
 
-(../../../../assets/langgraph-java/javelit)
+The output of the [Javelit] app looks like:
+
+#### Chat model selection
+![image1](../../../../assets/langgraph-java/javelit/javelit-app-01.png)
+
+#### Start agent
+![image2](../../../../assets/langgraph-java/javelit/javelit-app-02.png)
+
+
+#### Results
+![image3](../../../../assets/langgraph-java/javelit/javelit-app-03.png)
+
+## 👉 try yourself 👀 🚀 🤯
+
+If you want try jourself (after installed [javelit]) run the command 
+```
+javelit run https://github.com/langgraph4j/langgraph4j/tree/main/spring-ai/spring-ai-agent/src/test/java
+```
+
+## Conclusion
 
 ## References
 
