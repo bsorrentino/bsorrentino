@@ -67,7 +67,7 @@ javelit run App.java
 I've decided to use [Javelit] to develop some examples of [LangGraph4j] usage and below, I show you how have used [Javelit] to implement a demo app to run the **LangGraph4j powered React Agent**. 
 For simplicity I've reported only the meaningful code snippets, but for a complete code take a look to [`JtAgentExecutorApp.java`](https://github.com/langgraph4j/langgraph4j/blob/main/spring-ai/spring-ai-agent/src/test/java/JtAgentExecutorApp.java) for [spring AI] based implementation. 
 
-As [Streamlit] in [Javelit] entire application constist in just one `main()` method.
+As [Streamlit] in [Javelit] entire application consist in just one `main()` method.
 
 ```java
 public class JtAgentExecutorApp {
@@ -145,7 +145,7 @@ The output of the [Javelit] app looks like:
 
 ### 👉 try yourself 👀 🚀 🤯
 
-If you want try jourself (after installed [javelit]) run the command 
+If you want try yourself (after installed [javelit]) run the command 
 ```
 javelit run https://github.com/langgraph4j/langgraph4j/tree/main/spring-ai/spring-ai-agent/src/test/java
 ```
