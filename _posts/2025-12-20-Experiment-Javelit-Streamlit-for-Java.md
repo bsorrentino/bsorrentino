@@ -14,16 +14,15 @@ categories: ai
 
 ## Starting from Python development ecosystem 
 
-At beginning of my experience in working with Agentic Applications I've started working with Python using LangChain/LangGraph using, for testing and documenting purposes,  the simply but powerful Jupyter Notebooks. 
-In the sametime to move on rapid prototyping I've used the amazing Streamlit Python framework, that allowed me to create quickly working app with a effective UI and a good UX 
+At the beginning of my journey with agentic applications, I started with the Python programming language, leveraging [LangChain]/[LangGraph]. For testing and documentation, I relied on the simple yet powerful [Jupyter Notebooks]. Simultaneously, for rapid prototyping, I adopted the amazing [Streamlit] framework, which empowered me to quickly develop functional applications with an effective UI and excellent UX. 
 
 ## Moving from Python ecosystem to the Java one 
 
-When I started developing [LangGraph4j], I tried to replicate my Python development ecosystem in Java. I then experimented with Java Notebooks through the [rapaio-jupyter-kernel] project, which allowed me to replicate the development experience I had with Jupyter Notebooks in Python quite well. For rapid prototyping, I relied almost entirely on Spring Boot framework, which is a fairly fast and enjoyable programming experience.
+When I started developing [LangGraph4j], I tried to replicate my Python development ecosystem in Java. So I've experimented with the Java Notebooks through the [rapaio-jupyter-kernel] project, which allowed me to replicate the development experience I had with [Jupyter Notebooks] in Python quite well. For rapid prototyping, I relied almost entirely on [Spring Boot] framework, which is a fairly fast and enjoyable programming experience.
 
 ## Javelit come to play 🚀
 
-Going on my efforts on [LangGraph4j] and continuously monitoring the most interesting and promising Java projects on GitHub, I discovered [Javelit]. This project intrigued me because of its reference to [Streamlit], and after a review, I was amazed to realize that the dynamic programming model popularized by Streamlit had been adapted for Java by this initiative, which is cool.
+Going on my efforts on [LangGraph4j] and continuously monitoring the most interesting and promising Java projects on GitHub, I discovered [Javelit]. This project intrigued me because of its reference to [Streamlit], and after a review, I was amazed to realize that the dynamic programming model popularized by [Streamlit] had been adapted for Java by this initiative, which is cool.😎
 So I started to evaluate it as part of may java development ecosystem and below i'll share with you my experience about it.
 
 
@@ -65,8 +64,8 @@ javelit run App.java
 
 ## Use Javelit with LangGraph4j
 
-I've decided to use [Javelit] to develop some examples of [LangGraph4j] usage and below I'll show you how have used [Javelit] to implement a demo app to run the **LangGraph4j powered React Agent**. 
-For simplicity I'll report only the meaningful code snippets, but for a complete code take a look to [`JtAgentExecutorApp.java`](https://github.com/langgraph4j/langgraph4j/blob/main/spring-ai/spring-ai-agent/src/test/java/JtAgentExecutorApp.java) for [spring AI] based implementation. 
+I've decided to use [Javelit] to develop some examples of [LangGraph4j] usage and below, I show you how have used [Javelit] to implement a demo app to run the **LangGraph4j powered React Agent**. 
+For simplicity I've reported only the meaningful code snippets, but for a complete code take a look to [`JtAgentExecutorApp.java`](https://github.com/langgraph4j/langgraph4j/blob/main/spring-ai/spring-ai-agent/src/test/java/JtAgentExecutorApp.java) for [spring AI] based implementation. 
 
 As [Streamlit] in [Javelit] entire application constist in just one `main()` method.
 
@@ -160,6 +159,11 @@ Checkout project, try it and let me know your feedback and ... happy AI coding! 
 
 * [Javelit to create quick interactive app frontends in Java](https://glaforge.dev/posts/2025/10/24/javelit-to-create-quick-interactive-app-frontends-in-java/)
 
+[spring boot]: https://spring.io/projects/spring-boot
+[rapaio-jupyter-kernel]: https://github.com/padreati/rapaio-jupyter-kernel
+[jupyter notebooks]: https://jupyter.org
+[langchain]: https://docs.langchain.com/oss/python/langchain/overview
+[langgraph]: https://docs.langchain.com/oss/python/langgraph/overview
 [langgraph4j]: https://github.com/langgraph4j/langgraph4j
 [spring ai]: https://spring.io/projects/spring-ai#overview
 [langchain4j]: https://docs.langchain4j.dev
