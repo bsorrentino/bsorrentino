@@ -135,14 +135,13 @@ public class JtAgentExecutorApp {
 
 The output of the [Javelit] app looks like: 
 
-### Chat model selection
+**Chat model selection view**
 ![image1](../../../../assets/langgraph-java/javelit/javelit-app-01.png)
 
-### Start agent
+**Start agent view**
 ![image2](../../../../assets/langgraph-java/javelit/javelit-app-02.png)
 
-
-### Results
+**Results view**
 ![image3](../../../../assets/langgraph-java/javelit/javelit-app-03.png)
 
 ### 👉 try yourself 👀 🚀 🤯
