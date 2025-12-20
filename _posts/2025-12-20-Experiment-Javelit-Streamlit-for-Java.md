@@ -139,10 +139,10 @@ The output of the [Javelit] app looks like:
 > ![image1](../../../../assets/langgraph-java/javelit/javelit-app-01.png)
 
 **Start agent view**
-![image2](../../../../assets/langgraph-java/javelit/javelit-app-02.png)
+> ![image2](../../../../assets/langgraph-java/javelit/javelit-app-02.png)
 
 **Results view**
-![image3](../../../../assets/langgraph-java/javelit/javelit-app-03.png)
+> ![image3](../../../../assets/langgraph-java/javelit/javelit-app-03.png)
 
 ### 👉 try yourself 👀 🚀 🤯
 
