@@ -153,7 +153,7 @@ javelit run https://github.com/langgraph4j/langgraph4j/tree/main/spring-ai/sprin
 ## Conclusion
 
 [Javelit] brings the power of rapid prototyping and interactive web app development to the Java ecosystem, much like [Streamlit] does for Python. With its simple, loop-based programming model, developers can quickly build data-driven applications without needing extensive frontend knowledge, leveraging familiar Java syntax and the rich JVM ecosystem. The live-reload feature enables instant experimentation and iteration, making it ideal for prototyping AI agents, data visualizations, and interactive tools. By integrating seamlessly with libraries like [LangGraph4j] combined with both [Spring AI] and [LangChain4j], [Javelit] empowers Java developers to create engaging user interfaces effortlessly, bridging the gap between backend logic and user-facing applications.  
-Checkout project, try it and let me know your feedback and ... happy AI coding! 👋
+Checkout project, try it and let me know your feedback and ... happy coding! 👋
 
 ## References
 
