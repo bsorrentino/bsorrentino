@@ -1,6 +1,6 @@
 ---
 layout: post
-title:  Experimenting with Javelit a Streamlit for Java
+title:  Experimenting with Javelit - The Streamlit for Java
 date:   2025-12-20
 description: "Exploring Javelit, the Java counterpart to Streamlit, for rapid prototyping and AI agents using LangGraph4j."
 categories: ai
