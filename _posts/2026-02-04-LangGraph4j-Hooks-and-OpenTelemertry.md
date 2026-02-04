@@ -13,7 +13,7 @@ categories: ai
 
 ## Why Observability Matters
 
-Agentic workflows are dynamic: nodes may run conditionally, in parallel, or be skipped entirely. When something fails, a simple stack trace is rarely enough. **Observability** gives you a unified view of what happened, where it happened, and why.
+Agentic workflows are dynamic: nodes may run conditionally, in parallel, or be skipped entirely. When something fails, a simple stack trace is rarely enough. **Observability** gives you a unified view of **what** happened, **where** it happened, and **why**.
 
 In practice, observability helps you:
 
@@ -23,17 +23,19 @@ In practice, observability helps you:
 
 ## Why Telemetry Matters
 
-Observability is only possible if you collect high‑quality telemetry. Telemetry is the raw signal: **traces, logs, and metrics**. Without it, you are debugging blind.
+Observability is only possible if you collect high‑quality telemetry. Telemetry is the raw signal: **traces**, **logs**, and **metrics**. Without it, probably,  you are debugging your system partially.
 
 In agent graphs, telemetry becomes even more important because state and control flow are distributed across steps. The same workflow can behave differently depending on state, configuration, or external tool results.
 
 ## The LangGraph4j hooks
 
-LangGraph4j [hooks] are small, composable interceptors that sit around **nodes** and **conditional edges**. They let you run custom logic **before**, **after**, or **wrapping** the core action, without modifying the node itself. Hooks can be registered globally (applies to all nodes/edges) or by ID (targeted to a specific node/edge), and their execution order is defined (LIFO for `BeforeCall`/`AfterCall`, FIFO for `WrapCall`). This makes them a precise, low‑friction mechanism for cross‑cutting concerns like tracing, metrics, logging, or state inspection.
+LangGraph4j [hooks] are small, composable interceptors that sit around **nodes** and **conditional edges**. They let you run custom logic **before**, **after**, or **wrapping** the core action, without modifying the node itself. 
+Hooks can be registered globally (applies to all nodes/edges) or by ID (targeted to a specific node/edge), and their execution order is **LIFO**(Last In First Out) for `BeforeCall`/`AfterCall`, **FIFO**(First In First Out) for `WrapCall`. 
+This makes them a precise, low‑friction mechanism for cross‑cutting concerns like tracing, metrics, logging, or state inspection.
 
 ## How Hooks Enable Observability
 
-Hooks provide lifecycle interception points around node and edge execution. This is the ideal place to add logging, metrics, or traces without contaminating business logic.
+[Hooks] provide lifecycle interception points around node and edge execution. This is the ideal place to add logging, metrics, or traces without contaminating business logic.
 
 In [LangGraph4j] you can intercept execution **before**, **after**, or **around** node/edge calls. Here is a minimal example that measures node execution time and logs it:
 
@@ -63,11 +65,11 @@ This pattern scales: you can plug in structured logs, metrics counters, or spans
 * **Metrics** via meters
 * **Logs** via instrumentation
 
-You configure it once and export telemetry to a backend like [Jaeger], Grafana, or the OpenTelemetry Collector. The key benefit is portability: you are not locked to a single vendor.
+You configure it once and export telemetry to a backend like **[Jaeger]**, **Grafana**, or the **OpenTelemetry Collector**. The key benefit here is **portability**: you are not locked to a single vendor.
 
 ## How LangGraph4j Hooks Enable OpenTelemetry
 
-LangGraph4j includes a dedicated module, `langgraph4j-opentelemetry`, that provides hook implementations ready for tracing node and edge execution.
+[LangGraph4j] includes a dedicated module, `langgraph4j-opentelemetry`, that provides hook implementations ready for tracing node and edge execution.
 
 The module includes:
 
@@ -114,3 +116,4 @@ Checkout project, try it and let me know your feedback and ... happy AI coding! 
 [LangGraph4j]: https://github.com/langgraph4j/langgraph4j
 [Jaeger]: https://www.jaegertracing.io
 [hooks]: https://langgraph4j.github.io/langgraph4j/core/hooks/
+[OpenTelemetry]: https://opentelemetry.io/docs/what-is-opentelemetry/
