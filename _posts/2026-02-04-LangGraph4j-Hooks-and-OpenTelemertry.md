@@ -103,7 +103,7 @@ var workflow = new StateGraph<>(MyState.SCHEMA, serializer)
 
 This keeps node logic clean while producing rich, correlated traces for the entire workflow.
 
-Example of [Jaeger] output
+Below an example of output in [Jaeger] tracing platform
 
 ![jaeger](../../../../assets/langgraph-java/hook-otel/jaeger.png)
 
