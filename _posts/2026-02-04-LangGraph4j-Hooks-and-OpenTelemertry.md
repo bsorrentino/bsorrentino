@@ -103,6 +103,10 @@ var workflow = new StateGraph<>(MyState.SCHEMA, serializer)
 
 This keeps node logic clean while producing rich, correlated traces for the entire workflow.
 
+Example of [Jaeger] output
+
+![jaeger](../../../../assets/langgraph-java/hook-otel/jaeger.png)
+
 ## Conclusion
 
 Hooks are the foundation for observability in LangGraph4j: they give you structured interception points without affect your main workflow code. OpenTelemetry builds on top of this by standardizing how telemetry is collected and exported in the Java ecosystem.
