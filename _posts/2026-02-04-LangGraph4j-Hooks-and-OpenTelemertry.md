@@ -29,7 +29,7 @@ In agent graphs, telemetry becomes even more important because state and control
 
 ## The LangGraph4j hooks
 
-LangGraph4j [hooks] are small, composable interceptors that sit around **nodes** and **conditional edges**. They let you run custom logic **before**, **after**, or **wrapping** the core action, without modifying the node itself. 
+[LangGraph4j hooks][hooks] are small, composable interceptors that sit around **nodes** and **conditional edges**. They let you run custom logic **before**, **after**, or **wrapping** the core action, without modifying the node itself. 
 Hooks can be registered globally (applies to all nodes/edges) or by ID (targeted to a specific node/edge), and their execution order is **LIFO**(Last In First Out) for `BeforeCall`/`AfterCall`, **FIFO**(First In First Out) for `WrapCall`. 
 This makes them a precise, low‑friction mechanism for cross‑cutting concerns like tracing, metrics, logging, or state inspection.
 
@@ -69,7 +69,7 @@ You configure it once and export telemetry to a backend like **[Jaeger]**, **Gra
 
 ## How LangGraph4j Hooks Enable OpenTelemetry
 
-[LangGraph4j] includes a dedicated module, `langgraph4j-opentelemetry`, that provides hook implementations ready for tracing node and edge execution.
+[LangGraph4j] includes a dedicated module, `langgraph4j-opentelemetry`, that provides hook implementations ready for tracing node and edge execution. Consider it as a reference implementation about **how to integrate OpenTelemetry in LangGraph4j**
 
 The module includes:
 
@@ -109,7 +109,7 @@ Below an example of output in [Jaeger] tracing platform
 
 ## Conclusion
 
-Hooks are the foundation for observability in LangGraph4j: they give you structured interception points without affect your main workflow code. OpenTelemetry builds on top of this by standardizing how telemetry is collected and exported in the Java ecosystem.
+Hooks are the foundation for observability in [LangGraph4j]: they give you structured interception points without affect your main workflow code. OpenTelemetry builds on top of this by standardizing how telemetry is collected and exported in the Java ecosystem.
 Combined, they deliver production-grade visibility for complex agent workflows.
 Checkout project, try it and let me know your feedback and ... happy AI coding! 👋
 
