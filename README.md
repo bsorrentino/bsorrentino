@@ -64,7 +64,7 @@ _by Sam Schillace, Deputy CTO / Microsoft_
     - [PlantUML-PowerPlatform]
       > PlantUML sprites, macros, and other includes for PowerPlatform services
 
-- 🧠  am focusing in depth on the Agentic workflow architectures the really seems can be drive a disruptive changing in everything as we know 🤯  
+- 🧠 I am focusing in depth on the Agentic workflow architectures the really seems can be drive a disruptive changing in everything as we know 🤯  
 - 👀 I'm interested in [WebAssembly] that I consider a potential game-changer technology.
 
 ****
