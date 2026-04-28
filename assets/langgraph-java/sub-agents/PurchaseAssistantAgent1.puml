@@ -1,0 +1,41 @@
+@startuml Agent_Purchase_Assistant
+skinparam linetype ortho
+skinparam usecaseFontSize 14
+skinparam usecaseStereotypeFontSize 12
+skinparam hexagonFontSize 14
+skinparam hexagonStereotypeFontSize 12
+title "Purchase Assistant Agent"
+footer
+powered by langgraph4j
+end footer
+
+package purchase-assistant {
+    rectangle tools as tools0
+    rectangle LLM as llm0
+    rectangle instructions as instructions0
+}
+package agent-payment {
+    rectangle "Payment Skill" as skill1
+    rectangle LLM as llm1
+    rectangle tools as tools1
+}
+
+package agent-marketplace {
+    rectangle "Marketplace Skill" as skill2
+    rectangle LLM as llm2
+    rectangle tools as tools2
+
+    skill2 -[hidden]right-> tools2
+    llm2 -[hidden]left-> skill2
+}
+
+actor user
+
+user ...> llm0 : request
+
+"tools0" <.down.> "llm2" : context
+"tools0" --[hidden]--> "agent-marketplace" : context
+"tools0" --[hidden]--> "agent-payment" : context
+"tools0" <.down.> "llm1" : context
+
+@enduml

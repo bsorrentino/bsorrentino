@@ -1,0 +1,87 @@
+@startuml Agent_Purchase_Assistant
+skinparam linetype ortho
+skinparam usecaseFontSize 14
+skinparam usecaseStereotypeFontSize 12
+skinparam hexagonFontSize 14
+skinparam hexagonStereotypeFontSize 12
+title "Purchase Assistant Agent"
+footer
+powered by langgraph4j
+end footer
+package "purchase-assistant" {
+circle start<<input>> as __START__
+circle stop as __END__
+usecase "model"<<Node>>
+usecase "action_dispatcher"<<Node>>
+}
+
+package agent-payment {
+circle " " as agent_payment___START__
+circle exit as agent_payment___END__
+usecase "model"<<Node>> as agent_payment_model
+usecase "action_dispatcher"<<Node>> as agent_payment_action_dispatcher
+usecase "submit-payment"<<Node>> as agent_payment_submit_payment
+usecase "retrieve-iban"<<Node>> as agent_payment_retrieve_iban
+
+
+"agent_payment___START__" -down-> "agent_payment_model"
+
+
+"agent_payment_model" .down.> "agent_payment_action_dispatcher": "continue"
+
+"agent_payment_model" .down.> "agent_payment___END__": "end"
+"agent_payment_submit_payment" -down-> "agent_payment_action_dispatcher"
+"agent_payment_retrieve_iban" -down-> "agent_payment_action_dispatcher"
+
+
+"agent_payment_action_dispatcher" .down.> "agent_payment_model"
+
+"agent_payment_action_dispatcher" .down.> "agent_payment___END__"
+
+"agent_payment_action_dispatcher" .down.> "agent_payment_submit_payment"
+
+"agent_payment_action_dispatcher" .down.> "agent_payment_retrieve_iban"
+}
+package agent-marketplace {
+circle " " as agent_marketplace___START__
+circle exit as agent_marketplace___END__
+usecase "model"<<Node>> as agent_marketplace_model
+usecase "action_dispatcher"<<Node>> as agent_marketplace_action_dispatcher
+usecase "searchByProduct"<<Node>> as agent_marketplace_searchByProduct
+
+
+"agent_marketplace___START__" -down-> "agent_marketplace_model"
+
+
+"agent_marketplace_model" .down.> "agent_marketplace_action_dispatcher": "continue"
+
+"agent_marketplace_model" .down.> "agent_marketplace___END__": "end"
+"agent_marketplace_searchByProduct" -down-> "agent_marketplace_action_dispatcher"
+
+
+"agent_marketplace_action_dispatcher" .down.> "agent_marketplace_model"
+
+"agent_marketplace_action_dispatcher" .down.> "agent_marketplace___END__"
+
+"agent_marketplace_action_dispatcher" .down.> "agent_marketplace_searchByProduct"
+}
+
+
+"__START__" -down-> "model"
+
+
+"model" .down.> "action_dispatcher": "continue"
+
+"model" .down.> "__END__"
+"agent-payment" <-down-> "action_dispatcher"
+"agent-marketplace" <-down-> "action_dispatcher"
+
+
+"action_dispatcher" .down.> "model"
+
+"action_dispatcher" .down.> "__END__"
+
+'"action_dispatcher" .down.> "agent-payment"
+
+'"action_dispatcher" .down.> "agent-marketplace"
+@enduml

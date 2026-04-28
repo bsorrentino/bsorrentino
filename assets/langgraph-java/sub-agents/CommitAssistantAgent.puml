@@ -1,0 +1,70 @@
+@startuml Agent_commit_Assistant
+skinparam usecaseFontSize 14
+skinparam usecaseStereotypeFontSize 12
+skinparam hexagonFontSize 14
+skinparam hexagonStereotypeFontSize 12
+title "Agent commit Assistant"
+footer
+powered by langgraph4j
+end footer
+circle start<<input>> as __START__
+circle stop as __END__
+usecase "model"<<Node>>
+usecase "action_dispatcher"<<Node>>
+usecase "git-list-files"<<Node>>
+package agent-commit {
+circle " " as agent_commit___START__
+circle exit as agent_commit___END__
+usecase "model"<<Node>> as agent_commit_model
+usecase "action_dispatcher"<<Node>> as agent_commit_action_dispatcher
+usecase "git-diff"<<Node>> as agent_commit_git_diff
+usecase "approval_git-commit"<<Node>> as agent_commit_approval_git_commit
+usecase "git-commit"<<Node>> as agent_commit_git_commit
+'hexagon "check state" as agent_commit_condition1<<Condition>>
+'hexagon "check state" as agent_commit_condition2<<Condition>>
+'hexagon "check state" as agent_commit_condition3<<Condition>>
+"agent_commit___START__" -down-> "agent_commit_model"
+'"agent_commit_model" .down.> "agent_commit_condition1"
+'"agent_commit_condition1" .down.> "agent_commit_action_dispatcher": "continue"
+"agent_commit_model" .down.> "agent_commit_action_dispatcher": "continue"
+'"agent_commit_condition1" .down.> "agent_commit___END__": "end"
+"agent_commit_model" .down.> "agent_commit___END__": "end"
+"agent_commit_git_diff" -down-> "agent_commit_action_dispatcher"
+'"agent_commit_approval_git_commit" .down.> "agent_commit_condition2"
+'"agent_commit_condition2" .down.> "agent_commit_model"
+"agent_commit_approval_git_commit" .down.> "agent_commit_model"
+'"agent_commit_condition2" .down.> "agent_commit_action_dispatcher"
+"agent_commit_approval_git_commit" .down.> "agent_commit_action_dispatcher"
+'"agent_commit_condition2" .down.> "agent_commit_git_commit": "APPROVED"
+"agent_commit_approval_git_commit" .down.> "agent_commit_git_commit": "APPROVED"
+"agent_commit_git_commit" -down-> "agent_commit_action_dispatcher"
+'"agent_commit_action_dispatcher" .down.> "agent_commit_condition3"
+'"agent_commit_condition3" .down.> "agent_commit_model"
+"agent_commit_action_dispatcher" .down.> "agent_commit_model"
+'"agent_commit_condition3" .down.> "agent_commit___END__"
+"agent_commit_action_dispatcher" .down.> "agent_commit___END__"
+'"agent_commit_condition3" .down.> "agent_commit_git_diff"
+"agent_commit_action_dispatcher" .down.> "agent_commit_git_diff"
+'"agent_commit_condition3" .down.> "agent_commit_approval_git_commit"
+"agent_commit_action_dispatcher" .down.> "agent_commit_approval_git_commit"
+}
+'hexagon "check state" as condition1<<Condition>>
+'hexagon "check state" as condition2<<Condition>>
+"__START__" -down-> "model"
+'"model" .down.> "condition1"
+'"condition1" .down.> "action_dispatcher": "continue"
+"model" .down.> "action_dispatcher": "continue"
+'"condition1" .down.> "__END__": "end"
+"model" .down.> "__END__": "end"
+"git-list-files" -down-> "action_dispatcher"
+"agent-commit" -down-> "action_dispatcher"
+'"action_dispatcher" .down.> "condition2"
+'"condition2" .down.> "model"
+"action_dispatcher" .down.> "model"
+'"condition2" .down.> "__END__"
+"action_dispatcher" .down.> "__END__"
+'"condition2" .down.> "git-list-files"
+"action_dispatcher" .down.> "git-list-files"
+'"condition2" .down.> "agent-commit"
+"action_dispatcher" .down.> "agent-commit"
+@enduml
