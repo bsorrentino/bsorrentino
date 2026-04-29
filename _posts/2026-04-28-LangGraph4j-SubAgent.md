@@ -377,7 +377,7 @@ into a single reusable agent-building pattern.
 
 ## Conclusion
 
-Treating a skill as an executable tool-backed sub-agent is a simple but powerful architectural move.
+Turning a skill into a sub-agent is a small change with a large impact.
 
 It lets us:
 
