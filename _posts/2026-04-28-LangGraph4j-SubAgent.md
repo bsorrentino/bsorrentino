@@ -1,4 +1,3 @@
-Building Skill-Based Sub-Agents with LangGraph4j and Spring AI
 ---
 layout: post
 title:  Building Skill-Based Sub-Agents with LangGraph4j and Spring AI
@@ -163,7 +162,7 @@ The resulting agent is then wrapped as a Spring AI function tool.
 
 ### Purchase Assistant Agent
 
-This is an agent that allow to select a produdct from a reference marketplace and purchase it. Below the simplified component diagram
+This is an agent that allow to select a produdct from a reference marketplace and purchase it. Below the simplified component diagram.
 
 ![diagram](../../../../assets/langgraph-java/sub-agents/PurchaseAssistantAgent1.png)
 
