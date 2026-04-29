@@ -7,7 +7,7 @@ Modern agentic systems usually expose two strong but separate abstractions:
 * **Tools**, which give an LLM executable capabilities
 * **Skills**, which package reusable instructions for a narrow task
 
-This article shows how to combine both ideas in [LangGraph4j](https://github.com/langgraph4j/langgraph4j) so that a skill is not just prompt text, but a fully operational **sub-agent exposed as a tool**. The result is a practical pattern for building modular multi-agent systems in Java with **Spring AI** and **LangGraph4j**, while keeping each agent focused, reusable, and low in context cost.
+This article shows how to combine both ideas in [LangGraph4j] so that a skill is not just prompt text, but a fully operational **sub-agent exposed as a tool**. The result is a practical pattern for building modular multi-agent systems in Java with **[Spring AI]** and **[LangGraph4j]**, while keeping each agent focused, reusable, and low in context cost.
 
 Starting from a standard ReACT agent, the approach implemented is quite simple.
 
@@ -98,7 +98,7 @@ This narrower context has practical benefits:
 
 ## Reference implementation
 
-I've started implementation in the new [LangGraph4j] release stream `1.9`. The implementation is centered on [`SkilledReactSubAgent`], which turns a markdown skill into both:
+I've started implementation in the new [LangGraph4j] release stream `1.9` currently in active development. The implementation is centered on [`SkilledReactSubAgent`], which turns a markdown skill into both:
 
 * a compiled LangGraph4j sub-graph
 * a Spring AI tool (i.e. `ToolCallback`)
@@ -380,3 +380,7 @@ For Java teams building agentic applications with Spring AI and LangGraph4j, thi
 The implementation is in progress on release `1.9-SNAPSHOT` in develop branch of [LangGraph4j] repository but the first result are very promising.
 
 Hope this could help and encourage usage of [LangGraph4j] for your next Agentic Workflow. Checkout project, try it and let me know your feedback and... happy AI coding! 👋
+
+
+[LangGraph4j]: https://github.com/langgraph4j/langgraph4j
+[Spring AI]: https://spring.io/projects/spring-ai
