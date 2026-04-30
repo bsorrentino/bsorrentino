@@ -7,12 +7,11 @@ description: |
 categories: ai
 
 ---
-<!--
-![cover](../../../../assets/langgraph-java/hook-otel/langgraph4j-hook-otel.png)
+![cover](../../../../assets/langgraph-java/sub-agent/sub-agent-cover.png)
 <br>
 <hr>
 <br>
--->
+
 
 ## Combine Tools & Skill to create Agent
 
