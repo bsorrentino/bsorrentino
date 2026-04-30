@@ -1,6 +1,6 @@
 ---
 layout: post
-title:  Building Skill-Based Sub-Agents with LangGraph4j and Spring AI
+title:  Skill-Based Sub-Agents with LangGraph4j and Spring AI
 date:   2026-04-28
 description: |
   Learn how to build modular, skill-based sub-agents in Java using LangGraph4j and Spring AI.
