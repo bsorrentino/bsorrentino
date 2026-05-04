@@ -133,7 +133,7 @@ In particular the flow is:
 
 The supported skill format is 
 
-```
+```md
 ---
 name: <agent name>
 description: |
