@@ -12,6 +12,8 @@ categories: ai
 <hr>
 <br>
 
+## LangGraph4j 1.9.0 is out!
+
 **[LangGraph4j] 1.9.0 is out!** With the `1.8.x` release stream now in LTS, development moves forward on `1.9` with improvements to streaming, persistence, and the infrastructure for building agents in Java.
 
 This release is an important step toward workflows that are easier to follow while they run and easier to inspect after they finish. A node can now report progress output before returning its result, checkpoint savers have a richer execution lifecycle, and Studio gets an UI refresh.
@@ -75,6 +77,7 @@ graph.stream(GraphInput.noArgs(), RunnableConfig.empty()).forEachAsync( output -
         }
     });
 ```
+
 
 This gives us a useful channel for progress notifications, intermediate results, and application-specific events. **Dispatching a custom output does not update graph state.** If a value must influence routing, be available to later nodes, or become part of a persisted result, include it in the node's returned state update.
 
