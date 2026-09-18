@@ -118,7 +118,7 @@ var graph = workflow.compile(compileConfig);
 The practical upgrade check is to examine what your code does *after successful completion*. Any inspection, replay, resume, or manual-release logic that assumes an active checkpoint set needs attention.
 
 
-### Experimental Versioning for Released Runs
+### Experimental versioning for released runs
 
 Checkpoint tags gain optional version information. `BaseCheckpointSaver.Tag` exposes `threadId()`, `version()` as an `Optional<Integer>`, `checkpoints()`, and `lastCheckpoint()`.
 
@@ -134,7 +134,7 @@ The `version` argument to `tag(...)` is nullable. `lastTag(...)` retrieves the l
 
 `GraphResult.asLastCheckpointStateData()` now obtains its data through `Tag.lastCheckpoint()`, preserving its observable result. This is useful continuity for callers retrieving the final checkpoint state while the underlying release model evolves.
 
-### Parent and Subgraph Savers Work Together
+### Parent and Subgraph savers work together
 
 Subgraphs increasingly carry real agent behavior, so their persistence lifecycle must follow the parent execution.
 
@@ -165,7 +165,7 @@ The error-release hook does not change the default described above: an exception
 
 The in-memory, file-system, Redis, Postgres, Oracle, MySQL, CockroachDB, DynamoDB, and Hazelcast savers have been aligned with this contract through default implementations. The amount of information retained remains a concern of the specific saver implementation.
 
-### SQLite and PostgreSQL V2 Savers
+### SQLite and PostgreSQL V2 savers
 
 Both relational integrations add implementations backed by versioned SQL resources:
 
@@ -176,7 +176,7 @@ Both relational integrations add implementations backed by versioned SQL resourc
 
 The V2 implementations align with the updated release, error, and interruption contract. The original classes remain available for their V1 schemas. Treat adoption of a V2 saver as a persistence change to review against your existing database; the release notes do not establish an automatic V1-to-V2 data migration.
 
-## Other Changes Worth Knowing Before Upgrading
+## Other changes worth knowing before upgrading
 
 ### Explicit Graph Inputs
 
@@ -198,14 +198,14 @@ State cloning remains enabled by default. `RunnableConfig.builder().disableClone
 
 `StateSerializer.declareTransientAttributes(...)` excludes named attributes from serialized data and restores them from the same serializer's in-memory transient storage. Those values do not survive a restart, a different process, or a new serializer instance. Keep anything needed for durable resume in persisted state. `GsonStateSerializer` is deprecated for removal; move toward Jackson-based serialization.
 
-### Agent Infrastructure
+### Agent infrastructure
 
 The experimental core skills API introduces `SkillSource`, `SkillPath`, and `SkillParser`. 
 
 Spring AI builds on this with `SubAgent`, `CustomSubAgent`, `SkilledReactSubAgent`, and `SkillResource`, making compiled agents reusable as tools. I covered the pattern in [Skill-Based Sub-Agents with LangGraph4j and Spring AI][sub-agents].
 
 
-## LangGraph4j Studio Gets a Visual Refresh
+## LangGraph4j Studio gets a visual refresh
 
 
 ### Studio 1.8
@@ -240,19 +240,19 @@ This representation has been used for the Studio refactoring toward [React Flow]
 
 The next phase of development will focus on three areas. These are roadmap priorities, with scope and delivery to evolve as implementation progresses.
 
-### Persist More of the Execution Context
+### Persist more of the execution context
 
 I want to improve graph execution-context persistence so that it supports monitoring and post-processing analysis more effectively. The checkpoint lifecycle work in `1.9` is a step in that direction: understanding completed, interrupted, and failed runs is essential when agentic workflows move into production.
 
 The aim is to make retained execution information more useful for understanding behavior and for subsequent analysis and processing.
 
-### Redesign Parallel Node Execution
+### Redesign parallel node execution
 
 Another priority is to redesign the parallel-node implementation, removing current limitations and improving efficiency. As workflows grow, parallel branches need to become easier to compose and manage.
 
 This is upcoming work. Applications using `1.9` should continue to account for the currently documented parallel-execution limitations.
 
-### Improve Built-in Agents for Spring AI and LangChain4j
+### Improve built-in Agents for Spring AI and LangChain4j
 
 Finally, I want to enhance the built-in agent infrastructure for both **Spring AI** and **LangChain4j**. The skills and sub-agent work demonstrates how much can be built on top of graph execution; the goal is to make those building blocks more useful and easier to compose across both integrations.
 
