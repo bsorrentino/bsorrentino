@@ -159,6 +159,7 @@ Tag releaseCheckpointsOnError(
 These allow a saver to retain interruption information and distinguish an error release from normal completion. `InterruptionMetadata` now also exposes the interruption reason. That gives later analysis more context about why an execution stopped.
 
 The error-release hook does not change the default described above: an exception leaves the thread available, and the caller chooses its recovery or release strategy.
+**Note:** 👀
 > We suggest to call `saver.releaseOnError(RunnableConfig, Throwable)` on catching exceptions to avoid to leave lot of 'dirty' records in underlyng checkpoint saver storage.
 > We are evaluating in the future relase to call it automatically on whatever error catched by graph running engine.
 
@@ -212,14 +213,10 @@ Spring AI builds on this with `SubAgent`, `CustomSubAgent`, `SkilledReactSubAgen
 
 ![LangGraph4j Studio 1.8 showing a dark graph panel and execution state](../../../../assets/langgraph-java/1.9.0/studio-1.8-demo.gif)
 
-*Animation from the [Studio 1.8 documentation][studio-18].*
-
 
 ### Studio 1.9
 
 ![LangGraph4j Studio 1.9 showing the refreshed graph canvas and execution controls](../../../../assets/langgraph-java/1.9.0/studio-1.9-demo.gif)
-
-*Animation from the [Studio 1.9 documentation][studio-19].*
 
 In the new Studio the active node receives a blue highlight and a loading indicator, making execution easier to follow at a glance.
 
