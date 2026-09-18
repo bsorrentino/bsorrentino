@@ -20,9 +20,9 @@ Let's look at what changes for an application built on `1.8.x`, with particular 
 
 ## Emit Custom Output While a Node Is Running
 
-Imagine a node that retrieves documents, processes them, and prepares a response. The caller may want to show progress throughout that work. Waiting for the final node output gives the user little information about what is happening in the meantime.
+Imagine a node that retrieves documents, processes them, and prepares a response. The caller may want to show progress throughout that work. Waiting for the final node output gives the user minimal information about what is happening in the meantime.
 
-In `1.9`, a node can emit its own typed `NodeOutput` values through the active `graph.stream(...)` stream. They arrive alongside the usual START, node, and END outputs, before the node has necessarily finished.
+In `1.9`, a node action can emit its own typed `NodeOutput` values through the active graph execution stream (`graph.stream(...)`). They arrive alongside the usual START, node, and END outputs, before the node has necessarily finished.
 
 The mechanism is straightforward:
 
@@ -31,7 +31,7 @@ The mechanism is straightforward:
 3. Dispatch custom outputs during execution.
 4. Handle those types when consuming the graph stream.
 
-Here is a small example using `AgentState` as the graph state type. The snippets assume the usual LangGraph4j imports, `Map`, and the static `CompletableFuture.completedFuture` import.
+Here is a small example.
 
 ```java
 public final class ProgressOutput extends NodeOutput<AgentState> {
