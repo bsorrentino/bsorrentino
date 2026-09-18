@@ -20,7 +20,7 @@ This release is an important step toward workflows that are easier to follow whi
 
 Let's look at what changes for an application built on `1.8.x`, with particular attention to **custom output from nodes** and **checkpoint management**. The [official migration guide][migration] provides details API reference for the changes discussed here.
 
-## Emit Custom Output While a Node Is Running
+## Emit custom output while a node is running
 
 Imagine a node that retrieves documents, processes them, and prepares a response. The caller may want to show progress throughout that work. Waiting for the final node output gives the user minimal information about what is happening in the meantime.
 
@@ -87,7 +87,7 @@ Custom events are intended for `graph.stream(...)` consumers; they do not change
 
 ### The Streaming Engine Behind It
 
-This capability comes with a refactoring of the internal streaming engine around `AsyncGeneratorFlow` from `async-generator 5.0` project.
+This capability comes with a refactoring of the internal streaming engine around `AsyncGeneratorFlow` from []`async-generator 5.0`](https://github.com/bsorrentino/java-async-generator) project.
 
 Ordinary iteration over `stream()` remains source-compatible. Applications extending streaming generators, supplying a `BlockingQueue`, or depending on `AsyncGenerator.WithResult` need migration work. 
 
