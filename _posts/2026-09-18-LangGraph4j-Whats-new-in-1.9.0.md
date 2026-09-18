@@ -85,20 +85,20 @@ There are two dispatch options. `dispatchSync(...)` waits until the stream accep
 
 Custom events are intended for `graph.stream(...)` consumers; they do not change the result returned by `graph.invoke(...)`. See the [custom-output tutorial][custom-output] for the complete contract and a **hook-based** example.
 
-### The Streaming Engine Behind It
+### The streaming engine behind it
 
 This capability comes with a refactoring of the internal streaming engine around `AsyncGeneratorFlow` from []`async-generator 5.0`](https://github.com/bsorrentino/java-async-generator) project.
 
-Ordinary iteration over `stream()` remains source-compatible. Applications extending streaming generators, supplying a `BlockingQueue`, or depending on `AsyncGenerator.WithResult` need migration work. 
+Ordinary iteration over `stream()` remains source-compatible. Applications extending directly streaming generators, supplying a `BlockingQueue`, or depending on `AsyncGenerator.WithResult` need migration work. 
 
-Note: 👀
+**Note:** 👀
 > This refactoring is a groundwork for Reactor Flow support in a future LangGraph4j `2.0`; that support is a future direction.
 
-## Checkpoint Savers: A Richer Execution Lifecycle
+## Checkpoint Savers: A richer execution lifecycle
 
 Checkpoint persistence is central to long-running agents and Human-in-the-Loop workflows. In `1.9`, the changes cover what happens when execution finishes, how released runs can be retrieved, how subgraph savers participate, and how interruptions and failures are recorded. These are the [checkpoint changes][migration] I would review first when upgrading an existing application.
 
-### Completed Runs Release Their Thread by Default
+### Completed runs release their thread by default
 
 With a checkpoint saver configured, a graph that completes normally now releases its active thread automatically. Depending on the saver, release archives or tags its checkpoints and removes the active checkpoint set.
 
