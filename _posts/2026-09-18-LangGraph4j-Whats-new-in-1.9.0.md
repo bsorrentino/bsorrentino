@@ -87,7 +87,7 @@ Custom events are intended for `graph.stream(...)` consumers; they do not change
 
 ### The streaming engine behind it
 
-This capability comes with a refactoring of the internal streaming engine around `AsyncGeneratorFlow` from []`async-generator 5.0`](https://github.com/bsorrentino/java-async-generator) project.
+This capability comes with a refactoring of the internal streaming engine around `AsyncGeneratorFlow` from [`async-generator 5.0`](https://github.com/bsorrentino/java-async-generator) project.
 
 Ordinary iteration over `stream()` remains source-compatible. Applications extending directly streaming generators, supplying a `BlockingQueue`, or depending on `AsyncGenerator.WithResult` need migration work. 
 
@@ -100,7 +100,7 @@ Checkpoint persistence is central to long-running agents and Human-in-the-Loop w
 
 ### Completed runs release their thread by default
 
-With a checkpoint saver configured, a graph that completes normally now releases its active thread automatically. Depending on the saver, release archives or tags its checkpoints and removes the active checkpoint set.
+With a checkpoint saver configured, **a graph that completes normally now releases its active thread automatically**. Depending on the saver, release archives or tags its checkpoints and removes the active checkpoint set.
 
 This matters if your application completes a graph, updates the same active thread's state, and executes it again. To retain the previous lifecycle, explicitly disable automatic release when compiling:
 
