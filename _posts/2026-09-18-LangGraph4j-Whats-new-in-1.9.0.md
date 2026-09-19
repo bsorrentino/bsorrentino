@@ -159,10 +159,9 @@ Tag releaseCheckpointsOnError(
 These allow a saver to retain interruption information and distinguish an error release from normal completion. `InterruptionMetadata` now also exposes the interruption reason. That gives later analysis more context about why an execution stopped.
 
 The error-release hook does not change the default described above: an exception leaves the thread available, and the caller chooses its recovery or release strategy.
-**Note:** 👀
-> We suggest to call `saver.releaseOnError(RunnableConfig, Throwable)` on catching exceptions to avoid to leave lot of 'dirty' records in underlyng checkpoint saver storage.
-> We are evaluating in the future relase to call it automatically on whatever error catched by graph running engine.
 
+**Note:** 👀
+> To avoid leaving lots of unfinished records in the checkpoint persistence layer, we recommend calling `saver.releaseOnError(RunnableConfig, Throwable)` within exception handling logic. We are currently considering automating this  in a future release by having the graph execution engine invoke the method whenever an error occurs.
 
 The in-memory, file-system, Redis, Postgres, Oracle, MySQL, CockroachDB, DynamoDB, and Hazelcast savers have been aligned with this contract through default implementations. The amount of information retained remains a concern of the specific saver implementation.
 
@@ -175,7 +174,7 @@ Both relational integrations add implementations backed by versioned SQL resourc
 | SQLite | `SQLiteSaverV2` | `SQLiteSaver`, for the V1 schema |
 | PostgreSQL | `PostgresSaverV2` | `PostgresSaver`, for the V1 schema |
 
-The V2 implementations align with the updated release, error, and interruption contract. The original classes remain available for their V1 schemas. Treat adoption of a V2 saver as a persistence change to review against your existing database; the release notes do not establish an automatic V1-to-V2 data migration.
+The V2 implementations align with the updated release, error, and interruption contract. The original classes remain available for their V1 schemas. Treat adoption of a V2 saver as a persistence change to review against your existing database.
 
 ## Other changes worth knowing before upgrading
 
