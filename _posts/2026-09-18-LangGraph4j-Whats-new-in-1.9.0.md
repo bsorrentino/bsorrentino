@@ -1,6 +1,6 @@
 ---
 layout: post
-title: "LangGraph4j 1.9.0 is out: What's new and the roadmap"
+title: "LangGraph4j 1.9.0: What's new and the roadmap"
 date: 2026-09-18
 description: |
   Explore LangGraph4j 1.9.0: custom node output, checkpoint saver improvements, a refreshed Studio, and the next steps for Java agentic workflows.
