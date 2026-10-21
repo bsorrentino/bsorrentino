@@ -1,0 +1,1 @@
+I need a cover image for article _draft/site/tag/article/2026-10-19-LangGraph4j-Annotations.md startig from page image [Image #1]. the new cover image must have the same dimension of template image and must be generated in folder assets/langgraph-java/annotations
