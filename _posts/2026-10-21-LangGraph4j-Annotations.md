@@ -127,7 +127,7 @@ public final class DocumentWorkflow {
 
 There are some details to notice here.
 * `repository.node("prepare")` and `repository.node("review")` supplies a complete graph node whose ID and action lookup name are the same. 
-* Similarly, `repository.edge(...)` supplies a complete conditional edge. Both work with `StateGraph.add(...)`.
+* Similarly, `repository.edge(...)` supplies a complete conditional edge. Both work with the `StateGraph.add(...)` methods.
 
 This gives us a small example to make in evidence how graph definition change using annotations.
 
