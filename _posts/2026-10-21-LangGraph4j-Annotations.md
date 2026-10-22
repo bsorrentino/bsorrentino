@@ -133,8 +133,7 @@ This gives us a small example to make in evidence how graph definition change us
 
 ## Reuse an action under another node ID
 
-Sometimes the graph should give a reusable action a name specific to its role in that workflow. `repository.nodeAction(...)` retrieves the action factory without assigning the node ID:
-
+Sometimes, a graph reuses an action while assigning a specific name to the role it plays within a particular workflow. The `repository.nodeAction(...)` method is provided specifically for this purpose; it retrieves the action factory without assigning a node ID.
 ```java
 // Alternative preparation node: graph identity differs from the catalog lookup name.
 var workflow = new StateGraph<>(AgentState::new)
