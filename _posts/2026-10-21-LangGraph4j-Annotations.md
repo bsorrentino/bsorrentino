@@ -42,7 +42,7 @@ An explicit name is useful when the catalog should expose a stable action name e
 
 ## An example
 
-Let's build a small document workflow: prepare some text, decide whether review is requested, and optionally mark it as reviewed. We intentionally keep it simple so no LLM or external service is needed, so we can focus on how the catalog connects to the graph.
+Let's build a small document workflow: prepare some text, decide whether review is requested, and optionally mark it as reviewed. We intentionally keep it simple so no LLM or external service is needed than we can focus on how the catalog connects to the graph.
 
 ### Define the catalog
 
