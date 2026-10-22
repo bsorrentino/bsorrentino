@@ -142,7 +142,7 @@ var workflow = new StateGraph<>(AgentState::new)
         .addEdge("prepareIncomingDocument", END);
 ```
 
-This fragment replaces the earlier topology and uses the same repository. After compilation,  `prepareIncomingDocument` node would contain `prepare` action bound with `prepareDocument` method in action catalog.
+This fragment replaces the earlier definition and uses the same repository. After compilation, `prepareIncomingDocument` node would contain `prepare` action bound with `prepareDocument` method in action catalog.
 
 That distinction is useful when an action appears in several workflows, or more than once within a graph. Catalog names identify reusable behavior; graph node IDs identify its position in a particular workflow.
 
@@ -160,7 +160,7 @@ The example uses synchronous methods, but catalogs also support asynchronous wor
 
 Runtime methods can receive your `AgentState` subclass, `RunnableConfig`, both in either order, or neither. Include only what the method needs. A returned future must complete before its updates or routing result can be applied; returning a future does not itself schedule background work.
 
-A compile-time node method instead takes **one `CompileConfig` argument**. It runs when the graph creates its action during compilation and returns the action to execute later. This is useful when action construction depends on compilation settings. Edge conditions do not support `CompileConfig`. 
+A **compile-time** node method instead takes **one `CompileConfig` argument**. It runs when the graph creates its action during compilation and returns the action to execute later. This is useful when action construction depends on compilation settings. Edge conditions do not support **compile-time** configuration. 
 
 See the [signature examples][signatures] for the complete forms.
 
@@ -172,7 +172,7 @@ The repository uses the **catalog instance you supply**. That means constructor 
 
 Keep per-run values in graph state or execution configuration. A catalog shared across concurrent runs also shares its fields and dependencies, so mutable collaborators need suitable concurrency handling. The stateless catalog in this example avoids that concern.
 
-Catalog methods can be called directly in ordinary Java tests..
+Catalog methods can be called directly in ordinary Java tests.
 
 ## Common mistakes to catch early
 
