@@ -3,7 +3,7 @@ layout: post
 title: "LangGraph4j Annotations: Organize Graph Behavior with Action Catalogs"
 date: 2026-10-21
 description: |
-  Build a LangGraph4j workflow with annotated Java methods, reusable action catalogs, and explicit conditional routing.
+  Build a LangGraph4j workflow with annotated Java methods and reusable action catalogs.
 categories: ai
 
 ---
