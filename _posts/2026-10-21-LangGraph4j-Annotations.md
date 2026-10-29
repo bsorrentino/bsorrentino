@@ -187,7 +187,7 @@ For an existing graph, a practical migration is to move a related group of actio
 ## Conclusion
 
 The approach of organizing actions into catalogs helps maintain a clear structure as your workflow grows. It encourages modularity, reusability, and easier testing, while keeping the graph definitions explicit and manageable. 
-In the future action catalogs could feed advanced workflow designer tools, enabling more declarative automation and orchestration capabilities.
+In the future the **action catalogs could feed advanced workflow designer tools, enabling more declarative automation and orchestration capabilities**.
 I'm interested in how this approach fits larger workflows. Try it grouping a set of related actions in [LangGraph4j], share your feedback, and... happy AI coding! 👋
 
 [LangGraph4j]: https://github.com/langgraph4j/langgraph4j
